@@ -22,6 +22,7 @@
 		420108001FB3C0590060C84F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		420108031FB3C0590060C84F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		420108051FB3C0590060C84F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42DB00881FBF954C0089E15F /* navigation bar background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navigation bar background.png"; path = "Countdown/navigation bar background.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 			children = (
 				420107F81FB3C0590060C84F /* Countdown */,
 				420107F71FB3C0590060C84F /* Products */,
+				42DB00881FBF954C0089E15F /* navigation bar background.png */,
 			);
 			sourceTree = "<group>";
 		};
