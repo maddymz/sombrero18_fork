@@ -221,6 +221,7 @@ Test 3</string>
                         <outlet property="mainView" destination="8bC-Xf-vdC" id="pOA-l6-jXm"/>
                         <outlet property="pageControl" destination="eQp-e7-CAL" id="Dnp-WW-1Qv"/>
                         <outlet property="scrollView" destination="iij-lS-rpX" id="M0M-tv-Raf"/>
+                        <outlet property="stackView" destination="Htd-pq-7pw" id="xyR-1y-2NA"/>
                         <outlet property="timeBar" destination="Pdw-lV-3lm" id="dTl-UB-YDa"/>
                         <outlet property="timerLabel" destination="wAY-IJ-lID" id="lII-hc-O9g"/>
                     </connections>
@@ -253,7 +254,7 @@ Test 3</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FrF-3v-lTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2052" y="1024"/>
+            <point key="canvasLocation" x="2052" y="1023.2383808095952"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eCv-lk-JK0">
