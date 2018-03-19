@@ -80,6 +80,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     
+    @IBOutlet var Menu: UIView!
+    
     
 // actions
     @IBAction func panPerformed(_ sender: UIPanGestureRecognizer) {
@@ -134,10 +136,16 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
 
 // methods
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
         initTimer() // initialize countdown timer
+        
+        //add and hide menu
+        Menu.layer.zPosition = 1;
+        view.addSubview(Menu)
+        Menu.frame = CGRect(x:-300, y:0, width: 265, height:self.view.frame.height)
         
         //adaptability constraints
         gradientView.frame.size.width = view.frame.width
@@ -209,6 +217,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
 
 // functions
+    
     // handles tap on timeBar
     @objc func timeBarTap(sender:UITapGestureRecognizer) {
         if (dropdownShowing == 0) { //dropdown is not showing, show
@@ -514,4 +523,116 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
+    
+    //menu functions (include in all pages with hamburger)
+    @IBAction func menuClicked(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = true
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Menu.transform = CGAffineTransform(translationX: 300, y: 0)
+        }) { (success) in
+        }
+
+    }
+    
+    @IBAction func closeMenu(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.Menu.transform = CGAffineTransform(translationX: -300, y: 0)
+        }) { (success) in
+            self.tabBarController?.tabBar.isHidden = false
+        }
+    }
+
+    @IBAction func notification(_ sender: Any) {
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+            
+        })
+    }
+    
+    @IBAction func contactUs(_ sender: Any) {
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+            
+        })
+    }
+    
+    @IBAction func partners(_ sender: Any) {
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+            
+        })
+    }
+    
+    @IBAction func getInvolved(_ sender: Any) {
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+            
+        })
+    }
+    
+    @IBAction func blog(_ sender: Any) {
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+            
+        })
+    }
+    @IBAction func termsConditions(_ sender: Any) {
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+            
+        })
+    }
+    
+    @IBAction func openYoutube(_ sender: Any) {
+        
+        let YoutubeUser =  "UC2BGcbPW8mxryXnjQcBqk6A"
+        let appURL = NSURL(string: "youtube://www.youtube.com/user/\(YoutubeUser)")!
+        let webURL = NSURL(string: "https://www.youtube.com/channel/\(YoutubeUser)")!
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL as URL) {
+            application.open(appURL as URL)
+        } else {
+            // if Youtube app is not installed, open URL inside Safari
+            application.open(webURL as URL)
+        }
+    }
+    
+    @IBAction func openTwitter(_ sender: Any) {
+        let screenName =  "nasapsyche"
+        let appURL = NSURL(string: "twitter://user?screen_name=\(screenName)")!
+        let webURL = NSURL(string: "https://twitter.com/\(screenName)")!
+        
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL as URL) {
+            application.open(appURL as URL)
+        } else {
+            application.open(webURL as URL)
+        }
+    }
+    
+    @IBAction func openFB(_ sender: Any) {
+        let Username =  "nasapsyche" // Your Instagram Username here
+        let appURL = NSURL(string: "fb://profile/\(Username)")!
+        let webURL = NSURL(string: "https://facebook.com/\(Username)")!
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL as URL) {
+            application.open(appURL as URL)
+        } else {
+            // if Instagram app is not installed, open URL inside Safari
+            application.open(webURL as URL)
+        }
+    }
+    
+    @IBAction func openInsta(_ sender: Any) {
+        
+        let Username =  "nasapsyche" // Your Instagram Username here
+        let appURL = NSURL(string: "instagram://user?username=\(Username)")!
+        let webURL = NSURL(string: "https://instagram.com/\(Username)")!
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL as URL) {
+            application.open(appURL as URL)
+        } else {
+            // if Instagram app is not installed, open URL inside Safari
+            application.open(webURL as URL)
+        }
+    }
+    
 }

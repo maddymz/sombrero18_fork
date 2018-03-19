@@ -16,6 +16,8 @@ class LoadingViewController: UITabBarController {
     @IBOutlet var View4: UIView!
     @IBOutlet var View5: UIView!
     @IBOutlet var View6: UIView!
+    @IBOutlet var Menu: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,13 @@ class LoadingViewController: UITabBarController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    func openMenu(){
+        Menu.frame.size.height = view.frame.height
+        Menu.alpha = 1
+        view.addSubview(Menu)
+    }
+  
     func showLoadingScreen(){
         View1.frame.size.width = view.frame.width
         View1.frame.size.height = view.frame.height
@@ -54,7 +62,7 @@ class LoadingViewController: UITabBarController {
         View6.alpha = 0
         view.addSubview(View6)
         
-        var duration = 0.5;
+        let duration = 0.5;
         
         UIView.animate(withDuration: duration, animations: {
             self.View2.alpha = 1
@@ -109,4 +117,5 @@ class LoadingViewController: UITabBarController {
     }
     */
 
+    
 }
