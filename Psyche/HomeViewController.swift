@@ -35,6 +35,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     var dateViews = [DateView]()
     weak var countdownTimer: Timer? // timer that ticks every second and updates the label
     
+    
     // variables for the drop down blur
     let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
     let blurEffectView = UIVisualEffectView()
@@ -44,6 +45,11 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     let dropdownView = UIView() // this view rests on top of the blurEffectView
     
     var dropdownShowing = 0 // 0 means dropdown not showing, 1 means dropdown is showing
+    
+    //menu bur
+    @IBOutlet weak var menuBlur: UIVisualEffectView!
+    
+    
     
     // alignment constants for drop down
     // X positions
@@ -211,7 +217,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         dropdownView.frame = CGRect(x: 0, y: timeBlurYPos - timeBlurHeight, width: timeBlurWidth, height: timeBlurHeight)
         
-        stackView.layer.zPosition = 1 // makes stackView above other UI elements
+        //stackView.layer.zPosition = 1 // makes stackView above other UI elements
 
         addDates() // add dates to dates array
     }
@@ -526,19 +532,27 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     
     //menu functions (include in all pages with hamburger)
     @IBAction func menuClicked(_ sender: Any) {
-        self.tabBarController?.tabBar.isHidden = true
+        self.menuBlur.layer.zPosition = 1
+        self.menuBlur.alpha = 0
+        self.menuBlur.layer.isHidden = false
         UIView.animate(withDuration: 0.5, animations: {
+            self.menuBlur.alpha = 1.0
+            self.tabBarController?.tabBar.alpha = 0
             self.Menu.transform = CGAffineTransform(translationX: 300, y: 0)
         }) { (success) in
+            self.tabBarController?.tabBar.isHidden = true
         }
 
     }
     
     @IBAction func closeMenu(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = false
         UIView.animate(withDuration: 0.5, animations: {
+            self.tabBarController?.tabBar.alpha = 1.0
+            self.menuBlur.alpha = 0
             self.Menu.transform = CGAffineTransform(translationX: -300, y: 0)
         }) { (success) in
-            self.tabBarController?.tabBar.isHidden = false
+            self.menuBlur.layer.isHidden = true
         }
     }
 
