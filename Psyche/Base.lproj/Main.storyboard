@@ -373,7 +373,7 @@ Test 3</string>
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1392.8" y="1022.3388305847077"/>
+            <point key="canvasLocation" x="1399" y="1023"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ae8-Aj-Zgh">
