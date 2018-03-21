@@ -22,8 +22,8 @@ class DateView : UIView {
 
 // class
 class HomeViewController: UIViewController, UIScrollViewDelegate {
-
-// vars
+    
+    // vars
     var contentWidth: CGFloat = 0.0
     var Player: AVPlayer!
     var PlayerLayer: AVPlayerLayer!
@@ -53,21 +53,22 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     
     // alignment constants for drop down
     // X positions
-    let dateLabelX = 25
-    let yearLabelX = 104
-    let yearMLabelX = 104
-    let dayLabelX = 194
-    let dayMLabelX = 194
+    let dateLabelX = 16
+    let yearLabelX = 82
+    let yearMLabelX = 82
+    let dayLabelX = 188
+    let dayMLabelX = 188
     let hourLabelX = 314
     let hourMLabelX = 314
+    let timeMLabelXConst = 1
     
     // Y positions
     let dateLabelYConst = -20
     let timeLabelYConst = -10
-    let timeMLabelYConst = 12
+    let timeMLabelYConst = 16
     let separation = 90 // distance between the different dates
     
-// outlets
+    // outlets
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
@@ -89,7 +90,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var Menu: UIView!
     
     
-// actions
+    // actions
     @IBAction func panPerformed(_ sender: UIPanGestureRecognizer) {
         if sender.state == .began || sender.state == .changed {
             let translation = sender.translation(in: self.view).y
@@ -140,16 +141,16 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
-
-// methods
-
+    
+    // methods
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         initTimer() // initialize countdown timer
         
         //add and hide menu
-        Menu.layer.zPosition = 1;
+        Menu.layer.zPosition = 2;
         view.addSubview(Menu)
         Menu.frame = CGRect(x:-300, y:0, width: 265, height:self.view.frame.height)
         
@@ -157,15 +158,15 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         gradientView.frame.size.width = view.frame.width
         scrollView.frame.size.width = view.frame.width
         
-// gradient view
+        // gradient view
         let gradient = CAGradientLayer()
         gradient.frame = gradientView.bounds
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 1)
         gradient.colors = [UIColor(red: 250/255.5, green: 160/255.5, blue: 0/255.5, alpha: 1.0).cgColor, UIColor(red: 244/255.5, green: 124/255.5, blue: 51/255.5, alpha: 1.0).cgColor, UIColor(red: 239/255.5, green: 89/255.5, blue: 102/255.5, alpha: 1.0).cgColor]
         gradientView.layer.insertSublayer(gradient, at: 0)
-       
-// shadows
+        
+        // shadows
         gradientView.layer.shadowColor = UIColor.orange.cgColor
         gradientView.layer.shadowOpacity = 1
         gradientView.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -173,16 +174,16 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         blurView.layer.shadowOpacity = 1
         blurView.layer.shadowOffset = CGSize(width: 0, height: 0)
         
-// background gif
+        // background gif
         gifView.loadGif(name: "output")
         
-// animations
+        // animations
         gifView.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
         timeBar.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
         blurView.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
         arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
         
-// blur view
+        // blur view
         blurY.constant = 390
         blurHeight.constant = 554
         blurTextHeight.constant = 40
@@ -193,8 +194,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(500000)) {
             self.blurText.flashScrollIndicators()
         }
-
-// scroll view
+        
+        // scroll view
         scrollView.delegate = self
         for image in 0...3 {
             let imageToDisplay = UIImage(named: "\(image)")
@@ -218,11 +219,11 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         dropdownView.frame = CGRect(x: 0, y: timeBlurYPos - timeBlurHeight, width: timeBlurWidth, height: timeBlurHeight)
         
         //stackView.layer.zPosition = 1 // makes stackView above other UI elements
-
+        
         addDates() // add dates to dates array
     }
-
-// functions
+    
+    // functions
     
     // handles tap on timeBar
     @objc func timeBarTap(sender:UITapGestureRecognizer) {
@@ -231,6 +232,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             view.addSubview(dropdownView)
             
             addCountdownLabels()
+            
+            stackView.layer.zPosition = 1
+            
             
             UIView.animate(withDuration: 0.3) {
                 self.blurEffectView.frame = CGRect(x: 0, y: self.timeBlurYPos, width: self.timeBlurWidth, height: self.timeBlurHeight)
@@ -247,6 +251,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             }, completion: { (finished: Bool) in
                 self.blurEffectView.removeFromSuperview()
                 self.dropdownView.removeFromSuperview()
+                self.stackView.layer.zPosition = 0
             })
             
             self.dropdownShowing = 0
@@ -300,15 +305,15 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     let yearLabel = UILabel()
                     yearLabel.frame = CGRect(x: yearLabelX, y: timeLabelYConst, width: 100, height: 100)
                     let yearMLabel = UILabel()
-                    yearMLabel.frame = CGRect(x: yearMLabelX, y: timeMLabelYConst, width: 100, height: 100)
+                    yearMLabel.frame = CGRect(x: yearMLabelX + timeMLabelXConst, y: timeMLabelYConst, width: 100, height: 100)
                     let dayLabel = UILabel()
                     dayLabel.frame = CGRect(x: dayLabelX, y: timeLabelYConst, width: 100, height: 100)
                     let dayMLabel = UILabel()
-                    dayMLabel.frame = CGRect(x: dayMLabelX, y: timeMLabelYConst, width: 100, height: 100)
+                    dayMLabel.frame = CGRect(x: dayMLabelX + timeMLabelXConst, y: timeMLabelYConst, width: 100, height: 100)
                     let hourLabel = UILabel()
                     hourLabel.frame = CGRect(x: hourLabelX, y: timeLabelYConst, width: 100, height: 100)
                     let hourMLabel = UILabel()
-                    hourMLabel.frame = CGRect(x: hourMLabelX, y: timeMLabelYConst, width: 100, height: 100)
+                    hourMLabel.frame = CGRect(x: hourMLabelX + timeMLabelXConst, y: timeMLabelYConst, width: 100, height: 100)
                     
                     yearLabel.text = result.0
                     dayLabel.text = result.1
@@ -324,12 +329,18 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     hourMLabel.textColor = UIColor.gray
                     dayMLabel.textColor = UIColor.gray
                     
-                    yearLabel.font = yearLabel.font.withSize(36)
-                    dayLabel.font = dayLabel.font.withSize(36)
-                    hourLabel.font = hourLabel.font.withSize(36)
-                    yearMLabel.font = yearLabel.font.withSize(10)
-                    dayMLabel.font = dayLabel.font.withSize(10)
-                    hourMLabel.font = hourLabel.font.withSize(10)
+                    yearLabel.font = UIFont(name: "Roboto Mono", size: 36)
+                    dayLabel.font = UIFont(name: "Roboto Mono", size: 36)
+                    hourLabel.font = UIFont(name: "Roboto Mono", size: 36)
+                    yearMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+                    dayMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+                    hourMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+                    //yearLabel.font = yearLabel.font.withSize(36)
+                    //dayLabel.font = dayLabel.font.withSize(36)
+                    //hourLabel.font = hourLabel.font.withSize(36)
+                    //yearMLabel.font = yearLabel.font.withSize(10)
+                    //dayMLabel.font = dayLabel.font.withSize(10)
+                    //hourMLabel.font = hourLabel.font.withSize(10)
                     
                     dateView.addSubview(yearLabel)
                     dateView.addSubview(yearMLabel)
@@ -346,12 +357,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     let dayLabel = UILabel()
                     dayLabel.frame = CGRect(x: yearLabelX, y: timeLabelYConst, width: 100, height: 100)
                     let dayMLabel = UILabel()
-                    dayMLabel.frame = CGRect(x: yearMLabelX, y: timeMLabelYConst, width: 100, height: 100)
+                    dayMLabel.frame = CGRect(x: yearMLabelX + timeMLabelXConst, y: timeMLabelYConst, width: 100, height: 100)
                     
                     let timeLabel = UILabel()
                     timeLabel.frame = CGRect(x: dayLabelX, y: timeLabelYConst, width: 300, height: 100)
                     let timeMLabel = UILabel()
-                    timeMLabel.frame = CGRect(x: dayMLabelX, y: timeMLabelYConst, width: 200, height: 100)
+                    timeMLabel.frame = CGRect(x: dayMLabelX + timeMLabelXConst, y: timeMLabelYConst, width: 200, height: 100)
                     
                     dayLabel.text = result.1
                     timeLabel.text = result.2
@@ -363,10 +374,14 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     timeMLabel.textColor = UIColor.gray
                     dayMLabel.textColor = UIColor.gray
                     
-                    timeLabel.font = timeLabel.font.withSize(36)
-                    dayLabel.font = dayLabel.font.withSize(36)
-                    timeMLabel.font = timeMLabel.font.withSize(10)
-                    dayMLabel.font = dayLabel.font.withSize(10)
+                    timeLabel.font = UIFont(name: "Roboto Mono", size: 36)
+                    dayLabel.font = UIFont(name: "Roboto Mono", size: 36)
+                    timeMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+                    dayMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+                    //timeLabel.font = timeLabel.font.withSize(36)
+                    //dayLabel.font = dayLabel.font.withSize(36)
+                    //timeMLabel.font = timeMLabel.font.withSize(10)
+                    //dayMLabel.font = dayLabel.font.withSize(10)
                     
                     dateView.addSubview(timeLabel)
                     dateView.addSubview(timeMLabel)
@@ -384,7 +399,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                 
                 if (i < max) {
                     let line = UIView()
-                    line.frame = CGRect(x: 20, y: timeMLabelYConst + 75, width: Int(view.bounds.width - 40), height: 1)
+                    line.frame = CGRect(x: 16, y: timeMLabelYConst + 75, width: Int(view.bounds.width - 32), height: 1)
                     line.backgroundColor = UIColor.lightGray
                     dateView.addSubview(line)
                 }
@@ -484,7 +499,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-// countdown clock
+    // countdown clock
     func initTimer() {
         countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimerLabel)
     }
@@ -542,7 +557,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         }) { (success) in
             self.tabBarController?.tabBar.isHidden = true
         }
-
+        
     }
     
     @IBAction func closeMenu(_ sender: Any) {
@@ -555,7 +570,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             self.menuBlur.layer.isHidden = true
         }
     }
-
+    
     @IBAction func notification(_ sender: Any) {
         UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
             
@@ -650,3 +665,4 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
     
 }
+

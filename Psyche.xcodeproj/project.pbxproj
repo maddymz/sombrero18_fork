@@ -19,6 +19,7 @@
 		1788479C1FE255AD00916C4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1788479A1FE255AD00916C4D /* LaunchScreen.storyboard */; };
 		178847A61FE25BDA00916C4D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178847A51FE25BDA00916C4D /* HomeViewController.swift */; };
 		17C34E42205A490B00712D00 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C34E41205A490B00712D00 /* LoadingViewController.swift */; };
+		42F8ADE92063154600809E0F /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F8ADE82063154600809E0F /* RobotoMono-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		1788479D1FE255AD00916C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		178847A51FE25BDA00916C4D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		17C34E41205A490B00712D00 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		42F8ADE82063154600809E0F /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		178847901FE255AD00916C4D /* Psyche */ = {
 			isa = PBXGroup;
 			children = (
+				42F8ADE72063151E00809E0F /* fonts */,
 				1788479D1FE255AD00916C4D /* Info.plist */,
 				1788479A1FE255AD00916C4D /* LaunchScreen.storyboard */,
 				178847951FE255AD00916C4D /* Main.storyboard */,
@@ -83,6 +86,14 @@
 				17C34E41205A490B00712D00 /* LoadingViewController.swift */,
 			);
 			path = Psyche;
+			sourceTree = "<group>";
+		};
+		42F8ADE72063151E00809E0F /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				42F8ADE82063154600809E0F /* RobotoMono-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1788479C1FE255AD00916C4D /* LaunchScreen.storyboard in Resources */,
+				42F8ADE92063154600809E0F /* RobotoMono-Regular.ttf in Resources */,
 				178847991FE255AD00916C4D /* Assets.xcassets in Resources */,
 				178847971FE255AD00916C4D /* Main.storyboard in Resources */,
 				043E1F812033CB7F00455B26 /* output.gif in Resources */,
