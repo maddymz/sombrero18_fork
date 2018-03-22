@@ -46,11 +46,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     
     var dropdownShowing = 0 // 0 means dropdown not showing, 1 means dropdown is showing
     
-    //menu bur
-    @IBOutlet weak var menuBlur: UIVisualEffectView!
-    
-    
-    
     // alignment constants for drop down
     // X positions
     let dateLabelX = 16
@@ -145,7 +140,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     // methods
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         initTimer() // initialize countdown timer
         
@@ -600,6 +594,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             
         })
     }
+    
     @IBAction func termsConditions(_ sender: Any) {
         UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
             
@@ -607,7 +602,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func openYoutube(_ sender: Any) {
-        
         let YoutubeUser =  "UC2BGcbPW8mxryXnjQcBqk6A"
         let appURL = NSURL(string: "youtube://www.youtube.com/user/\(YoutubeUser)")!
         let webURL = NSURL(string: "https://www.youtube.com/channel/\(YoutubeUser)")!
@@ -650,7 +644,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func openInsta(_ sender: Any) {
-        
         let Username =  "nasapsyche" // Your Instagram Username here
         let appURL = NSURL(string: "instagram://user?username=\(Username)")!
         let webURL = NSURL(string: "https://instagram.com/\(Username)")!
