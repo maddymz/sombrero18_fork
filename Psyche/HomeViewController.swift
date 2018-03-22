@@ -83,6 +83,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var stackView: UIStackView!
     
     @IBOutlet var Menu: UIView!
+    @IBOutlet weak var menuBlur: UIVisualEffectView!
     
     
     // actions
