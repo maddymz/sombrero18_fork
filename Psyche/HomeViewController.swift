@@ -46,11 +46,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     
     var dropdownShowing = 0 // 0 means dropdown not showing, 1 means dropdown is showing
     
-    //menu bur
-    @IBOutlet weak var menuBlur: UIVisualEffectView!
-    
-    
-    
     // alignment constants for drop down
     // X positions
     let dateLabelX = 25
@@ -66,8 +61,11 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     let timeLabelYConst = -10
     let timeMLabelYConst = 12
     let separation = 90 // distance between the different dates
-    
+
 // outlets
+    //menu bur
+    @IBOutlet weak var menuBlur: UIVisualEffectView!
+    //
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
@@ -87,7 +85,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var stackView: UIStackView!
     
     @IBOutlet var Menu: UIView!
-    
     
 // actions
     @IBAction func panPerformed(_ sender: UIPanGestureRecognizer) {
@@ -142,9 +139,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
 
 // methods
-
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         initTimer() // initialize countdown timer
         
@@ -157,15 +152,17 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         gradientView.frame.size.width = view.frame.width
         scrollView.frame.size.width = view.frame.width
         
-// gradient view
+        // gradient view
+        /*
         let gradient = CAGradientLayer()
         gradient.frame = gradientView.bounds
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 1)
         gradient.colors = [UIColor(red: 250/255.5, green: 160/255.5, blue: 0/255.5, alpha: 1.0).cgColor, UIColor(red: 244/255.5, green: 124/255.5, blue: 51/255.5, alpha: 1.0).cgColor, UIColor(red: 239/255.5, green: 89/255.5, blue: 102/255.5, alpha: 1.0).cgColor]
         gradientView.layer.insertSublayer(gradient, at: 0)
-       
-// shadows
+        */
+        
+        // shadows
         gradientView.layer.shadowColor = UIColor.orange.cgColor
         gradientView.layer.shadowOpacity = 1
         gradientView.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -173,16 +170,16 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         blurView.layer.shadowOpacity = 1
         blurView.layer.shadowOffset = CGSize(width: 0, height: 0)
         
-// background gif
+        // background gif
         gifView.loadGif(name: "output")
         
-// animations
-        gifView.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
-        timeBar.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
-        blurView.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
-        arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
+        // animations
+        gifView.fadeIn(duration: 9, delay: 0.5, completion: {(finished: Bool) -> Void in})
+        timeBar.fadeIn(duration: 9, delay: 0.5, completion: {(finished: Bool) -> Void in})
+        blurView.fadeIn(duration: 9, delay: 0.5, completion: {(finished: Bool) -> Void in})
+        arrowImage.fadeIn(duration: 9, delay: 0.5, completion: {(finished: Bool) -> Void in})
         
-// blur view
+        // blur view
         blurY.constant = 390
         blurHeight.constant = 554
         blurTextHeight.constant = 40
@@ -194,7 +191,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             self.blurText.flashScrollIndicators()
         }
 
-// scroll view
+        // scroll view
         scrollView.delegate = self
         for image in 0...3 {
             let imageToDisplay = UIImage(named: "\(image)")
@@ -223,7 +220,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
 
 // functions
-    
     // handles tap on timeBar
     @objc func timeBarTap(sender:UITapGestureRecognizer) {
         if (dropdownShowing == 0) { //dropdown is not showing, show
@@ -484,7 +480,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-// countdown clock
+    // countdown clock
     func initTimer() {
         countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimerLabel)
     }
@@ -585,6 +581,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             
         })
     }
+    
     @IBAction func termsConditions(_ sender: Any) {
         UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
             
@@ -592,7 +589,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func openYoutube(_ sender: Any) {
-        
         let YoutubeUser =  "UC2BGcbPW8mxryXnjQcBqk6A"
         let appURL = NSURL(string: "youtube://www.youtube.com/user/\(YoutubeUser)")!
         let webURL = NSURL(string: "https://www.youtube.com/channel/\(YoutubeUser)")!
@@ -635,7 +631,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func openInsta(_ sender: Any) {
-        
         let Username =  "nasapsyche" // Your Instagram Username here
         let appURL = NSURL(string: "instagram://user?username=\(Username)")!
         let webURL = NSURL(string: "https://instagram.com/\(Username)")!
