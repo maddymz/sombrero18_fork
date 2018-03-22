@@ -541,11 +541,11 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     
     //menu functions (include in all pages with hamburger)
     @IBAction func menuClicked(_ sender: Any) {
-        self.menuBlur.layer.zPosition = 1
-        self.menuBlur.alpha = 0
-        self.menuBlur.layer.isHidden = false
+        //self.menuBlur.layer.zPosition = 1
+        //self.menuBlur.alpha = 0
+        //self.menuBlur.layer.isHidden = false
         UIView.animate(withDuration: 0.5, animations: {
-            self.menuBlur.alpha = 1.0
+            //self.menuBlur.alpha = 1.0
             self.tabBarController?.tabBar.alpha = 0
             self.Menu.transform = CGAffineTransform(translationX: 300, y: 0)
         }) { (success) in
@@ -558,10 +558,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         self.tabBarController?.tabBar.isHidden = false
         UIView.animate(withDuration: 0.5, animations: {
             self.tabBarController?.tabBar.alpha = 1.0
-            self.menuBlur.alpha = 0
+            //self.menuBlur.alpha = 0
             self.Menu.transform = CGAffineTransform(translationX: -300, y: 0)
         }) { (success) in
-            self.menuBlur.layer.isHidden = true
+            //self.menuBlur.layer.isHidden = true
         }
     }
     
