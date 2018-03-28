@@ -23,7 +23,9 @@
 		1788479C1FE255AD00916C4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1788479A1FE255AD00916C4D /* LaunchScreen.storyboard */; };
 		178847A61FE25BDA00916C4D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178847A51FE25BDA00916C4D /* HomeViewController.swift */; };
 		17C34E42205A490B00712D00 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C34E41205A490B00712D00 /* LoadingViewController.swift */; };
+		42164ECB206C24BC00E2BCD2 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42164ECA206C24BC00E2BCD2 /* ModalViewController.swift */; };
 		42F8ADE92063154600809E0F /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F8ADE82063154600809E0F /* RobotoMono-Regular.ttf */; };
+		4ACB6C32F9D0DB70D77DAAB0 /* Pods_Psyche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE854616BEDDF09064D09BA5 /* Pods_Psyche.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +47,12 @@
 		1788479D1FE255AD00916C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		178847A51FE25BDA00916C4D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		17C34E41205A490B00712D00 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		42164EC9206C249600E2BCD2 /* Psyche-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Psyche-Bridging-Header.h"; sourceTree = "<group>"; };
+		42164ECA206C24BC00E2BCD2 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		42F8ADE82063154600809E0F /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
+		47E261C9C69D5AF064A576FC /* Pods-Psyche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.release.xcconfig"; sourceTree = "<group>"; };
+		86917CA57DC723F27B804306 /* Pods-Psyche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.debug.xcconfig"; sourceTree = "<group>"; };
+		EE854616BEDDF09064D09BA5 /* Pods_Psyche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psyche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ACB6C32F9D0DB70D77DAAB0 /* Pods_Psyche.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +72,8 @@
 			children = (
 				178847901FE255AD00916C4D /* Psyche */,
 				1788478F1FE255AD00916C4D /* Products */,
+				EB6D03473893B8501298CBB1 /* Pods */,
+				632FC3FEC3AFC3C1661A9C4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +106,8 @@
 				178847931FE255AD00916C4D /* BonusViewController.swift */,
 				17C34E41205A490B00712D00 /* LoadingViewController.swift */,
 				043E1F802033CB7E00455B26 /* output.gif */,
+				42164EC9206C249600E2BCD2 /* Psyche-Bridging-Header.h */,
+				42164ECA206C24BC00E2BCD2 /* ModalViewController.swift */,
 			);
 			path = Psyche;
 			sourceTree = "<group>";
@@ -108,6 +120,23 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		632FC3FEC3AFC3C1661A9C4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE854616BEDDF09064D09BA5 /* Pods_Psyche.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB6D03473893B8501298CBB1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86917CA57DC723F27B804306 /* Pods-Psyche.debug.xcconfig */,
+				47E261C9C69D5AF064A576FC /* Pods-Psyche.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +144,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 178847A01FE255AD00916C4D /* Build configuration list for PBXNativeTarget "Psyche" */;
 			buildPhases = (
+				944A21C06B9E40C6F14F2332 /* [CP] Check Pods Manifest.lock */,
 				1788478A1FE255AD00916C4D /* Sources */,
 				1788478B1FE255AD00916C4D /* Frameworks */,
 				1788478C1FE255AD00916C4D /* Resources */,
+				6F696B478EE14FF134DDF641 /* [CP] Embed Pods Frameworks */,
+				92AAC2C4A23B779B71D86044 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -178,6 +210,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6F696B478EE14FF134DDF641 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Psyche/Pods-Psyche-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FLKAutoLayout/FLKAutoLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/FMMosaicLayout/FMMosaicLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/ORStackView/ORStackView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLKAutoLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMMosaicLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ORStackView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Psyche/Pods-Psyche-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92AAC2C4A23B779B71D86044 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Psyche/Pods-Psyche-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		944A21C06B9E40C6F14F2332 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Psyche-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1788478A1FE255AD00916C4D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -192,6 +286,7 @@
 				178847921FE255AD00916C4D /* AppDelegate.swift in Sources */,
 				17C34E42205A490B00712D00 /* LoadingViewController.swift in Sources */,
 				175B1B7C206C0E830046A81D /* TimelineTableViewController.swift in Sources */,
+				42164ECB206C24BC00E2BCD2 /* ModalViewController.swift in Sources */,
 				178847A61FE25BDA00916C4D /* HomeViewController.swift in Sources */,
 				043E1F8320343C4300455B26 /* swift+gif.swift in Sources */,
 				170D74FC202396BD0026E232 /* GalleryViewController.swift in Sources */,
@@ -329,6 +424,7 @@
 		};
 		178847A11FE255AD00916C4D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86917CA57DC723F27B804306 /* Pods-Psyche.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -345,6 +441,7 @@
 		};
 		178847A21FE255AD00916C4D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47E261C9C69D5AF064A576FC /* Pods-Psyche.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
