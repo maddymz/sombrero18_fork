@@ -49,10 +49,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     // alignment constants for drop down
     // X positions
     let dateLabelX = 16
-    let yearLabelX = 82
-    let yearMLabelX = 82
-    let dayLabelX = 188
-    let dayMLabelX = 188
+    let yearLabelX = 101
+    let yearMLabelX = 101
+    let dayLabelX = 199
+    let dayMLabelX = 199
     let hourLabelX = 314
     let hourMLabelX = 314
     let timeMLabelXConst = 1
