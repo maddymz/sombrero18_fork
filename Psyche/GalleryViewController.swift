@@ -20,6 +20,11 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     var it : UIImage?
     var c : Int?
     
+    //menu items
+    @IBOutlet var Menu: UIView!
+    @IBOutlet weak var menuBlur: UIVisualEffectView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,6 +33,11 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         collectionView.collectionViewLayout = mosaicLayout
         
         imageArray = ["1","2","3","4","5","6","7","8"]
+        
+        //add and hide menu
+        Menu.layer.zPosition = 2;
+        view.addSubview(Menu)
+        Menu.frame = CGRect(x:-300, y:0, width: 265, height:self.view.frame.height)
     }
     
     override func didReceiveMemoryWarning() {
@@ -137,6 +147,124 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, mosaicCellSizeForItemAt indexPath: IndexPath!) -> FMMosaicCellSize {
         
         return indexPath.item % 4 == 0 ? FMMosaicCellSize.big : FMMosaicCellSize.small
+    }
+    
+    //menu functions (include in all pages with hamburger)
+    @IBAction func menuClicked(_ sender: Any) {
+        self.menuBlur.layer.zPosition = 1
+        self.menuBlur.alpha = 0
+        self.menuBlur.layer.isHidden = false
+        UIView.animate(withDuration: 0.5, animations: {
+            self.menuBlur.alpha = 1.0
+            self.tabBarController?.tabBar.alpha = 0
+            self.Menu.transform = CGAffineTransform(translationX: 300, y: 0)
+        }) { (success) in
+            self.tabBarController?.tabBar.isHidden = true
+        }
+        
+    }
+    
+    @IBAction func closeMenu(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = false
+        UIView.animate(withDuration: 0.5, animations: {
+            self.tabBarController?.tabBar.alpha = 1.0
+            self.menuBlur.alpha = 0
+            self.Menu.transform = CGAffineTransform(translationX: -300, y: 0)
+        }) { (success) in
+            self.menuBlur.layer.isHidden = true
+        }
+    }
+    
+    @IBAction func notification(_ sender: Any) {
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+            
+        })
+    }
+    
+    @IBAction func contactUs(_ sender: Any) {
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+            
+        })
+    }
+    
+    @IBAction func partners(_ sender: Any) {
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+            
+        })
+    }
+    
+    @IBAction func getInvolved(_ sender: Any) {
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+            
+        })
+    }
+    
+    @IBAction func blog(_ sender: Any) {
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+            
+        })
+    }
+    
+    @IBAction func termsConditions(_ sender: Any) {
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+            
+        })
+    }
+    
+    @IBAction func openYoutube(_ sender: Any) {
+        let YoutubeUser =  "UC2BGcbPW8mxryXnjQcBqk6A"
+        let appURL = NSURL(string: "youtube://www.youtube.com/user/\(YoutubeUser)")!
+        let webURL = NSURL(string: "https://www.youtube.com/channel/\(YoutubeUser)")!
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL as URL) {
+            application.open(appURL as URL)
+        } else {
+            // if Youtube app is not installed, open URL inside Safari
+            application.open(webURL as URL)
+        }
+    }
+    
+    @IBAction func openTwitter(_ sender: Any) {
+        let screenName =  "nasapsyche"
+        let appURL = NSURL(string: "twitter://user?screen_name=\(screenName)")!
+        let webURL = NSURL(string: "https://twitter.com/\(screenName)")!
+        
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL as URL) {
+            application.open(appURL as URL)
+        } else {
+            application.open(webURL as URL)
+        }
+    }
+    
+    @IBAction func openFB(_ sender: Any) {
+        let Username =  "nasapsyche" // Your Instagram Username here
+        let appURL = NSURL(string: "fb://profile/\(Username)")!
+        let webURL = NSURL(string: "https://facebook.com/\(Username)")!
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL as URL) {
+            application.open(appURL as URL)
+        } else {
+            // if Instagram app is not installed, open URL inside Safari
+            application.open(webURL as URL)
+        }
+    }
+    
+    @IBAction func openInsta(_ sender: Any) {
+        let Username =  "nasapsyche" // Your Instagram Username here
+        let appURL = NSURL(string: "instagram://user?username=\(Username)")!
+        let webURL = NSURL(string: "https://instagram.com/\(Username)")!
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL as URL) {
+            application.open(appURL as URL)
+        } else {
+            // if Instagram app is not installed, open URL inside Safari
+            application.open(webURL as URL)
+        }
     }
 }
 
