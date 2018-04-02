@@ -18,10 +18,15 @@ class LoadingViewController: UITabBarController {
     @IBOutlet var View6: UIView!
     @IBOutlet var Menu: UIView!
     
+    public var showAnimation = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showLoadingScreen()
+        
+        if showAnimation {
+            showLoadingScreen()
+        }
+        
         // Do any additional setup after loading the view.
     }
 

@@ -215,9 +215,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         dropdownView.frame = CGRect(x: 0, y: timeBlurYPos - timeBlurHeight, width: timeBlurWidth, height: timeBlurHeight)
         
-        //stackView.layer.zPosition = 1 // makes stackView above other UI elements
-        
         addDates() // add dates to dates array
+        
+        countdownTimer?.fire() // trigger timer right away, otherwise there is a 1 second delay
     }
     
     // functions
@@ -332,12 +332,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     yearMLabel.font = UIFont(name: "Roboto Mono", size: 10)
                     dayMLabel.font = UIFont(name: "Roboto Mono", size: 10)
                     hourMLabel.font = UIFont(name: "Roboto Mono", size: 10)
-                    //yearLabel.font = yearLabel.font.withSize(36)
-                    //dayLabel.font = dayLabel.font.withSize(36)
-                    //hourLabel.font = hourLabel.font.withSize(36)
-                    //yearMLabel.font = yearLabel.font.withSize(10)
-                    //dayMLabel.font = dayLabel.font.withSize(10)
-                    //hourMLabel.font = hourLabel.font.withSize(10)
                     
                     dateView.addSubview(yearLabel)
                     dateView.addSubview(yearMLabel)
@@ -375,10 +369,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     dayLabel.font = UIFont(name: "Roboto Mono", size: 36)
                     timeMLabel.font = UIFont(name: "Roboto Mono", size: 10)
                     dayMLabel.font = UIFont(name: "Roboto Mono", size: 10)
-                    //timeLabel.font = timeLabel.font.withSize(36)
-                    //dayLabel.font = dayLabel.font.withSize(36)
-                    //timeMLabel.font = timeMLabel.font.withSize(10)
-                    //dayMLabel.font = dayLabel.font.withSize(10)
                     
                     dateView.addSubview(timeLabel)
                     dateView.addSubview(timeMLabel)
