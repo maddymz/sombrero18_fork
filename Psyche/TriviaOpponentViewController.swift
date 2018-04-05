@@ -56,10 +56,14 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
         if(indexPath.row < level){
             let cell:UnlockedTriviaOpponentTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "UnlockedOpponentCell") as! UnlockedTriviaOpponentTableViewCell!
             cell.setOpponent(opponent: opponent)
+            cell.playButton.tag = indexPath.row
             return cell
         }
         else{
             let cell:LockedTriviaOpponentTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "LockedOpponentCell") as! LockedTriviaOpponentTableViewCell!
+            if(indexPath.row == level){
+                cell.backgroundView = UIImageView.init(image: UIImage.init(named: "FakeShadowRectangle"))
+            }
             cell.setOpponent(opponent: opponent)
             return cell
         }
@@ -68,9 +72,17 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 100.0
+        return 85.0
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toGame"{
+                let sender = sender as! UIButton
+                let receiver = segue.destination as! TriviaCategoryViewController
+                receiver.opponent = opponentList.opponents[sender.tag]
+        }
+
+    }
 
 }

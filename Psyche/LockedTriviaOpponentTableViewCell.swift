@@ -14,6 +14,7 @@ class LockedTriviaOpponentTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var difficulty: UILabel!
     @IBOutlet weak var score: UILabel!
+    @IBOutlet weak var levelImage: UIImageView!
     
     
     func setOpponent(opponent: Opponent){
@@ -21,16 +22,21 @@ class LockedTriviaOpponentTableViewCell: UITableViewCell {
         name.text = opponent.name
         if(opponent.difficulty == 1){
             difficulty.text = "Easy"
+            levelImage.image = #imageLiteral(resourceName: "EasyIconBW")
         }
         else if (opponent.difficulty == 2){
             difficulty.text = "Medium"
+            levelImage.image = #imageLiteral(resourceName: "MediumIconBW")
         }
         else if (opponent.difficulty == 3){
             difficulty.text = "Hard"
+            levelImage.image = #imageLiteral(resourceName: "HardIconBW")
         }
         else{
             difficulty.text = "Very Hard"
+            levelImage.image = #imageLiteral(resourceName: "VeryHardIconBW")
         }
+
         score.text = String(opponent.highScore)
     }
 }
