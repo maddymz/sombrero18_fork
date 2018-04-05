@@ -38,6 +38,10 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         Menu.layer.zPosition = 2;
         view.addSubview(Menu)
         Menu.frame = CGRect(x:-300, y:0, width: 265, height:self.view.frame.height)
+        
+        //tap recognizer to close menu
+        let tapOut = UITapGestureRecognizer(target: self, action: #selector(closeMenu))
+        self.menuBlur.addGestureRecognizer(tapOut)
     }
     
     override func didReceiveMemoryWarning() {

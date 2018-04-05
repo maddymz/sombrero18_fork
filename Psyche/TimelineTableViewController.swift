@@ -50,12 +50,15 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         // Load the timeline items
         loadTimelineItems()
         tableView.reloadData()
-        print("Hello World")
         
         //add the menu
         Menu.layer.zPosition = 2;
         view.addSubview(Menu)
         Menu.frame = CGRect(x:-300, y:0, width: 265, height:self.view.frame.height)
+        
+        //tap recognizer to close menu
+        let tapOut = UITapGestureRecognizer(target: self, action: #selector(closeMenu))
+        self.menuBlur.addGestureRecognizer(tapOut)
     }
 
     override func didReceiveMemoryWarning() {

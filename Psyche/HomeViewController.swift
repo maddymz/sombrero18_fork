@@ -218,7 +218,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         addDates() // add dates to dates array
         
         countdownTimer?.fire() // trigger timer right away, otherwise there is a 1 second delay
+        
+         //tap recognizer to close menu
+        let tapOut = UITapGestureRecognizer(target: self, action: #selector(closeMenu))
+        self.menuBlur.addGestureRecognizer(tapOut)
     }
+    
     
     // functions
     
@@ -534,7 +539,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     
     //menu functions (include in all pages with hamburger)
     @IBAction func menuClicked(_ sender: Any) {
-        self.menuBlur.layer.zPosition = 1
         self.menuBlur.alpha = 0
         self.menuBlur.layer.isHidden = false
         UIView.animate(withDuration: 0.5, animations: {
