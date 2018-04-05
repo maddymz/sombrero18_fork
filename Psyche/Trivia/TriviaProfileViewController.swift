@@ -10,17 +10,22 @@ import UIKit
 import Foundation
 
 // Custom UIImageView class for the avatars
-class AvatarView: UIImageView {
-    var imageShowing = 0
+class AvatarView: UIButton {
+    var imageShowing = 0 // 0 represents the normal image showing, 1 represents the gray (BW) image showing
     var normalImg = ""
     var grayImg = ""
+    var id = 0
     
     // Constructor, pass in names of the normal image and the greyed out image
-    init(normalImg: String, grayImg: String) {
-        super.init(image: UIImage(named: normalImg))
+    init(normalImg: String, grayImg: String, frame: CGRect, id: Int) {
+        super.init(frame: frame)
         
+        self.setTitle("", for: .normal)
+        self.setImage(UIImage(named: normalImg), for: .normal)
+        self.setImage(UIImage(named: normalImg), for: .highlighted)
         self.normalImg = normalImg
         self.grayImg = grayImg
+        self.id = id
     }
     
     // Required for creating a subclass of UIImageView
@@ -31,9 +36,13 @@ class AvatarView: UIImageView {
     // Toggle image shown
     func toggleImg() {
         if imageShowing == 0 {
-            // change img
+            self.setImage(UIImage(named: grayImg), for: .normal)
+            self.setImage(UIImage(named: grayImg), for: .highlighted)
+            imageShowing = 1
         } else {
-            // change img
+            self.setImage(UIImage(named: normalImg), for: .normal)
+            self.setImage(UIImage(named: normalImg), for: .highlighted)
+            imageShowing = 0
         }
     }
 }
@@ -45,6 +54,7 @@ class TriviaProfileViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     
     var avatars = [AvatarView]()
+    var profileSelected = -1 // Id of the AvatarView selected, -1 represents no avatar has been selected
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,20 +79,14 @@ class TriviaProfileViewController: UIViewController {
     // Create six image views for avatars
     func createAvatarViews() {
         // 1st row
-        let a1 = AvatarView(normalImg: "Trivia-Moon", grayImg: "")
-        a1.frame = CGRect(x: 32, y: 187, width: 62, height: 62)
-        let a2 = AvatarView(normalImg: "Trivia-Earth", grayImg: "")
-        a2.frame = CGRect(x: 109, y: 187, width: 62, height: 62)
-        let a3 = AvatarView(normalImg: "Trivia-Star", grayImg: "")
-        a3.frame = CGRect(x: 187, y: 187, width: 62, height: 62)
+        let a1 = AvatarView(normalImg: "Trivia-Moon", grayImg: "Trivia-EarthBW", frame: CGRect(x: 32, y: 187, width: 62, height: 62), id: 0)
+        let a2 = AvatarView(normalImg: "Trivia-Earth", grayImg: "Trivia-EarthBW", frame: CGRect(x: 109, y: 187, width: 62, height: 62), id: 1)
+        let a3 = AvatarView(normalImg: "Trivia-Star", grayImg: "Trivia-StarBW", frame: CGRect(x: 187, y: 187, width: 62, height: 62), id: 2)
         
         // 2nd row
-        let a4 = AvatarView(normalImg: "Trivia-Asteroid", grayImg: "")
-        a4.frame = CGRect(x: 32, y: 270, width: 62, height: 62)
-        let a5 = AvatarView(normalImg: "Trivia-Sun", grayImg: "")
-        a5.frame = CGRect(x: 109, y: 270, width: 62, height: 62)
-        let a6 = AvatarView(normalImg: "Trivia-Saturn", grayImg: "")
-        a6.frame = CGRect(x: 187, y: 270, width: 62, height: 62)
+        let a4 = AvatarView(normalImg: "Trivia-Asteroid", grayImg: "Trivia-AsteroidBW", frame: CGRect(x: 32, y: 270, width: 62, height: 62), id: 3)
+        let a5 = AvatarView(normalImg: "Trivia-Sun", grayImg: "Trivia-SunBW", frame: CGRect(x: 109, y: 270, width: 62, height: 62), id: 4)
+        let a6 = AvatarView(normalImg: "Trivia-Saturn", grayImg: "Trivia-SaturnBW", frame: CGRect(x: 187, y: 270, width: 62, height: 62), id: 5)
         
         // Add to array
         avatars.append(a1)
@@ -102,25 +106,32 @@ class TriviaProfileViewController: UIViewController {
         
         // Add tap handler for each AvatarView
         avatars.forEach { (avatar) in
-            // Add tap handler
-            let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-            avatar.isUserInteractionEnabled = true
-            avatar.addGestureRecognizer(tap)
+            avatar.addTarget(self, action: #selector(self.pressButton(_:)), for: .touchUpInside)
         }
     }
     
-    // Tap handler
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    {
-        let tappedImage = tapGestureRecognizer.view as! AvatarView
-        print("?tapped")
-        let context = CIContext(options: nil)
-         let currentFilter = CIFilter(name: "CIPhotoEffectTonal")
-         currentFilter!.setValue(CIImage(image: tappedImage.image!), forKey: kCIInputImageKey)
-         let output = currentFilter!.outputImage
-         let cgimg = context.createCGImage(output!,from: output!.extent)
-         let processedImage = UIImage(cgImage: cgimg!)
-         tappedImage.image = processedImage
+    //The target function
+    @objc func pressButton(_ sender: AvatarView) {
+        print("sender: \(sender.id)")
+        if profileSelected != -1 && profileSelected != sender.id {
+            avatars.forEach { (avatar) in
+                if avatar.id == sender.id || avatar.id == profileSelected {
+                    avatar.toggleImg()
+                }
+            }
+        } else {
+            avatars.forEach { (avatar) in
+                if avatar.id != sender.id {
+                    avatar.toggleImg()
+                }
+            }
+        }
+        
+        if profileSelected == sender.id {
+            profileSelected = -1 // User clicked on the selected profile, so reset to show there is no profile selected
+        } else {
+            profileSelected = sender.id
+        }
     }
     
     // Sets background color of orange to red gradient
