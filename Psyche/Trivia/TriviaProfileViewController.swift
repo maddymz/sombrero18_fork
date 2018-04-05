@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 // Custom UIImageView class for the avatars
-class AvatarView: UIButton {
+class AvatarButton: UIButton {
     var imageShowing = 0 // 0 represents the normal image showing, 1 represents the gray (BW) image showing
     var normalImg = ""
     var grayImg = ""
@@ -53,15 +53,15 @@ class TriviaProfileViewController: UIViewController {
     @IBOutlet weak var readyBtn: UIButton!
     @IBOutlet weak var usernameField: UITextField!
     
-    var avatars = [AvatarView]()
-    var profileSelected = -1 // Id of the AvatarView selected, -1 represents no avatar has been selected
+    var avatars = [AvatarButton]()
+    var profileSelected = -1 // Id of the AvatarButton selected, -1 represents no avatar has been selected
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setGradientBackground()
         setStyle()
-        createAvatarViews()
+        createAvatarButtons()
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,16 +77,16 @@ class TriviaProfileViewController: UIViewController {
     }
     
     // Create six image views for avatars
-    func createAvatarViews() {
+    func createAvatarButtons() {
         // 1st row
-        let a1 = AvatarView(normalImg: "Trivia-Moon", grayImg: "Trivia-EarthBW", frame: CGRect(x: 32, y: 187, width: 62, height: 62), id: 0)
-        let a2 = AvatarView(normalImg: "Trivia-Earth", grayImg: "Trivia-EarthBW", frame: CGRect(x: 109, y: 187, width: 62, height: 62), id: 1)
-        let a3 = AvatarView(normalImg: "Trivia-Star", grayImg: "Trivia-StarBW", frame: CGRect(x: 187, y: 187, width: 62, height: 62), id: 2)
+        let a1 = AvatarButton(normalImg: "Trivia-Moon", grayImg: "Trivia-EarthBW", frame: CGRect(x: 32, y: 187, width: 62, height: 62), id: 0)
+        let a2 = AvatarButton(normalImg: "Trivia-Earth", grayImg: "Trivia-EarthBW", frame: CGRect(x: 109, y: 187, width: 62, height: 62), id: 1)
+        let a3 = AvatarButton(normalImg: "Trivia-Star", grayImg: "Trivia-StarBW", frame: CGRect(x: 187, y: 187, width: 62, height: 62), id: 2)
         
         // 2nd row
-        let a4 = AvatarView(normalImg: "Trivia-Asteroid", grayImg: "Trivia-AsteroidBW", frame: CGRect(x: 32, y: 270, width: 62, height: 62), id: 3)
-        let a5 = AvatarView(normalImg: "Trivia-Sun", grayImg: "Trivia-SunBW", frame: CGRect(x: 109, y: 270, width: 62, height: 62), id: 4)
-        let a6 = AvatarView(normalImg: "Trivia-Saturn", grayImg: "Trivia-SaturnBW", frame: CGRect(x: 187, y: 270, width: 62, height: 62), id: 5)
+        let a4 = AvatarButton(normalImg: "Trivia-Asteroid", grayImg: "Trivia-AsteroidBW", frame: CGRect(x: 32, y: 270, width: 62, height: 62), id: 3)
+        let a5 = AvatarButton(normalImg: "Trivia-Sun", grayImg: "Trivia-SunBW", frame: CGRect(x: 109, y: 270, width: 62, height: 62), id: 4)
+        let a6 = AvatarButton(normalImg: "Trivia-Saturn", grayImg: "Trivia-SaturnBW", frame: CGRect(x: 187, y: 270, width: 62, height: 62), id: 5)
         
         // Add to array
         avatars.append(a1)
@@ -104,15 +104,15 @@ class TriviaProfileViewController: UIViewController {
         mainView.addSubview(a5)
         mainView.addSubview(a6)
         
-        // Add tap handler for each AvatarView
+        // Add tap handler for each AvatarButton
         avatars.forEach { (avatar) in
             avatar.addTarget(self, action: #selector(self.pressButton(_:)), for: .touchUpInside)
         }
     }
     
-    //The target function
-    @objc func pressButton(_ sender: AvatarView) {
-        print("sender: \(sender.id)")
+    // Function executed when user taps on AvatarButton
+    @objc func pressButton(_ sender: AvatarButton) {
+        // If user tapped on avatar when another one was selected
         if profileSelected != -1 && profileSelected != sender.id {
             avatars.forEach { (avatar) in
                 if avatar.id == sender.id || avatar.id == profileSelected {
