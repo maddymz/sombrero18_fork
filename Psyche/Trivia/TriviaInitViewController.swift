@@ -14,26 +14,21 @@ class TriviaInitViewController: UIViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var noThanksBtn: UIButton!
     @IBOutlet weak var letsPlayBtn: UIButton!
+    @IBOutlet weak var descLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBarController?.tabBar.layer.zPosition = -1 // Hides the tab bar
         setGradientBackground()
         setStyle()
+        setLabelText()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func backBtnPressed(_ sender: Any) {
-        self.tabBarController?.tabBar.layer.zPosition = 0 // Shows the tab bar again
-        tabBarController?.selectedIndex = 0 // This points to the root tab bar controller
-    }
-    
     @IBAction func noThanksBtnPressed(_ sender: Any) {
-        self.tabBarController?.tabBar.layer.zPosition = 0 // Shows the tab bar again
         tabBarController?.selectedIndex = 0 // This points to the root tab bar controller
     }
     
@@ -65,5 +60,13 @@ class TriviaInitViewController: UIViewController {
         letsPlayBtn.backgroundColor = UIColor.orange
         letsPlayBtn.setTitleColor(UIColor.white, for: .normal)
         letsPlayBtn.layer.cornerRadius = 13
+    }
+    
+    // Pull current level from core data and change the text on descLabel
+    func setLabelText() {
+        let role = "scientists"
+        let player = "Neil deGrasse Tyson"
+        
+        descLabel.text = "Test your knowledge against \(role) like \(player)!"
     }
 }
