@@ -62,6 +62,17 @@ class TriviaGameViewController: UIViewController {
         opponentName.text = opponent?.name
         self.questions = myDict[category! + String(opponent!.difficulty)]!
         
+        //set up button border
+        answer1.layer.borderWidth = 1
+        answer2.layer.borderWidth = 1
+        answer3.layer.borderWidth = 1
+        answer4.layer.borderWidth = 1
+        answer1.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+        answer2.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+        answer3.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+        answer4.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+        
+        
         newQuestion()
     }
     
