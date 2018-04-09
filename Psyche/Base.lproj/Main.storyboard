@@ -14,6 +14,9 @@
         <array key="Courier.ttc">
             <string>Courier</string>
         </array>
+        <array key="Helvetica.ttc">
+            <string>Helvetica</string>
+        </array>
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
@@ -65,7 +68,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" image="Hamburger"/>
                                                         <connections>
-                                                            <action selector="menuClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QS2-dB-aRU"/>
+                                                            <action selector="menuClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qGK-nq-P6B"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NASA Psyche Mission" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNt-xf-QyV">
@@ -231,14 +234,17 @@ Test 3</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFH-Pd-gJ6">
-                            <rect key="frame" x="-27" y="252" width="295" height="44"/>
+                            <rect key="frame" x="-27" y="63" width="295" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="                Terms &amp; Conditions">
+                            <state key="normal" title="                Mission">
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="mission:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPK-iG-hpy"/>
+                            </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MENU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tml-f2-JBd">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LINKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tml-f2-JBd">
                             <rect key="frame" x="21" y="26" width="113" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -246,14 +252,14 @@ Test 3</string>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7F-ID-x3Q">
-                            <rect key="frame" x="-27" y="63" width="295" height="41"/>
+                            <rect key="frame" x="-27" y="252" width="295" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="                Notifications">
+                            <state key="normal" title="                Events">
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="notification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQZ-Mc-JV8"/>
+                                <action selector="events:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kzd-gL-NPM"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYj-LB-Mun">
@@ -263,9 +269,6 @@ Test 3</string>
                             <state key="normal" title="                Get Involved">
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <connections>
-                                <action selector="getInvolved:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lVh-0Z-NbC"/>
-                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LN5-95-RnW">
                             <rect key="frame" x="-27" y="104" width="295" height="37"/>
@@ -287,17 +290,16 @@ Test 3</string>
                             </state>
                             <connections>
                                 <action selector="blog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xlw-Fu-Rqv"/>
-                                <action selector="termsConditions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BDa-Ov-pLh"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jt-hU-9L2">
                             <rect key="frame" x="-27" y="141" width="295" height="37"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="               Partners">
+                            <state key="normal" title="               Psyche Science">
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="partners:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hbx-hg-Ckk"/>
+                                <action selector="science:" destination="BYZ-38-t0r" eventType="touchUpInside" id="skx-L7-nSe"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlw-wB-rSX">
@@ -314,9 +316,6 @@ Test 3</string>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_youtube"/>
-                            <connections>
-                                <action selector="openYoutube:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7bu-0g-etM"/>
-                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONNECT WITH US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCA-fy-BQd">
                             <rect key="frame" x="20" y="578" width="189" height="27"/>
@@ -339,9 +338,6 @@ Test 3</string>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_facebook"/>
-                            <connections>
-                                <action selector="openFB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qnH-mT-4Pt"/>
-                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWB-FS-3Tz">
                             <rect key="frame" x="224" y="23" width="30" height="30"/>
@@ -350,9 +346,6 @@ Test 3</string>
                             <state key="normal" title="×">
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <connections>
-                                <action selector="closeMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E1K-FX-aKS"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -573,7 +566,6 @@ Test 3</string>
                                 <state key="normal" image="Hamburger"/>
                                 <connections>
                                     <action selector="menuClicked:" destination="YRO-ac-t4q" eventType="touchUpInside" id="mgO-mG-1sg"/>
-                                    <action selector="menuClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pJQ-cR-KR4"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NASA-insignia30x30-1" translatesAutoresizingMaskIntoConstraints="NO" id="mqt-IH-9dr">
@@ -613,14 +605,14 @@ Test 3</string>
                             <rect key="frame" x="-27" y="252" width="295" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="                Terms &amp; Conditions">
+                            <state key="normal" title="                Events">
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="termsConditions:" destination="YRO-ac-t4q" eventType="touchUpInside" id="mNj-9X-9x6"/>
+                                <action selector="events:" destination="YRO-ac-t4q" eventType="touchUpInside" id="Guk-BQ-vGS"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MENU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb2-7T-sbd">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LINKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb2-7T-sbd">
                             <rect key="frame" x="21" y="26" width="113" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -631,12 +623,11 @@ Test 3</string>
                             <rect key="frame" x="-27" y="63" width="295" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="                Notifications">
+                            <state key="normal" title="                Mission">
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="notification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z5o-3C-GBi"/>
-                                <action selector="notification:" destination="YRO-ac-t4q" eventType="touchUpInside" id="pqV-AX-f7L"/>
+                                <action selector="mission:" destination="YRO-ac-t4q" eventType="touchUpInside" id="4ff-YB-QdO"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PED-hu-lc4">
@@ -647,8 +638,7 @@ Test 3</string>
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="getInvolved:" destination="BYZ-38-t0r" eventType="touchUpInside" id="URZ-bi-HNv"/>
-                                <action selector="getInvolved:" destination="YRO-ac-t4q" eventType="touchUpInside" id="i85-ef-BnE"/>
+                                <action selector="getInvolved:" destination="YRO-ac-t4q" eventType="touchUpInside" id="36P-gB-mYm"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVd-4b-qR9">
@@ -659,8 +649,7 @@ Test 3</string>
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="contactUs:" destination="YRO-ac-t4q" eventType="touchUpInside" id="cI2-Tg-JDh"/>
-                                <action selector="contactUs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sgC-qb-ls9"/>
+                                <action selector="contactUs:" destination="YRO-ac-t4q" eventType="touchUpInside" id="EPV-ui-eXK"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaI-BC-bhE">
@@ -672,19 +661,17 @@ Test 3</string>
                             </state>
                             <connections>
                                 <action selector="blog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RVJ-TL-b5h"/>
-                                <action selector="blog:" destination="YRO-ac-t4q" eventType="touchUpInside" id="sIN-dt-w7L"/>
-                                <action selector="termsConditions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hZb-LU-cnf"/>
+                                <action selector="blog:" destination="YRO-ac-t4q" eventType="touchUpInside" id="dAV-Iw-hC1"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbr-5F-z56">
                             <rect key="frame" x="-27" y="141" width="295" height="37"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="               Partners">
+                            <state key="normal" title="               Psyche Science">
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="partners:" destination="YRO-ac-t4q" eventType="touchUpInside" id="eCQ-MU-57P"/>
-                                <action selector="partners:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eN0-MH-j2Z"/>
+                                <action selector="science:" destination="YRO-ac-t4q" eventType="touchUpInside" id="3b0-SK-BAB"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8a-4H-bJu">
@@ -693,7 +680,6 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_instagram"/>
                             <connections>
-                                <action selector="openInsta:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Bf-Tn-HIs"/>
                                 <action selector="openInsta:" destination="YRO-ac-t4q" eventType="touchUpInside" id="vnk-4n-v4L"/>
                             </connections>
                         </button>
@@ -721,7 +707,6 @@ Test 3</string>
                             <state key="normal" image="SocialMediaIcons_twitter"/>
                             <connections>
                                 <action selector="openTwitter:" destination="YRO-ac-t4q" eventType="touchUpInside" id="KUI-4p-24e"/>
-                                <action selector="openTwitter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MMo-mI-bhN"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IL2-wl-uy1">
@@ -743,7 +728,6 @@ Test 3</string>
                             </state>
                             <connections>
                                 <action selector="closeMenu:" destination="YRO-ac-t4q" eventType="touchUpInside" id="fLU-IF-zDT"/>
-                                <action selector="closeMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xxR-0K-Zqa"/>
                             </connections>
                         </button>
                     </subviews>
@@ -763,7 +747,7 @@ Test 3</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NOX-7B-UWO">
-                                <rect key="frame" x="0.0" y="212" width="375" height="455"/>
+                                <rect key="frame" x="0.0" y="196" width="375" height="471"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -775,38 +759,45 @@ Test 3</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qly-PS-3PZ">
-                                                    <rect key="frame" x="93" y="19" width="187" height="21"/>
+                                                    <rect key="frame" x="93" y="11" width="174" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqG-Dc-kff">
-                                                    <rect key="frame" x="280" y="14" width="69" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                    <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYx-Bg-0np">
                                                     <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S45-46-pYo">
-                                                    <rect key="frame" x="280" y="48" width="94" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S45-46-pYo">
+                                                    <rect key="frame" x="330" y="11" width="47" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="9"/>
                                                     <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhD-gR-Xxu">
+                                                    <rect key="frame" x="93" y="52" width="160" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="9"/>
+                                                    <color key="textColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ms8-qn-wnX">
-                                                    <rect key="frame" x="170" y="57" width="28" height="4"/>
+                                                    <rect key="frame" x="170" y="61" width="28" height="4"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhD-gR-Xxu">
-                                                    <rect key="frame" x="93" y="48" width="160" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="profession" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wof-lc-CSC">
+                                                    <rect key="frame" x="93" y="27" width="160" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="10"/>
+                                                    <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="560" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqG-Dc-kff">
+                                                    <rect key="frame" x="236" y="8" width="87" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="27"/>
                                                     <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -817,6 +808,7 @@ Test 3</string>
                                             <outlet property="levelImage" destination="Ms8-qn-wnX" id="RgH-uf-LzD"/>
                                             <outlet property="name" destination="qly-PS-3PZ" id="ARR-cY-RD6"/>
                                             <outlet property="picture" destination="gYx-Bg-0np" id="oZV-Gz-zpw"/>
+                                            <outlet property="professionLabel" destination="wof-lc-CSC" id="mZZ-0G-NQD"/>
                                             <outlet property="score" destination="LqG-Dc-kff" id="sa2-dz-sV6"/>
                                         </connections>
                                     </tableViewCell>
@@ -827,8 +819,15 @@ Test 3</string>
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPE-AI-UK5">
+                                                    <rect key="frame" x="93" y="11" width="174" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzw-St-c1a">
-                                                    <rect key="frame" x="276" y="51" width="77" height="29"/>
+                                                    <rect key="frame" x="276" y="51" width="77" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.96862745098039216" green="0.62352941176470589" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -838,7 +837,7 @@ Test 3</string>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <integer key="value" value="15"/>
+                                                            <integer key="value" value="14"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
@@ -849,35 +848,36 @@ Test 3</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdz-nJ-47e">
-                                                    <rect key="frame" x="93" y="48" width="160" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdz-nJ-47e">
+                                                    <rect key="frame" x="93" y="52" width="160" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="9"/>
+                                                    <color key="textColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vIt-Vd-bFh">
-                                                    <rect key="frame" x="170" y="57" width="28" height="4"/>
+                                                    <rect key="frame" x="170" y="61" width="28" height="4"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAW-SV-Pg5">
-                                                    <rect key="frame" x="280" y="30" width="94" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="560" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFg-2C-JFJ">
+                                                    <rect key="frame" x="236" y="8" width="87" height="39"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="27"/>
+                                                    <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFg-2C-JFJ">
-                                                    <rect key="frame" x="280" y="11" width="73" height="23"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="profession" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg4-nS-YnO">
+                                                    <rect key="frame" x="93" y="27" width="154" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                    <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="10"/>
+                                                    <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPE-AI-UK5">
-                                                    <rect key="frame" x="93" y="19" width="174" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAW-SV-Pg5">
+                                                    <rect key="frame" x="330" y="11" width="47" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="9"/>
+                                                    <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -888,6 +888,7 @@ Test 3</string>
                                             <outlet property="name" destination="LPE-AI-UK5" id="8ot-Do-S1e"/>
                                             <outlet property="picture" destination="zVy-4K-RT9" id="4Fe-wg-bef"/>
                                             <outlet property="playButton" destination="gzw-St-c1a" id="G9Y-kY-WJ5"/>
+                                            <outlet property="professionLabel" destination="eg4-nS-YnO" id="we8-VY-iX7"/>
                                             <outlet property="score" destination="CFg-2C-JFJ" id="IrD-Cp-ORv"/>
                                         </connections>
                                     </tableViewCell>
@@ -900,6 +901,10 @@ Test 3</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient1" translatesAutoresizingMaskIntoConstraints="NO" id="8cD-h7-5Ne">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FadingRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="ZDx-I6-vCa">
+                                <rect key="frame" x="1" y="138" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NASA-insignia30x30-1" translatesAutoresizingMaskIntoConstraints="NO" id="THC-8m-wfn">
                                 <rect key="frame" x="314" y="10" width="45" height="45"/>
@@ -916,17 +921,17 @@ Test 3</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3i-fi-zAu">
-                                <rect key="frame" x="291" y="66" width="58" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1500" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3i-fi-zAu">
+                                <rect key="frame" x="284" y="69" width="82" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9Y-gY-kcv">
-                                <rect key="frame" x="291" y="101" width="58" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9Y-gY-kcv">
+                                <rect key="frame" x="287" y="102" width="76" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -985,34 +990,26 @@ Test 3</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yx4-i8-gYr">
-                                <rect key="frame" x="45" y="348" width="130" height="130"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tL4-uX-byd">
+                                <rect key="frame" x="215" y="328" width="160" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="scienceTrivia"/>
-                                <connections>
-                                    <segue destination="J9T-Va-pGK" kind="show" identifier="scienceSegue" id="pzT-gL-PoK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tL4-uX-byd">
-                                <rect key="frame" x="199" y="348" width="130" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="psycheTrivia"/>
+                                <state key="normal" image="GameCards_Psyche"/>
                                 <connections>
                                     <segue destination="J9T-Va-pGK" kind="show" identifier="psycheSegue" id="rMD-HD-iqJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSl-AD-Dgr">
-                                <rect key="frame" x="47" y="486" width="130" height="130"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSl-AD-Dgr">
+                                <rect key="frame" x="30" y="526" width="151" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="nasaTrivia"/>
+                                <state key="normal" image="GameCards_NASA"/>
                                 <connections>
                                     <segue destination="J9T-Va-pGK" kind="show" identifier="nasaSegue" id="Egp-Aw-1IY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbz-oQ-uCl">
-                                <rect key="frame" x="200" y="486" width="130" height="130"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbz-oQ-uCl">
+                                <rect key="frame" x="196" y="506" width="179" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="spaceTrivia"/>
+                                <state key="normal" image="GameCards_Space"/>
                                 <connections>
                                     <segue destination="J9T-Va-pGK" kind="show" identifier="spaceSegue" id="MXS-FT-LcY"/>
                                 </connections>
@@ -1028,27 +1025,35 @@ Test 3</string>
                                     <action selector="backBtnPressed:" destination="cps-AL-CVU" eventType="touchUpInside" id="bHf-oP-CSa"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ax-cw-YB6">
-                                <rect key="frame" x="30" y="183" width="130" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Neil deGrasse Tyson is an American astrophysicist, author, and science communicator." lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRd-pM-g42">
+                                <rect key="frame" x="30" y="212" width="315" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="9"/>
+                                <color key="textColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ax-cw-YB6">
+                                <rect key="frame" x="30" y="183" width="130" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQe-Qp-ROL">
-                                <rect key="frame" x="215" y="183" width="130" height="43"/>
+                                <rect key="frame" x="215" y="183" width="130" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="blurb" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRd-pM-g42">
-                                <rect key="frame" x="37" y="218" width="300" height="102"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yx4-i8-gYr">
+                                <rect key="frame" x="23" y="263" width="144" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" image="GameCards_Science"/>
+                                <connections>
+                                    <segue destination="J9T-Va-pGK" kind="show" identifier="scienceSegue" id="pzT-gL-PoK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oZy-5i-rmD"/>
@@ -1326,7 +1331,6 @@ Test 3</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Hamburger"/>
                                 <connections>
-                                    <action selector="menuClicked:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="HIM-da-Wfe"/>
                                     <action selector="menuClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zfS-Y0-McW"/>
                                 </connections>
                             </button>
@@ -1422,15 +1426,14 @@ Test 3</string>
                             <rect key="frame" x="-27" y="252" width="295" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="                Terms &amp; Conditions">
+                            <state key="normal" title="                Events">
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="termsConditions:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="TUm-Yu-M8k"/>
-                                <action selector="termsConditions:" destination="YRO-ac-t4q" eventType="touchUpInside" id="o9O-Og-Jsr"/>
+                                <action selector="events:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="vk0-Fr-Zg4"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MENU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0A8-KJ-uvb">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LINKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0A8-KJ-uvb">
                             <rect key="frame" x="21" y="26" width="113" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1441,13 +1444,11 @@ Test 3</string>
                             <rect key="frame" x="-27" y="63" width="295" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="                Notifications">
+                            <state key="normal" title="                Mission">
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="notification:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="4Be-uC-Gc3"/>
-                                <action selector="notification:" destination="YRO-ac-t4q" eventType="touchUpInside" id="9nJ-8G-LRr"/>
-                                <action selector="notification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aUY-bj-lKw"/>
+                                <action selector="mission:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="I5H-fR-ipA"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvR-4Y-cWd">
@@ -1458,9 +1459,7 @@ Test 3</string>
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="getInvolved:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="P0m-nm-Tde"/>
                                 <action selector="getInvolved:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zt4-Xe-9jx"/>
-                                <action selector="getInvolved:" destination="YRO-ac-t4q" eventType="touchUpInside" id="qOs-ij-N6S"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uoj-zJ-ctJ">
@@ -1471,9 +1470,7 @@ Test 3</string>
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="contactUs:" destination="YRO-ac-t4q" eventType="touchUpInside" id="8fg-dU-gRs"/>
-                                <action selector="contactUs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SRW-kq-kQp"/>
-                                <action selector="contactUs:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="aAP-gv-MgQ"/>
+                                <action selector="contactUs:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="AOn-cM-Kf8"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ude-eV-4VQ">
@@ -1484,22 +1481,19 @@ Test 3</string>
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="blog:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="1vu-Ys-wiS"/>
                                 <action selector="blog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KJD-z5-0gK"/>
-                                <action selector="blog:" destination="YRO-ac-t4q" eventType="touchUpInside" id="duC-0l-jjj"/>
-                                <action selector="termsConditions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4RM-Bi-jZs"/>
+                                <action selector="blog:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="bMu-YT-98i"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVK-Bh-u9V">
                             <rect key="frame" x="-27" y="141" width="295" height="37"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="               Partners">
+                            <state key="normal" title="               Psyche Science">
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="partners:" destination="YRO-ac-t4q" eventType="touchUpInside" id="H84-M5-Uiu"/>
-                                <action selector="partners:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="oKf-kY-pcz"/>
-                                <action selector="partners:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r5O-JJ-nWE"/>
+                                <action selector="getInvolved:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="19D-cR-aL9"/>
+                                <action selector="science:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="brG-sF-Qoj"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7L-zl-42n">
@@ -1509,7 +1503,6 @@ Test 3</string>
                             <state key="normal" image="SocialMediaIcons_instagram"/>
                             <connections>
                                 <action selector="openInsta:" destination="YRO-ac-t4q" eventType="touchUpInside" id="9wl-QG-p7S"/>
-                                <action selector="openInsta:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a2x-3i-F30"/>
                                 <action selector="openInsta:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="aNI-oH-VOc"/>
                             </connections>
                         </button>
@@ -1521,7 +1514,6 @@ Test 3</string>
                             <connections>
                                 <action selector="openYoutube:" destination="YRO-ac-t4q" eventType="touchUpInside" id="ZiB-Ax-5kJ"/>
                                 <action selector="openYoutube:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="nSd-n0-JX7"/>
-                                <action selector="openYoutube:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zjL-7y-Hof"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONNECT WITH US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMX-uh-Kpu">
@@ -1537,7 +1529,6 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_twitter"/>
                             <connections>
-                                <action selector="openTwitter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="121-8a-50a"/>
                                 <action selector="openTwitter:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="3J8-8T-kMh"/>
                                 <action selector="openTwitter:" destination="YRO-ac-t4q" eventType="touchUpInside" id="pNo-s7-dJf"/>
                             </connections>
@@ -1548,7 +1539,6 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_facebook"/>
                             <connections>
-                                <action selector="openFB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KJF-Kw-aRD"/>
                                 <action selector="openFB:" destination="YRO-ac-t4q" eventType="touchUpInside" id="L3X-0b-xTY"/>
                                 <action selector="openFB:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="hrQ-9N-Rxs"/>
                             </connections>
@@ -2022,8 +2012,13 @@ Test 3</string>
     </scenes>
     <resources>
         <image name="Arrow" width="30" height="30"/>
+        <image name="FadingRectangle" width="375" height="84"/>
         <image name="Gallery" width="30" height="28"/>
         <image name="GalleryNavIcon_Filled" width="30" height="30"/>
+        <image name="GameCards_NASA" width="334" height="417"/>
+        <image name="GameCards_Psyche" width="334" height="417"/>
+        <image name="GameCards_Science" width="334" height="417"/>
+        <image name="GameCards_Space" width="334" height="417"/>
         <image name="Hamburger" width="25" height="25"/>
         <image name="HomeNavIcon" width="30" height="30"/>
         <image name="HomeNavIcon_Filled" width="30" height="30"/>
@@ -6774,15 +6769,11 @@ ARJoAAEScAABEnMAARKFAAESiAABEo0AAAAAAAAEAQAAAAAAAABZAAAAAAAAAAAAAAAAAAESjw
         </image>
         <image name="gradient1" width="414" height="130"/>
         <image name="gradient2" width="414" height="70"/>
-        <image name="nasaTrivia" width="1501" height="1501"/>
         <image name="new-timeline-first" width="100" height="300"/>
         <image name="new-timeline-second" width="100" height="500"/>
-        <image name="psycheTrivia" width="1501" height="1501"/>
-        <image name="scienceTrivia" width="1500" height="1501"/>
-        <image name="spaceTrivia" width="1501" height="1501"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e6O-p5-2dh"/>
+        <segue reference="nWd-5Z-J5P"/>
         <segue reference="pzT-gL-PoK"/>
     </inferredMetricsTieBreakers>
 </document>

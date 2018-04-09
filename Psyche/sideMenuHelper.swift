@@ -10,33 +10,33 @@ import Foundation
 import UIKit
 
 class menuHelper{
-    static func notification(){
-        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+    static func events(){
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/get-involved/events/")!, options: [:], completionHandler: { (status) in
         })
     }
     
     static func contactUs(){
-        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/contact/")!, options: [:], completionHandler: { (status) in
         })
     }
     
-    static func partners(){
-        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+    static func science(){
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/science/")!, options: [:], completionHandler: { (status) in
         })
     }
     
     static func getInvolved(){
-        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/get-involved/")!, options: [:], completionHandler: { (status) in
         })
     }
     
     static func blog(){
-        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/category/blog/")!, options: [:], completionHandler: { (status) in
         })
     }
     
-    static func termsConditions(){
-        UIApplication.shared.open(URL(string : "https://psyche.asu.edu")!, options: [:], completionHandler: { (status) in
+    static func mission(){
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/mission/")!, options: [:], completionHandler: { (status) in
         })
     }
     

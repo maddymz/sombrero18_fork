@@ -25,25 +25,25 @@ class TriviaCategoryViewController: UIViewController {
         super.viewDidLoad()
         opponentAvatar.image = opponent?.unlockedImage
         if(profile_image == 1){
-            profile.image = #imageLiteral(resourceName: "Trivia-Asteroid")
+            profile.image = #imageLiteral(resourceName: "Asteroid_Large")
         }
         else if(profile_image == 2){
-            profile.image = #imageLiteral(resourceName: "Trivia-Earth")
+            profile.image = #imageLiteral(resourceName: "Earth_Large")
         }
         else if(profile_image == 3){
-            profile.image = #imageLiteral(resourceName: "Trivia-Moon")
+            profile.image = #imageLiteral(resourceName: "Moon_Large")
         }
         else if(profile_image == 4){
-            profile.image = #imageLiteral(resourceName: "Trivia-Saturn")
+            profile.image = #imageLiteral(resourceName: "Saturn_Large")
         }
         else if(profile_image == 5){
-            profile.image = #imageLiteral(resourceName: "Trivia-Star")
+            profile.image = #imageLiteral(resourceName: "Star_Large")
         }
         else if(profile_image == 6){
-            profile.image = #imageLiteral(resourceName: "Trivia-Sun")
+            profile.image = #imageLiteral(resourceName: "Sun_Large")
         }
         profileName.text = "name"
-        opponentName.text = opponent?.name
+        opponentName.text = opponent?.fname
         opponentBlurb.text = opponent?.blurb
     }
     

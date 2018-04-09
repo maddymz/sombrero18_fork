@@ -16,6 +16,7 @@ class UnlockedTriviaOpponentTableViewCell: UITableViewCell {
     @IBOutlet weak var levelImage: UIImageView!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var score: UILabel!
+    @IBOutlet weak var professionLabel: UILabel!
     
     func setOpponent(opponent: Opponent){
         picture.image = opponent.unlockedImage
@@ -38,6 +39,7 @@ class UnlockedTriviaOpponentTableViewCell: UITableViewCell {
         }
         
         score.text = String(opponent.highScore)
+        professionLabel.text = opponent.profession
     }
 
 

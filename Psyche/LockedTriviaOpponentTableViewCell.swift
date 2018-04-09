@@ -15,6 +15,7 @@ class LockedTriviaOpponentTableViewCell: UITableViewCell {
     @IBOutlet weak var difficulty: UILabel!
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var levelImage: UIImageView!
+    @IBOutlet weak var professionLabel: UILabel!
     
     
     func setOpponent(opponent: Opponent){
@@ -38,5 +39,6 @@ class LockedTriviaOpponentTableViewCell: UITableViewCell {
         }
 
         score.text = String(opponent.highScore)
+        professionLabel.text = opponent.profession
     }
 }

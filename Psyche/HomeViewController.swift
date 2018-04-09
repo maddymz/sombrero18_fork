@@ -563,16 +563,16 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    @IBAction func notification(_ sender: Any) {
-        menuHelper.notification()
+    @IBAction func events(_ sender: Any) {
+        menuHelper.events()
     }
     
     @IBAction func contactUs(_ sender: Any) {
         menuHelper.contactUs()
     }
     
-    @IBAction func partners(_ sender: Any) {
-        menuHelper.partners()
+    @IBAction func science(_ sender: Any) {
+        menuHelper.science()
     }
     
     @IBAction func getInvolved(_ sender: Any) {
@@ -583,8 +583,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         menuHelper.blog()
     }
     
-    @IBAction func termsConditions(_ sender: Any) {
-        menuHelper.termsConditions()
+    @IBAction func mission(_ sender: Any) {
+        menuHelper.mission()
     }
     
     @IBAction func openYoutube(_ sender: Any) {
