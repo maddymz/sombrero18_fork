@@ -1,5 +1,5 @@
 //
-//  TriviaGameViewController.swift
+//  TriviaCategoryViewController.swift
 //  Psyche
 //
 //  Created by Julia Liu on 4/4/18.
@@ -12,6 +12,11 @@ class TriviaCategoryViewController: UIViewController {
 
     @IBOutlet weak var opponentAvatar: UIImageView!
     @IBOutlet weak var profile: UIImageView!
+    @IBOutlet weak var profileName: UILabel!
+    @IBOutlet weak var opponentName: UILabel!
+    
+    @IBOutlet weak var opponentBlurb: UILabel!
+    
     
     var opponent: Opponent?
     var profile_image = 1
@@ -37,6 +42,9 @@ class TriviaCategoryViewController: UIViewController {
         else if(profile_image == 6){
             profile.image = #imageLiteral(resourceName: "Trivia-Sun")
         }
+        profileName.text = "name"
+        opponentName.text = opponent?.name
+        opponentBlurb.text = opponent?.blurb
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -15,6 +15,7 @@ class UnlockedTriviaOpponentTableViewCell: UITableViewCell {
     @IBOutlet weak var difficulty: UILabel!
     @IBOutlet weak var levelImage: UIImageView!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var score: UILabel!
     
     func setOpponent(opponent: Opponent){
         picture.image = opponent.unlockedImage
@@ -35,6 +36,8 @@ class UnlockedTriviaOpponentTableViewCell: UITableViewCell {
             difficulty.text = "Very Hard"
             levelImage.image = #imageLiteral(resourceName: "VeryHardIcon")
         }
+        
+        score.text = String(opponent.highScore)
     }
 
 

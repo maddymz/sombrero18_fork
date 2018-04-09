@@ -30,6 +30,7 @@
 		17F1D24F2075DE2D00B9B6A9 /* TriviaCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1D24E2075DE2D00B9B6A9 /* TriviaCategoryViewController.swift */; };
 		17F1D2512075FD8400B9B6A9 /* TriviaGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1D2502075FD8400B9B6A9 /* TriviaGameViewController.swift */; };
 		17F1D2532076A7DC00B9B6A9 /* sideMenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1D2522076A7DC00B9B6A9 /* sideMenuHelper.swift */; };
+		17F1D257207B39EE00B9B6A9 /* TriviaFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1D256207B39EE00B9B6A9 /* TriviaFinalViewController.swift */; };
 		42164ECB206C24BC00E2BCD2 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42164ECA206C24BC00E2BCD2 /* ModalViewController.swift */; };
 		424B94DB20717C2300739FF1 /* TriviaInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B94DA20717C2300739FF1 /* TriviaInitViewController.swift */; };
 		424B94DD2071933B00739FF1 /* TriviaExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B94DC2071933B00739FF1 /* TriviaExitViewController.swift */; };
@@ -64,6 +65,7 @@
 		17F1D24E2075DE2D00B9B6A9 /* TriviaCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaCategoryViewController.swift; sourceTree = "<group>"; };
 		17F1D2502075FD8400B9B6A9 /* TriviaGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaGameViewController.swift; sourceTree = "<group>"; };
 		17F1D2522076A7DC00B9B6A9 /* sideMenuHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideMenuHelper.swift; sourceTree = "<group>"; };
+		17F1D256207B39EE00B9B6A9 /* TriviaFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaFinalViewController.swift; sourceTree = "<group>"; };
 		42164EC9206C249600E2BCD2 /* Psyche-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Psyche-Bridging-Header.h"; sourceTree = "<group>"; };
 		42164ECA206C24BC00E2BCD2 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		424B94DA20717C2300739FF1 /* TriviaInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaInitViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				17F1D24E2075DE2D00B9B6A9 /* TriviaCategoryViewController.swift */,
 				17F1D2502075FD8400B9B6A9 /* TriviaGameViewController.swift */,
 				17F1D2522076A7DC00B9B6A9 /* sideMenuHelper.swift */,
+				17F1D256207B39EE00B9B6A9 /* TriviaFinalViewController.swift */,
 			);
 			path = Psyche;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				424B94DF2071950700739FF1 /* TriviaProfileViewController.swift in Sources */,
 				170B330C20756DA50080FA6E /* LockedTriviaOpponentTableViewCell.swift in Sources */,
 				0406D8A220357F780087D5BC /* UIViewExtensions.swift in Sources */,
+				17F1D257207B39EE00B9B6A9 /* TriviaFinalViewController.swift in Sources */,
 				170B330A20756DA50080FA6E /* TriviaOpponentViewController.swift in Sources */,
 				424B94DD2071933B00739FF1 /* TriviaExitViewController.swift in Sources */,
 				175B1B7A206C0E830046A81D /* TimelineItem.swift in Sources */,

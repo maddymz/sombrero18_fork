@@ -540,6 +540,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     //menu functions (include in all pages with hamburger)
     @IBAction func menuClicked(_ sender: Any) {
         self.menuBlur.alpha = 0
+        self.menuBlur.layer.zPosition = 2
         self.menuBlur.layer.isHidden = false
         UIView.animate(withDuration: 0.5, animations: {
             self.menuBlur.alpha = 1.0
