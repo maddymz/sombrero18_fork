@@ -15,6 +15,8 @@ class TriviaFinalViewController: UIViewController {
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var opponentName: UILabel!
     @IBOutlet weak var finalScoreLabel: UILabel!
+    @IBOutlet weak var opponentScoreLabel: UILabel!
+    @IBOutlet weak var mainView: UIView!
     
     //category buttons
     
@@ -47,10 +49,29 @@ class TriviaFinalViewController: UIViewController {
         }
         profileName.text = "name"
         opponentName.text = opponent?.fname
-        opponentQuote.text = "\"" + (opponent?.quote)! + "\""
-        finalScoreLabel.text = "Final Score: " + String(finalScore)
+        opponentQuote.text = "\"" + (opponent?.quote)! + "\"\n- " + (opponent?.name)!
+        finalScoreLabel.text = String(finalScore)
+        mainView.layer.cornerRadius = 8
+        
+        opponentScoreLabel.text = String((opponent?.highScore)!)
+        
+        setGradientBackground()
         
         //determine if the number of levels unlocked should be incremented here
     }
 
+    
+    // Sets background color of orange to red gradient
+    func setGradientBackground() {
+        let colorTop =  UIColor(red: 216.0/255.0, green: 112.0/255.0, blue: 43.0/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 241.0/255.0, green: 101.0/255.0, blue: 85.0/255.0, alpha: 1.0).cgColor
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [ colorTop, colorBottom ]
+        gradientLayer.locations = [ 0.0, 1.0 ]
+        gradientLayer.frame = self.view.bounds
+        
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
 }

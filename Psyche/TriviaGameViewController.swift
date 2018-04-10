@@ -65,21 +65,6 @@ class TriviaGameViewController: UIViewController {
         opponentName.text = opponent?.fname
         self.questions = myDict[category! + String(opponent!.difficulty)]!
         
-        //set up buttons
-//        answer1.layer.borderWidth = 1
-//        answer2.layer.borderWidth = 1
-//        answer3.layer.borderWidth = 1
-//        answer4.layer.borderWidth = 1
-//        answer1.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
-//        answer2.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
-//        answer3.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
-//        answer4.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
-//        answer1.setTitleColor(.white, for: .normal)
-//        answer2.setTitleColor(.white, for: .normal)
-//        answer3.setTitleColor(.white, for: .normal)
-//        answer4.setTitleColor(.white, for: .normal)
-        
-        
         newQuestion()
     }
     
@@ -105,6 +90,12 @@ class TriviaGameViewController: UIViewController {
         answer2.setBackgroundImage(nil, for: .normal)
         answer3.setBackgroundImage(nil, for: .normal)
         answer4.setBackgroundImage(nil, for: .normal)
+        
+        //enable buttons
+        self.answer1.isUserInteractionEnabled = true
+        self.answer2.isUserInteractionEnabled = true
+        self.answer3.isUserInteractionEnabled = true
+        self.answer4.isUserInteractionEnabled = true
         
         //change question text
         questionNo.text = "Question: " + String(currentQuestion+1)
@@ -196,6 +187,12 @@ class TriviaGameViewController: UIViewController {
                     self.answer4.setTitleColor(.white, for: .normal)
                     self.answer4.layer.borderWidth = 0
                 }
+                
+                //disable buttons
+                self.answer1.isUserInteractionEnabled = false
+                self.answer2.isUserInteractionEnabled = false
+                self.answer3.isUserInteractionEnabled = false
+                self.answer4.isUserInteractionEnabled = false
                 
                 //make question and buttons visible again
                 UIView.animate(withDuration: 0.5, animations: {
