@@ -14,6 +14,9 @@ class TriviaGameViewController: UIViewController {
     @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var opponentName: UILabel!
+    @IBOutlet weak var questionCard: UIImageView!
+    
+    
     
     var category: String?
     var opponent: Opponent?
@@ -62,7 +65,26 @@ class TriviaGameViewController: UIViewController {
         opponentName.text = opponent?.fname
         self.questions = myDict[category! + String(opponent!.difficulty)]!
         
-        //set up button border
+        //set up buttons
+//        answer1.layer.borderWidth = 1
+//        answer2.layer.borderWidth = 1
+//        answer3.layer.borderWidth = 1
+//        answer4.layer.borderWidth = 1
+//        answer1.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+//        answer2.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+//        answer3.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+//        answer4.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+//        answer1.setTitleColor(.white, for: .normal)
+//        answer2.setTitleColor(.white, for: .normal)
+//        answer3.setTitleColor(.white, for: .normal)
+//        answer4.setTitleColor(.white, for: .normal)
+        
+        
+        newQuestion()
+    }
+    
+    func newQuestion(){
+        //set up question visuals
         answer1.layer.borderWidth = 1
         answer2.layer.borderWidth = 1
         answer3.layer.borderWidth = 1
@@ -71,12 +93,20 @@ class TriviaGameViewController: UIViewController {
         answer2.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
         answer3.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
         answer4.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+        answer1.setTitleColor(UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1), for: .normal)
+        answer2.setTitleColor(UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1), for: .normal)
+        answer3.setTitleColor(UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1), for: .normal)
+        answer4.setTitleColor(UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1), for: .normal)
+        answer1.backgroundColor = .white
+        answer2.backgroundColor = .white
+        answer3.backgroundColor = .white
+        answer4.backgroundColor = .white
+        answer1.setBackgroundImage(nil, for: .normal)
+        answer2.setBackgroundImage(nil, for: .normal)
+        answer3.setBackgroundImage(nil, for: .normal)
+        answer4.setBackgroundImage(nil, for: .normal)
         
-        
-        newQuestion()
-    }
-    
-    func newQuestion(){
+        //change question text
         questionNo.text = "Question: " + String(currentQuestion+1)
         question.text = questions[currentQuestion][0]
         
@@ -116,17 +146,79 @@ class TriviaGameViewController: UIViewController {
     }
     
     @IBAction func action(_ sender: AnyObject){
-        if(String(sender.tag) == correctAnswer ){
-            score += 1
-            scoreLabel.text = String(score)
+        
+        var chosenButton = sender as! UIButton
+        
+        //CARD FLIP
+        UIView.animate(withDuration: 0.4, animations: {
+            //hide all elements for card flip
+            self.questionNo.alpha = 0
+            self.question.alpha = 0
+            self.answer1.alpha = 0
+            self.answer2.alpha = 0
+            self.answer3.alpha = 0
+            self.answer4.alpha = 0
+        }) { (success) in
+            //card flip
+            UIView.animate(withDuration: 0.5, animations: {
+                UIView.transition(with: self.questionCard, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+            }) { (success) in
+                //sleep for 0.5 seconds
+                usleep(500000)
+                //change the question labels
+                if(String(sender.tag) == self.correctAnswer ){
+                    self.questionNo.text = "Correct! +" + String(1)
+                }
+                else{
+                    self.questionNo.text = "Incorrect"
+                    chosenButton.backgroundColor = UIColor( red: CGFloat(162/255.0), green: CGFloat(162/255.0), blue: CGFloat(162/255.0), alpha: CGFloat(1.0) )
+                    chosenButton.setTitleColor(.white, for: .normal)
+                }
+                
+                //highlight correct answer
+                if(String(self.answer1.tag) == self.correctAnswer ){
+                    self.answer1.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                    self.answer1.setTitleColor(.white, for: .normal)
+                    self.answer1.layer.borderWidth = 0
+                }
+                else if(String(self.answer2.tag) == self.correctAnswer){
+                    self.answer2.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                    self.answer2.setTitleColor(.white, for: .normal)
+                    self.answer2.layer.borderWidth = 0
+                }
+                else if(String(self.answer3.tag) == self.correctAnswer){
+                    self.answer3.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                    self.answer3.setTitleColor(.white, for: .normal)
+                    self.answer3.layer.borderWidth = 0
+                }
+                else if(String(self.answer4.tag) == self.correctAnswer){
+                    self.answer4.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                    self.answer4.setTitleColor(.white, for: .normal)
+                    self.answer4.layer.borderWidth = 0
+                }
+                
+                //make question and buttons visible again
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.questionNo.alpha = 1
+                    self.question.alpha = 1
+                    self.answer1.alpha = 1
+                    self.answer2.alpha = 1
+                    self.answer3.alpha = 1
+                    self.answer4.alpha = 1
+                }) { (success) in
+                    
+                    sleep(2)
+                    if(self.currentQuestion != self.questions.count){
+                        self.newQuestion()
+                    }
+                    else{
+                        self.performSegue(withIdentifier: "showScore", sender: self)
+                    }
+                }
+            }
         }
     
-        if(currentQuestion != questions.count){
-            newQuestion()
-        }
-        else{
-            performSegue(withIdentifier: "showScore", sender: self)
-        }
+
 
     }
     
@@ -139,6 +231,10 @@ class TriviaGameViewController: UIViewController {
             receiver.category = category
 
         }
+    }
+    
+    func showCorrectAnswer(){
+
     }
 }
     

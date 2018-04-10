@@ -1120,43 +1120,51 @@ Test 3</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="QuestionCards_Card Flip" translatesAutoresizingMaskIntoConstraints="NO" id="AZT-gE-SaQ">
+                                <rect key="frame" x="16" y="224" width="343" height="393"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="QuestionCards_Question 10" translatesAutoresizingMaskIntoConstraints="NO" id="EbY-MY-s1i">
+                                <rect key="frame" x="16" y="224" width="343" height="393"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question: #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S56-Tr-Upe">
-                                <rect key="frame" x="30" y="234" width="229" height="48"/>
+                                <rect key="frame" x="54" y="289" width="229" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="blahblahblahblah pretend there are real words here" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-Ws-j7M">
-                                <rect key="frame" x="30" y="302" width="294" height="129"/>
+                                <rect key="frame" x="54" y="333" width="265" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0H4-38-Yik">
-                                <rect key="frame" x="30" y="604" width="52" height="32"/>
+                                <rect key="frame" x="30" y="625" width="52" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7in-m7-fFa">
-                                <rect key="frame" x="30" y="183" width="130" height="43"/>
+                                <rect key="frame" x="30" y="183" width="130" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvn-ii-RtP">
-                                <rect key="frame" x="215" y="182" width="130" height="44"/>
+                                <rect key="frame" x="215" y="182" width="130" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9H-qE-eq1">
-                                <rect key="frame" x="94" y="439" width="186" height="30"/>
+                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9H-qE-eq1">
+                                <rect key="frame" x="42" y="429" width="293" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -1168,8 +1176,8 @@ Test 3</string>
                                     <action selector="action:" destination="J9T-Va-pGK" eventType="touchUpInside" id="yeH-Te-gnD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DtG-pK-uT3">
-                                <rect key="frame" x="94" y="477" width="186" height="30"/>
+                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DtG-pK-uT3">
+                                <rect key="frame" x="42" y="467" width="293" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -1181,8 +1189,8 @@ Test 3</string>
                                     <action selector="action:" destination="J9T-Va-pGK" eventType="touchUpInside" id="ap8-lI-AhO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WY2-qJ-9cr">
-                                <rect key="frame" x="94" y="515" width="186" height="30"/>
+                            <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WY2-qJ-9cr">
+                                <rect key="frame" x="42" y="505" width="293" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -1194,8 +1202,8 @@ Test 3</string>
                                     <action selector="action:" destination="J9T-Va-pGK" eventType="touchUpInside" id="W0T-zs-hkz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8m-5I-kmC">
-                                <rect key="frame" x="94" y="553" width="186" height="30"/>
+                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8m-5I-kmC">
+                                <rect key="frame" x="42" y="545" width="293" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -1221,6 +1229,7 @@ Test 3</string>
                         <outlet property="profile" destination="GSl-0h-WBK" id="7fe-2l-yDo"/>
                         <outlet property="profileName" destination="7in-m7-fFa" id="hUB-YW-MZg"/>
                         <outlet property="question" destination="mHY-Ws-j7M" id="WW5-Rn-KpK"/>
+                        <outlet property="questionCard" destination="EbY-MY-s1i" id="SJM-ge-tUA"/>
                         <outlet property="questionNo" destination="S56-Tr-Upe" id="aF4-dF-ZUf"/>
                         <outlet property="scoreLabel" destination="0H4-38-Yik" id="A5v-So-jDB"/>
                         <segue destination="cLv-jf-eoN" kind="show" identifier="showScore" id="33B-pK-jLT"/>
@@ -2039,6 +2048,8 @@ Test 3</string>
         <image name="PsycheLoad_8" width="375" height="667"/>
         <image name="PsycheLoad_9" width="375" height="667"/>
         <image name="Psyche_Icon_30px30px" width="126" height="126"/>
+        <image name="QuestionCards_Card Flip" width="1250" height="1417"/>
+        <image name="QuestionCards_Question 10" width="1251" height="1417"/>
         <image name="SocialMediaIcons_facebook" width="126" height="126"/>
         <image name="SocialMediaIcons_instagram" width="125" height="126"/>
         <image name="SocialMediaIcons_twitter" width="126" height="125"/>
