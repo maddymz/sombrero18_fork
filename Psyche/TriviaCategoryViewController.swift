@@ -17,6 +17,12 @@ class TriviaCategoryViewController: UIViewController {
     
     @IBOutlet weak var opponentBlurb: UILabel!
     
+    //category buttons
+    @IBOutlet weak var scienceButton: UIButton!
+    @IBOutlet weak var psycheButton: UIButton!
+    @IBOutlet weak var nasaButton: UIButton!
+    @IBOutlet weak var spaceButton: UIButton!
+    
     
     var opponent: Opponent?
     var profile_image = 1
@@ -45,6 +51,11 @@ class TriviaCategoryViewController: UIViewController {
         profileName.text = "name"
         opponentName.text = opponent?.fname
         opponentBlurb.text = opponent?.blurb
+        
+        scienceButton.setImage(#imageLiteral(resourceName: "GameCards_Science"), for: .normal)
+        psycheButton.setImage(#imageLiteral(resourceName: "GameCards_Psyche"), for: .normal)
+        nasaButton.setImage(#imageLiteral(resourceName: "GameCards_NASA"), for: .normal)
+        spaceButton.setImage(#imageLiteral(resourceName: "GameCards_Space"), for: .normal)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,15 +65,19 @@ class TriviaCategoryViewController: UIViewController {
         
         if (segue.identifier == "psycheSegue"){
             receiver.category = "psyche"
+            psycheButton.setImage(#imageLiteral(resourceName: "GameCards_Psyche pressed"), for: .normal)
         }
         else if(segue.identifier == "scienceSegue"){
             receiver.category = "science"
+            scienceButton.setImage(#imageLiteral(resourceName: "GameCards_Science pressed"), for: .normal)
         }
         else if(segue.identifier == "nasaSegue"){
             receiver.category = "nasa"
+            nasaButton.setImage(#imageLiteral(resourceName: "GameCards_NASA pressed"), for: .normal)
         }
         else{
             receiver.category = "space"
+            spaceButton.setImage(#imageLiteral(resourceName: "GameCards_Space pressed"), for: .normal)
         }
     }
 

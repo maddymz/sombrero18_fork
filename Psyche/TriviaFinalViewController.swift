@@ -16,6 +16,8 @@ class TriviaFinalViewController: UIViewController {
     @IBOutlet weak var opponentName: UILabel!
     @IBOutlet weak var finalScoreLabel: UILabel!
     
+    //category buttons
+    
     @IBOutlet weak var opponentQuote: UILabel!
     var category: String?
     var opponent: Opponent?
