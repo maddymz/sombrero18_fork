@@ -84,7 +84,7 @@ class LoadingViewController: UITabBarController {
                         UIView.animate(withDuration: duration, animations: {
                             self.View6.alpha = 1
                         }) { (success) in
-                            UIView.animate(withDuration: 2, animations: {
+                            UIView.animate(withDuration: 1.5, animations: {
                                 
                                 //self.View6.addSubview(nav)
                                 self.View1.removeFromSuperview()

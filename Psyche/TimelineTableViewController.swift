@@ -93,6 +93,9 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         // CELL STYLE ========
         
+        // prevent highlighting when pressed
+        cell.selectionStyle = .none
+        
         // restore background colors to alpha if not debugging
         if (!debugColors) {
             let transparent : UIColor = UIColor(white: 1, alpha: 0)

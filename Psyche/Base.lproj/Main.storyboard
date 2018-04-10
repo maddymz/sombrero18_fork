@@ -903,6 +903,9 @@ Test 3</string>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="4fl-zg-UXU" id="L3v-nw-uZR"/>
                                     <outlet property="delegate" destination="4fl-zg-UXU" id="9zY-uy-VxH"/>
