@@ -17,7 +17,7 @@ class DateView : UIView {
     var hourLabel: UILabel? // If years == 0, then this will be the timer label
 }
 
-class CountdownClockHome : UIView {
+class CountdownClockHome : UIView, UIScrollViewDelegate {
     var hvc : HomeViewController!
     
     var daysLabel = UILabel()
@@ -27,7 +27,8 @@ class CountdownClockHome : UIView {
     var secondsMLabel = UILabel()
     var psycheLogo = UIImageView()
     
-    var dates = [Date]() // array of dates for countdown clock
+    //var dates = [Date]() // array of dates for countdown clock
+    var phases: [(label: String, phase: String, date: Date)] = []
     var dateLabels = [String]() // array of names for dates
     var currentDateIndex = 0 // index of date being displayed
     var dateViews = [DateView]()
@@ -180,16 +181,22 @@ class CountdownClockHome : UIView {
         var i = 0 // counter for number of views added to the blur
         var j = 0 // counter to loop through dates
         
-        let max = dates.count - 2
+        let max = phases.count - 2
         
         dateViews.forEach { (dateView) in
             dateView.removeFromSuperview()
         }
         dateViews = [DateView]() // clear the array
         
-        dates.forEach { (date) in
+        let scrollView = UIScrollView()
+        scrollView.delegate = self
+        scrollView.contentSize = CGSize(width: Int(self.bounds.width), height: separation * phases.count)
+        scrollView.frame = CGRect(x: 0, y: 0, width: Int(self.bounds.width), height: Int(dropdownView.bounds.height))
+        dropdownView.addSubview(scrollView)
+        
+        phases.forEach { (phase) in
             if (j != currentDateIndex) {
-                let result = dateToString(date: date)
+                let result = dateToString(date: phase.2)
                 
                 let dateView = DateView()
                 dateView.frame = CGRect(x: 0, y: i * separation, width: Int(self.bounds.width), height: separation)
@@ -283,9 +290,10 @@ class CountdownClockHome : UIView {
                     dateView.hourLabel = timeLabel
                 }
                 
-                dateLabel.text = dateLabels[i]
+                dateLabel.text = phase.0 //dateLabels[i]
                 dateLabel.textColor = UIColor.black
                 dateLabel.font = dateLabel.font.withSize(10)
+                //dateLabel.font = UIFont(name: "Roboto Mono", size: 10)
                 dateView.addSubview(dateLabel)
                 
                 if (i < max) {
@@ -298,7 +306,8 @@ class CountdownClockHome : UIView {
                 dateView.isUserInteractionEnabled = true
                 dateView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dateTap))) // adds tap event handler for timeBar
                 
-                dropdownView.addSubview(dateView)
+                //dropdownView.addSubview(dateView)
+                scrollView.addSubview(dateView)
                 dateView.id = j
                 dateViews.append(dateView)
                 
@@ -306,6 +315,9 @@ class CountdownClockHome : UIView {
             }
             j += 1
         }
+        
+        
+        //dropdownView.addSubview(scrollView)
     }
     
     // formats a date to a string
@@ -333,39 +345,87 @@ class CountdownClockHome : UIView {
     
     // adds countdown dates to dates array
     func addDates() {
+        
+        /*
+         DESIGN & BUILD - phase c May 2019
+         ASSEMBLY - phase D Jan 2021
+         LAUNCH - phase D Aug 2022
+         GRAVITY ASSIST - phase E May 2023
+         ARRIVAL - phase E Jan 2026
+         ORBITING - phase E Jan 2026
+         CLOSEOUT - phase F Nov 2027
+         */
+        
         var dateComponents = DateComponents()
-        dateComponents.year = 2018
-        dateComponents.month = 7
+        dateComponents.year = 2019
+        dateComponents.month = 5
         dateComponents.day = 1
         dateComponents.timeZone = TimeZone(abbreviation: "CST")
-        dateComponents.hour = 9
+        dateComponents.hour = 0
         dateComponents.minute = 0
-        dates.append(Calendar.current.date(from: dateComponents)!)
-        dateLabels.append("ARRIVAL")
+        //dates.append(Calendar.current.date(from: dateComponents)!)
+        //dateLabels.append("BUILD")
+        phases.append(("BUILD", "C", Calendar.current.date(from: dateComponents)!))
+        
+        dateComponents.year = 2021
+        dateComponents.month = 1
+        dateComponents.day = 1
+        dateComponents.timeZone = TimeZone(abbreviation: "CST")
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        //dates.append(Calendar.current.date(from: dateComponents)!)
+        //dateLabels.append("BUILD")
+        phases.append(("ASSEMBLY", "D", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2022
-        dateComponents.month = 9
-        dateComponents.day = 23
-        dateComponents.hour = 5
-        dateComponents.minute = 45
-        dates.append(Calendar.current.date(from: dateComponents)!)
-        dateLabels.append("EXPLORE")
+        dateComponents.month = 8
+        dateComponents.day = 1
+        dateComponents.timeZone = TimeZone(abbreviation: "CST")
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        //dates.append(Calendar.current.date(from: dateComponents)!)
+        //dateLabels.append("BUILD")
+        phases.append(("LAUNCH", "D", Calendar.current.date(from: dateComponents)!))
+        
+        dateComponents.year = 2023
+        dateComponents.month = 5
+        dateComponents.day = 1
+        dateComponents.timeZone = TimeZone(abbreviation: "CST")
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        //dates.append(Calendar.current.date(from: dateComponents)!)
+        //dateLabels.append("BUILD")
+        phases.append(("MARS ASSIST", "E", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2026
-        dateComponents.month = 12
+        dateComponents.month = 1
         dateComponents.day = 1
-        dateComponents.hour = 9
-        dateComponents.minute = 10
-        dates.append(Calendar.current.date(from: dateComponents)!)
-        dateLabels.append("REVIEW")
+        dateComponents.timeZone = TimeZone(abbreviation: "CST")
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        //dates.append(Calendar.current.date(from: dateComponents)!)
+        //dateLabels.append("BUILD")
+        phases.append(("ARRIVAL", "E", Calendar.current.date(from: dateComponents)!))
         
-        dateComponents.year = 2028
-        dateComponents.month = 3
-        dateComponents.day = 11
-        dateComponents.hour = 14
-        dateComponents.minute = 30
-        dates.append(Calendar.current.date(from: dateComponents)!)
-        dateLabels.append("DEPART")
+        dateComponents.year = 2026
+        dateComponents.month = 1
+        dateComponents.day = 1
+        dateComponents.timeZone = TimeZone(abbreviation: "CST")
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        //dates.append(Calendar.current.date(from: dateComponents)!)
+        //dateLabels.append("BUILD")
+        phases.append(("ORBITING", "E", Calendar.current.date(from: dateComponents)!))
+        
+        dateComponents.year = 2027
+        dateComponents.month = 11
+        dateComponents.day = 1
+        dateComponents.timeZone = TimeZone(abbreviation: "CST")
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        //dates.append(Calendar.current.date(from: dateComponents)!)
+        //dateLabels.append("BUILD")
+        phases.append(("CLOSEOUT", "F", Calendar.current.date(from: dateComponents)!))
     }
     
     // countdown clock
@@ -375,7 +435,7 @@ class CountdownClockHome : UIView {
     
     // updates all the timer labels
     func updateTimerLabel(t: Timer) {
-        var diff = Int(dates[currentDateIndex].timeIntervalSince(Date.init()))
+        var diff = Int(phases[currentDateIndex].2.timeIntervalSince(Date.init()))
         
         let days = diff / 86400 // 86400 = 60 * 60 * 24
         diff -= days * 86400
@@ -390,7 +450,7 @@ class CountdownClockHome : UIView {
         
         if (dropdownShowing == 1) { // if dropdown is showing, then loop through all the dates and update the labels
             dateViews.forEach { (dateView) in
-                diff = Int(dates[dateView.id].timeIntervalSince(Date.init()))
+                diff = Int(phases[dateView.id].2.timeIntervalSince(Date.init()))
                 let years = diff / 31536000 // 31536000 = 60 * 60 * 24 * 365
                 diff -= years * 31536000
                 let days = diff / 86400 // 86400 = 60 * 60 * 24
@@ -414,3 +474,4 @@ class CountdownClockHome : UIView {
         }
     }
 }
+
