@@ -353,6 +353,9 @@ Test 3</string>
                             <state key="normal" title="×">
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="closeMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jMZ-WG-vbx"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1347,7 +1350,7 @@ Test 3</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Hamburger"/>
                                 <connections>
-                                    <action selector="menuClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zfS-Y0-McW"/>
+                                    <action selector="menuClicked:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="2QH-mu-uMm"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Media Gallery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lA-m5-xSb">
