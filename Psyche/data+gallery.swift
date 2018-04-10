@@ -8,6 +8,7 @@
 
 import Foundation
 
+//captions Dicitionary
 public var captions : [Int:String]  = [
     1 : "Caption 1",
     2 : "Caption 2",
