@@ -149,8 +149,8 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //WHEN BIG WHEN SMALL
     func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, mosaicCellSizeForItemAt indexPath: IndexPath!) -> FMMosaicCellSize {
-        return FMMosaicCellSize.small
-        //return indexPath.item % 4 == 0 ? FMMosaicCellSize.big : FMMosaicCellSize.small
+        //return FMMosaicCellSize.small
+        return indexPath.item % 3 == 0 ? FMMosaicCellSize.big : FMMosaicCellSize.small
     }
     
     //menu functions (include in all pages with hamburger)
