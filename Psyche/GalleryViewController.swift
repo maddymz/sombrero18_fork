@@ -32,7 +32,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         let mosaicLayout : FMMosaicLayout = FMMosaicLayout()
         collectionView.collectionViewLayout = mosaicLayout
         
-        imageArray = ["1","2","3","4","5","6","7","8"]
+        imageArray = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16"]
         
         //add and hide menu
         Menu.layer.zPosition = 2;
@@ -61,8 +61,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         let imageView = UIImageView(image: UIImage(named: imageArray[indexPath.row%imageArray.count]))
         it = UIImage(named: imageArray[indexPath.row%imageArray.count])!
         
-        c = (indexPath.row + 1)%imageArray.count
-        
+        c = indexPath.row + 1
         
         
         //popup = imageView
@@ -117,8 +116,9 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //NUMBER OF COLUMNS
     func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, numberOfColumnsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
+    
     
     //CHANGE CELL
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -134,7 +134,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //NUMBER OF PHOTOS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count*3
+        return imageArray.count
     }
     
     //INSETS BORDER SIZES
@@ -149,8 +149,8 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //WHEN BIG WHEN SMALL
     func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, mosaicCellSizeForItemAt indexPath: IndexPath!) -> FMMosaicCellSize {
-        
-        return indexPath.item % 4 == 0 ? FMMosaicCellSize.big : FMMosaicCellSize.small
+        return FMMosaicCellSize.small
+        //return indexPath.item % 4 == 0 ? FMMosaicCellSize.big : FMMosaicCellSize.small
     }
     
     //menu functions (include in all pages with hamburger)
