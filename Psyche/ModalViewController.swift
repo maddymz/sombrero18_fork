@@ -18,6 +18,8 @@ class ModalViewController: UIViewController {
     
     weak var delegate: ModalViewControllerDelegate?
     
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var caption: UITextView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var imageBig: UIImageView!
     
@@ -44,11 +46,17 @@ class ModalViewController: UIViewController {
         
         if let testt = img
         {
+            date.text = dates[testt]
+            caption.text = captions[testt]
             let st:String = String(testt)
             imageBig.image = UIImage(named: st)
-            imageBig.contentMode = .scaleAspectFit
+            //imageBig.contentMode = .scaleAspectFit
             
         }
+        imageBig.layer.cornerRadius = 8
+        imageBig.clipsToBounds = true
+        view.bringSubview(toFront: cancelButton)
+        view.sendSubview(toBack: imageBig)
     }
 }
 
