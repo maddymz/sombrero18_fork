@@ -282,8 +282,6 @@ class TriviaGameViewController: UIViewController {
                 }
             }
         }
-    
-
 
     }
     
