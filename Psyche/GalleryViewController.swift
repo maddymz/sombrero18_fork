@@ -32,7 +32,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         let mosaicLayout : FMMosaicLayout = FMMosaicLayout()
         collectionView.collectionViewLayout = mosaicLayout
         
-        imageArray = ["1","2","3","4","5","6","7","8"]
+        imageArray = ["4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19"]
         
         //add and hide menu
         Menu.layer.zPosition = 2;
@@ -53,6 +53,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         self.definesPresentationContext = true
         self.providesPresentationContextTransitionStyle = true
         self.overlayBlurredBackgroundView()
+        
         //let cell = collectionView.cellForItem(at: indexPath)
         //var imagething = cell as! UIImageView
         //image = imagething
@@ -61,8 +62,13 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         let imageView = UIImageView(image: UIImage(named: imageArray[indexPath.row%imageArray.count]))
         it = UIImage(named: imageArray[indexPath.row%imageArray.count])!
         
-        c = (indexPath.row + 1)%imageArray.count
-        
+        if(indexPath.row == 15)
+        {
+            c = 19
+        }
+        else{
+            c = ((indexPath.row + 1)%imageArray.count) + 3
+        }
         
         
         //popup = imageView
@@ -96,7 +102,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             if identifier == "ShowModalView" {
                 if let viewController = segue.destination as? ModalViewController {
                     viewController.delegate = self
-                    viewController.modalPresentationStyle = .overFullScreen
+                    viewController.modalPresentationStyle = .overCurrentContext
                     viewController.img = c
                     //viewController.imageBig.image = it
                 }
@@ -150,7 +156,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     //WHEN BIG WHEN SMALL
     func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, mosaicCellSizeForItemAt indexPath: IndexPath!) -> FMMosaicCellSize {
         
-        return indexPath.item % 4 == 0 ? FMMosaicCellSize.big : FMMosaicCellSize.small
+        return indexPath.item % 3 == 0 ? FMMosaicCellSize.big : FMMosaicCellSize.small
     }
     
     //menu functions (include in all pages with hamburger)
