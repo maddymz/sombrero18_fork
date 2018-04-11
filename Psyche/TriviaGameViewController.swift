@@ -37,9 +37,7 @@ class TriviaGameViewController: UIViewController {
     var currentQuestion = 0
     var correctAnswer = ""
     var score = 0
-    
-    //for debugging purposes
-    @IBOutlet weak var scoreLabel: UILabel!
+    var multiplier = 1
     
     
     override func viewDidLoad() {
@@ -101,9 +99,18 @@ class TriviaGameViewController: UIViewController {
         else if(profile_image == 6){
             profile.image = #imageLiteral(resourceName: "Sun_Large")
         }
-        profileName.text = "name"
         opponentName.text = opponent?.fname
         self.questions = myDict[category! + String(opponent!.difficulty)]!
+        
+        if(opponent?.difficulty == 1){
+            multiplier = 5
+        }
+        else if(opponent?.difficulty == 2){
+            multiplier = 10
+        }
+        else if(opponent?.difficulty == 3 || opponent?.difficulty == 4){
+            multiplier = 10
+        }
         
         newQuestion()
     }
@@ -199,6 +206,7 @@ class TriviaGameViewController: UIViewController {
                 //change the question labels
                 if(String(sender.tag) == self.correctAnswer ){
                     self.questionNo.text = "Correct! +" + String(1)
+                    self.score += 1 * self.multiplier
                 }
                 else{
                     self.questionNo.text = "Incorrect"

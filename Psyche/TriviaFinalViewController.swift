@@ -90,7 +90,6 @@ class TriviaFinalViewController: UIViewController {
         else if(profile_image == 6){
             profile.image = #imageLiteral(resourceName: "Sun_Large")
         }
-        profileName.text = "name"
         opponentName.text = opponent?.fname
         opponentQuote.text = "\"" + (opponent?.quote)! + "\"\n- " + (opponent?.name)!
         finalScoreLabel.text = String(finalScore)
