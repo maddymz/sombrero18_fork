@@ -59,12 +59,4 @@ class TriviaFinalViewController: UIViewController {
         //determine if the number of levels unlocked should be incremented here
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toTabController"{
-            if let vc = segue.destination as? LoadingViewController {
-                vc.showAnimation = false // This ensures that the LoadingViewController will not show the animation
-            }
-        }
-    }
-    
 }

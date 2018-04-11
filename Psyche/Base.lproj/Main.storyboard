@@ -981,7 +981,7 @@ Test 3</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqs-Gk-b6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kPG-eb-Sfa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4180" y="1743"/>
+            <point key="canvasLocation" x="5176.8000000000002" y="1774.3628185907048"/>
         </scene>
         <!--Trivia Category View Controller-->
         <scene sceneID="Sa4-yJ-Zap">
@@ -1097,7 +1097,7 @@ Test 3</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8R-16-v4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="R97-gR-mNA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5153" y="1743"/>
+            <point key="canvasLocation" x="5952.8000000000002" y="1773.4632683658172"/>
         </scene>
         <!--Trivia Game View Controller-->
         <scene sceneID="gzQ-Mb-mHa">
@@ -1259,7 +1259,7 @@ Test 3</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Sm-dA-rce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6020" y="1743"/>
+            <point key="canvasLocation" x="6856.8000000000002" y="1773.4632683658172"/>
         </scene>
         <!--Trivia Final View Controller-->
         <scene sceneID="Hia-lo-6vF">
@@ -1366,7 +1366,6 @@ Test 3</string>
                                 </state>
                                 <connections>
                                     <action selector="backBtnPressed:" destination="pi3-bh-trm" eventType="touchUpInside" id="HQP-HQ-auU"/>
-                                    <segue destination="qqq-cO-b09" kind="show" identifier="toTabController" id="7mH-ik-aNE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1387,7 +1386,7 @@ Test 3</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywV-AA-TkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6994.3999999999996" y="1742.8785607196403"/>
+            <point key="canvasLocation" x="7634.3999999999996" y="1771.6641679160421"/>
         </scene>
         <!--Gallery View Controller-->
         <scene sceneID="pv2-1t-n2l">
@@ -1905,7 +1904,7 @@ Test 3</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqM-f1-xEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="IKB-jR-xQA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6759" y="879"/>
+            <point key="canvasLocation" x="5351" y="534"/>
         </scene>
         <!--Trivia Profile View Controller-->
         <scene sceneID="lQh-0b-dWX">
@@ -2031,7 +2030,6 @@ Test 3</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5fb-a0-hGe"/>
-        <segue reference="7mH-ik-aNE"/>
         <segue reference="pzT-gL-PoK"/>
     </inferredMetricsTieBreakers>
 </document>
