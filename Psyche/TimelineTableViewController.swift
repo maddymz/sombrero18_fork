@@ -440,19 +440,19 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func openYoutube(_ sender: Any) {
-        menuHelper.openYoutube()
+        menuHelper.openYoutube(vc: self)
     }
     
     @IBAction func openTwitter(_ sender: Any) {
-        menuHelper.openTwitter()
+        menuHelper.openTwitter(vc: self)
     }
     
     @IBAction func openFB(_ sender: Any) {
-        menuHelper.openFB()
+        menuHelper.openFB(vc: self)
     }
     
     @IBAction func openInsta(_ sender: Any) {
-        menuHelper.openInsta()
+        menuHelper.openInsta(vc: self)
     }
     
     
