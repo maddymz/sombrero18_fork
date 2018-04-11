@@ -16,8 +16,11 @@ class TriviaGameViewController: UIViewController {
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var opponentName: UILabel!
     @IBOutlet weak var questionCard: UIImageView!
+    @IBOutlet weak var questionCardsBack: UIImageView!
     @IBOutlet weak var gradient: UIImageView!
     
+    @IBOutlet weak var playerScoreLabel: UILabel!
+    @IBOutlet weak var opponentScoreLabel: UILabel!
     
     
     var category: String?
@@ -112,6 +115,8 @@ class TriviaGameViewController: UIViewController {
             multiplier = 10
         }
         
+        opponentScoreLabel.text = String((opponent?.highScore)!)
+        
         newQuestion()
     }
     
@@ -121,14 +126,14 @@ class TriviaGameViewController: UIViewController {
         answer2.layer.borderWidth = 1
         answer3.layer.borderWidth = 1
         answer4.layer.borderWidth = 1
-        answer1.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
-        answer2.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
-        answer3.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
-        answer4.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
-        answer1.setTitleColor(UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1), for: .normal)
-        answer2.setTitleColor(UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1), for: .normal)
-        answer3.setTitleColor(UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1), for: .normal)
-        answer4.setTitleColor(UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1), for: .normal)
+        answer1.layer.borderColor = UIColor(red:162/255, green:162/255, blue:162/255, alpha: 1).cgColor
+        answer2.layer.borderColor = UIColor(red:162/255, green:162/255, blue:162/255, alpha: 1).cgColor
+        answer3.layer.borderColor = UIColor(red:162/255, green:162/255, blue:162/255, alpha: 1).cgColor
+        answer4.layer.borderColor = UIColor(red:162/255, green:162/255, blue:162/255, alpha: 1).cgColor
+        answer1.setTitleColor(UIColor(red:162/255, green:162/255, blue:162/255, alpha: 1), for: .normal)
+        answer2.setTitleColor(UIColor(red:162/255, green:162/255, blue:162/255, alpha: 1), for: .normal)
+        answer3.setTitleColor(UIColor(red:162/255, green:162/255, blue:162/255, alpha: 1), for: .normal)
+        answer4.setTitleColor(UIColor(red:162/255, green:162/255, blue:162/255, alpha: 1), for: .normal)
         answer1.backgroundColor = .white
         answer2.backgroundColor = .white
         answer3.backgroundColor = .white
@@ -150,6 +155,19 @@ class TriviaGameViewController: UIViewController {
         
         //correct answer
         self.correctAnswer = questions[currentQuestion][questions[currentQuestion].count - 1]
+        
+        //update card back image
+        if(currentQuestion == 8){
+            UIView.transition(with: questionCardsBack, duration: 0.5, options: .transitionCrossDissolve, animations:{
+                self.questionCardsBack.image = #imageLiteral(resourceName: "QuestionCards_Middle Card")
+                })
+        }
+        else if (currentQuestion == 9){
+            UIView.animate(withDuration: 0.5, animations: {
+                self.questionCardsBack.alpha = 0
+            })
+        }
+
         
         //check if question contains 2 or 4 answers
         if(questions[currentQuestion].count == 6)
@@ -205,8 +223,10 @@ class TriviaGameViewController: UIViewController {
                 usleep(500000)
                 //change the question labels
                 if(String(sender.tag) == self.correctAnswer ){
-                    self.questionNo.text = "Correct! +" + String(1)
-                    self.score += 1 * self.multiplier
+                    self.questionNo.text = "Correct! +" + String(5 * self.multiplier)
+                    //change 5 to the amount of time left of timer ALSO CHECK LINE 212
+                    self.score += 5 * self.multiplier
+                    self.playerScoreLabel.text = String(self.score)
                 }
                 else{
                     self.questionNo.text = "Incorrect"

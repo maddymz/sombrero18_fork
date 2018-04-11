@@ -22,6 +22,9 @@ class TriviaFinalViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var vsLabel: UILabel!
     
+    @IBOutlet weak var completeMessage: UILabel!
+    
+    
     
     //category buttons
     
@@ -97,7 +100,23 @@ class TriviaFinalViewController: UIViewController {
         shareButton.setBackgroundImage(#imageLiteral(resourceName: "FacebookButton"), for: .normal)
         opponentScoreLabel.text = String((opponent?.highScore)!)
         
+        if(finalScore > (opponent?.highScore)!){
+            completeMessage.text = "Congrats, You Won!"
+        }
+        else{
+            completeMessage.text = "It's ok, You can try again!"
+        }
+        
+        
+        
         //determine if the number of levels unlocked should be incremented here
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTabController"{
+            if let vc = segue.destination as? LoadingViewController {
+                vc.showAnimation = false // This ensures that the LoadingViewController will not show the animation
+            }
+        }
+    }
 }
