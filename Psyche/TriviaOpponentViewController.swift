@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
+
 class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //THIS NEEDS TO BE CHANGED TO BE IN CORE DATA
-    let profile_image = 1
+    var profile_image = 1
     @IBOutlet weak var profile: UIImageView!
     var level = 4
     
@@ -22,6 +24,44 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TriviaInfo")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let results = try context.fetch(request)
+            
+            // This is a for loop but there should only be one object in core data
+            for result in results as! [NSManagedObject] {
+                // Get username
+                if let username = result.value(forKey: "username") as? String {
+                    print(username)
+                } else {
+                    print("no username")
+                }
+                
+                // Get avatar
+                if let avatar = result.value(forKey: "avatar") as? Int {
+                    print(avatar)
+                    profile_image = avatar
+                } else {
+                    print("no avatar")
+                }
+                
+                // Get high score
+                if let highScore = result.value(forKey: "high_score") as? Int {
+                    print(highScore)
+                } else {
+                    print("no high score")
+                }
+            }
+        } catch {
+            
+        }
+        
+        
         if(profile_image == 1){
             profile.image = #imageLiteral(resourceName: "Asteroid_Large")
         }
@@ -40,8 +80,6 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
         else if(profile_image == 6){
             profile.image = #imageLiteral(resourceName: "Sun_Large")
         }
-
-
     }
     
     // number of rows in table view

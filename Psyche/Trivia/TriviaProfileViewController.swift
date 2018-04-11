@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import CoreData
 
 // Custom UIImageView class for the avatars
 class AvatarButton: UIButton {
@@ -63,6 +64,8 @@ class TriviaProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround() // Hide keyboard if user taps somewhere else
+        
         //setGradientBackground()
         setStyle()
         createAvatarButtons()
@@ -78,8 +81,36 @@ class TriviaProfileViewController: UIViewController {
     
     @IBAction func readyBtnPressed(_ sender: Any) {
         if let uname = usernameField.text, uname.count >= 20 {
-            usernameLengthLabel.isHidden = false
+            usernameLengthLabel.isHidden = false // Show user that username must be less than 20 characters
         } else {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let triviaProfile = NSEntityDescription.insertNewObject(forEntityName: "TriviaInfo", into: context)
+            
+            var username = ""
+            if let uname = usernameField.text, uname.count > 0 { // If username is not blank
+                username = uname
+            } else { // If username is blank, set default
+                username = "Team Sombrero"
+            }
+            triviaProfile.setValue(username, forKey: "username")
+            
+            var avatar = 0
+            if profileSelected != -1 {
+                avatar = profileSelected
+            } else {
+                avatar = Int(arc4random() % 6) + 1 // Random int between 1 and 6
+            }
+            triviaProfile.setValue(avatar, forKey: "avatar")
+            
+            triviaProfile.setValue(0, forKey: "high_score")
+            
+            do {
+                try context.save() // Save profile info to core data
+            } catch {
+                
+            }
+            
             performSegue(withIdentifier: "toTriviaOpponent", sender: self)
         }
     }
@@ -87,14 +118,14 @@ class TriviaProfileViewController: UIViewController {
     // Create six image views for avatars
     func createAvatarButtons() {
         // 1st row
-        let a1 = AvatarButton(normalImg: "Trivia-Moon", grayImg: "Trivia-EarthBW", frame: CGRect(x: 32, y: 187, width: 62, height: 62), id: 0)
-        let a2 = AvatarButton(normalImg: "Trivia-Earth", grayImg: "Trivia-EarthBW", frame: CGRect(x: 109, y: 187, width: 62, height: 62), id: 1)
-        let a3 = AvatarButton(normalImg: "Trivia-Star", grayImg: "Trivia-StarBW", frame: CGRect(x: 187, y: 187, width: 62, height: 62), id: 2)
+        let a1 = AvatarButton(normalImg: "Trivia-Moon", grayImg: "Trivia-EarthBW", frame: CGRect(x: 32, y: 187, width: 62, height: 62), id: 1)
+        let a2 = AvatarButton(normalImg: "Trivia-Earth", grayImg: "Trivia-EarthBW", frame: CGRect(x: 109, y: 187, width: 62, height: 62), id: 2)
+        let a3 = AvatarButton(normalImg: "Trivia-Star", grayImg: "Trivia-StarBW", frame: CGRect(x: 187, y: 187, width: 62, height: 62), id: 3)
         
         // 2nd row
-        let a4 = AvatarButton(normalImg: "Trivia-Asteroid", grayImg: "Trivia-AsteroidBW", frame: CGRect(x: 32, y: 270, width: 62, height: 62), id: 3)
-        let a5 = AvatarButton(normalImg: "Trivia-Sun", grayImg: "Trivia-SunBW", frame: CGRect(x: 109, y: 270, width: 62, height: 62), id: 4)
-        let a6 = AvatarButton(normalImg: "Trivia-Saturn", grayImg: "Trivia-SaturnBW", frame: CGRect(x: 187, y: 270, width: 62, height: 62), id: 5)
+        let a4 = AvatarButton(normalImg: "Trivia-Asteroid", grayImg: "Trivia-AsteroidBW", frame: CGRect(x: 32, y: 270, width: 62, height: 62), id: 4)
+        let a5 = AvatarButton(normalImg: "Trivia-Sun", grayImg: "Trivia-SunBW", frame: CGRect(x: 109, y: 270, width: 62, height: 62), id: 5)
+        let a6 = AvatarButton(normalImg: "Trivia-Saturn", grayImg: "Trivia-SaturnBW", frame: CGRect(x: 187, y: 270, width: 62, height: 62), id: 6)
         
         // Add to array
         avatars.append(a1)
@@ -176,4 +207,15 @@ class TriviaProfileViewController: UIViewController {
         
     }
     
+}
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
