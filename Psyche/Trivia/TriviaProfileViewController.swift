@@ -69,6 +69,16 @@ class TriviaProfileViewController: UIViewController {
         //setGradientBackground()
         setStyle()
         createAvatarButtons()
+        
+        /*let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "TriviaInfo")
+        let request = NSBatchDeleteRequest(fetchRequest: fetch)
+        do {
+        let result = try context.execute(request)
+        } catch {
+         
+        }*/
     }
     
     override func didReceiveMemoryWarning() {
@@ -85,31 +95,46 @@ class TriviaProfileViewController: UIViewController {
         } else {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
-            let triviaProfile = NSEntityDescription.insertNewObject(forEntityName: "TriviaInfo", into: context)
             
-            var username = ""
-            if let uname = usernameField.text, uname.count > 0 { // If username is not blank
-                username = uname
-            } else { // If username is blank, set default
-                username = "Team Sombrero"
-            }
-            triviaProfile.setValue(username, forKey: "username")
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TriviaInfo")
+            request.returnsObjectsAsFaults = false
             
-            var avatar = 0
-            if profileSelected != -1 {
-                avatar = profileSelected
-            } else {
-                avatar = Int(arc4random() % 6) + 1 // Random int between 1 and 6
-            }
-            triviaProfile.setValue(avatar, forKey: "avatar")
-            
-            triviaProfile.setValue(0, forKey: "high_score")
+            do {
+                let results = try context.fetch(request)
+                
+                var username = ""
+                if let uname = usernameField.text, uname.count > 0 { // If username is not blank
+                    username = uname
+                } else { // If username is blank, set default
+                    username = "Team Sombrero"
+                }
+                var avatar = 0
+                if profileSelected != -1 {
+                    avatar = profileSelected
+                } else {
+                    avatar = Int(arc4random() % 6) + 1 // Random int between 1 and 6
+                }
+                
+                if results.count > 0 { // If there is already a profile created
+                    // Updating core data
+                    let result = results.first as! NSManagedObject
+                    result.setValue(username, forKey: "username")
+                    result.setValue(avatar, forKey: "avatar")
+                } else { // No profile created yet, create one
+                    // Inserting into core data
+                    let triviaProfile = NSEntityDescription.insertNewObject(forEntityName: "TriviaInfo", into: context)
+                    
+                    triviaProfile.setValue(username, forKey: "username")
+                    triviaProfile.setValue(avatar, forKey: "avatar")
+                    
+                    triviaProfile.setValue(0, forKey: "high_score")
+                    triviaProfile.setValue(1, forKey: "levels_unlocked")
+                }
+            } catch { }
             
             do {
                 try context.save() // Save profile info to core data
-            } catch {
-                
-            }
+            } catch { }
             
             performSegue(withIdentifier: "toTriviaOpponent", sender: self)
         }
