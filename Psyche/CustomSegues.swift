@@ -82,6 +82,8 @@ class UnwindProfileOpponentSegue: UIStoryboardSegue{
         
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
         dst.view.alpha = 1
+        dst.mainView.alpha = 0
+        dst.backButton.alpha = 0
 
         UIView.animate(withDuration: 0.5, animations: {
             src.gradient.frame = CGRect(x:0, y:0, width: src.view.frame.width, height: src.view.frame.height)
@@ -93,7 +95,7 @@ class UnwindProfileOpponentSegue: UIStoryboardSegue{
                     dst.backButton.alpha = 1
                     dst.mainView.alpha = 1
                 }, completion: { finished in
-                    src.dismiss(animated: false, completion: nil)
+                    src.present(dst, animated: false, completion: nil)
                 })
             })
         })
@@ -115,6 +117,39 @@ class GameFinalSegue: UIStoryboardSegue{
                 src.view.alpha = 0
             }, completion: { finished in
                 src.present(dst, animated: false, completion: nil)
+            })
+        })
+    }
+}
+
+class PlayAgainSegue: UIStoryboardSegue{
+    override func perform()
+    {
+        let src = self.source as! TriviaFinalViewController
+        let dst = self.destination as! TriviaOpponentViewController
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            src.mainView.alpha = 0
+            src.finalScoreLabel.alpha = 0
+            src.opponentScoreLabel.alpha = 0
+            src.opponentName.alpha = 0
+            src.profileName.alpha = 0
+            src.opponentQuote.alpha = 0
+            src.profile.alpha = 0
+            src.opponentAvatar.alpha = 0
+            src.vsLabel.alpha = 0
+            
+        }, completion: { finished in
+            UIView.animate(withDuration: 0.5, animations: {
+                src.view.alpha = 0
+            }, completion: { finished in
+                UIView.animate(withDuration: 1, animations: {
+                    dst.gradient.frame = CGRect(x:0, y:0, width: dst.view.frame.width, height: 130)
+                }, completion: { finished in
+                    src.present(dst, animated: false, completion: nil)
+                })
             })
         })
     }

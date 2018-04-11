@@ -964,7 +964,7 @@ Test 3</string>
                                 </state>
                                 <connections>
                                     <action selector="backBtnPressed:" destination="pi3-bh-trm" eventType="touchUpInside" id="cXf-8e-91o"/>
-                                    <segue destination="kPG-eb-Sfa" kind="unwind" customClass="UnwindProfileOpponentSegue" customModule="Psyche" customModuleProvider="target" unwindAction="prepareForUnwindWithSegue:" id="eyw-iX-1HE"/>
+                                    <segue destination="pi3-bh-trm" kind="custom" customClass="UnwindProfileOpponentSegue" customModule="Psyche" customModuleProvider="target" id="qW7-CE-FaO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -980,9 +980,8 @@ Test 3</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqs-Gk-b6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="kPG-eb-Sfa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4180" y="1742.8785607196403"/>
+            <point key="canvasLocation" x="4489" y="1822"/>
         </scene>
         <!--Trivia Category View Controller-->
         <scene sceneID="Sa4-yJ-Zap">
@@ -1343,6 +1342,9 @@ Test 3</string>
                                                 <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="4fl-zg-UXU" kind="show" customClass="PlayAgainSegue" customModule="Psyche" customModuleProvider="target" id="flH-1B-IPE"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congrats, You Won!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7G-f1-PrC">
                                         <rect key="frame" x="22" y="21" width="245" height="81"/>
@@ -1393,6 +1395,7 @@ Test 3</string>
                         <outlet property="profile" destination="7H4-fM-YNQ" id="yah-Be-ne5"/>
                         <outlet property="profileName" destination="KhY-D5-EML" id="WOK-kC-Hxe"/>
                         <outlet property="shareButton" destination="oh9-a8-rxT" id="Lmx-wy-bhu"/>
+                        <outlet property="vsLabel" destination="doH-dN-AVf" id="Kvz-tf-QBF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywV-AA-TkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2048,7 +2051,9 @@ Test 3</string>
         <image name="new-timeline-second" width="100" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5fb-a0-hGe"/>
+        <segue reference="qW7-CE-FaO"/>
+        <segue reference="99g-zA-NbL"/>
         <segue reference="pzT-gL-PoK"/>
+        <segue reference="flH-1B-IPE"/>
     </inferredMetricsTieBreakers>
 </document>
