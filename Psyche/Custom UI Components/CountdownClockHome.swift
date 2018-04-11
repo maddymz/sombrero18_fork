@@ -20,12 +20,13 @@ class DateView : UIView {
 class CountdownClockHome : UIView, UIScrollViewDelegate {
     var hvc : HomeViewController!
     
+    var phaseImg = UIImageView()
+    var phaseMLabel = UILabel()
     var daysLabel = UILabel()
     var daysMLabel = UILabel()
     var timerLabel = UILabel()
     var timerMLabel = UILabel()
     var secondsMLabel = UILabel()
-    var phaseImg = UIImageView()
     
     var phases: [(label: String, phase: String, date: Date)] = [] // Array of tuples
     var dateLabels = [String]() // Array of names for dates
@@ -70,7 +71,9 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewTap))) // Adds tap event handler
         
         // Initialize imageview and labels
-        phaseImg.frame = CGRect(x: 15, y: 10, width: 40, height: 40)
+        phaseImg.frame = CGRect(x: 15, y: 14, width: 25, height: 25)
+        phaseMLabel.frame = CGRect(x: 15, y: 41, width: 40, height: 21)
+        phaseMLabel.text = "PHASE"
         
         daysLabel.frame = CGRect(x: 101, y: 9, width: 100, height: 33)
         
@@ -90,14 +93,17 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         timerLabel.font = UIFont(name: "Roboto Mono", size: 34)
         timerMLabel.font = UIFont(name: "Roboto Mono", size: 10)
         secondsMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+        phaseMLabel.font = UIFont(name: "Roboto Mono", size: 10)
         
         daysLabel.textColor = UIColor.white
         daysMLabel.textColor = UIColor.white
         timerLabel.textColor = UIColor.white
         timerMLabel.textColor = UIColor.white
         secondsMLabel.textColor = UIColor.white
+        phaseMLabel.textColor = UIColor.white
         
         self.addSubview(phaseImg)
+        self.addSubview(phaseMLabel)
         self.addSubview(daysLabel)
         self.addSubview(daysMLabel)
         self.addSubview(timerLabel)

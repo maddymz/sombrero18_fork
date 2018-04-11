@@ -10,12 +10,14 @@ import UIKit
 import Foundation
 
 class CountdownClockTimeline : UIView {
+    
+    var phaseImg = UIImageView()
+    var phaseMLabel = UILabel()
     var daysLabel = UILabel()
     var daysMLabel = UILabel()
     var timerLabel = UILabel()
     var timerMLabel = UILabel()
     var secondsMLabel = UILabel()
-    var phaseImg = UIImageView()
     
     var phases: [(phase: String, date: Date)] = [] // Array of tuples
     var currentDateIndex = 0 // Index of date being displayed
@@ -26,7 +28,9 @@ class CountdownClockTimeline : UIView {
         super.init(frame: frame)
         
         // Initialize imageview and labels
-        phaseImg.frame = CGRect(x: 15, y: 10, width: 40, height: 40)
+        phaseImg.frame = CGRect(x: 15, y: 14, width: 25, height: 25)
+        phaseMLabel.frame = CGRect(x: 15, y: 41, width: 40, height: 21)
+        phaseMLabel.text = "PHASE"
         
         daysLabel.frame = CGRect(x: 101, y: 9, width: 100, height: 33)
         
@@ -46,14 +50,18 @@ class CountdownClockTimeline : UIView {
         timerLabel.font = UIFont(name: "Roboto Mono", size: 34)
         timerMLabel.font = UIFont(name: "Roboto Mono", size: 10)
         secondsMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+        phaseMLabel.font = UIFont(name: "Roboto Mono", size: 10)
         
+        phaseMLabel.textColor = UIColor.white
         daysLabel.textColor = UIColor.white
         daysMLabel.textColor = UIColor.white
         timerLabel.textColor = UIColor.white
         timerMLabel.textColor = UIColor.white
         secondsMLabel.textColor = UIColor.white
+        phaseMLabel.textColor = UIColor.white
         
         self.addSubview(phaseImg)
+        self.addSubview(phaseMLabel)
         self.addSubview(daysLabel)
         self.addSubview(daysMLabel)
         self.addSubview(timerLabel)
