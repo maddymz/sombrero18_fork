@@ -455,5 +455,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         menuHelper.openInsta(vc: self)
     }
     
-    
+    @IBAction func openNASA(_ sender: Any) {
+        menuHelper.openNASA(vc: self)
+    }
 }

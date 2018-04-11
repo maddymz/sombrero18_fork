@@ -207,6 +207,10 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     @IBAction func openInsta(_ sender: Any) {
         menuHelper.openInsta(vc: self)
     }
+    
+    @IBAction func openNASA(_ sender: Any) {
+        menuHelper.openNASA(vc: self)
+    }
 }
 
 

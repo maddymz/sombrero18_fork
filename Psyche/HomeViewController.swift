@@ -270,4 +270,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         menuHelper.openInsta(vc: self)
     }
     
+    @IBAction func openNASA(_ sender: Any) {
+        menuHelper.openNASA(vc: self)
+    }
 }
