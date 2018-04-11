@@ -9,7 +9,7 @@
 import UIKit
 import FMMosaicLayout
 
-class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, ModalViewControllerDelegate{
+class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
     
     //@IBOutlet weak var popup: UIImageView!
     
@@ -25,23 +25,39 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     @IBOutlet weak var menuBlur: UIVisualEffectView!
     
     
+    //second view outlets
+
+
+    @IBOutlet var secondViewer: UIView!
+    @IBOutlet weak var imageViewer: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var captionText: UITextView!
+    @IBOutlet weak var cancelButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //popup.isHidden = true;
+        
+        //MosaicLayout
         let mosaicLayout : FMMosaicLayout = FMMosaicLayout()
         collectionView.collectionViewLayout = mosaicLayout
-        
         imageArray = ["4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19"]
         
-        //add and hide menu
+        //Side Menu
+        //Add and Hide Menu
         Menu.layer.zPosition = 2;
         view.addSubview(Menu)
         Menu.frame = CGRect(x:-300, y:0, width: 265, height:self.view.frame.height)
-        
         //tap recognizer to close menu
         let tapOut = UITapGestureRecognizer(target: self, action: #selector(closeMenu))
         self.menuBlur.addGestureRecognizer(tapOut)
+        
+        //SecondView
+        //Add and Hide View
+        secondViewer.layer.zPosition = 2;
+        view.addSubview(secondViewer)
+        secondViewer.alpha = 0.0
+        secondViewer.frame = CGRect(x:-375, y:70, width: 375, height:self.view.frame.height)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,77 +65,39 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         // Dispose of any resources that can be recreated.
     }
     
+    //clicked thumbnail reveal secondView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.definesPresentationContext = true
-        self.providesPresentationContextTransitionStyle = true
-        self.overlayBlurredBackgroundView()
         
-        //let cell = collectionView.cellForItem(at: indexPath)
-        //var imagething = cell as! UIImageView
-        //image = imagething
+        imageViewer.image = UIImage(named: imageArray[(indexPath.row%imageArray.count)])
+        dateLabel.text = dates[indexPath.row + 4]
+        captionText.text = captions[indexPath.row + 4]
+        imageViewer.layer.cornerRadius = 8
+        imageViewer.clipsToBounds = true
         
-        
-        let imageView = UIImageView(image: UIImage(named: imageArray[indexPath.row%imageArray.count]))
-        it = UIImage(named: imageArray[indexPath.row%imageArray.count])!
-        
-        if(indexPath.row == 15)
-        {
-            c = 19
-        }
-        else{
-            c = ((indexPath.row + 1)%imageArray.count) + 3
-        }
-        
-        
-        //popup = imageView
-        
-        indexPathfor = indexPath
-        
-        performSegue(withIdentifier: "ShowModalView", sender: self)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.secondViewer.alpha = 1.0
+            self.secondViewer.transform = CGAffineTransform(translationX: 375, y: 0)
+
+        })
+
     }
     
+    //hide SecondView
+    @IBAction func hideSecondView(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.secondViewer.alpha = 0.0
+            self.secondViewer.transform = CGAffineTransform(translationX: -375, y: 0)
+        })
+    }
+    
+    
+    
     //TEST
-    
-    
-    
     func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
         sender.view?.removeFromSuperview()
     }
     //END TEST
     
-    
-    func removeBlurredBackgroundView() {
-        
-        for subview in view.subviews {
-            if subview.isKind(of: UIVisualEffectView.self) {
-                subview.removeFromSuperview()
-            }
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            if identifier == "ShowModalView" {
-                if let viewController = segue.destination as? ModalViewController {
-                    viewController.delegate = self
-                    viewController.modalPresentationStyle = .overCurrentContext
-                    viewController.img = c
-                    //viewController.imageBig.image = it
-                }
-            }
-        }
-    }
-    
-    func overlayBlurredBackgroundView() {
-        
-        let blurredBackgroundView = UIVisualEffectView()
-        
-        blurredBackgroundView.frame = view.frame
-        blurredBackgroundView.effect = UIBlurEffect(style: .extraLight)
-        
-        view.addSubview(blurredBackgroundView)
-        
-    }
     
     //NUMBER OF COLUMNS
     func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, numberOfColumnsInSection section: Int) -> Int {
@@ -133,6 +111,11 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         cell.layer.cornerRadius = 8
         
         var imageView = cell.viewWithTag(2) as! UIImageView
+        
+        if(indexPath.row == 0)
+        {
+            imageView.loadGif(name: "output")
+        }
         imageView.image = UIImage(named: imageArray[(indexPath.row%imageArray.count)])
         
         return cell
