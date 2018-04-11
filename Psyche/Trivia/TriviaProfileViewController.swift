@@ -54,6 +54,7 @@ class TriviaProfileViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var backgroundGradient: UIImageView!
+    @IBOutlet weak var usernameLengthLabel: UILabel!
     
     
     var avatars = [AvatarButton]()
@@ -76,7 +77,11 @@ class TriviaProfileViewController: UIViewController {
     }
     
     @IBAction func readyBtnPressed(_ sender: Any) {
-        // Not implemented yet
+        if let uname = usernameField.text, uname.count >= 20 {
+            usernameLengthLabel.isHidden = false
+        } else {
+            performSegue(withIdentifier: "toTriviaOpponent", sender: self)
+        }
     }
     
     // Create six image views for avatars
