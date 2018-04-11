@@ -230,5 +230,9 @@ class TriviaGameViewController: UIViewController {
 
         }
     }
+    
+    @IBAction func prepareForUnwind(segue:UIStoryboardSegue){
+        
+    }
 }
     

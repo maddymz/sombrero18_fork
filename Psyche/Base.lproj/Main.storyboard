@@ -1218,6 +1218,7 @@ Test 3</string>
                                 </state>
                                 <connections>
                                     <action selector="backBtnPressed:" destination="pi3-bh-trm" eventType="touchUpInside" id="nh5-zT-Xo1"/>
+                                    <segue destination="aDh-Yd-Mga" kind="show" id="5fb-a0-hGe"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nxk-Al-p28" userLabel="profile">
@@ -1882,8 +1883,8 @@ Test 3</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="No"/>
                                         <connections>
-                                            <action selector="noBtnPressed:" destination="aDh-Yd-Mga" eventType="touchUpInside" id="boy-Oh-4Js"/>
                                             <action selector="noThanksBtnPressed:" destination="cps-AL-CVU" eventType="touchUpInside" id="c27-FB-98Q"/>
+                                            <segue destination="IKB-jR-xQA" kind="unwind" unwindAction="prepareForUnwindWithSegue:" id="5wV-JG-KMC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWg-yC-x8O">
@@ -1893,7 +1894,7 @@ Test 3</string>
                                         <state key="normal" title="Yes"/>
                                         <connections>
                                             <action selector="letsPlayBtnPressed:" destination="cps-AL-CVU" eventType="touchUpInside" id="LK3-Or-pm2"/>
-                                            <action selector="yesBtnPressed:" destination="aDh-Yd-Mga" eventType="touchUpInside" id="fz7-QV-dU9"/>
+                                            <action selector="yesBtnPressed:" destination="aDh-Yd-Mga" eventType="touchUpInside" id="qNm-QX-6tw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1908,10 +1909,10 @@ Test 3</string>
                         <outlet property="noBtn" destination="A5f-F1-0yA" id="jZO-Nb-uJ1"/>
                         <outlet property="yesBtn" destination="hWg-yC-x8O" id="Myv-G4-BIu"/>
                         <segue destination="qqq-cO-b09" kind="show" identifier="toTabController" id="hRq-xg-zMh"/>
-                        <segue destination="pi3-bh-trm" kind="show" identifier="toProfile" id="e6O-p5-2dh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqM-f1-xEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="IKB-jR-xQA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5351" y="534"/>
         </scene>
@@ -2037,7 +2038,7 @@ Test 3</string>
         <image name="new-timeline-second" width="100" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nWd-5Z-J5P"/>
+        <segue reference="5fb-a0-hGe"/>
         <segue reference="pzT-gL-PoK"/>
     </inferredMetricsTieBreakers>
 </document>
