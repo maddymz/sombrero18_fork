@@ -323,6 +323,9 @@ Test 3</string>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_youtube"/>
+                            <connections>
+                                <action selector="openYoutube:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hiu-OA-dWC"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONNECT WITH US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCA-fy-BQd">
                             <rect key="frame" x="20" y="578" width="189" height="27"/>
@@ -345,6 +348,9 @@ Test 3</string>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_facebook"/>
+                            <connections>
+                                <action selector="openFB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iOp-y5-Sss"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWB-FS-3Tz">
                             <rect key="frame" x="224" y="23" width="30" height="30"/>

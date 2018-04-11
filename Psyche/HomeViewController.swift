@@ -263,7 +263,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func openFB(_ sender: Any) {
-        print("openFB1")
         menuHelper.openFB(vc: self)
     }
     
