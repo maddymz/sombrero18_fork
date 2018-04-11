@@ -58,15 +58,29 @@ class ProfileOpponentSegue : UIStoryboardSegue{
         let src = self.source as! TriviaProfileViewController
         let dst = self.destination as! TriviaOpponentViewController
         
-        //dst.gradient.frame = CGRect(x:0, y:0, width: dst.view.frame.width, height: dst.view.frame.height)
-//        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
-//
-//        UIView.animate(withDuration: 0.5, animations: {
-//            src.view.alpha = 0
-//        }, completion: { finished in
-//
-//        })
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+
+        UIView.animate(withDuration: 1, animations: {
+            src.view.alpha = 0
+        }, completion: { finished in
+            UIView.animate(withDuration: 2, animations: {
+                dst.gradient.frame = CGRect(x:0, y:0, width: dst.view.frame.width, height: 130)
+            }, completion: { finished in
+                src.present(dst, animated: false, completion: nil)
+            })
+        })
         
+        
+//        UIView.animate(withDuration: 1, animations: {
+//            src.
+//        }, completion: { finished in
+//            UIView.animate(withDuration: 1, animations: {
+//                src.view.alpha = 0
+//            }, completion: { finished in
+//                
+//            })
+//        })
+//        
         
 //        UIView.animate(withDuration: 0.5, animations:{
 //            src.mainView.alpha = 0
@@ -89,6 +103,6 @@ class ProfileOpponentSegue : UIStoryboardSegue{
 //            })
 //        })
  
-        src.present(dst, animated: false, completion: nil)
+        
     }
 }
