@@ -10,6 +10,7 @@ import UIKit
 
 class TriviaFinalViewController: UIViewController {
 
+
     @IBOutlet weak var opponentAvatar: UIImageView!
     @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var profileName: UILabel!
@@ -55,23 +56,15 @@ class TriviaFinalViewController: UIViewController {
         
         opponentScoreLabel.text = String((opponent?.highScore)!)
         
-        setGradientBackground()
-        
         //determine if the number of levels unlocked should be incremented here
     }
-
     
-    // Sets background color of orange to red gradient
-    func setGradientBackground() {
-        let colorTop =  UIColor(red: 216.0/255.0, green: 112.0/255.0, blue: 43.0/255.0, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 241.0/255.0, green: 101.0/255.0, blue: 85.0/255.0, alpha: 1.0).cgColor
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [ colorTop, colorBottom ]
-        gradientLayer.locations = [ 0.0, 1.0 ]
-        gradientLayer.frame = self.view.bounds
-        
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTabController"{
+            if let vc = segue.destination as? LoadingViewController {
+                vc.showAnimation = false // This ensures that the LoadingViewController will not show the animation
+            }
+        }
     }
     
 }

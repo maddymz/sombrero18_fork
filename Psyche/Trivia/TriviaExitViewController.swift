@@ -38,9 +38,9 @@ class TriviaExitViewController: UIViewController {
         performSegue(withIdentifier: "toTabController", sender: self) // Performs segue to the tab bar controller which goes to the home tab
     }
     
-    @IBAction func noBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toProfile", sender: self)
-    }
+//    @IBAction func noBtnPressed(_ sender: Any) {
+//        performSegue(withIdentifier: "toProfile", sender: self)
+//    }
     
     // Sets background color of orange to red gradient
     func setGradientBackground() {
