@@ -31,6 +31,7 @@
 		17F1D2512075FD8400B9B6A9 /* TriviaGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1D2502075FD8400B9B6A9 /* TriviaGameViewController.swift */; };
 		17F1D2532076A7DC00B9B6A9 /* sideMenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1D2522076A7DC00B9B6A9 /* sideMenuHelper.swift */; };
 		17F1D257207B39EE00B9B6A9 /* TriviaFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1D256207B39EE00B9B6A9 /* TriviaFinalViewController.swift */; };
+		42009ECB207E961900DBCFB1 /* CustomSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1D258207D555000B9B6A9 /* CustomSegues.swift */; };
 		424B94DB20717C2300739FF1 /* TriviaInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B94DA20717C2300739FF1 /* TriviaInitViewController.swift */; };
 		424B94DD2071933B00739FF1 /* TriviaExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B94DC2071933B00739FF1 /* TriviaExitViewController.swift */; };
 		424B94DF2071950700739FF1 /* TriviaProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B94DE2071950700739FF1 /* TriviaProfileViewController.swift */; };
@@ -338,7 +339,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				175B1B7B206C0E830046A81D /* TextContent.swift in Sources */,
-				17F1D259207D555000B9B6A9 /* CustomSegues.swift in Sources */,
 				424B94DB20717C2300739FF1 /* TriviaInitViewController.swift in Sources */,
 				7EBBA7CE207D4917007853F5 /* data+gallery.swift in Sources */,
 				041A92642063BD5A00E3EA92 /* data+entry.swift in Sources */,
@@ -346,6 +346,7 @@
 				175B1B7D206C0E830046A81D /* TimelineItemTableViewCell.swift in Sources */,
 				170B330B20756DA50080FA6E /* TriviaOpponentData.swift in Sources */,
 				42B9188C207C0D820038D3A9 /* CountdownClockHome.swift in Sources */,
+				42009ECB207E961900DBCFB1 /* CustomSegues.swift in Sources */,
 				170B330D20756DA50080FA6E /* UnlockedTriviaOpponentTableViewCell.swift in Sources */,
 				424B94DF2071950700739FF1 /* TriviaProfileViewController.swift in Sources */,
 				170B330C20756DA50080FA6E /* LockedTriviaOpponentTableViewCell.swift in Sources */,
