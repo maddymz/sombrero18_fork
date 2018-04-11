@@ -118,14 +118,14 @@ class TriviaProfileViewController: UIViewController {
     // Create six image views for avatars
     func createAvatarButtons() {
         // 1st row
-        let a1 = AvatarButton(normalImg: "Trivia-Moon", grayImg: "Trivia-EarthBW", frame: CGRect(x: 32, y: 187, width: 62, height: 62), id: 1)
+        let a1 = AvatarButton(normalImg: "Trivia-Moon", grayImg: "Trivia-EarthBW", frame: CGRect(x: 32, y: 187, width: 62, height: 62), id: 3)
         let a2 = AvatarButton(normalImg: "Trivia-Earth", grayImg: "Trivia-EarthBW", frame: CGRect(x: 109, y: 187, width: 62, height: 62), id: 2)
-        let a3 = AvatarButton(normalImg: "Trivia-Star", grayImg: "Trivia-StarBW", frame: CGRect(x: 187, y: 187, width: 62, height: 62), id: 3)
+        let a3 = AvatarButton(normalImg: "Trivia-Star", grayImg: "Trivia-StarBW", frame: CGRect(x: 187, y: 187, width: 62, height: 62), id: 5)
         
         // 2nd row
-        let a4 = AvatarButton(normalImg: "Trivia-Asteroid", grayImg: "Trivia-AsteroidBW", frame: CGRect(x: 32, y: 270, width: 62, height: 62), id: 4)
-        let a5 = AvatarButton(normalImg: "Trivia-Sun", grayImg: "Trivia-SunBW", frame: CGRect(x: 109, y: 270, width: 62, height: 62), id: 5)
-        let a6 = AvatarButton(normalImg: "Trivia-Saturn", grayImg: "Trivia-SaturnBW", frame: CGRect(x: 187, y: 270, width: 62, height: 62), id: 6)
+        let a4 = AvatarButton(normalImg: "Trivia-Asteroid", grayImg: "Trivia-AsteroidBW", frame: CGRect(x: 32, y: 270, width: 62, height: 62), id: 1)
+        let a5 = AvatarButton(normalImg: "Trivia-Sun", grayImg: "Trivia-SunBW", frame: CGRect(x: 109, y: 270, width: 62, height: 62), id: 6)
+        let a6 = AvatarButton(normalImg: "Trivia-Saturn", grayImg: "Trivia-SaturnBW", frame: CGRect(x: 187, y: 270, width: 62, height: 62), id: 4)
         
         // Add to array
         avatars.append(a1)
