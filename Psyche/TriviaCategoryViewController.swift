@@ -88,7 +88,6 @@ class TriviaCategoryViewController: UIViewController {
         else if(profile_image == 6){
             profile.image = #imageLiteral(resourceName: "Sun_Large")
         }
-        profileName.text = "name"
         opponentName.text = opponent?.fname
         opponentBlurb.text = opponent?.blurb
         
