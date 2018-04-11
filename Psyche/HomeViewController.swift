@@ -263,7 +263,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func openFB(_ sender: Any) {
-        print("openFB1")
         menuHelper.openFB(vc: self)
     }
     
@@ -271,4 +270,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         menuHelper.openInsta(vc: self)
     }
     
+    @IBAction func openNASA(_ sender: Any) {
+        menuHelper.openNASA(vc: self)
+    }
 }

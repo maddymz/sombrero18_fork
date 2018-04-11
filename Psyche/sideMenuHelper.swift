@@ -52,7 +52,7 @@ class menuHelper{
         showWarningAlert(vc: vc, appURLStr: "twitter://user?screen_name=\(screenName)", webURLStr: "https://twitter.com/\(screenName)")
     }
     
-    static func openFB(vc : UIViewController){
+    static func openFB(vc: UIViewController){
         let Username =  "nasapsyche"
         
         showWarningAlert(vc: vc, appURLStr: "fb://profile/\(Username)", webURLStr: "https://facebook.com/\(Username)")
@@ -62,6 +62,10 @@ class menuHelper{
         let Username =  "nasapsyche" // Your Instagram Username here
         
         showWarningAlert(vc: vc, appURLStr: "instagram://user?username=\(Username)", webURLStr: "https://instagram.com/\(Username)")
+    }
+    
+    static func openNASA(vc: UIViewController) {
+        showWarningAlert(vc: vc, appURLStr: "", webURLStr: "https://www.nasa.gov/")
     }
     
     // Try opening the app, if the app is not installed then open the website in Safari

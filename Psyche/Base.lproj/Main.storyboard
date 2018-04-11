@@ -123,10 +123,14 @@
                                                             </imageView>
                                                         </subviews>
                                                     </view>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NASA-insignia30x30-1" translatesAutoresizingMaskIntoConstraints="NO" id="UdL-bh-9tc">
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCr-JS-BYE" userLabel="NASA_Logo">
                                                         <rect key="frame" x="324" y="22" width="45" height="45"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    </imageView>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="NASA-insignia30x30-1"/>
+                                                        <connections>
+                                                            <action selector="openNASA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="APf-mx-6QY"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -323,6 +327,9 @@ Test 3</string>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_youtube"/>
+                            <connections>
+                                <action selector="openYoutube:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hiu-OA-dWC"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONNECT WITH US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCA-fy-BQd">
                             <rect key="frame" x="20" y="578" width="189" height="27"/>
@@ -345,6 +352,9 @@ Test 3</string>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_facebook"/>
+                            <connections>
+                                <action selector="openFB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iOp-y5-Sss"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWB-FS-3Tz">
                             <rect key="frame" x="224" y="23" width="30" height="30"/>
@@ -578,10 +588,6 @@ Test 3</string>
                                     <action selector="menuClicked:" destination="YRO-ac-t4q" eventType="touchUpInside" id="mgO-mG-1sg"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NASA-insignia30x30-1" translatesAutoresizingMaskIntoConstraints="NO" id="mqt-IH-9dr">
-                                <rect key="frame" x="324" y="22" width="45" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2M-c6-7yv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -591,6 +597,15 @@ Test 3</string>
                                 </view>
                                 <blurEffect style="extraLight"/>
                             </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-ub-Wiu" userLabel="NASA_Logo">
+                                <rect key="frame" x="324" y="22" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="NASA-insignia30x30-1"/>
+                                <connections>
+                                    <action selector="openNASA:" destination="YRO-ac-t4q" eventType="touchUpInside" id="BE6-d7-tuj"/>
+                                    <action selector="openNASA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p1y-ai-Ge4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9VV-g4-Thm"/>
@@ -1449,10 +1464,6 @@ Test 3</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NASA-insignia30x30-1" translatesAutoresizingMaskIntoConstraints="NO" id="5th-y1-NQB">
-                                <rect key="frame" x="324" y="22" width="45" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lbB-0F-qZ1">
                                 <rect key="frame" x="0.0" y="75" width="375" height="543"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1509,6 +1520,16 @@ Test 3</string>
                                 </view>
                                 <blurEffect style="extraLight"/>
                             </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbk-oT-6yY" userLabel="NASA_Logo">
+                                <rect key="frame" x="324" y="22" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="NASA-insignia30x30-1"/>
+                                <connections>
+                                    <action selector="openNASA:" destination="YRO-ac-t4q" eventType="touchUpInside" id="NMV-US-xdS"/>
+                                    <action selector="openNASA:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="xWD-6G-kA9"/>
+                                    <action selector="openNASA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yHc-Py-aMy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5le-zf-rIz"/>
