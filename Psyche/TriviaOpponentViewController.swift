@@ -18,6 +18,7 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
     let opponentList = Opponents()
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var gradient: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

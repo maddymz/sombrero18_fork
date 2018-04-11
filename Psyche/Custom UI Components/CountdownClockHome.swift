@@ -392,7 +392,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         
         let date = Date() // Current date
         // Remove all phases that already passed
-        for i in 0 ... phases.count {
+        for i in 0 ... phases.count-1 {
             if phases[i].2 < date {
                 phases.remove(at: i)
             }

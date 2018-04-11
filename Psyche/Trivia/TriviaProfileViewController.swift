@@ -51,7 +51,10 @@ class TriviaProfileViewController: UIViewController {
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var readyBtn: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var backgroundGradient: UIImageView!
+    
     
     var avatars = [AvatarButton]()
     var profileSelected = -1 // Id of the AvatarButton selected, -1 represents no avatar has been selected
@@ -59,7 +62,7 @@ class TriviaProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setGradientBackground()
+        //setGradientBackground()
         setStyle()
         createAvatarButtons()
     }
@@ -167,4 +170,5 @@ class TriviaProfileViewController: UIViewController {
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){
         
     }
+    
 }
