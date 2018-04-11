@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-// custom class used for the dates on the drop down blur
+// Custom class used for the dates on the drop down blur
 class DateView : UIView {
     var id = 0
     var yearLabel: UILabel?
@@ -25,27 +25,26 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     var timerLabel = UILabel()
     var timerMLabel = UILabel()
     var secondsMLabel = UILabel()
-    var psycheLogo = UIImageView()
+    var phaseImg = UIImageView()
     
-    //var dates = [Date]() // array of dates for countdown clock
-    var phases: [(label: String, phase: String, date: Date)] = []
-    var dateLabels = [String]() // array of names for dates
-    var currentDateIndex = 0 // index of date being displayed
+    var phases: [(label: String, phase: String, date: Date)] = [] // Array of tuples
+    var dateLabels = [String]() // Array of names for dates
+    var currentDateIndex = 0 // Index of date being displayed
     var dateViews = [DateView]()
     
-    weak var countdownTimer: Timer? // timer that ticks every second and updates the label
+    weak var countdownTimer: Timer? // Timer that ticks every second and updates the label
     
-    // variables for the drop down blur
+    // Variables for the drop down blur
     let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
     let blurEffectView = UIVisualEffectView()
     var timeBlurYPos = 0 // Y position of blur drop down
     var timeBlurHeight = 0
     var timeBlurWidth = 0
-    let dropdownView = UIView() // this view rests on top of the blurEffectView
     
+    let dropdownView = UIView() // This view rests on top of the blurEffectView
     var dropdownShowing = 0 // 0 means dropdown not showing, 1 means dropdown is showing
     
-    // alignment constants for drop down
+    // Alignment constants for drop down
     // X positions
     let dateLabelX = 16
     let yearLabelX = 101
@@ -61,18 +60,17 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     let dateLabelYConst = -20
     let timeLabelYConst = -10
     let timeMLabelYConst = 16
-    let separation = 90 // distance between the different dates
+    let separation = 90 // Distance between the different dates
     
     init(frame: CGRect, parent: HomeViewController) {
         super.init(frame: frame)
         
         self.hvc = parent
         
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewTap))) // adds tap event handler
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewTap))) // Adds tap event handler
         
-        // initialize imageview and labels
-        psycheLogo.image = UIImage(named: "Psyche_Icon_30px30px")
-        psycheLogo.frame = CGRect(x: 15, y: 10, width: 40, height: 40)
+        // Initialize imageview and labels
+        phaseImg.frame = CGRect(x: 15, y: 10, width: 40, height: 40)
         
         daysLabel.frame = CGRect(x: 101, y: 9, width: 100, height: 33)
         
@@ -99,14 +97,14 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         timerMLabel.textColor = UIColor.white
         secondsMLabel.textColor = UIColor.white
         
-        self.addSubview(psycheLogo)
+        self.addSubview(phaseImg)
         self.addSubview(daysLabel)
         self.addSubview(daysMLabel)
         self.addSubview(timerLabel)
         self.addSubview(timerMLabel)
         self.addSubview(secondsMLabel)
         
-        // initialize blur variables
+        // Initialize blur variables
         timeBlurYPos = Int(hvc.stackView.frame.height)
         timeBlurHeight = Int(hvc.view.bounds.height) - timeBlurYPos
         timeBlurWidth = Int(hvc.view.bounds.width)
@@ -115,10 +113,12 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         dropdownView.frame = CGRect(x: 0, y: timeBlurYPos - timeBlurHeight, width: timeBlurWidth, height: timeBlurHeight)
         
-        addDates() // add dates to dates array
+        addDates() // Add phases to phases array
+        
+        updatePhaseImg()
         
         initTimer()
-        countdownTimer?.fire() // trigger timer right away, otherwise there is a 1 second delay
+        countdownTimer?.fire() // Trigger timer right away, otherwise there is a 1 second delay
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -126,7 +126,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     }
     
     @objc func viewTap(sender: UITapGestureRecognizer) {
-        if (dropdownShowing == 0) { //dropdown is not showing, show
+        if (dropdownShowing == 0) { // Dropdown is not showing, show
             hvc.view.addSubview(blurEffectView)
             hvc.view.addSubview(dropdownView)
             
@@ -141,12 +141,13 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
             }
             
             self.dropdownShowing = 1
-        } else { // dropdown is showing, unshow
+        } else { // Dropdown is showing, unshow
             UIView.animate(withDuration: 0.3, delay: 0.0, options: [], animations: {
                 self.blurEffectView.frame = CGRect(x: 0, y: self.timeBlurYPos - self.timeBlurHeight
                     , width: self.timeBlurWidth, height: self.timeBlurHeight)
                 self.dropdownView.frame = CGRect(x: 0, y: self.timeBlurYPos - self.timeBlurHeight
                     , width: self.timeBlurWidth, height: self.timeBlurHeight)
+                self.updatePhaseImg()
             }, completion: { (finished: Bool) in
                 self.blurEffectView.removeFromSuperview()
                 self.dropdownView.removeFromSuperview()
@@ -159,7 +160,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         }
     }
     
-    // handles user tapping a different countdown date
+    // Handles user tapping a different countdown date
     @objc func dateTap(sender:UITapGestureRecognizer) {
         let viewTapped = sender.view as? DateView
         
@@ -176,17 +177,22 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         }
     }
     
-    // adds labels to blur effect view
+    func updatePhaseImg() {
+        let phase = phases[currentDateIndex].1
+        phaseImg.image = UIImage(named: "Phase_\(phase)")
+    }
+    
+    // Adds labels to blur effect view
     func addCountdownLabels() {
-        var i = 0 // counter for number of views added to the blur
-        var j = 0 // counter to loop through dates
+        var i = 0 // Counter for number of views added to the blur
+        var j = 0 // Counter to loop through dates
         
         let max = phases.count - 2
         
         dateViews.forEach { (dateView) in
             dateView.removeFromSuperview()
         }
-        dateViews = [DateView]() // clear the array
+        dateViews = [DateView]() // Clear the array
         
         let scrollView = UIScrollView()
         scrollView.delegate = self
@@ -290,10 +296,9 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
                     dateView.hourLabel = timeLabel
                 }
                 
-                dateLabel.text = phase.0 //dateLabels[i]
+                dateLabel.text = phase.0
                 dateLabel.textColor = UIColor.black
                 dateLabel.font = dateLabel.font.withSize(10)
-                //dateLabel.font = UIFont(name: "Roboto Mono", size: 10)
                 dateView.addSubview(dateLabel)
                 
                 if (i < max) {
@@ -304,9 +309,8 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
                 }
                 
                 dateView.isUserInteractionEnabled = true
-                dateView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dateTap))) // adds tap event handler for timeBar
+                dateView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dateTap))) // Adds tap event handler for timeBar
                 
-                //dropdownView.addSubview(dateView)
                 scrollView.addSubview(dateView)
                 dateView.id = j
                 dateViews.append(dateView)
@@ -315,14 +319,11 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
             }
             j += 1
         }
-        
-        
-        //dropdownView.addSubview(scrollView)
     }
     
-    // formats a date to a string
+    // Formats a date to a string
     func dateToString(date: Date) -> (String, String, String) {
-        var tempDiff = Int(date.timeIntervalSince(Date.init())) // number of seconds until date
+        var tempDiff = Int(date.timeIntervalSince(Date.init())) // Number of seconds until date
         
         let years = tempDiff / 31536000 // 31536000 = 60 * 60 * 24 * 365
         tempDiff -= years * 31536000
@@ -343,14 +344,14 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         }
     }
     
-    // adds countdown dates to dates array
+    // Adds countdown dates to phases array
     func addDates() {
         
         /*
-         DESIGN & BUILD - phase c May 2019
+         BUILD - phase C May 2019
          ASSEMBLY - phase D Jan 2021
          LAUNCH - phase D Aug 2022
-         GRAVITY ASSIST - phase E May 2023
+         MARS ASSIST - phase E May 2023
          ARRIVAL - phase E Jan 2026
          ORBITING - phase E Jan 2026
          CLOSEOUT - phase F Nov 2027
@@ -363,77 +364,47 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         dateComponents.timeZone = TimeZone(abbreviation: "CST")
         dateComponents.hour = 0
         dateComponents.minute = 0
-        //dates.append(Calendar.current.date(from: dateComponents)!)
-        //dateLabels.append("BUILD")
         phases.append(("BUILD", "C", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2021
         dateComponents.month = 1
-        dateComponents.day = 1
-        dateComponents.timeZone = TimeZone(abbreviation: "CST")
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-        //dates.append(Calendar.current.date(from: dateComponents)!)
-        //dateLabels.append("BUILD")
         phases.append(("ASSEMBLY", "D", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2022
         dateComponents.month = 8
-        dateComponents.day = 1
-        dateComponents.timeZone = TimeZone(abbreviation: "CST")
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-        //dates.append(Calendar.current.date(from: dateComponents)!)
-        //dateLabels.append("BUILD")
         phases.append(("LAUNCH", "D", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2023
         dateComponents.month = 5
-        dateComponents.day = 1
-        dateComponents.timeZone = TimeZone(abbreviation: "CST")
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-        //dates.append(Calendar.current.date(from: dateComponents)!)
-        //dateLabels.append("BUILD")
         phases.append(("MARS ASSIST", "E", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2026
         dateComponents.month = 1
-        dateComponents.day = 1
-        dateComponents.timeZone = TimeZone(abbreviation: "CST")
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-        //dates.append(Calendar.current.date(from: dateComponents)!)
-        //dateLabels.append("BUILD")
         phases.append(("ARRIVAL", "E", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2026
         dateComponents.month = 1
-        dateComponents.day = 1
-        dateComponents.timeZone = TimeZone(abbreviation: "CST")
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-        //dates.append(Calendar.current.date(from: dateComponents)!)
-        //dateLabels.append("BUILD")
         phases.append(("ORBITING", "E", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2027
         dateComponents.month = 11
-        dateComponents.day = 1
-        dateComponents.timeZone = TimeZone(abbreviation: "CST")
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-        //dates.append(Calendar.current.date(from: dateComponents)!)
-        //dateLabels.append("BUILD")
         phases.append(("CLOSEOUT", "F", Calendar.current.date(from: dateComponents)!))
+        
+        let date = Date() // Current date
+        // Remove all phases that already passed
+        for i in 0 ... phases.count {
+            if phases[i].2 < date {
+                phases.remove(at: i)
+            }
+        }
     }
     
-    // countdown clock
+    // Initialize countdown clock
     func initTimer() {
         countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimerLabel)
     }
     
-    // updates all the timer labels
+    // Updates all the timer labels
     func updateTimerLabel(t: Timer) {
         var diff = Int(phases[currentDateIndex].2.timeIntervalSince(Date.init()))
         
@@ -448,7 +419,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         daysLabel.text = "\(days)"
         timerLabel.text = String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
         
-        if (dropdownShowing == 1) { // if dropdown is showing, then loop through all the dates and update the labels
+        if (dropdownShowing == 1) { // If dropdown is showing, then loop through all the dates and update the labels
             dateViews.forEach { (dateView) in
                 diff = Int(phases[dateView.id].2.timeIntervalSince(Date.init()))
                 let years = diff / 31536000 // 31536000 = 60 * 60 * 24 * 365
