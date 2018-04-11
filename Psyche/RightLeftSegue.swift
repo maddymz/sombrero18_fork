@@ -51,58 +51,60 @@ class UnwindRightLeftSegue : UIStoryboardSegue{
 
 class ProfileOpponentSegue : UIStoryboardSegue{
     
-    var gradient : UIImageView = UIImageView(image: #imageLiteral(resourceName: "Loading_6"))
-    
     override func perform()
     {
         let src = self.source as! TriviaProfileViewController
         let dst = self.destination as! TriviaOpponentViewController
         
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
-
-        UIView.animate(withDuration: 1, animations: {
-            src.view.alpha = 0
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            src.mainView.alpha = 0
+            src.backButton.alpha = 0
         }, completion: { finished in
-            UIView.animate(withDuration: 2, animations: {
-                dst.gradient.frame = CGRect(x:0, y:0, width: dst.view.frame.width, height: 130)
+            UIView.animate(withDuration: 0.5, animations: {
+                src.view.alpha = 0
             }, completion: { finished in
-                src.present(dst, animated: false, completion: nil)
+                UIView.animate(withDuration: 1, animations: {
+                    dst.gradient.frame = CGRect(x:0, y:0, width: dst.view.frame.width, height: 130)
+                }, completion: { finished in
+                    src.present(dst, animated: false, completion: nil)
+                })
             })
         })
+    }
+}
+
+class UnwindProfileOpponentSegue: UIStoryboardSegue{
+    override func perform(){
+        let dst = self.destination as! TriviaProfileViewController
+        let src = self.source as! TriviaOpponentViewController
         
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        dst.view.alpha = 1
+
+        UIView.animate(withDuration: 0.5, animations: {
+            src.gradient.frame = CGRect(x:0, y:0, width: src.view.frame.width, height: src.view.frame.height)
+        }, completion: { finished in
+            UIView.animate(withDuration: 0.5, animations: {
+                src.view.alpha = 0
+            }, completion: { finished in
+                UIView.animate(withDuration: 0.5, animations: {
+                    dst.backButton.alpha = 1
+                    dst.mainView.alpha = 1
+                }, completion: { finished in
+                    src.dismiss(animated: false, completion: nil)
+                })
+            })
+        })
+
         
-//        UIView.animate(withDuration: 1, animations: {
-//            src.
-//        }, completion: { finished in
-//            UIView.animate(withDuration: 1, animations: {
-//                src.view.alpha = 0
-//            }, completion: { finished in
-//                
-//            })
-//        })
-//        
-        
-//        UIView.animate(withDuration: 0.5, animations:{
-//            src.mainView.alpha = 0
-//            src.backButton.alpha = 0
-//        }, completion: { finished in
-//            src.view.superview?.insertSubview(dst.profile, aboveSubview: src.view)
-//            dst.profile.alpha = 0;
-//            UIView.animate(withDuration: 1, animations:{
-//                dst.profile.alpha = 1
-//                src.view.frame = CGRect(x:0, y:0, width: src.view.frame.width, height:125)
-//            }, completion: { finished in
-//
-//                UIView.animate(withDuration: 0.5, animations: {
-//                    src.view.alpha = 0;
-//                }, completion: { finished in
-//                    dst.view.superview?.insertSubview(dst.profile)
-//                    src.present(dst, animated: false, completion: nil)
-//                    })
-//
-//            })
-//        })
+        /*
+ UIView.animate(withDuration: 0.5, animations: {
+ }, completion: { finished in
  
+ }) */
         
+
     }
 }

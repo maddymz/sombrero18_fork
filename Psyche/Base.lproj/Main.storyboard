@@ -964,7 +964,7 @@ Test 3</string>
                                 </state>
                                 <connections>
                                     <action selector="backBtnPressed:" destination="pi3-bh-trm" eventType="touchUpInside" id="cXf-8e-91o"/>
-                                    <segue destination="kPG-eb-Sfa" kind="unwind" customClass="UnwindRightLeftSegue" customModule="Psyche" customModuleProvider="target" unwindAction="prepareForUnwindWithSegue:" id="eyw-iX-1HE"/>
+                                    <segue destination="kPG-eb-Sfa" kind="unwind" customClass="UnwindProfileOpponentSegue" customModule="Psyche" customModuleProvider="target" unwindAction="prepareForUnwindWithSegue:" id="eyw-iX-1HE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1985,7 +1985,7 @@ Test 3</string>
                         <outlet property="usernameField" destination="4aA-gt-jaE" id="FMa-Sc-fn4"/>
                         <outlet property="usernameLengthLabel" destination="QdD-6H-gAe" id="hnD-4M-4rx"/>
                         <segue destination="aDh-Yd-Mga" kind="show" identifier="toExit" id="99g-zA-NbL"/>
-                        <segue destination="4fl-zg-UXU" kind="show" identifier="toTriviaOpponent" id="MwH-6p-iZZ"/>
+                        <segue destination="4fl-zg-UXU" kind="custom" identifier="toTriviaOpponent" customClass="ProfileOpponentSegue" customModule="Psyche" customModuleProvider="target" id="MwH-6p-iZZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="es7-PM-bRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
