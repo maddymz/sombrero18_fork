@@ -1362,6 +1362,10 @@ Test 3</string>
                                     <action selector="backBtnPressed:" destination="pi3-bh-trm" eventType="touchUpInside" id="HQP-HQ-auU"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Loading_6" translatesAutoresizingMaskIntoConstraints="NO" id="PdO-yX-3QV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="kDY-Yx-OcC"/>

@@ -97,14 +97,16 @@ class UnwindProfileOpponentSegue: UIStoryboardSegue{
                 })
             })
         })
+    }
+}
 
+class GameFinalSegue: UIStoryboardSegue{
+    override func perform()
+    {
+        let src = self.source as! TriviaProfileViewController
+        let dst = self.destination as! TriviaOpponentViewController
         
-        /*
- UIView.animate(withDuration: 0.5, animations: {
- }, completion: { finished in
- 
- }) */
-        
-
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        src.present(dst, animated: false, completion: nil)
     }
 }
