@@ -20,6 +20,7 @@ class TriviaFinalViewController: UIViewController {
     @IBOutlet weak var opponentScoreLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var vsLabel: UILabel!
     
     
     //category buttons
