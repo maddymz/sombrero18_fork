@@ -60,25 +60,32 @@ class TriviaCategoryViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let receiver = segue.destination as! TriviaGameViewController
-        receiver.opponent = opponent
         
         if (segue.identifier == "psycheSegue"){
+            let receiver = segue.destination as! TriviaGameViewController
+            receiver.opponent = opponent
             receiver.category = "psyche"
             psycheButton.setImage(#imageLiteral(resourceName: "GameCards_Psyche pressed"), for: .normal)
         }
         else if(segue.identifier == "scienceSegue"){
+            let receiver = segue.destination as! TriviaGameViewController
+            receiver.opponent = opponent
             receiver.category = "science"
             scienceButton.setImage(#imageLiteral(resourceName: "GameCards_Science pressed"), for: .normal)
         }
         else if(segue.identifier == "nasaSegue"){
+            let receiver = segue.destination as! TriviaGameViewController
+            receiver.opponent = opponent
             receiver.category = "nasa"
             nasaButton.setImage(#imageLiteral(resourceName: "GameCards_NASA pressed"), for: .normal)
         }
-        else{
+        else if (segue.identifier == "spaceSegue"){
+            let receiver = segue.destination as! TriviaGameViewController
+            receiver.opponent = opponent
             receiver.category = "space"
             spaceButton.setImage(#imageLiteral(resourceName: "GameCards_Space pressed"), for: .normal)
         }
+        
     }
 
 }

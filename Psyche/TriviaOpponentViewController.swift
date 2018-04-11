@@ -89,5 +89,9 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
         }
 
     }
+    
+    @IBAction func prepareForUnwind(segue:UIStoryboardSegue){
+        
+    }
 
 }

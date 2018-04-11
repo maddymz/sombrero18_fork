@@ -163,4 +163,8 @@ class TriviaProfileViewController: UIViewController {
         readyBtn.setTitleColor(UIColor.white, for: .normal)
         readyBtn.layer.cornerRadius = 13
     }
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){
+        
+    }
 }
