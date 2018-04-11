@@ -974,6 +974,7 @@ Test 3</string>
                     <navigationItem key="navigationItem" id="491-gV-Tjy"/>
                     <connections>
                         <outlet property="gradient" destination="8cD-h7-5Ne" id="W05-sT-2TH"/>
+                        <outlet property="nameLabel" destination="fCv-G1-ro7" id="CAE-WX-g0j"/>
                         <outlet property="profile" destination="XcK-fO-tvY" id="uKe-PV-MPP"/>
                         <outlet property="tableView" destination="NOX-7B-UWO" id="ohH-ic-bdj"/>
                     </connections>
@@ -981,7 +982,7 @@ Test 3</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqs-Gk-b6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kPG-eb-Sfa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4180" y="1743"/>
+            <point key="canvasLocation" x="4180" y="1742.8785607196403"/>
         </scene>
         <!--Trivia Category View Controller-->
         <scene sceneID="Sa4-yJ-Zap">
@@ -1129,13 +1130,6 @@ Test 3</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0H4-38-Yik">
-                                <rect key="frame" x="30" y="625" width="52" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7in-m7-fFa">
                                 <rect key="frame" x="30" y="183" width="130" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1253,7 +1247,6 @@ Test 3</string>
                         <outlet property="question" destination="mHY-Ws-j7M" id="WW5-Rn-KpK"/>
                         <outlet property="questionCard" destination="EbY-MY-s1i" id="SJM-ge-tUA"/>
                         <outlet property="questionNo" destination="S56-Tr-Upe" id="aF4-dF-ZUf"/>
-                        <outlet property="scoreLabel" destination="0H4-38-Yik" id="A5v-So-jDB"/>
                         <segue destination="cLv-jf-eoN" kind="custom" identifier="showScore" customClass="GameFinalSegue" customModule="Psyche" customModuleProvider="target" id="33B-pK-jLT"/>
                     </connections>
                 </viewController>
@@ -1324,15 +1317,32 @@ Test 3</string>
                                 <rect key="frame" x="39" y="278" width="289" height="244"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh9-a8-rxT">
-                                        <rect key="frame" x="175" y="193" width="84" height="30"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh9-a8-rxT">
+                                        <rect key="frame" x="157" y="193" width="110" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Share Score"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Share Score">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFH-Vn-r5Z">
-                                        <rect key="frame" x="45" y="193" width="66" height="30"/>
+                                        <rect key="frame" x="22" y="193" width="127" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Let's Play"/>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.62352941179999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Let's Play">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congrats, You Won!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7G-f1-PrC">
                                         <rect key="frame" x="22" y="21" width="245" height="81"/>
@@ -1383,6 +1393,7 @@ Test 3</string>
                         <outlet property="opponentScoreLabel" destination="sci-1Z-Wdh" id="AwX-Eh-PFs"/>
                         <outlet property="profile" destination="7H4-fM-YNQ" id="yah-Be-ne5"/>
                         <outlet property="profileName" destination="KhY-D5-EML" id="WOK-kC-Hxe"/>
+                        <outlet property="shareButton" destination="oh9-a8-rxT" id="Lmx-wy-bhu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywV-AA-TkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1798,6 +1809,10 @@ Test 3</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Loading_6" translatesAutoresizingMaskIntoConstraints="NO" id="lwg-mz-d4q">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rS-Xw-SCJ">
                                 <rect key="frame" x="47" y="133" width="280" height="220"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -1867,6 +1882,10 @@ Test 3</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Loading_6" translatesAutoresizingMaskIntoConstraints="NO" id="EMn-8V-zhw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z4n-D1-kyI">
                                 <rect key="frame" x="47" y="133" width="280" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -1915,7 +1934,7 @@ Test 3</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqM-f1-xEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="IKB-jR-xQA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6759" y="879"/>
+            <point key="canvasLocation" x="6757.6000000000004" y="878.41079460269873"/>
         </scene>
         <!--Trivia Profile View Controller-->
         <scene sceneID="lQh-0b-dWX">

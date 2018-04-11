@@ -18,7 +18,7 @@ class TriviaExitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setGradientBackground()
+        //setGradientBackground()
         setStyle()
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TriviaFinalViewController: UIViewController {
 
@@ -18,6 +19,8 @@ class TriviaFinalViewController: UIViewController {
     @IBOutlet weak var finalScoreLabel: UILabel!
     @IBOutlet weak var opponentScoreLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var shareButton: UIButton!
+    
     
     //category buttons
     
@@ -29,6 +32,44 @@ class TriviaFinalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TriviaInfo")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let results = try context.fetch(request)
+            
+            // This is a for loop but there should only be one object in core data
+            for result in results as! [NSManagedObject] {
+                // Get username
+                if let username = result.value(forKey: "username") as? String {
+                    print(username)
+                    profileName.text = username
+                } else {
+                    print("no username")
+                }
+                
+                // Get avatar
+                if let avatar = result.value(forKey: "avatar") as? Int {
+                    print(avatar)
+                    profile_image = avatar
+                } else {
+                    print("no avatar")
+                }
+                
+                // Get high score
+                if let highScore = result.value(forKey: "high_score") as? Int {
+                    print(highScore)
+                } else {
+                    print("no high score")
+                }
+            }
+        } catch {
+            
+        }
+        
         opponentAvatar.image = opponent?.unlockedImage
         if(profile_image == 1){
             profile.image = #imageLiteral(resourceName: "Asteroid_Large")
@@ -53,7 +94,7 @@ class TriviaFinalViewController: UIViewController {
         opponentQuote.text = "\"" + (opponent?.quote)! + "\"\n- " + (opponent?.name)!
         finalScoreLabel.text = String(finalScore)
         mainView.layer.cornerRadius = 8
-        
+        shareButton.setBackgroundImage(#imageLiteral(resourceName: "FacebookButton"), for: .normal)
         opponentScoreLabel.text = String((opponent?.highScore)!)
         
         //determine if the number of levels unlocked should be incremented here

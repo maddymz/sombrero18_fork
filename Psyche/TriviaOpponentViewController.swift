@@ -11,7 +11,7 @@ import CoreData
 
 class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //THIS NEEDS TO BE CHANGED TO BE IN CORE DATA
+
     var profile_image = 1
     @IBOutlet weak var profile: UIImageView!
     var level = 4
@@ -21,6 +21,8 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var gradient: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,7 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
                 // Get username
                 if let username = result.value(forKey: "username") as? String {
                     print(username)
+                    nameLabel.text = username
                 } else {
                     print("no username")
                 }
