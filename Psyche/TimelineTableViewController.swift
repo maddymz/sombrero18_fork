@@ -18,6 +18,8 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet var Menu: UIView!
     @IBOutlet weak var menuBlur: UIVisualEffectView!
     
+    // Countdown clock
+    let countdownClock = CountdownClockTimeline(frame: CGRect(x: 0, y: 64, width: 375, height: 61))
     
     // MARK: Demo Options
     let debugColors = false // set to true to keep colorful ui element bgs, false to change all bgs to transparent
@@ -50,6 +52,8 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         // Load the timeline items
         loadTimelineItems()
         tableView.reloadData()
+        
+        view.addSubview(countdownClock)
         
         //add the menu
         Menu.layer.zPosition = 2;
@@ -174,10 +178,15 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selectedIndex \(selectedIndex) : indexPath.row \(indexPath.row)")
         if (selectedIndex == indexPath.row) {
             selectedIndex = -1
         } else {
             selectedIndex = indexPath.row
+            
+            // Update countdown clock to match phase that was just tapped
+            let item = items[selectedIndex]
+            countdownClock.changeCountdown(phase: item.phase!, date: item.date)
         }
         self.tableView.beginUpdates()
         self.tableView.reloadRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)

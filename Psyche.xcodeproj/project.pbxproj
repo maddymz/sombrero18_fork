@@ -37,6 +37,7 @@
 		424B94DD2071933B00739FF1 /* TriviaExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B94DC2071933B00739FF1 /* TriviaExitViewController.swift */; };
 		424B94DF2071950700739FF1 /* TriviaProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B94DE2071950700739FF1 /* TriviaProfileViewController.swift */; };
 		42B9188C207C0D820038D3A9 /* CountdownClockHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B9188B207C0D820038D3A9 /* CountdownClockHome.swift */; };
+		42B9D31C207D93B90086EAC6 /* CountdownClockTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B9D31B207D93B90086EAC6 /* CountdownClockTimeline.swift */; };
 		42F8ADE92063154600809E0F /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F8ADE82063154600809E0F /* RobotoMono-Regular.ttf */; };
 		4ACB6C32F9D0DB70D77DAAB0 /* Pods_Psyche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE854616BEDDF09064D09BA5 /* Pods_Psyche.framework */; };
 		7EBBA7CE207D4917007853F5 /* data+gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBBA7CD207D4917007853F5 /* data+gallery.swift */; };
@@ -76,6 +77,7 @@
 		424B94DC2071933B00739FF1 /* TriviaExitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaExitViewController.swift; sourceTree = "<group>"; };
 		424B94DE2071950700739FF1 /* TriviaProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaProfileViewController.swift; sourceTree = "<group>"; };
 		42B9188B207C0D820038D3A9 /* CountdownClockHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownClockHome.swift; sourceTree = "<group>"; };
+		42B9D31B207D93B90086EAC6 /* CountdownClockTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownClockTimeline.swift; sourceTree = "<group>"; };
 		42F8ADE82063154600809E0F /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
 		47E261C9C69D5AF064A576FC /* Pods-Psyche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.release.xcconfig"; sourceTree = "<group>"; };
 		7EBBA7CD207D4917007853F5 /* data+gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "data+gallery.swift"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				42B9188B207C0D820038D3A9 /* CountdownClockHome.swift */,
+				42B9D31B207D93B90086EAC6 /* CountdownClockTimeline.swift */,
 			);
 			path = "Custom UI Components";
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				170B330D20756DA50080FA6E /* UnlockedTriviaOpponentTableViewCell.swift in Sources */,
 				424B94DF2071950700739FF1 /* TriviaProfileViewController.swift in Sources */,
 				170B330C20756DA50080FA6E /* LockedTriviaOpponentTableViewCell.swift in Sources */,
+				42B9D31C207D93B90086EAC6 /* CountdownClockTimeline.swift in Sources */,
 				0406D8A220357F780087D5BC /* UIViewExtensions.swift in Sources */,
 				17F1D257207B39EE00B9B6A9 /* TriviaFinalViewController.swift in Sources */,
 				170B330A20756DA50080FA6E /* TriviaOpponentViewController.swift in Sources */,
