@@ -15,6 +15,7 @@ class TriviaGameViewController: UIViewController {
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var opponentName: UILabel!
     @IBOutlet weak var questionCard: UIImageView!
+    @IBOutlet weak var gradient: UIImageView!
     
     
     
@@ -228,10 +229,6 @@ class TriviaGameViewController: UIViewController {
             receiver.category = category
 
         }
-    }
-    
-    func showCorrectAnswer(){
-
     }
 }
     

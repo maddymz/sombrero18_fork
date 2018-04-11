@@ -1,5 +1,5 @@
 //
-//  RightLeftSegue.swift
+//  CustomSegues.swift
 //  Psyche
 //
 //  Created by Julia Liu on 4/10/18.
@@ -103,10 +103,19 @@ class UnwindProfileOpponentSegue: UIStoryboardSegue{
 class GameFinalSegue: UIStoryboardSegue{
     override func perform()
     {
-        let src = self.source as! TriviaProfileViewController
-        let dst = self.destination as! TriviaOpponentViewController
+        let src = self.source as! TriviaGameViewController
+        let dst = self.destination as! TriviaFinalViewController
         
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
-        src.present(dst, animated: false, completion: nil)
+
+        UIView.animate(withDuration: 1, animations: {
+            src.gradient.frame = CGRect(x:0, y:0, width: src.view.frame.width, height: src.view.frame.height)
+        }, completion: { finished in
+            UIView.animate(withDuration: 0.5, animations: {
+                src.view.alpha = 0
+            }, completion: { finished in
+                src.present(dst, animated: false, completion: nil)
+            })
+        })
     }
 }
