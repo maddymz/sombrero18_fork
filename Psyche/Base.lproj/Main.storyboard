@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qqq-cO-b09">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qqq-cO-b09">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Courier.ttc">
+            <string>Courier</string>
+        </array>
+        <array key="Helvetica.ttc">
+            <string>Helvetica</string>
+        </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+        </array>
+        <array key="Optima.ttc">
+            <string>Optima-Regular</string>
+        </array>
         <array key="RobotoMono-Regular.ttf">
             <string>RobotoMono-Regular</string>
         </array>
@@ -1245,6 +1258,13 @@ Test 3</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogx-tJ-X8F">
+                                <rect key="frame" x="167" y="49" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5z5-pJ-2Jj"/>
@@ -1265,6 +1285,7 @@ Test 3</string>
                         <outlet property="questionCard" destination="EbY-MY-s1i" id="SJM-ge-tUA"/>
                         <outlet property="questionCardsBack" destination="AZT-gE-SaQ" id="Rre-0l-ub0"/>
                         <outlet property="questionNo" destination="S56-Tr-Upe" id="aF4-dF-ZUf"/>
+                        <outlet property="timerLabel" destination="Ogx-tJ-X8F" id="2RG-Dc-6Yd"/>
                         <segue destination="cLv-jf-eoN" kind="custom" identifier="showScore" customClass="GameFinalSegue" customModule="Psyche" customModuleProvider="target" id="33B-pK-jLT"/>
                     </connections>
                 </viewController>
@@ -2101,10 +2122,11 @@ Test 3</string>
         <image name="new-timeline-second" width="100" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="33B-pK-jLT"/>
         <segue reference="qW7-CE-FaO"/>
-        <segue reference="99g-zA-NbL"/>
-        <segue reference="azk-ax-l3W"/>
+        <segue reference="5fb-a0-hGe"/>
+        <segue reference="hRq-xg-zMh"/>
         <segue reference="pzT-gL-PoK"/>
-        <segue reference="MwH-6p-iZZ"/>
+        <segue reference="flH-1B-IPE"/>
     </inferredMetricsTieBreakers>
 </document>
