@@ -1258,6 +1258,13 @@ Test 3</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogx-tJ-X8F">
+                                <rect key="frame" x="167" y="49" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5z5-pJ-2Jj"/>
@@ -1278,6 +1285,7 @@ Test 3</string>
                         <outlet property="questionCard" destination="EbY-MY-s1i" id="SJM-ge-tUA"/>
                         <outlet property="questionCardsBack" destination="AZT-gE-SaQ" id="Rre-0l-ub0"/>
                         <outlet property="questionNo" destination="S56-Tr-Upe" id="aF4-dF-ZUf"/>
+                        <outlet property="timerLabel" destination="Ogx-tJ-X8F" id="2RG-Dc-6Yd"/>
                         <segue destination="cLv-jf-eoN" kind="custom" identifier="showScore" customClass="GameFinalSegue" customModule="Psyche" customModuleProvider="target" id="33B-pK-jLT"/>
                     </connections>
                 </viewController>
@@ -2136,6 +2144,6 @@ Test 3</string>
         <segue reference="99g-zA-NbL"/>
         <segue reference="azk-ax-l3W"/>
         <segue reference="pzT-gL-PoK"/>
-        <segue reference="MwH-6p-iZZ"/>
+        <segue reference="flH-1B-IPE"/>
     </inferredMetricsTieBreakers>
 </document>

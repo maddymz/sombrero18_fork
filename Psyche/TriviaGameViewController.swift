@@ -42,9 +42,206 @@ class TriviaGameViewController: UIViewController {
     var score = 0
     var multiplier = 1
     
+// countdown clock
+    
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    var time = 10
+    var timer = Timer()
+    let shapeLayer = CAShapeLayer()
+    let shapeLayer2 = CAShapeLayer()
+    
+    //@objc private func handleTap() {
+    //    runAnimate()
+    //}
+    
+    @objc func startAction() {
+        if (time > 0) {
+            time -= 1
+            timerLabel.text = "\(time)"
+        } else {
+            runAnimatePause()
+            UIView.animate(withDuration: 0.4, animations: {
+                //hide all elements for card flip
+                self.questionNo.alpha = 0
+                self.question.alpha = 0
+                self.answer1.alpha = 0
+                self.answer2.alpha = 0
+                self.answer3.alpha = 0
+                self.answer4.alpha = 0
+            }) { (success) in
+                //card flip
+                UIView.animate(withDuration: 0.5, animations: {
+                    UIView.transition(with: self.questionCard, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+                }) { (success) in
+                    //sleep for 0.5 seconds
+                    usleep(500000)
+                    //change the question labels
+                    self.questionNo.text = "Incorrect"
+                    
+                    //highlight correct answer
+                    if(String(self.answer1.tag) == self.correctAnswer ){
+                        self.answer1.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                        self.answer1.setTitleColor(.white, for: .normal)
+                        self.answer1.layer.borderWidth = 0
+                    }
+                    else if(String(self.answer2.tag) == self.correctAnswer){
+                        self.answer2.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                        self.answer2.setTitleColor(.white, for: .normal)
+                        self.answer2.layer.borderWidth = 0
+                    }
+                    else if(String(self.answer3.tag) == self.correctAnswer){
+                        self.answer3.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                        self.answer3.setTitleColor(.white, for: .normal)
+                        self.answer3.layer.borderWidth = 0
+                    }
+                    else if(String(self.answer4.tag) == self.correctAnswer){
+                        self.answer4.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                        self.answer4.setTitleColor(.white, for: .normal)
+                        self.answer4.layer.borderWidth = 0
+                    }
+                    
+                    //disable buttons
+                    self.answer1.isUserInteractionEnabled = false
+                    self.answer2.isUserInteractionEnabled = false
+                    self.answer3.isUserInteractionEnabled = false
+                    self.answer4.isUserInteractionEnabled = false
+                    
+                    //make question and buttons visible again
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.questionNo.alpha = 1
+                        self.question.alpha = 1
+                        self.answer1.alpha = 1
+                        self.answer2.alpha = 1
+                        self.answer3.alpha = 1
+                        self.answer4.alpha = 1
+                    }) { (success) in
+                        
+                        sleep(2)
+                        if(self.currentQuestion != self.questions.count){
+                            self.newQuestion()
+                            self.runAnimate()
+                        }
+                        else{
+                            self.performSegue(withIdentifier: "showScore", sender: self)
+                        }
+                    }
+                }
+            }
+        
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        runAnimate()
+    }
+    
+    @objc private func runAnimate() {
+        shapeLayer2.strokeColor = UIColor.clear.cgColor
+        timer.invalidate()
+        
+        time = 10
+        timerLabel.text = "10"
+        
+        timer = Timer.scheduledTimer(timeInterval: 0.999, target: self, selector: #selector(TriviaGameViewController.startAction), userInfo: nil, repeats: true)
+        
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        basicAnimation.toValue = 0
+        basicAnimation.duration = 10
+        //basicAnimation.fillMode = kCAFillModeForwards
+        //basicAnimation.isRemovedOnCompletion = false
+        
+        shapeLayer.add(basicAnimation, forKey: "basic")
+        //UIView.animate(withDuration: 10, animations: )
+        
+        
+    }
+    
+    @objc private func runAnimatePause() {
+        var eEndAngle = -1.5706795
+        if (time == 9) {
+            eEndAngle = -0.9423609692828735
+        } else if (time == 8) {
+            eEndAngle = -0.3140424385664735
+        } else if (time == 7) {
+            eEndAngle = 0.3142760921499265
+        } else if (time == 6) {
+            eEndAngle = 0.9425946228663266
+        } else if (time == 5) {
+            eEndAngle = 1.570913153582727
+        } else if (time == 4) {
+            eEndAngle = 2.199231684297381
+        } else if (time == 3) {
+            eEndAngle = 2.827550215013781
+        } else if (time == 2) {
+            eEndAngle = 3.455868745730181
+        } else if (time == 1) {
+            eEndAngle = 4.084187276446581
+        } else if (time < 1) {
+            eEndAngle = 4.712505807162981
+        }
+        /*
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        basicAnimation.toValue = 0
+        basicAnimation.duration = 0
+        //basicAnimation.fillMode = kCAFillModeForwards
+        //basicAnimation.isRemovedOnCompletion = false
+        
+        shapeLayer.add(basicAnimation, forKey: "basic")
+        //UIView.animate(withDuration: 10, animations: )
+        */
+        
+        let center = CGPoint(x: 187, y: 60)
+        let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: CGFloat(eEndAngle), clockwise: false)
+        
+        // create circle layer
+        shapeLayer2.path = circularPath.cgPath
+        shapeLayer2.strokeColor = UIColor.white.cgColor
+        shapeLayer2.lineWidth = 7
+        shapeLayer2.fillColor = UIColor.clear.cgColor
+        shapeLayer2.lineCap = kCALineCapRound
+        shapeLayer2.strokeEnd = 1
+        
+        view.layer.addSublayer(shapeLayer2)
+        
+        timer.invalidate()
+
+    }
+    
+// countdown clock
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // countdown clock
+        let center = CGPoint(x: 187, y: 60)
+        
+        // create track layer
+        let trackLayer = CAShapeLayer()
+        let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: -1.5706795, clockwise: false)
+        
+        trackLayer.path = circularPath.cgPath
+        trackLayer.strokeColor = UIColor(red: 230/255.5, green: 230/255.5, blue: 230/255.5, alpha: 0.3).cgColor
+        trackLayer.lineWidth = 3
+        trackLayer.fillColor = UIColor.clear.cgColor
+        trackLayer.lineCap = kCALineCapRound
+        
+        view.layer.addSublayer(trackLayer)
+        
+        // create circle layer
+        shapeLayer.path = circularPath.cgPath
+        shapeLayer.strokeColor = UIColor.white.cgColor
+        shapeLayer.lineWidth = 7
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.lineCap = kCALineCapRound
+        shapeLayer.strokeEnd = 1
+        
+        view.layer.addSublayer(shapeLayer)
+        
+        // start animation
+        //view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        
+//countdown clock
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -121,6 +318,8 @@ class TriviaGameViewController: UIViewController {
     }
     
     func newQuestion(){
+        //if (currentQuestion < 11) {
+
         //set up question visuals
         answer1.layer.borderWidth = 1
         answer2.layer.borderWidth = 1
@@ -151,7 +350,7 @@ class TriviaGameViewController: UIViewController {
         
         //change question text
         questionNo.text = "Question: " + String(currentQuestion+1)
-        question.text = questions[currentQuestion][0]
+            question.text = questions[currentQuestion][0]
         
         //correct answer
         self.correctAnswer = questions[currentQuestion][questions[currentQuestion].count - 1]
@@ -199,9 +398,12 @@ class TriviaGameViewController: UIViewController {
         
         //sets up for next Question
         currentQuestion += 1
+        runAnimate()
+        //}
     }
     
     @IBAction func action(_ sender: AnyObject){
+        runAnimatePause()
         
         var chosenButton = sender as! UIButton
         
@@ -223,9 +425,9 @@ class TriviaGameViewController: UIViewController {
                 usleep(500000)
                 //change the question labels
                 if(String(sender.tag) == self.correctAnswer ){
-                    self.questionNo.text = "Correct! +" + String(5 * self.multiplier)
+                    self.questionNo.text = "Correct! +" + String(Int(self.timerLabel.text!)! * self.multiplier)
                     //change 5 to the amount of time left of timer ALSO CHECK LINE 212
-                    self.score += 5 * self.multiplier
+                    self.score += Int(self.timerLabel.text!)! * self.multiplier
                     self.playerScoreLabel.text = String(self.score)
                 }
                 else{
