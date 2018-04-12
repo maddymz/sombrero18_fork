@@ -20,6 +20,16 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
+  - FBSDKCoreKit (4.30.0):
+    - Bolts (~> 1.7)
+  - FBSDKShareKit (4.30.0):
+    - FBSDKCoreKit (~> 4.30.0)
   - FLKAutoLayout (0.2.1)
   - FMMosaicLayout (0.1.4)
   - ORStackView (3.0.1):
@@ -28,17 +38,21 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
+  - FBSDKShareKit
   - FMMosaicLayout
   - ORStackView (~> 3.0)
   - SwiftyJSON (~> 3.1.1)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  FBSDKCoreKit: 7c4bba2877781a131ab5d54c0a78c405d4307b62
+  FBSDKShareKit: a9427574b51bde4f437262c3f118c4ccfddeef6c
   FLKAutoLayout: 9db6b30c2008d230da608e62c607b11c23b942e6
   FMMosaicLayout: c0febf6876c987c425d7e2176d034fa7a2c98cb5
   ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 2014b1a56998863f32d3983f70a679bc8eb8674d
+PODFILE CHECKSUM: edba8dea6b67a442b3a906895ec5d58ef106df54
 
 COCOAPODS: 1.4.0
