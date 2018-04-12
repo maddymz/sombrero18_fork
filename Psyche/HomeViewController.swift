@@ -167,6 +167,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
          //tap recognizer to close menu
         let tapOut = UITapGestureRecognizer(target: self, action: #selector(closeMenu))
         self.menuBlur.addGestureRecognizer(tapOut)
+        
     }
     
     

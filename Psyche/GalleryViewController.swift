@@ -28,8 +28,10 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     @IBOutlet weak var captionText: UITextView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var video: UIButton!
+    @IBOutlet weak var fadeBack: UIVisualEffectView!
     var playerLayer : AVPlayerLayer?
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +57,16 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        if (playing)
+        {
+            if let test = playerLayer{
+                test.player!.pause()
+            }
+        }
+        self.hideSecondView(self)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -63,17 +75,19 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     //clicked thumbnail reveal secondView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if(indexPath.row == 0){
-            imageViewer.loadGif(name: "output")
+        if(isVideo[indexPath.row]!){
+            //imageViewer.loadGif(name: imageArray[(indexPath.row)])
             dateLabel.text = dates[indexPath.row + 4]
             captionText.text = captions[indexPath.row + 4]
-            imageViewer.layer.cornerRadius = 8
-            imageViewer.clipsToBounds = true
+            //imageViewer.layer.cornerRadius = 8
+            //imageViewer.clipsToBounds = true
             selected = indexPath.row
-            video.isHidden = false
+            //video.isHidden = false
+            playVideo(self)
         }
         else{
             video.isHidden = true
+            imageViewer.isHidden = false
             imageViewer.image = UIImage(named: imageArray[(indexPath.row%imageArray.count)])
             dateLabel.text = dates[indexPath.row + 4]
             captionText.text = captions[indexPath.row + 4]
@@ -97,12 +111,20 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             test.player!.pause()
             test.isHidden = true
         }
-        imageViewer.isHidden = false
+        imageViewer.alpha = 1.0
+        UIView.animate(withDuration: 1.0, animations: {
+            self.fadeBack.effect = UIBlurEffect(style: .extraLight)
+        })
+        playing = false
+        video.isHidden = true
     }
     
+    //PLAY VIDEO
     @IBAction func playVideo(_ sender: Any) {
-        video.isHidden = true;
-        guard let path = Bundle.main.path(forResource: "movie", ofType:"m4v") else {
+        video.isHidden = false;
+        imageViewer.isHidden = true;
+        
+        guard let path = Bundle.main.path(forResource: videoName[selected], ofType: videoType[selected]) else {
             debugPrint("video.m4v not found")
             return
         }
@@ -111,11 +133,37 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         playerLayer = AVPlayerLayer(player: player)
         //playerLayer.frame = self.view.bounds
         playerLayer!.frame = CGRect(x: 27, y: 48, width: 320, height: 320)
+        playerLayer!.masksToBounds = true
+        playerLayer!.cornerRadius = 20
+
+
+        
+        
         self.secondViewer.layer.addSublayer(playerLayer!)
         player.play()
-        imageViewer.isHidden = true
+        UIView.animate(withDuration: 1.0, animations: {
+            //self.imageViewer.alpha = 0.0
+            //self.fadeBack.effect = UIBlurEffect(style: .dark)
+        })
+        playing = true
     }
     
+    @IBAction func toggleState(_ sender: Any) {
+        if(playing){
+            if let test = playerLayer
+            {
+                test.player!.pause()
+                playing = false
+            }
+        }
+        else {
+            if let test = playerLayer
+            {
+                test.player!.play()
+                playing = true
+            }
+        }
+    }
     
     //TEST
     func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
@@ -131,24 +179,24 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //CHANGE CELL
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! UICollectionViewCell
-        
         cell.layer.cornerRadius = 8
-        
         var imageView = cell.viewWithTag(2) as! UIImageView
         
-        if(indexPath.row == 0)
+        if(isVideo[indexPath.row]!)
         {
-            imageView.loadGif(name: "output")
+            imageView.loadGif(name: imageArray[(indexPath.row)])
         }
-        imageView.image = UIImage(named: imageArray[(indexPath.row%imageArray.count)])
-        
+        else{
+            imageView.image = UIImage(named: imageArray[(indexPath.row)])
+        }
         return cell
     }
     
     //NUMBER OF PHOTOS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count*3
+        return imageArray.count
     }
     
     //INSETS BORDER SIZES
