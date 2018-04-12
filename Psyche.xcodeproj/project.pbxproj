@@ -42,6 +42,8 @@
 		4ACB6C32F9D0DB70D77DAAB0 /* Pods_Psyche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE854616BEDDF09064D09BA5 /* Pods_Psyche.framework */; };
 		7E3AAB78207ED3E200EFB8B0 /* movie.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 7E3AAB77207ED3E100EFB8B0 /* movie.m4v */; };
 		7EBBA7CE207D4917007853F5 /* data+gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBBA7CD207D4917007853F5 /* data+gallery.swift */; };
+		7EDEDCB5207F26B100769FF2 /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7EDEDCB3207F26B000769FF2 /* videoplayback.mp4 */; };
+		7EDEDCB6207F26B100769FF2 /* videoplayback2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7EDEDCB4207F26B100769FF2 /* videoplayback2.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		47E261C9C69D5AF064A576FC /* Pods-Psyche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.release.xcconfig"; sourceTree = "<group>"; };
 		7E3AAB77207ED3E100EFB8B0 /* movie.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = movie.m4v; sourceTree = "<group>"; };
 		7EBBA7CD207D4917007853F5 /* data+gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "data+gallery.swift"; sourceTree = "<group>"; };
+		7EDEDCB3207F26B000769FF2 /* videoplayback.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback.mp4; sourceTree = "<group>"; };
+		7EDEDCB4207F26B100769FF2 /* videoplayback2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback2.mp4; sourceTree = "<group>"; };
 		86917CA57DC723F27B804306 /* Pods-Psyche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.debug.xcconfig"; sourceTree = "<group>"; };
 		EE854616BEDDF09064D09BA5 /* Pods_Psyche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psyche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -145,6 +149,8 @@
 				170B330920756DA50080FA6E /* UnlockedTriviaOpponentTableViewCell.swift */,
 				043E1F802033CB7E00455B26 /* output.gif */,
 				7E3AAB77207ED3E100EFB8B0 /* movie.m4v */,
+				7EDEDCB4207F26B100769FF2 /* videoplayback2.mp4 */,
+				7EDEDCB3207F26B000769FF2 /* videoplayback.mp4 */,
 				42164EC9206C249600E2BCD2 /* Psyche-Bridging-Header.h */,
 				170D74FB202396BD0026E232 /* GalleryViewController.swift */,
 				17F1D24E2075DE2D00B9B6A9 /* TriviaCategoryViewController.swift */,
@@ -268,6 +274,8 @@
 				42F8ADE92063154600809E0F /* RobotoMono-Regular.ttf in Resources */,
 				7E3AAB78207ED3E200EFB8B0 /* movie.m4v in Resources */,
 				178847991FE255AD00916C4D /* Assets.xcassets in Resources */,
+				7EDEDCB6207F26B100769FF2 /* videoplayback2.mp4 in Resources */,
+				7EDEDCB5207F26B100769FF2 /* videoplayback.mp4 in Resources */,
 				178847971FE255AD00916C4D /* Main.storyboard in Resources */,
 				043E1F812033CB7F00455B26 /* output.gif in Resources */,
 			);

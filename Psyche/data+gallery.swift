@@ -64,5 +64,20 @@ public var dates : [Int:String] = [
 //      print("That airport is not in the airports dictionary.")
 //  }
 public var isVideo : [Int:Bool] = [
-    1:true
+    1:true,
+    2:true,
+    3:true,
+    4:false,
+    5:false,
+    6:false,
+    7:false,
+    8:false,
+    9:false,
+    10:false,
+    11:false,
+    12:false,
+    13:false,
+    14:false,
+    15:false,
+    16:false
 ]

@@ -148,7 +148,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //NUMBER OF PHOTOS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count*3
+        return imageArray.count
     }
     
     //INSETS BORDER SIZES
