@@ -8,39 +8,34 @@
 
 import UIKit
 import FMMosaicLayout
+import AVFoundation
 
 class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
     
-    //@IBOutlet weak var popup: UIImageView!
-    
+    //Collection View
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var imageArray = [String]()
-    var indexPathfor:IndexPath?
-    var it : UIImage?
-    var c : Int?
-    
+
     //menu items
     @IBOutlet var Menu: UIView!
     @IBOutlet weak var menuBlur: UIVisualEffectView!
     
     
     //second view outlets
-
-
     @IBOutlet var secondViewer: UIView!
     @IBOutlet weak var imageViewer: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionText: UITextView!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var video: UIButton!
+    var playerLayer : AVPlayerLayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //MosaicLayout
+        //MosaicLayout and imageArray Initialization
         let mosaicLayout : FMMosaicLayout = FMMosaicLayout()
         collectionView.collectionViewLayout = mosaicLayout
-        imageArray = ["4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19"]
         
         //Side Menu
         //Add and Hide Menu
@@ -68,28 +63,58 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     //clicked thumbnail reveal secondView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        imageViewer.image = UIImage(named: imageArray[(indexPath.row%imageArray.count)])
-        dateLabel.text = dates[indexPath.row + 4]
-        captionText.text = captions[indexPath.row + 4]
-        imageViewer.layer.cornerRadius = 8
-        imageViewer.clipsToBounds = true
+        if(indexPath.row == 0){
+            imageViewer.loadGif(name: "output")
+            dateLabel.text = dates[indexPath.row + 4]
+            captionText.text = captions[indexPath.row + 4]
+            imageViewer.layer.cornerRadius = 8
+            imageViewer.clipsToBounds = true
+            selected = indexPath.row
+            video.isHidden = false
+        }
+        else{
+            video.isHidden = true
+            imageViewer.image = UIImage(named: imageArray[(indexPath.row%imageArray.count)])
+            dateLabel.text = dates[indexPath.row + 4]
+            captionText.text = captions[indexPath.row + 4]
+            imageViewer.layer.cornerRadius = 8
+            imageViewer.clipsToBounds = true
+        }
         
+        self.secondViewer.transform = CGAffineTransform(translationX: 375, y: 0)
         UIView.animate(withDuration: 0.5, animations: {
             self.secondViewer.alpha = 1.0
-            self.secondViewer.transform = CGAffineTransform(translationX: 375, y: 0)
-
         })
 
     }
     
     //hide SecondView
     @IBAction func hideSecondView(_ sender: Any) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.secondViewer.alpha = 0.0
-            self.secondViewer.transform = CGAffineTransform(translationX: -375, y: 0)
-        })
+        self.secondViewer.alpha = 0.0
+        self.secondViewer.transform = CGAffineTransform(translationX: -375, y: 0)
+        if let test = playerLayer
+        {
+            test.player!.pause()
+            test.isHidden = true
+        }
+        imageViewer.isHidden = false
     }
     
+    @IBAction func playVideo(_ sender: Any) {
+        video.isHidden = true;
+        guard let path = Bundle.main.path(forResource: "movie", ofType:"m4v") else {
+            debugPrint("video.m4v not found")
+            return
+        }
+        let player = AVPlayer(url: URL(fileURLWithPath: path))
+        
+        playerLayer = AVPlayerLayer(player: player)
+        //playerLayer.frame = self.view.bounds
+        playerLayer!.frame = CGRect(x: 27, y: 48, width: 320, height: 320)
+        self.secondViewer.layer.addSublayer(playerLayer!)
+        player.play()
+        imageViewer.isHidden = true
+    }
     
     
     //TEST
@@ -128,7 +153,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //INSETS BORDER SIZES
     func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 25.0, left: 25.0, bottom: 5.0, right: 25.0)
+        return UIEdgeInsets(top: 0.0, left: 25.0, bottom: 5.0, right: 25.0)
     }
     
     //ITERITEM SPACING

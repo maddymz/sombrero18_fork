@@ -8,6 +8,14 @@
 
 import Foundation
 
+public var selected:Int = 0
+
+//assetNames
+public var imageArray = [
+"4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19"]
+
+
+
 //captions Dicitionary
 public var captions : [Int:String]  = [
     4 : "This cross stitch is based off the current artist rendering of the Psyche asteroid. Abigail Weibel chose to exaggerate the image by using a lot of color to help it pop off the black background (and because there are only so many choices of grey thread!).",
@@ -45,4 +53,16 @@ public var dates : [Int:String] = [
     17 : "",
     18 : "04/02/2018",
     19 : "03/21/2018"
+]
+
+//when accessing Dictionaries, if the key doesnt exsist, then returns nil
+//for example
+//
+//  if let airportName = airports["DUB"] {
+//  print("The name of the airport is \(airportName).")
+//  } else {
+//      print("That airport is not in the airports dictionary.")
+//  }
+public var isVideo : [Int:Bool] = [
+    1:true
 ]
