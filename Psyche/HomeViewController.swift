@@ -254,6 +254,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         menuHelper.mission()
     }
     
+    @IBAction func openNews(_ sender: Any) {
+        menuHelper.news()
+    }
+    
     @IBAction func openYoutube(_ sender: Any) {
         menuHelper.openYoutube(vc: self)
     }
@@ -273,4 +277,5 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func openNASA(_ sender: Any) {
         menuHelper.openNASA(vc: self)
     }
+    
 }

@@ -439,6 +439,10 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         menuHelper.mission()
     }
     
+    @IBAction func news(_ sender: Any) {
+        menuHelper.news()
+    }
+    
     @IBAction func openYoutube(_ sender: Any) {
         menuHelper.openYoutube(vc: self)
     }

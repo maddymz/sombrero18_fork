@@ -217,6 +217,10 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         menuHelper.mission()
     }
     
+    @IBAction func news(_ sender: Any) {
+        menuHelper.news()
+    }
+    
     @IBAction func openYoutube(_ sender: Any) {
         menuHelper.openYoutube(vc: self)
     }
