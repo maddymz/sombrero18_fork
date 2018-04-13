@@ -280,6 +280,9 @@ Test 3</string>
                             <state key="normal" title="                Get Involved">
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="getInvolved:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIZ-MP-Yww"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LN5-95-RnW">
                             <rect key="frame" x="-27" y="104" width="295" height="37"/>
@@ -696,7 +699,6 @@ Test 3</string>
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="blog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RVJ-TL-b5h"/>
                                 <action selector="blog:" destination="YRO-ac-t4q" eventType="touchUpInside" id="dAV-Iw-hC1"/>
                             </connections>
                         </button>
@@ -726,7 +728,6 @@ Test 3</string>
                             <state key="normal" image="SocialMediaIcons_youtube"/>
                             <connections>
                                 <action selector="openYoutube:" destination="YRO-ac-t4q" eventType="touchUpInside" id="4rg-wa-IiD"/>
-                                <action selector="openYoutube:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hXT-Ar-80O"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONNECT WITH US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPg-M0-6YO">
@@ -751,7 +752,6 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_facebook"/>
                             <connections>
-                                <action selector="openFB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Ss-6Q-U8E"/>
                                 <action selector="openFB:" destination="YRO-ac-t4q" eventType="touchUpInside" id="zSI-zs-4UJ"/>
                             </connections>
                         </button>
@@ -1626,7 +1626,7 @@ Test 3</string>
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="getInvolved:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zt4-Xe-9jx"/>
+                                <action selector="getInvolved:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="fXG-It-FKf"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uoj-zJ-ctJ">
@@ -1648,7 +1648,6 @@ Test 3</string>
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="blog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KJD-z5-0gK"/>
                                 <action selector="blog:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="bMu-YT-98i"/>
                             </connections>
                         </button>
@@ -1659,7 +1658,6 @@ Test 3</string>
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="getInvolved:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="19D-cR-aL9"/>
                                 <action selector="science:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="brG-sF-Qoj"/>
                             </connections>
                         </button>
@@ -1669,7 +1667,6 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_instagram"/>
                             <connections>
-                                <action selector="openInsta:" destination="YRO-ac-t4q" eventType="touchUpInside" id="9wl-QG-p7S"/>
                                 <action selector="openInsta:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="aNI-oH-VOc"/>
                             </connections>
                         </button>
@@ -1679,7 +1676,6 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_youtube"/>
                             <connections>
-                                <action selector="openYoutube:" destination="YRO-ac-t4q" eventType="touchUpInside" id="ZiB-Ax-5kJ"/>
                                 <action selector="openYoutube:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="nSd-n0-JX7"/>
                             </connections>
                         </button>
@@ -1697,7 +1693,6 @@ Test 3</string>
                             <state key="normal" image="SocialMediaIcons_twitter"/>
                             <connections>
                                 <action selector="openTwitter:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="3J8-8T-kMh"/>
-                                <action selector="openTwitter:" destination="YRO-ac-t4q" eventType="touchUpInside" id="pNo-s7-dJf"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsx-Tx-797">
@@ -1706,7 +1701,6 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_facebook"/>
                             <connections>
-                                <action selector="openFB:" destination="YRO-ac-t4q" eventType="touchUpInside" id="L3X-0b-xTY"/>
                                 <action selector="openFB:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="hrQ-9N-Rxs"/>
                             </connections>
                         </button>
@@ -1718,8 +1712,6 @@ Test 3</string>
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="closeMenu:" destination="YRO-ac-t4q" eventType="touchUpInside" id="DIT-ca-Ndu"/>
-                                <action selector="closeMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LG5-8n-Su6"/>
                                 <action selector="closeMenu:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="kI5-5b-rEb"/>
                             </connections>
                         </button>
@@ -2174,7 +2166,6 @@ Test 3</string>
         <image name="new-timeline-second" width="100" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YtS-iN-4uP"/>
         <segue reference="qW7-CE-FaO"/>
         <segue reference="99g-zA-NbL"/>
         <segue reference="azk-ax-l3W"/>
