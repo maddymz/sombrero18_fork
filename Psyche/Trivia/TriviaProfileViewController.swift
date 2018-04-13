@@ -106,7 +106,7 @@ class TriviaProfileViewController: UIViewController {
                 if let uname = usernameField.text, uname.count > 0 { // If username is not blank
                     username = uname
                 } else { // If username is blank, set default
-                    username = "Team Sombrero"
+                    username = "Player 16"
                 }
                 var avatar = 0
                 if profileSelected != -1 {

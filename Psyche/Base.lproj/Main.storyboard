@@ -569,7 +569,7 @@ Test 3</string>
                                     <outlet property="delegate" destination="YRO-ac-t4q" id="I4e-Cj-sse"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient2" translatesAutoresizingMaskIntoConstraints="NO" id="FFN-YE-liw" customClass="Timeline">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Loading_6" translatesAutoresizingMaskIntoConstraints="NO" id="FFN-YE-liw" customClass="Timeline">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -990,6 +990,7 @@ Test 3</string>
                     <connections>
                         <outlet property="gradient" destination="8cD-h7-5Ne" id="W05-sT-2TH"/>
                         <outlet property="nameLabel" destination="fCv-G1-ro7" id="CAE-WX-g0j"/>
+                        <outlet property="playerHighScore" destination="b3i-fi-zAu" id="CST-NE-IRV"/>
                         <outlet property="profile" destination="XcK-fO-tvY" id="uKe-PV-MPP"/>
                         <outlet property="tableView" destination="NOX-7B-UWO" id="ohH-ic-bdj"/>
                     </connections>
@@ -1072,8 +1073,8 @@ Test 3</string>
                                     <segue destination="R97-gR-mNA" kind="unwind" customClass="UnwindRightLeftSegue" customModule="Psyche" customModuleProvider="target" unwindAction="prepareForUnwindWithSegue:" id="PuA-Fh-jqK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Neil deGrasse Tyson is an American astrophysicist, author, and science communicator." lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRd-pM-g42">
-                                <rect key="frame" x="42" y="212" width="291" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Neil deGrasse Tyson is an American astrophysicist, author, and science communicator." lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRd-pM-g42">
+                                <rect key="frame" x="42" y="204" width="291" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="9"/>
                                 <color key="textColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1361,9 +1362,10 @@ Test 3</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="quote" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFK-ed-aGs">
-                                <rect key="frame" x="39" y="543" width="289" height="76"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFK-ed-aGs">
+                                <rect key="frame" x="47" y="543" width="280" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">We are part of this universe; we are in this universe, but perhaps more important than both of those facts, is that the universe is in us. - Neil deGrasse Tyson</string>
                                 <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="11"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1453,7 +1455,7 @@ Test 3</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient2" translatesAutoresizingMaskIntoConstraints="NO" id="efe-5g-cUL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Loading_6" translatesAutoresizingMaskIntoConstraints="NO" id="efe-5g-cUL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -2135,12 +2137,12 @@ Test 3</string>
         <image name="White-Carot-Left" width="30" height="30"/>
         <image name="WhiteX" width="121" height="120"/>
         <image name="gradient1" width="414" height="130"/>
-        <image name="gradient2" width="414" height="70"/>
         <image name="new-timeline-first" width="100" height="300"/>
         <image name="new-timeline-second" width="100" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nWd-5Z-J5P"/>
+        <segue reference="YtS-iN-4uP"/>
+        <segue reference="qW7-CE-FaO"/>
         <segue reference="99g-zA-NbL"/>
         <segue reference="azk-ax-l3W"/>
         <segue reference="pzT-gL-PoK"/>
