@@ -419,7 +419,7 @@ Test 3</string>
                                                     <rect key="frame" x="16" y="11" width="343" height="300"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new-timeline-first" translatesAutoresizingMaskIntoConstraints="NO" id="u55-7f-6dC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="300"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="320"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="Jnl-SR-neC"/>
                                                             </constraints>
@@ -469,7 +469,7 @@ Test 3</string>
                                                         <constraint firstAttribute="trailing" secondItem="dbo-WN-A7v" secondAttribute="trailing" id="YnS-K9-eyf"/>
                                                         <constraint firstItem="dbo-WN-A7v" firstAttribute="top" secondItem="txh-us-UsS" secondAttribute="bottom" constant="-5" id="bfD-aG-3PJ"/>
                                                         <constraint firstAttribute="bottom" secondItem="u55-7f-6dC" secondAttribute="bottom" id="hHa-2w-7Vb"/>
-                                                        <constraint firstAttribute="height" constant="300" id="jNg-EX-QgI"/>
+                                                        <constraint firstAttribute="height" constant="320" id="jNg-EX-QgI"/>
                                                         <constraint firstItem="txh-us-UsS" firstAttribute="top" secondItem="j9f-Ns-zdn" secondAttribute="bottom" constant="5" id="sWg-6b-9tg"/>
                                                         <constraint firstAttribute="trailing" secondItem="txh-us-UsS" secondAttribute="trailing" id="usx-4H-7ER"/>
                                                     </constraints>
@@ -565,6 +565,7 @@ Test 3</string>
                                             <outlet property="bulletsLabel" destination="hjt-or-txl" id="F6q-bK-2xW"/>
                                             <outlet property="dateLabel" destination="Ezm-fb-GdZ" id="VXV-N6-wUv"/>
                                             <outlet property="firstView" destination="Y69-Sz-eHN" id="cgp-Ut-jbp"/>
+                                            <outlet property="firstViewHeightConstraint" destination="jNg-EX-QgI" id="NH8-4A-gzX"/>
                                             <outlet property="phaseLabel" destination="txh-us-UsS" id="eZq-Nu-Cgp"/>
                                             <outlet property="photoImageView" destination="j9f-Ns-zdn" id="30o-f8-aL0"/>
                                             <outlet property="secondView" destination="zBX-iB-kMq" id="o8T-Hz-JoY"/>
@@ -2162,8 +2163,8 @@ Test 3</string>
         <image name="White-Carot-Left" width="30" height="30"/>
         <image name="WhiteX" width="121" height="120"/>
         <image name="gradient1" width="414" height="130"/>
-        <image name="new-timeline-first" width="100" height="300"/>
-        <image name="new-timeline-second" width="100" height="500"/>
+        <image name="new-timeline-first" width="50" height="300"/>
+        <image name="new-timeline-second" width="50" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qW7-CE-FaO"/>

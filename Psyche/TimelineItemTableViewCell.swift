@@ -18,6 +18,7 @@ class TimelineItemTableViewCell: UITableViewCell {
     @IBOutlet weak var secondView: UIView!
     
     @IBOutlet weak var secondViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var firstViewHeightConstraint: NSLayoutConstraint!
     
     
     @IBOutlet weak var photoImageView: UIImageView!

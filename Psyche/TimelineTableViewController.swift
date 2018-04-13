@@ -31,9 +31,10 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     // MARK: Properties
     var selectedIndex = -1
     var items = [TimelineItem]()
-    //var cellHeights = [791,243,751,1055,649,101]
-    var cellHeights = [482,276,552,664,482,178]
-    let firstViewHeight:CGFloat = CGFloat(300)
+    //var cellHeights = [482,276,552,664,482,168]
+    var cellHeights = [470,192,552,664,482,94]
+    let firstViewHeight:CGFloat = CGFloat(320)
+    let firstViewHeightMargin:CGFloat = CGFloat(0)
     let bulletsContentSpacing = 12
     let bulletToNextTitleSpacing = -24
     
@@ -130,7 +131,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         cell.bulletOneTopConstraint.constant = CGFloat(bulletsContentSpacing)
         cell.bulletTwoTopConstraint.constant = CGFloat(bulletsContentSpacing)
         cell.bulletThreeTopConstraint.constant = CGFloat(bulletsContentSpacing)
-        //cell.titleOneTopConstraint.constant = bulletsContentSpacing
+        //cell.titleOneTopConstraint.constant = CGFloat(bulletsContentSpacing)
         cell.titleTwoTopConstraint.constant = CGFloat(bulletsContentSpacing + bulletToNextTitleSpacing)
         cell.titleThreeTopConstraint.constant = CGFloat(bulletsContentSpacing + bulletToNextTitleSpacing)
         
@@ -159,7 +160,15 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         totalSecondViewHeights += CGFloat((5 * bulletsContentSpacing))
         totalSecondViewHeights += CGFloat((2 * bulletToNextTitleSpacing))
         
-        print(item.phase! + "]==[: " + String(describing: totalSecondViewHeights))
+        let sectionOneTextHeight:String = String(describing: cell.titleOneLabel.bounds.height + cell.bulletsLabel.bounds.height)
+        let sectionTwoTextHeight:String = String(describing: cell.titleTwoLabel.bounds.height + cell.bulletTwoLabel.bounds.height)
+        let sectionThreeTextHeight:String = String(describing: cell.titleThreeLabel.bounds.height + cell.bulletThreeLabel.bounds.height)
+        let sectionsHeights:String = " { " + sectionOneTextHeight + ", " + sectionTwoTextHeight + ", " + sectionThreeTextHeight + " }"
+        let sectionsSpacings:String = " { " + String(describing: CGFloat((5 * bulletsContentSpacing) + (2 * bulletToNextTitleSpacing))) + " }"
+        
+        print(item.phase! + "]==[: " + String(describing: totalSecondViewHeights) + sectionsHeights + sectionsSpacings)
+        
+        //cell.firstViewHeightConstraint.constant = CGFloat(cell.showDetails ? 324 : 300)
        
         return cell
     }
@@ -169,11 +178,12 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (selectedIndex == indexPath.row) {
             // Total expanded cell height
-            //return 540
+            // return firstViewHeight + firstViewHeightMargin + 240 // default height
+            //countdownClock.changeCountdown(phase: items[indexPath.row].phase!, date: items[indexPath.row].date)
             return firstViewHeight + CGFloat(cellHeights[indexPath.row])
         } else {
             // Collapsed cell height
-            return firstViewHeight
+            return firstViewHeight + firstViewHeightMargin
         }
     }
     
