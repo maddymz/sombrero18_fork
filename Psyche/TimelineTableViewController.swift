@@ -131,7 +131,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         cell.bulletOneTopConstraint.constant = CGFloat(bulletsContentSpacing)
         cell.bulletTwoTopConstraint.constant = CGFloat(bulletsContentSpacing)
         cell.bulletThreeTopConstraint.constant = CGFloat(bulletsContentSpacing)
-        //cell.titleOneTopConstraint.constant = CGFloat(bulletsContentSpacing)
+        cell.titleOneTopConstraint.constant = CGFloat(bulletsContentSpacing / 2)
         cell.titleTwoTopConstraint.constant = CGFloat(bulletsContentSpacing + bulletToNextTitleSpacing)
         cell.titleThreeTopConstraint.constant = CGFloat(bulletsContentSpacing + bulletToNextTitleSpacing)
         

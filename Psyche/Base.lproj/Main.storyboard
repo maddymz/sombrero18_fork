@@ -464,7 +464,7 @@ Test 3</string>
                                                         <constraint firstItem="u55-7f-6dC" firstAttribute="leading" secondItem="Y69-Sz-eHN" secondAttribute="leading" id="FtB-bb-k3f"/>
                                                         <constraint firstItem="txh-us-UsS" firstAttribute="leading" secondItem="Y69-Sz-eHN" secondAttribute="leading" constant="50" id="Sbd-A4-MkM"/>
                                                         <constraint firstItem="j9f-Ns-zdn" firstAttribute="leading" secondItem="Y69-Sz-eHN" secondAttribute="leading" constant="50" id="Ska-Cg-mYV"/>
-                                                        <constraint firstItem="j9f-Ns-zdn" firstAttribute="top" secondItem="Y69-Sz-eHN" secondAttribute="top" id="W3F-5w-5Ob"/>
+                                                        <constraint firstItem="j9f-Ns-zdn" firstAttribute="top" secondItem="Y69-Sz-eHN" secondAttribute="top" constant="20" id="W3F-5w-5Ob"/>
                                                         <constraint firstAttribute="trailing" secondItem="j9f-Ns-zdn" secondAttribute="trailing" id="XV5-1q-BkW"/>
                                                         <constraint firstAttribute="trailing" secondItem="dbo-WN-A7v" secondAttribute="trailing" id="YnS-K9-eyf"/>
                                                         <constraint firstItem="dbo-WN-A7v" firstAttribute="top" secondItem="txh-us-UsS" secondAttribute="bottom" constant="-5" id="bfD-aG-3PJ"/>
@@ -572,6 +572,7 @@ Test 3</string>
                                             <outlet property="secondViewHeightConstraint" destination="V1g-dm-eGi" id="zpj-6n-teO"/>
                                             <outlet property="titleLabel" destination="dbo-WN-A7v" id="iKL-rl-7zw"/>
                                             <outlet property="titleOneLabel" destination="uTO-Cv-rDy" id="6gd-wb-W1d"/>
+                                            <outlet property="titleOneTopConstraint" destination="xbW-1C-bOI" id="uk2-y9-0cG"/>
                                             <outlet property="titleThreeLabel" destination="Bc5-E3-B1j" id="BDY-Q7-qMT"/>
                                             <outlet property="titleThreeTopConstraint" destination="YZq-jy-UIq" id="hh1-gl-IuG"/>
                                             <outlet property="titleTwoLabel" destination="x5d-a4-gVd" id="1xX-Qs-Yc8"/>

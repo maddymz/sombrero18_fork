@@ -37,6 +37,7 @@ class TimelineItemTableViewCell: UITableViewCell {
     
     
     
+    @IBOutlet weak var titleOneTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var bulletOneTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleTwoTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var bulletTwoTopConstraint: NSLayoutConstraint!
