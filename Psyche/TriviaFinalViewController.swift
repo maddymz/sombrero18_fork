@@ -66,13 +66,19 @@ class TriviaFinalViewController: UIViewController {
                 // Get high score
                 if let highScore = result.value(forKey: "high_score") as? Int {
                     print(highScore)
+                    if(highScore < finalScore)
+                    {
+                        result.setValue(finalScore, forKey: "high_score")
+                    }
                 } else {
                     print("no high score")
                 }
             }
         } catch {
-            
         }
+        do {
+            try context.save() // Save profile info to core data
+        } catch { }
         
         opponentAvatar.image = opponent?.unlockedImage
         if(profile_image == 1){
@@ -106,10 +112,6 @@ class TriviaFinalViewController: UIViewController {
         else{
             completeMessage.text = "It's ok, You can try again!"
         }
-        
-        
-        
-        //determine if the number of levels unlocked should be incremented here
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
