@@ -73,6 +73,16 @@ class TriviaFinalViewController: UIViewController {
                 } else {
                     print("no high score")
                 }
+                
+                // Get high score
+                if let levels_unlocked = result.value(forKey: "levels_unlocked") as? Int {
+                    print(levels_unlocked)
+                    if(finalScore > (opponent?.highScore)! && levels_unlocked == opponent?.level){
+                        result.setValue(levels_unlocked + 1, forKey: "levels_unlocked")
+                    }
+                } else {
+                    print("no levels_unlocked")
+                }
             }
         } catch {
         }

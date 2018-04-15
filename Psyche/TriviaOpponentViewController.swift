@@ -62,6 +62,14 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
                 } else {
                     print("no high score")
                 }
+                
+                if let levels_unlocked = result.value(forKey: "levels_unlocked") as? Int {
+                    print(levels_unlocked)
+                    level = levels_unlocked
+                    
+                } else {
+                    print("no high score")
+                }
             }
         } catch {
             
