@@ -17,13 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        //UINavigationBar.appearance().barTintColor = UIColor(red: 245/255, green: 131/255, blue: 41/255, alpha: 1)
-        
         //ViewControllerBased status bar to NO in info.plist
         UIApplication.shared.statusBarStyle = .lightContent
-        
-        //let navBgImage = UIImage(named: "topGradient")
-        //UINavigationBar.appearance().setBackgroundImage(navBgImage, for: .default)
         
         return true
     }
@@ -99,42 +94,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-extension UINavigationBar {
-    
-    func setGradientBackground(colors: [UIColor]) {
-        
-        var updatedFrame = bounds
-        updatedFrame.size.height += self.frame.origin.y
-        let gradientLayer = CAGradientLayer(frame: updatedFrame, colors: colors)
-        
-        setBackgroundImage(gradientLayer.creatGradientImage(), for: UIBarMetrics.default)
-    }
-}
-
-extension CAGradientLayer {
-    
-    convenience init(frame: CGRect, colors: [UIColor]) {
-        self.init()
-        self.frame = frame
-        self.colors = []
-        for color in colors {
-            self.colors?.append(color.cgColor)
-        }
-        startPoint = CGPoint(x: 0, y: 0)
-        endPoint = CGPoint(x: 0, y: 1)
-    }
-    
-    func creatGradientImage() -> UIImage? {
-        
-        var image: UIImage? = nil
-        UIGraphicsBeginImageContext(bounds.size)
-        if let context = UIGraphicsGetCurrentContext() {
-            render(in: context)
-            image = UIGraphicsGetImageFromCurrentImageContext()
-        }
-        UIGraphicsEndImageContext()
-        return image
-    }
-    
-}
-
+//extension UINavigationBar {
+//
+//    func setGradientBackground(colors: [UIColor]) {
+//
+//        var updatedFrame = bounds
+//        updatedFrame.size.height += self.frame.origin.y
+//        let gradientLayer = CAGradientLayer(frame: updatedFrame, colors: colors)
+//
+//        setBackgroundImage(gradientLayer.creatGradientImage(), for: UIBarMetrics.default)
+//    }
+//}
+//
+//extension CAGradientLayer {
+//
+//    convenience init(frame: CGRect, colors: [UIColor]) {
+//        self.init()
+//        self.frame = frame
+//        self.colors = []
+//        for color in colors {
+//            self.colors?.append(color.cgColor)
+//        }
+//        startPoint = CGPoint(x: 0, y: 0)
+//        endPoint = CGPoint(x: 0, y: 1)
+//    }
+//
+//    func creatGradientImage() -> UIImage? {
+//
+//        var image: UIImage? = nil
+//        UIGraphicsBeginImageContext(bounds.size)
+//        if let context = UIGraphicsGetCurrentContext() {
+//            render(in: context)
+//            image = UIGraphicsGetImageFromCurrentImageContext()
+//        }
+//        UIGraphicsEndImageContext()
+//        return image
+//    }
+//
+//}
+//
