@@ -16,7 +16,7 @@ class LoadingViewController: UITabBarController {
     @IBOutlet var View4: UIView!
     @IBOutlet var View5: UIView!
     @IBOutlet var View6: UIView!
-    @IBOutlet var Menu: UIView!
+
     
     public var showAnimation = true
     
@@ -26,22 +26,10 @@ class LoadingViewController: UITabBarController {
         if showAnimation {
             showLoadingScreen()
         }
-        
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    func openMenu(){
-        Menu.frame.size.height = view.frame.height
-        Menu.alpha = 1
-        view.addSubview(Menu)
     }
   
     func showLoadingScreen(){
+        //Add loading subviews to the main view
         View1.frame.size.width = view.frame.width
         View1.frame.size.height = view.frame.height
         View1.alpha = 1
@@ -67,8 +55,10 @@ class LoadingViewController: UITabBarController {
         View6.alpha = 0
         view.addSubview(View6)
         
+        //time for each part of the logo to fade
         let duration = 0.5;
         
+        //animations
         UIView.animate(withDuration: duration, animations: {
             self.View2.alpha = 1
         }) { (success) in
@@ -85,15 +75,14 @@ class LoadingViewController: UITabBarController {
                             self.View6.alpha = 1
                         }) { (success) in
                             UIView.animate(withDuration: 1.5, animations: {
-                                
-                                //self.View6.addSubview(nav)
                                 self.View1.removeFromSuperview()
                                 self.View2.removeFromSuperview()
                                 self.View3.removeFromSuperview()
                                 self.View4.removeFromSuperview()
                                 self.View5.removeFromSuperview()
                                 
-                                self.View6.frame = CGRect(x:0, y:0, width: self.view.frame.width, height:125)
+                                //shrinks the view
+                                self.View6.frame = CGRect(x:0, y:0, width: self.view.frame.width, height:130)
 
                             }) { (success) in
                                 UIView.animate(withDuration: 0.5, animations: {
@@ -111,16 +100,5 @@ class LoadingViewController: UITabBarController {
             }
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     
 }
