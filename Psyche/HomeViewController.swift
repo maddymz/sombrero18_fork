@@ -73,7 +73,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         } else if sender.state == .ended {
             if blurY.constant < 265 {
                 UIView.animate(withDuration: 0.2, animations: {
-                    self.blurY.constant = 8
+                    self.blurY.constant = 17
                     self.view.layoutIfNeeded()
                     self.arrowImage.image = UIImage(named: "ArrowF")
                     self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
@@ -134,8 +134,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         // animations
         gifView.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
         timeBar.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
-        blurView.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
-        arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
+        //blurView.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
+        //arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
         
         // blur view
         blurY.constant = 390
