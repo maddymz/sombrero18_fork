@@ -10,25 +10,37 @@ import UIKit
 import CoreData
 
 class TriviaGameViewController: UIViewController {
-
-    @IBOutlet weak var opponentAvatar: UIImageView!
-    @IBOutlet weak var profile: UIImageView!
-    @IBOutlet weak var profileName: UILabel!
-    @IBOutlet weak var opponentName: UILabel!
-    @IBOutlet weak var questionCard: UIImageView!
-    @IBOutlet weak var questionCardsBack: UIImageView!
-    @IBOutlet weak var gradient: UIImageView!
     
-    @IBOutlet weak var playerScoreLabel: UILabel!
-    @IBOutlet weak var opponentScoreLabel: UILabel!
-    
-    
+    //Game set variables
     var category: String?
     var opponent: Opponent?
     var profile_image = 1
     var questions :[[String]] = []
+    var multiplier = 1
     
-    //question labels
+    //Game running variable
+    var currentQuestion = 0
+    var correctAnswer = ""
+    var score = 0
+    
+    //timer variables
+    var time = 10
+    var timer = Timer()
+    let shapeLayer = CAShapeLayer()
+    let shapeLayer2 = CAShapeLayer()
+    
+    //Top Bar Outlets
+    @IBOutlet weak var opponentAvatar: UIImageView!
+    @IBOutlet weak var profile: UIImageView!
+    @IBOutlet weak var profileName: UILabel!
+    @IBOutlet weak var opponentName: UILabel!
+    @IBOutlet weak var gradient: UIImageView!
+    @IBOutlet weak var playerScoreLabel: UILabel!
+    @IBOutlet weak var opponentScoreLabel: UILabel!
+    
+    //Question assets
+    @IBOutlet weak var questionCard: UIImageView!
+    @IBOutlet weak var questionCardsBack: UIImageView!
     @IBOutlet weak var questionNo: UILabel!
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var answer1: UIButton!
@@ -36,24 +48,9 @@ class TriviaGameViewController: UIViewController {
     @IBOutlet weak var answer3: UIButton!
     @IBOutlet weak var answer4: UIButton!
     
-    //game running variable
-    var currentQuestion = 0
-    var correctAnswer = ""
-    var score = 0
-    var multiplier = 1
-    
-// countdown clock
-    
+
+    // countdown clock
     @IBOutlet weak var timerLabel: UILabel!
-    
-    var time = 10
-    var timer = Timer()
-    let shapeLayer = CAShapeLayer()
-    let shapeLayer2 = CAShapeLayer()
-    
-    //@objc private func handleTap() {
-    //    runAnimate()
-    //}
     
     @objc func startAction() {
         if (time > 0) {
@@ -116,7 +113,7 @@ class TriviaGameViewController: UIViewController {
                         self.answer3.alpha = 1
                         self.answer4.alpha = 1
                     }) { (success) in
-                        
+                        //show correct answer for two seconds
                         sleep(2)
                         if(self.currentQuestion != self.questions.count){
                             self.newQuestion()
@@ -148,12 +145,7 @@ class TriviaGameViewController: UIViewController {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         basicAnimation.toValue = 0
         basicAnimation.duration = 10
-        //basicAnimation.fillMode = kCAFillModeForwards
-        //basicAnimation.isRemovedOnCompletion = false
-        
         shapeLayer.add(basicAnimation, forKey: "basic")
-        //UIView.animate(withDuration: 10, animations: )
-        
         
     }
     
@@ -180,16 +172,6 @@ class TriviaGameViewController: UIViewController {
         } else if (time < 1) {
             eEndAngle = 4.712505807162981
         }
-        /*
-        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        basicAnimation.toValue = 0
-        basicAnimation.duration = 0
-        //basicAnimation.fillMode = kCAFillModeForwards
-        //basicAnimation.isRemovedOnCompletion = false
-        
-        shapeLayer.add(basicAnimation, forKey: "basic")
-        //UIView.animate(withDuration: 10, animations: )
-        */
         
         let center = CGPoint(x: 187, y: 60)
         let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: CGFloat(eEndAngle), clockwise: false)
@@ -207,8 +189,6 @@ class TriviaGameViewController: UIViewController {
         timer.invalidate()
 
     }
-    
-// countdown clock
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -237,11 +217,7 @@ class TriviaGameViewController: UIViewController {
         shapeLayer.strokeEnd = 1
         
         view.layer.addSublayer(shapeLayer)
-        
-        // start animation
-        //view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-        
-//countdown clock
+
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -255,7 +231,6 @@ class TriviaGameViewController: UIViewController {
             for result in results as! [NSManagedObject] {
                 // Get username
                 if let username = result.value(forKey: "username") as? String {
-                    print(username)
                     profileName.text = username
                 } else {
                     print("no username")
@@ -263,17 +238,9 @@ class TriviaGameViewController: UIViewController {
                 
                 // Get avatar
                 if let avatar = result.value(forKey: "avatar") as? Int {
-                    print(avatar)
                     profile_image = avatar
                 } else {
                     print("no avatar")
-                }
-                
-                // Get high score
-                if let highScore = result.value(forKey: "high_score") as? Int {
-                    print(highScore)
-                } else {
-                    print("no high score")
                 }
             }
         } catch {
@@ -314,11 +281,11 @@ class TriviaGameViewController: UIViewController {
         
         opponentScoreLabel.text = String((opponent?.highScore)!)
         
+        //start game with new question
         newQuestion()
     }
     
     func newQuestion(){
-        //if (currentQuestion < 11) {
 
         //set up question visuals
         answer1.layer.borderWidth = 1
