@@ -11,26 +11,29 @@ import CoreData
 
 class TriviaCategoryViewController: UIViewController {
 
+    //Opponent and Player outlets
     @IBOutlet weak var opponentAvatar: UIImageView!
     @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var opponentName: UILabel!
-    
     @IBOutlet weak var opponentBlurb: UILabel!
     
-    //category buttons
+    //Category buttons
     @IBOutlet weak var scienceButton: UIButton!
     @IBOutlet weak var psycheButton: UIButton!
     @IBOutlet weak var nasaButton: UIButton!
     @IBOutlet weak var spaceButton: UIButton!
     
-    
+    //Opponent passed in through segue
     var opponent: Opponent?
+    
+    //Image chosen by user, will be updated in core date in viewDidLoad
     var profile_image = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //retrieve from coredata
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TriviaInfo")
@@ -43,7 +46,6 @@ class TriviaCategoryViewController: UIViewController {
             for result in results as! [NSManagedObject] {
                 // Get username
                 if let username = result.value(forKey: "username") as? String {
-                    print(username)
                     profileName.text = username
                 } else {
                     print("no username")
@@ -51,24 +53,16 @@ class TriviaCategoryViewController: UIViewController {
                 
                 // Get avatar
                 if let avatar = result.value(forKey: "avatar") as? Int {
-                    print(avatar)
                     profile_image = avatar
                 } else {
                     print("no avatar")
-                }
-                
-                // Get high score
-                if let highScore = result.value(forKey: "high_score") as? Int {
-                    print(highScore)
-                } else {
-                    print("no high score")
                 }
             }
         } catch {
             
         }
         
-        
+        //set player and opponent
         opponentAvatar.image = opponent?.unlockedImage
         if(profile_image == 1){
             profile.image = #imageLiteral(resourceName: "Asteroid_Large")
@@ -90,16 +84,11 @@ class TriviaCategoryViewController: UIViewController {
         }
         opponentName.text = opponent?.fname
         opponentBlurb.text = opponent?.blurb
-        
-        scienceButton.setImage(#imageLiteral(resourceName: "GameCards_Science"), for: .normal)
-        psycheButton.setImage(#imageLiteral(resourceName: "GameCards_Psyche"), for: .normal)
-        nasaButton.setImage(#imageLiteral(resourceName: "GameCards_NASA"), for: .normal)
-        spaceButton.setImage(#imageLiteral(resourceName: "GameCards_Space"), for: .normal)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
+        //different button segues
         if (segue.identifier == "psycheSegue"){
             let receiver = segue.destination as! TriviaGameViewController
             receiver.opponent = opponent

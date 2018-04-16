@@ -1031,7 +1031,7 @@ Test 3</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient1" translatesAutoresizingMaskIntoConstraints="NO" id="bgW-j8-eK0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Loading_6" translatesAutoresizingMaskIntoConstraints="NO" id="bgW-j8-eK0">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -2163,7 +2163,6 @@ Test 3</string>
         <image name="TriviaNavIcon_Filled" width="30" height="30"/>
         <image name="White-Carot-Left" width="30" height="30"/>
         <image name="WhiteX" width="121" height="120"/>
-        <image name="gradient1" width="414" height="130"/>
         <image name="new-timeline-first" width="50" height="300"/>
         <image name="new-timeline-second" width="50" height="500"/>
     </resources>
