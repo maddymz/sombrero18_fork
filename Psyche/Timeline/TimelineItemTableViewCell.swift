@@ -18,6 +18,7 @@ class TimelineItemTableViewCell: UITableViewCell {
     @IBOutlet weak var secondView: UIView!
     
     @IBOutlet weak var secondViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var firstViewHeightConstraint: NSLayoutConstraint!
     
     
     @IBOutlet weak var photoImageView: UIImageView!
@@ -36,6 +37,7 @@ class TimelineItemTableViewCell: UITableViewCell {
     
     
     
+    @IBOutlet weak var titleOneTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var bulletOneTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleTwoTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var bulletTwoTopConstraint: NSLayoutConstraint!

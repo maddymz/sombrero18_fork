@@ -280,6 +280,9 @@ Test 3</string>
                             <state key="normal" title="                Get Involved">
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="getInvolved:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIZ-MP-Yww"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LN5-95-RnW">
                             <rect key="frame" x="-27" y="104" width="295" height="37"/>
@@ -314,7 +317,7 @@ Test 3</string>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlw-wB-rSX">
-                            <rect key="frame" x="118" y="608" width="50" height="50"/>
+                            <rect key="frame" x="131" y="608" width="50" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_instagram"/>
@@ -323,7 +326,7 @@ Test 3</string>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwD-Ir-Vij">
-                            <rect key="frame" x="167" y="608" width="50" height="50"/>
+                            <rect key="frame" x="187" y="608" width="50" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_youtube"/>
@@ -339,7 +342,7 @@ Test 3</string>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohq-LQ-8Hg">
-                            <rect key="frame" x="69" y="608" width="50" height="50"/>
+                            <rect key="frame" x="76" y="608" width="50" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_twitter"/>
@@ -365,6 +368,17 @@ Test 3</string>
                             </state>
                             <connections>
                                 <action selector="closeMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jMZ-WG-vbx"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdz-EA-cFR">
+                            <rect key="frame" x="-27" y="285" width="295" height="41"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="                News">
+                                <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="openNews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VAY-M2-nQg"/>
                             </connections>
                         </button>
                     </subviews>
@@ -405,7 +419,7 @@ Test 3</string>
                                                     <rect key="frame" x="16" y="11" width="343" height="300"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new-timeline-first" translatesAutoresizingMaskIntoConstraints="NO" id="u55-7f-6dC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="300"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="320"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="Jnl-SR-neC"/>
                                                             </constraints>
@@ -450,12 +464,12 @@ Test 3</string>
                                                         <constraint firstItem="u55-7f-6dC" firstAttribute="leading" secondItem="Y69-Sz-eHN" secondAttribute="leading" id="FtB-bb-k3f"/>
                                                         <constraint firstItem="txh-us-UsS" firstAttribute="leading" secondItem="Y69-Sz-eHN" secondAttribute="leading" constant="50" id="Sbd-A4-MkM"/>
                                                         <constraint firstItem="j9f-Ns-zdn" firstAttribute="leading" secondItem="Y69-Sz-eHN" secondAttribute="leading" constant="50" id="Ska-Cg-mYV"/>
-                                                        <constraint firstItem="j9f-Ns-zdn" firstAttribute="top" secondItem="Y69-Sz-eHN" secondAttribute="top" id="W3F-5w-5Ob"/>
+                                                        <constraint firstItem="j9f-Ns-zdn" firstAttribute="top" secondItem="Y69-Sz-eHN" secondAttribute="top" constant="20" id="W3F-5w-5Ob"/>
                                                         <constraint firstAttribute="trailing" secondItem="j9f-Ns-zdn" secondAttribute="trailing" id="XV5-1q-BkW"/>
                                                         <constraint firstAttribute="trailing" secondItem="dbo-WN-A7v" secondAttribute="trailing" id="YnS-K9-eyf"/>
                                                         <constraint firstItem="dbo-WN-A7v" firstAttribute="top" secondItem="txh-us-UsS" secondAttribute="bottom" constant="-5" id="bfD-aG-3PJ"/>
                                                         <constraint firstAttribute="bottom" secondItem="u55-7f-6dC" secondAttribute="bottom" id="hHa-2w-7Vb"/>
-                                                        <constraint firstAttribute="height" constant="300" id="jNg-EX-QgI"/>
+                                                        <constraint firstAttribute="height" constant="320" id="jNg-EX-QgI"/>
                                                         <constraint firstItem="txh-us-UsS" firstAttribute="top" secondItem="j9f-Ns-zdn" secondAttribute="bottom" constant="5" id="sWg-6b-9tg"/>
                                                         <constraint firstAttribute="trailing" secondItem="txh-us-UsS" secondAttribute="trailing" id="usx-4H-7ER"/>
                                                     </constraints>
@@ -551,12 +565,14 @@ Test 3</string>
                                             <outlet property="bulletsLabel" destination="hjt-or-txl" id="F6q-bK-2xW"/>
                                             <outlet property="dateLabel" destination="Ezm-fb-GdZ" id="VXV-N6-wUv"/>
                                             <outlet property="firstView" destination="Y69-Sz-eHN" id="cgp-Ut-jbp"/>
+                                            <outlet property="firstViewHeightConstraint" destination="jNg-EX-QgI" id="NH8-4A-gzX"/>
                                             <outlet property="phaseLabel" destination="txh-us-UsS" id="eZq-Nu-Cgp"/>
                                             <outlet property="photoImageView" destination="j9f-Ns-zdn" id="30o-f8-aL0"/>
                                             <outlet property="secondView" destination="zBX-iB-kMq" id="o8T-Hz-JoY"/>
                                             <outlet property="secondViewHeightConstraint" destination="V1g-dm-eGi" id="zpj-6n-teO"/>
                                             <outlet property="titleLabel" destination="dbo-WN-A7v" id="iKL-rl-7zw"/>
                                             <outlet property="titleOneLabel" destination="uTO-Cv-rDy" id="6gd-wb-W1d"/>
+                                            <outlet property="titleOneTopConstraint" destination="xbW-1C-bOI" id="uk2-y9-0cG"/>
                                             <outlet property="titleThreeLabel" destination="Bc5-E3-B1j" id="BDY-Q7-qMT"/>
                                             <outlet property="titleThreeTopConstraint" destination="YZq-jy-UIq" id="hh1-gl-IuG"/>
                                             <outlet property="titleTwoLabel" destination="x5d-a4-gVd" id="1xX-Qs-Yc8"/>
@@ -569,7 +585,7 @@ Test 3</string>
                                     <outlet property="delegate" destination="YRO-ac-t4q" id="I4e-Cj-sse"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient2" translatesAutoresizingMaskIntoConstraints="NO" id="FFN-YE-liw" customClass="Timeline">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Loading_6" translatesAutoresizingMaskIntoConstraints="NO" id="FFN-YE-liw" customClass="Timeline">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -685,7 +701,6 @@ Test 3</string>
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="blog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RVJ-TL-b5h"/>
                                 <action selector="blog:" destination="YRO-ac-t4q" eventType="touchUpInside" id="dAV-Iw-hC1"/>
                             </connections>
                         </button>
@@ -700,7 +715,7 @@ Test 3</string>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8a-4H-bJu">
-                            <rect key="frame" x="118" y="608" width="50" height="50"/>
+                            <rect key="frame" x="131" y="608" width="50" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_instagram"/>
@@ -709,13 +724,12 @@ Test 3</string>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nC-Pp-zKc">
-                            <rect key="frame" x="167" y="608" width="50" height="50"/>
+                            <rect key="frame" x="187" y="608" width="50" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_youtube"/>
                             <connections>
                                 <action selector="openYoutube:" destination="YRO-ac-t4q" eventType="touchUpInside" id="4rg-wa-IiD"/>
-                                <action selector="openYoutube:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hXT-Ar-80O"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONNECT WITH US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPg-M0-6YO">
@@ -726,7 +740,7 @@ Test 3</string>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ya3-VO-8Df">
-                            <rect key="frame" x="69" y="608" width="50" height="50"/>
+                            <rect key="frame" x="76" y="608" width="50" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_twitter"/>
@@ -740,7 +754,6 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_facebook"/>
                             <connections>
-                                <action selector="openFB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Ss-6Q-U8E"/>
                                 <action selector="openFB:" destination="YRO-ac-t4q" eventType="touchUpInside" id="zSI-zs-4UJ"/>
                             </connections>
                         </button>
@@ -753,6 +766,17 @@ Test 3</string>
                             </state>
                             <connections>
                                 <action selector="closeMenu:" destination="YRO-ac-t4q" eventType="touchUpInside" id="fLU-IF-zDT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3x-Yi-X4b">
+                            <rect key="frame" x="-27" y="285" width="295" height="41"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="                News">
+                                <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="news:" destination="YRO-ac-t4q" eventType="touchUpInside" id="k5u-L4-QsP"/>
                             </connections>
                         </button>
                     </subviews>
@@ -990,6 +1014,7 @@ Test 3</string>
                     <connections>
                         <outlet property="gradient" destination="8cD-h7-5Ne" id="W05-sT-2TH"/>
                         <outlet property="nameLabel" destination="fCv-G1-ro7" id="CAE-WX-g0j"/>
+                        <outlet property="playerHighScore" destination="b3i-fi-zAu" id="CST-NE-IRV"/>
                         <outlet property="profile" destination="XcK-fO-tvY" id="uKe-PV-MPP"/>
                         <outlet property="tableView" destination="NOX-7B-UWO" id="ohH-ic-bdj"/>
                     </connections>
@@ -1072,8 +1097,8 @@ Test 3</string>
                                     <segue destination="R97-gR-mNA" kind="unwind" customClass="UnwindRightLeftSegue" customModule="Psyche" customModuleProvider="target" unwindAction="prepareForUnwindWithSegue:" id="PuA-Fh-jqK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Neil deGrasse Tyson is an American astrophysicist, author, and science communicator." lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRd-pM-g42">
-                                <rect key="frame" x="39" y="212" width="294" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Neil deGrasse Tyson is an American astrophysicist, author, and science communicator." lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRd-pM-g42">
+                                <rect key="frame" x="42" y="204" width="291" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="9"/>
                                 <color key="textColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1310,7 +1335,7 @@ Test 3</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8CU-2z-Exa">
-                                <rect key="frame" x="39" y="278" width="289" height="244"/>
+                                <rect key="frame" x="47" y="278" width="280" height="244"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFH-Vn-r5Z">
@@ -1337,8 +1362,8 @@ Test 3</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share you score on Facebook or play another round!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hf-Ml-SAb">
-                                        <rect key="frame" x="22" y="118" width="237" height="56"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share your score on Facebook or play another round!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hf-Ml-SAb">
+                                        <rect key="frame" x="22" y="118" width="245" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -1361,10 +1386,11 @@ Test 3</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="quote" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFK-ed-aGs">
-                                <rect key="frame" x="39" y="543" width="289" height="76"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFK-ed-aGs">
+                                <rect key="frame" x="47" y="543" width="280" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="9"/>
+                                <string key="text">We are part of this universe; we are in this universe, but perhaps more important than both of those facts, is that the universe is in us. - Neil deGrasse Tyson</string>
+                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="11"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1453,7 +1479,7 @@ Test 3</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient2" translatesAutoresizingMaskIntoConstraints="NO" id="efe-5g-cUL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Loading_6" translatesAutoresizingMaskIntoConstraints="NO" id="efe-5g-cUL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1602,7 +1628,7 @@ Test 3</string>
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="getInvolved:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zt4-Xe-9jx"/>
+                                <action selector="getInvolved:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="fXG-It-FKf"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uoj-zJ-ctJ">
@@ -1624,7 +1650,6 @@ Test 3</string>
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="blog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KJD-z5-0gK"/>
                                 <action selector="blog:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="bMu-YT-98i"/>
                             </connections>
                         </button>
@@ -1635,27 +1660,24 @@ Test 3</string>
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="getInvolved:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="19D-cR-aL9"/>
                                 <action selector="science:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="brG-sF-Qoj"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7L-zl-42n">
-                            <rect key="frame" x="118" y="608" width="50" height="50"/>
+                            <rect key="frame" x="131" y="608" width="50" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_instagram"/>
                             <connections>
-                                <action selector="openInsta:" destination="YRO-ac-t4q" eventType="touchUpInside" id="9wl-QG-p7S"/>
                                 <action selector="openInsta:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="aNI-oH-VOc"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSm-OU-jtp">
-                            <rect key="frame" x="167" y="608" width="50" height="50"/>
+                            <rect key="frame" x="187" y="608" width="50" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_youtube"/>
                             <connections>
-                                <action selector="openYoutube:" destination="YRO-ac-t4q" eventType="touchUpInside" id="ZiB-Ax-5kJ"/>
                                 <action selector="openYoutube:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="nSd-n0-JX7"/>
                             </connections>
                         </button>
@@ -1667,13 +1689,12 @@ Test 3</string>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sb4-Cf-RtB">
-                            <rect key="frame" x="69" y="608" width="50" height="50"/>
+                            <rect key="frame" x="76" y="608" width="50" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_twitter"/>
                             <connections>
                                 <action selector="openTwitter:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="3J8-8T-kMh"/>
-                                <action selector="openTwitter:" destination="YRO-ac-t4q" eventType="touchUpInside" id="pNo-s7-dJf"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsx-Tx-797">
@@ -1682,7 +1703,6 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_facebook"/>
                             <connections>
-                                <action selector="openFB:" destination="YRO-ac-t4q" eventType="touchUpInside" id="L3X-0b-xTY"/>
                                 <action selector="openFB:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="hrQ-9N-Rxs"/>
                             </connections>
                         </button>
@@ -1694,9 +1714,18 @@ Test 3</string>
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="closeMenu:" destination="YRO-ac-t4q" eventType="touchUpInside" id="DIT-ca-Ndu"/>
-                                <action selector="closeMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LG5-8n-Su6"/>
                                 <action selector="closeMenu:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="kI5-5b-rEb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOg-9Y-xPX">
+                            <rect key="frame" x="-27" y="285" width="295" height="41"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="                News">
+                                <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="news:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="vTX-k8-qiQ"/>
                             </connections>
                         </button>
                     </subviews>
@@ -1874,6 +1903,15 @@ Test 3</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGA-lm-NTE" userLabel="NASA_Logo">
+                                <rect key="frame" x="324" y="22" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="NASA-insignia30x30-1"/>
+                                <connections>
+                                    <action selector="openNASA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="acd-ak-5AM"/>
+                                    <action selector="openNASA:" destination="YRO-ac-t4q" eventType="touchUpInside" id="vTt-mE-YJY"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rS-Xw-SCJ">
                                 <rect key="frame" x="47" y="133" width="280" height="220"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -2009,6 +2047,15 @@ Test 3</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLs-IS-Cer" userLabel="NASA_Logo">
+                                <rect key="frame" x="324" y="22" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="NASA-insignia30x30-1"/>
+                                <connections>
+                                    <action selector="openNASA:" destination="YRO-ac-t4q" eventType="touchUpInside" id="T22-Ig-BUe"/>
+                                    <action selector="openNASA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bWk-dt-vdc"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MRC-lx-U1P">
                                 <rect key="frame" x="47" y="133" width="280" height="400"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -2117,15 +2164,13 @@ Test 3</string>
         <image name="White-Carot-Left" width="30" height="30"/>
         <image name="WhiteX" width="121" height="120"/>
         <image name="gradient1" width="414" height="130"/>
-        <image name="gradient2" width="414" height="70"/>
-        <image name="new-timeline-first" width="100" height="300"/>
-        <image name="new-timeline-second" width="100" height="500"/>
+        <image name="new-timeline-first" width="50" height="300"/>
+        <image name="new-timeline-second" width="50" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="33B-pK-jLT"/>
         <segue reference="qW7-CE-FaO"/>
-        <segue reference="5fb-a0-hGe"/>
-        <segue reference="hRq-xg-zMh"/>
+        <segue reference="99g-zA-NbL"/>
+        <segue reference="azk-ax-l3W"/>
         <segue reference="pzT-gL-PoK"/>
         <segue reference="flH-1B-IPE"/>
     </inferredMetricsTieBreakers>

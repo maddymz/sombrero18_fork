@@ -22,6 +22,7 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var gradient: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var playerHighScore: UILabel!
     
     
     override func viewDidLoad() {
@@ -56,6 +57,16 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
                 // Get high score
                 if let highScore = result.value(forKey: "high_score") as? Int {
                     print(highScore)
+                    playerHighScore.text = String(highScore)
+                    
+                } else {
+                    print("no high score")
+                }
+                
+                if let levels_unlocked = result.value(forKey: "levels_unlocked") as? Int {
+                    print(levels_unlocked)
+                    level = levels_unlocked
+                    
                 } else {
                     print("no high score")
                 }

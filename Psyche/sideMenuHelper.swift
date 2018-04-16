@@ -40,6 +40,11 @@ class menuHelper{
         })
     }
     
+    static func news(){
+        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/category/news/")!, options: [:], completionHandler: { (status) in
+        })
+    }
+    
     static func openYoutube(vc : UIViewController){
         let YoutubeUser =  "UC2BGcbPW8mxryXnjQcBqk6A"
         
@@ -101,4 +106,5 @@ class menuHelper{
         // Present dialog message in ViewController passed in
         vc.present(dialogMessage, animated: true, completion: nil)
     }
+    
 }

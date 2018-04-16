@@ -99,6 +99,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1713C9A420841F940077D347 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				175B1B75206C0E820046A81D /* TimelineItem.swift */,
+				175B1B78206C0E820046A81D /* TimelineItemTableViewCell.swift */,
+				175B1B77206C0E820046A81D /* TimelineTableViewController.swift */,
+				175B1B76206C0E820046A81D /* TextContent.swift */,
+			);
+			path = Timeline;
+			sourceTree = "<group>";
+		};
 		178847851FE255AD00916C4D = {
 			isa = PBXGroup;
 			children = (
@@ -120,37 +131,26 @@
 		178847901FE255AD00916C4D /* Psyche */ = {
 			isa = PBXGroup;
 			children = (
+				1713C9A420841F940077D347 /* Timeline */,
 				42B9188A207C0D550038D3A9 /* Custom UI Components */,
 				424B94E02071AE3800739FF1 /* Trivia */,
 				42F8ADE72063151E00809E0F /* fonts */,
 				178847951FE255AD00916C4D /* Main.storyboard */,
 				1788479A1FE255AD00916C4D /* LaunchScreen.storyboard */,
-				175B1B76206C0E820046A81D /* TextContent.swift */,
-				175B1B75206C0E820046A81D /* TimelineItem.swift */,
-				175B1B78206C0E820046A81D /* TimelineItemTableViewCell.swift */,
-				175B1B77206C0E820046A81D /* TimelineTableViewController.swift */,
 				1788479D1FE255AD00916C4D /* Info.plist */,
 				178847911FE255AD00916C4D /* AppDelegate.swift */,
 				043E1F8220343C4300455B26 /* swift+gif.swift */,
 				7EBBA7CD207D4917007853F5 /* data+gallery.swift */,
-				041A92632063BD5A00E3EA92 /* data+entry.swift */,
 				0406D8A120357F770087D5BC /* UIViewExtensions.swift */,
 				178847981FE255AD00916C4D /* Assets.xcassets */,
 				178847A51FE25BDA00916C4D /* HomeViewController.swift */,
 				178847931FE255AD00916C4D /* BonusViewController.swift */,
 				17C34E41205A490B00712D00 /* LoadingViewController.swift */,
-				170B330820756DA50080FA6E /* LockedTriviaOpponentTableViewCell.swift */,
-				170B330720756DA40080FA6E /* TriviaOpponentData.swift */,
-				170B330620756DA40080FA6E /* TriviaOpponentViewController.swift */,
-				170B330920756DA50080FA6E /* UnlockedTriviaOpponentTableViewCell.swift */,
 				043E1F802033CB7E00455B26 /* output.gif */,
 				7E3AAB77207ED3E100EFB8B0 /* movie.m4v */,
 				42164EC9206C249600E2BCD2 /* Psyche-Bridging-Header.h */,
 				170D74FB202396BD0026E232 /* GalleryViewController.swift */,
-				17F1D24E2075DE2D00B9B6A9 /* TriviaCategoryViewController.swift */,
-				17F1D2502075FD8400B9B6A9 /* TriviaGameViewController.swift */,
 				17F1D2522076A7DC00B9B6A9 /* sideMenuHelper.swift */,
-				17F1D256207B39EE00B9B6A9 /* TriviaFinalViewController.swift */,
 				17F1D258207D555000B9B6A9 /* CustomSegues.swift */,
 				42B9D341207DBF090086EAC6 /* Psyche.xcdatamodeld */,
 			);
@@ -160,9 +160,17 @@
 		424B94E02071AE3800739FF1 /* Trivia */ = {
 			isa = PBXGroup;
 			children = (
+				170B330920756DA50080FA6E /* UnlockedTriviaOpponentTableViewCell.swift */,
+				170B330820756DA50080FA6E /* LockedTriviaOpponentTableViewCell.swift */,
 				424B94DA20717C2300739FF1 /* TriviaInitViewController.swift */,
 				424B94DC2071933B00739FF1 /* TriviaExitViewController.swift */,
+				170B330720756DA40080FA6E /* TriviaOpponentData.swift */,
 				424B94DE2071950700739FF1 /* TriviaProfileViewController.swift */,
+				17F1D24E2075DE2D00B9B6A9 /* TriviaCategoryViewController.swift */,
+				17F1D2502075FD8400B9B6A9 /* TriviaGameViewController.swift */,
+				17F1D256207B39EE00B9B6A9 /* TriviaFinalViewController.swift */,
+				170B330620756DA40080FA6E /* TriviaOpponentViewController.swift */,
+				041A92632063BD5A00E3EA92 /* data+entry.swift */,
 			);
 			path = Trivia;
 			sourceTree = "<group>";
