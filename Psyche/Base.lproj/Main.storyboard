@@ -2096,6 +2096,15 @@ Test 3</string>
                                         <color key="textColor" red="1" green="0.36944573800000002" blue="0.1112450626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVT-W6-5Z7">
+                                        <rect key="frame" x="32" y="357" width="61" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="Skip"/>
+                                        <connections>
+                                            <action selector="readyBtnPressed:" destination="pi3-bh-trm" eventType="touchUpInside" id="8Bu-fz-CUD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -2116,6 +2125,7 @@ Test 3</string>
                         <outlet property="backgroundGradient" destination="3uO-gc-cJ8" id="Jn0-Es-kle"/>
                         <outlet property="mainView" destination="MRC-lx-U1P" id="ecq-H9-9hx"/>
                         <outlet property="readyBtn" destination="v4D-Eh-EtW" id="ReZ-ac-XJ0"/>
+                        <outlet property="skipBtn" destination="jVT-W6-5Z7" id="pXz-CB-Lwp"/>
                         <outlet property="usernameField" destination="4aA-gt-jaE" id="FMa-Sc-fn4"/>
                         <outlet property="usernameLengthLabel" destination="QdD-6H-gAe" id="hnD-4M-4rx"/>
                         <segue destination="aDh-Yd-Mga" kind="show" identifier="toExit" id="99g-zA-NbL"/>

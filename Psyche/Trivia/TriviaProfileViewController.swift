@@ -52,6 +52,7 @@ class TriviaProfileViewController: UIViewController {
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var readyBtn: UIButton!
+    @IBOutlet weak var skipBtn: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var backgroundGradient: UIImageView!
@@ -226,6 +227,11 @@ class TriviaProfileViewController: UIViewController {
         readyBtn.backgroundColor = UIColor.orange
         readyBtn.setTitleColor(UIColor.white, for: .normal)
         readyBtn.layer.cornerRadius = 13
+        
+        skipBtn.layer.borderColor = UIColor.gray.cgColor
+        skipBtn.layer.borderWidth = 1
+        skipBtn.layer.cornerRadius = 13
+        skipBtn.setTitleColor(UIColor.gray, for: .normal)
     }
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){
