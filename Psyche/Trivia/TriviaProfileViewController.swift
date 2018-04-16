@@ -143,7 +143,7 @@ class TriviaProfileViewController: UIViewController {
     // Create six image views for avatars
     func createAvatarButtons() {
         // 1st row
-        let a1 = AvatarButton(normalImg: "Trivia-Moon", grayImg: "Trivia-EarthBW", frame: CGRect(x: 32, y: 187, width: 62, height: 62), id: 3)
+        let a1 = AvatarButton(normalImg: "Trivia-Moon", grayImg: "Trivia-MoonBW", frame: CGRect(x: 32, y: 187, width: 62, height: 62), id: 3)
         let a2 = AvatarButton(normalImg: "Trivia-Earth", grayImg: "Trivia-EarthBW", frame: CGRect(x: 109, y: 187, width: 62, height: 62), id: 2)
         let a3 = AvatarButton(normalImg: "Trivia-Star", grayImg: "Trivia-StarBW", frame: CGRect(x: 187, y: 187, width: 62, height: 62), id: 5)
         
