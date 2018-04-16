@@ -113,7 +113,6 @@ class TriviaFinalViewController: UIViewController {
         opponentQuote.text = "\"" + (opponent?.quote)! + "\"\n- " + (opponent?.name)!
         finalScoreLabel.text = String(finalScore)
         mainView.layer.cornerRadius = 8
-        shareButton.setBackgroundImage(#imageLiteral(resourceName: "FacebookButton"), for: .normal)
         opponentScoreLabel.text = String((opponent?.highScore)!)
         
         if(finalScore > (opponent?.highScore)!){
