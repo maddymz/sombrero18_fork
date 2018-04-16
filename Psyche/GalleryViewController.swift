@@ -53,7 +53,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         secondViewer.layer.zPosition = 2;
         view.addSubview(secondViewer)
         secondViewer.alpha = 0.0
-        secondViewer.frame = CGRect(x:-375, y:70, width: 375, height:self.view.frame.height)
+        secondViewer.frame = CGRect(x:-375, y:70, width: self.view.frame.width, height:self.view.frame.height)
         
     }
     
