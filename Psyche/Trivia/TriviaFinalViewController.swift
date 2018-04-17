@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Social
 
 class TriviaFinalViewController: UIViewController {
 
@@ -121,6 +122,47 @@ class TriviaFinalViewController: UIViewController {
         else{
             completeMessage.text = "It's ok, You can try again!"
         }
+    }
+    
+    @IBAction func shareDialog(_ sender: Any) {
+        let option1 = true
+        if(option1) {
+            /**
+             SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+             [tweetSheet setInitialText:@"Testing"];
+             [self presentViewController:tweetSheet animated:YES completion:nil];
+             **/
+            
+            var tweet : SLComposeViewController = SLComposeViewController(forServiceType: "SLServiceTypeTwitter")
+            tweet.setInitialText("I Beat \(String(describing: opponentName.text)) with a score of \(String(describing: finalScoreLabel.text))!")
+            tweet.add(takeScreenshot()!)
+            var link = URL(string: "https://psyche.asu.edu/")
+            tweet.add(link!)
+            
+            self.present(tweet,animated: true, completion: nil)
+        }
+        else{
+        let message = "I Beat \(String(describing: opponentName.text)) with a score of \(String(describing: finalScoreLabel.text))!"
+        let image:UIImage = takeScreenshot()!
+        let activityController = UIActivityViewController(activityItems: [message, image],
+                                                          applicationActivities: nil)
+        present(activityController, animated: true, completion: nil)
+        }
+    }
+    
+    open func takeScreenshot(_ shouldSave: Bool = true) -> UIImage? {
+        var screenshotImage :UIImage?
+        let layer = UIApplication.shared.keyWindow!.layer
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+        guard let context = UIGraphicsGetCurrentContext() else {return nil}
+        layer.render(in:context)
+        screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        if let image = screenshotImage, shouldSave {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
+        return screenshotImage
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

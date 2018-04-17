@@ -1351,6 +1351,9 @@ Test 3</string>
                                                 <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="shareDialog:" destination="cLv-jf-eoN" eventType="touchUpInside" id="77b-fi-hQu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFH-Vn-r5Z">
                                         <rect key="frame" x="22" y="194" width="107" height="24"/>
