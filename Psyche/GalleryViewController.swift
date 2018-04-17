@@ -41,7 +41,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         
         //Side Menu
         //Add and Hide Menu
-        Menu.layer.zPosition = 2;
+        Menu.layer.zPosition = 4;
         view.addSubview(Menu)
         Menu.frame = CGRect(x:-300, y:0, width: 265, height:self.view.frame.height)
         //tap recognizer to close menu
@@ -95,6 +95,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             imageViewer.clipsToBounds = true
         }
         
+        //self.secondViewer.layer.zPosition = 3;
         self.secondViewer.transform = CGAffineTransform(translationX: 375, y: 0)
         UIView.animate(withDuration: 0.5, animations: {
             self.secondViewer.alpha = 1.0
@@ -132,7 +133,10 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         
         playerLayer = AVPlayerLayer(player: player)
         //playerLayer.frame = self.view.bounds
-        playerLayer!.frame = CGRect(x: 27, y: 48, width: 320, height: 320)
+        let wsize = self.view.frame.width
+        //let hsize = self.view.frame.height
+        playerLayer!.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
+        video.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
         playerLayer!.masksToBounds = true
         playerLayer!.cornerRadius = 20
 
@@ -217,7 +221,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //menu functions (include in all pages with hamburger)
     @IBAction func menuClicked(_ sender: Any) {
-        self.menuBlur.layer.zPosition = 1
+        self.menuBlur.layer.zPosition = 3
         self.menuBlur.alpha = 0
         self.menuBlur.layer.isHidden = false
         UIView.animate(withDuration: 0.5, animations: {
