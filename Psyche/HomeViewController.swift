@@ -129,7 +129,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         blurView.layer.shadowOffset = CGSize(width: 0, height: 0)
         
         // background gif
-        gifView.loadGif(name: "output")
+        gifView.loadGif(name: "ONe")
         
         // animations
         gifView.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
