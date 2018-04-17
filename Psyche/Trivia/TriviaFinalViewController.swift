@@ -134,15 +134,15 @@ class TriviaFinalViewController: UIViewController {
              **/
             
             var tweet : SLComposeViewController = SLComposeViewController(forServiceType: "SLServiceTypeTwitter")
-            tweet.setInitialText("I Beat \(String(describing: opponentName.text)) with a score of \(String(describing: finalScoreLabel.text))!")
+            tweet.setInitialText("I beat \(String(describing: opponentName.text)) with a score of \(String(describing: finalScoreLabel.text))!")
             tweet.add(takeScreenshot()!)
-            var link = URL(string: "https://psyche.asu.edu/")
+            var link = URL(string: "https://www.nasa.gov/psyche")
             tweet.add(link!)
             
             self.present(tweet,animated: true, completion: nil)
         }
         else{
-        let message = "I Beat \(String(describing: opponentName.text)) with a score of \(String(describing: finalScoreLabel.text))!"
+        let message = "I beat \(String(describing: opponentName.text)) with a score of \(String(describing: finalScoreLabel.text))!"
         let image:UIImage = takeScreenshot()!
         let activityController = UIActivityViewController(activityItems: [message, image],
                                                           applicationActivities: nil)
