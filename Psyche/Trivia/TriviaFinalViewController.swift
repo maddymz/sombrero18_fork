@@ -132,7 +132,7 @@ class TriviaFinalViewController: UIViewController {
     }
     
     @IBAction func shareDialog(_ sender: Any) {
-        let option1 = true //Set to true when not on simulator
+        let option1 = false //Set to true when not on simulator
         if(option1) {
             
             if (TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers()) {
