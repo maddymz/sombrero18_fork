@@ -10,39 +10,33 @@ import Foundation
 import UIKit
 
 class menuHelper{
-    static func events(){
-        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/get-involved/events/")!, options: [:], completionHandler: { (status) in
-        })
+    static func events(vc : UIViewController){
+        showWarningAlert(vc: vc, appURLStr: "", webURLStr: "https://psyche.asu.edu/get-involved/events/")
     }
     
-    static func contactUs(){
-        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/contact/")!, options: [:], completionHandler: { (status) in
-        })
+    static func contactUs(vc : UIViewController){
+        showWarningAlert(vc: vc, appURLStr: "", webURLStr: "https://psyche.asu.edu/contact/")
     }
     
-    static func science(){
-        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/science/")!, options: [:], completionHandler: { (status) in
-        })
+    static func science(vc : UIViewController){
+        showWarningAlert(vc: vc, appURLStr: "", webURLStr: "https://psyche.asu.edu/science/")
     }
     
-    static func getInvolved(){
-        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/get-involved/")!, options: [:], completionHandler: { (status) in
-        })
+    static func getInvolved(vc : UIViewController){
+        showWarningAlert(vc: vc, appURLStr: "", webURLStr: "https://psyche.asu.edu/get-involved/")
     }
     
-    static func blog(){
-        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/category/blog/")!, options: [:], completionHandler: { (status) in
-        })
+    static func blog(vc : UIViewController){
+        showWarningAlert(vc: vc, appURLStr: "", webURLStr: "https://psyche.asu.edu/category/blog/")
     }
     
-    static func mission(){
-        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/mission/")!, options: [:], completionHandler: { (status) in
-        })
+    static func mission(vc : UIViewController){
+        showWarningAlert(vc: vc, appURLStr: "", webURLStr: "https://psyche.asu.edu/mission/")
+        
     }
     
-    static func news(){
-        UIApplication.shared.open(URL(string : "https://psyche.asu.edu/category/news/")!, options: [:], completionHandler: { (status) in
-        })
+    static func news(vc : UIViewController){
+        showWarningAlert(vc: vc, appURLStr: "", webURLStr: "https://psyche.asu.edu/category/news/")
     }
     
     static func openYoutube(vc : UIViewController){

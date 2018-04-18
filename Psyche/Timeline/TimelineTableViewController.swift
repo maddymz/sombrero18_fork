@@ -426,31 +426,31 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func events(_ sender: Any) {
-        menuHelper.events()
+        menuHelper.events(vc: self)
     }
     
     @IBAction func contactUs(_ sender: Any) {
-        menuHelper.contactUs()
+        menuHelper.contactUs(vc: self)
     }
     
     @IBAction func science(_ sender: Any) {
-        menuHelper.science()
+        menuHelper.science(vc: self)
     }
     
     @IBAction func getInvolved(_ sender: Any) {
-        menuHelper.getInvolved()
+        menuHelper.getInvolved(vc: self)
     }
     
     @IBAction func blog(_ sender: Any) {
-        menuHelper.blog()
+        menuHelper.blog(vc: self)
     }
     
     @IBAction func mission(_ sender: Any) {
-        menuHelper.mission()
+        menuHelper.mission(vc: self)
     }
     
     @IBAction func news(_ sender: Any) {
-        menuHelper.news()
+        menuHelper.news(vc: self)
     }
     
     @IBAction func openYoutube(_ sender: Any) {
