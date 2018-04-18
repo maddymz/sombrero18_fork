@@ -960,10 +960,6 @@ Test 3</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NASA-insignia30x30-1" translatesAutoresizingMaskIntoConstraints="NO" id="THC-8m-wfn">
-                                <rect key="frame" x="324" y="22" width="45" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sun_Large" translatesAutoresizingMaskIntoConstraints="NO" id="XcK-fO-tvY" userLabel="profile">
                                 <rect key="frame" x="114" y="20" width="148" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -998,6 +994,16 @@ Test 3</string>
                                 <connections>
                                     <action selector="backBtnPressed:" destination="pi3-bh-trm" eventType="touchUpInside" id="cXf-8e-91o"/>
                                     <segue destination="pi3-bh-trm" kind="custom" customClass="UnwindProfileOpponentSegue" customModule="Psyche" customModuleProvider="target" id="qW7-CE-FaO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWF-td-0tT" userLabel="NASA_Logo">
+                                <rect key="frame" x="324" y="22" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="NASA-insignia30x30-1"/>
+                                <connections>
+                                    <action selector="openNASA:" destination="4fl-zg-UXU" eventType="touchUpInside" id="Ji5-HK-j7D"/>
+                                    <action selector="openNASA:" destination="YRO-ac-t4q" eventType="touchUpInside" id="Lyx-1L-gjC"/>
+                                    <action selector="openNASA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NHP-ap-3Cp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1916,6 +1922,7 @@ Test 3</string>
                                 <state key="normal" image="NASA-insignia30x30-1"/>
                                 <connections>
                                     <action selector="openNASA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="acd-ak-5AM"/>
+                                    <action selector="openNASA:" destination="cps-AL-CVU" eventType="touchUpInside" id="fde-OV-sE1"/>
                                     <action selector="openNASA:" destination="YRO-ac-t4q" eventType="touchUpInside" id="vTt-mE-YJY"/>
                                 </connections>
                             </button>
@@ -2059,6 +2066,7 @@ Test 3</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="NASA-insignia30x30-1"/>
                                 <connections>
+                                    <action selector="openNASA:" destination="pi3-bh-trm" eventType="touchUpInside" id="KWk-kr-KbT"/>
                                     <action selector="openNASA:" destination="YRO-ac-t4q" eventType="touchUpInside" id="T22-Ig-BUe"/>
                                     <action selector="openNASA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bWk-dt-vdc"/>
                                 </connections>
@@ -2186,9 +2194,9 @@ Test 3</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nWd-5Z-J5P"/>
-        <segue reference="5fb-a0-hGe"/>
+        <segue reference="99g-zA-NbL"/>
         <segue reference="azk-ax-l3W"/>
         <segue reference="pzT-gL-PoK"/>
-        <segue reference="flH-1B-IPE"/>
+        <segue reference="MwH-6p-iZZ"/>
     </inferredMetricsTieBreakers>
 </document>

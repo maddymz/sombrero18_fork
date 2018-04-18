@@ -147,4 +147,7 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
         
     }
 
+    @IBAction func openNASA(_ sender: Any) {
+        menuHelper.openNASA(vc: self)
+    }
 }

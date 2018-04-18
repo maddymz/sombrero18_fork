@@ -243,6 +243,9 @@ class TriviaProfileViewController: UIViewController {
         
     }
     
+    @IBAction func openNASA(_ sender: Any) {
+        menuHelper.openNASA(vc: self)
+    }
 }
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {

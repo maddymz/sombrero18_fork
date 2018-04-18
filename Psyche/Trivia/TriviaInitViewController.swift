@@ -69,4 +69,8 @@ class TriviaInitViewController: UIViewController {
         
         descLabel.text = "Test your knowledge against \(role) like \(player)!"
     }
+    
+    @IBAction func openNASA(_ sender: Any) {
+        menuHelper.openNASA(vc: self)
+    }
 }
