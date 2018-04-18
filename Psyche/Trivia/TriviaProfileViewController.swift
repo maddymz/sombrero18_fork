@@ -119,7 +119,9 @@ class TriviaProfileViewController: UIViewController {
                 if results.count > 0 { // If there is already a profile created
                     // Updating core data
                     let result = results.first as! NSManagedObject
-                    result.setValue(username, forKey: "username")
+                    if(usernameField.text?.count != 0){
+                        result.setValue(username, forKey: "username")
+                    }
                     result.setValue(avatar, forKey: "avatar")
                 } else { // No profile created yet, create one
                     // Inserting into core data
