@@ -32,14 +32,18 @@ class CountdownClockTimeline : UIView {
         phaseMLabel.frame = CGRect(x: 15, y: 41, width: 40, height: 21)
         phaseMLabel.text = "PHASE"
         
-        daysLabel.frame = CGRect(x: 101, y: 9, width: 100, height: 33)
+        let width = Int(self.frame.width)
         
-        daysMLabel.frame = CGRect(x: 104, y: 41, width: 42, height: 21)
+        let space = (width - 15 * 2 - 25 - 164 - 82) / 3
+        
+        daysLabel.frame = CGRect(x: 40 + space * 2 + 10, y: 9, width: 100, height: 33)
+        
+        daysMLabel.frame = CGRect(x: 40 + space * 2 + 10 + 3, y: 41, width: 42, height: 21)
         daysMLabel.text = "DAYS"
         
-        timerLabel.frame = CGRect(x: 199, y: 11, width: 176, height: 29)
+        timerLabel.frame = CGRect(x: 40 + space * 2 + 82 + space, y: 11, width: 176, height: 29)
         
-        timerMLabel.frame = CGRect(x: 201, y: 41, width: 110, height: 21)
+        timerMLabel.frame = CGRect(x: 40 + space * 2 + 82 + space + 2, y: 41, width: 110, height: 21)
         timerMLabel.text = "HOURS     MINUTES"
         
         secondsMLabel.frame = CGRect(x: 317, y: 41, width: 50, height: 21)

@@ -48,13 +48,13 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     // Alignment constants for drop down
     // X positions
     let dateLabelX = 16
-    let yearLabelX = 101
-    let yearMLabelX = 101
-    let dayLabelX = 199
-    let dayMLabelX = 199
-    let hourLabelX = 314
-    let hourMLabelX = 314
-    let secondsMLabelX = 317
+    var yearLabelX = 101
+    var yearMLabelX = 101
+    var dayLabelX = 199
+    var dayMLabelX = 199
+    var hourLabelX = 314
+    var hourMLabelX = 314
+    var secondsMLabelX = 317
     let timeMLabelXConst = 1
     
     // Y positions
@@ -62,6 +62,8 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     let timeLabelYConst = -10
     let timeMLabelYConst = 16
     let separation = 90 // Distance between the different dates
+    
+    var width = 0
     
     init(frame: CGRect, parent: HomeViewController) {
         super.init(frame: frame)
@@ -75,17 +77,30 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         phaseMLabel.frame = CGRect(x: 15, y: 41, width: 40, height: 21)
         phaseMLabel.text = "PHASE"
         
-        daysLabel.frame = CGRect(x: 101, y: 9, width: 100, height: 33)
+        //40 + 15 + 164 - 82
+        width = Int(hvc.view.bounds.width)
         
-        daysMLabel.frame = CGRect(x: 104, y: 41, width: 42, height: 21)
+        let space = (width - 15 * 2 - 25 - 164 - 82) / 3
+        
+        yearLabelX = 40 + space * 2 + 10
+        yearMLabelX = yearLabelX
+        dayLabelX = 40 + space * 2 + 82 + space
+        dayMLabelX = dayLabelX
+        secondsMLabelX = width - 41 - 15
+        hourLabelX = width - 41 - 15
+        hourMLabelX = hourLabelX
+        
+        daysLabel.frame = CGRect(x: yearLabelX, y: 9, width: 100, height: 33)
+        
+        daysMLabel.frame = CGRect(x: yearMLabelX + 3, y: 41, width: 42, height: 21)
         daysMLabel.text = "DAYS"
         
-        timerLabel.frame = CGRect(x: 199, y: 11, width: 176, height: 29)
+        timerLabel.frame = CGRect(x: dayLabelX, y: 11, width: 164, height: 29)
         
-        timerMLabel.frame = CGRect(x: 201, y: 41, width: 110, height: 21)
+        timerMLabel.frame = CGRect(x: dayMLabelX + 2, y: 41, width: 110, height: 21)
         timerMLabel.text = "HOURS     MINUTES"
         
-        secondsMLabel.frame = CGRect(x: 317, y: 41, width: 50, height: 21)
+        secondsMLabel.frame = CGRect(x: secondsMLabelX, y: 41, width: 43, height: 21)
         secondsMLabel.text = "SECONDS"
         
         daysLabel.font = UIFont(name: "Roboto Mono", size: 34)
@@ -202,8 +217,8 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         
         let scrollView = UIScrollView()
         scrollView.delegate = self
-        scrollView.contentSize = CGSize(width: Int(self.bounds.width), height: separation * phases.count)
-        scrollView.frame = CGRect(x: 0, y: 0, width: Int(self.bounds.width), height: Int(dropdownView.bounds.height))
+        scrollView.contentSize = CGSize(width: width, height: separation * phases.count)
+        scrollView.frame = CGRect(x: 0, y: 0, width: width, height: Int(dropdownView.bounds.height))
         dropdownView.addSubview(scrollView)
         
         phases.forEach { (phase) in
@@ -309,7 +324,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
                 
                 if (i < max) {
                     let line = UIView()
-                    line.frame = CGRect(x: 16, y: timeMLabelYConst + 75, width: Int(self.bounds.width - 32), height: 1)
+                    line.frame = CGRect(x: 15, y: timeMLabelYConst + 75, width: width - 30, height: 1)
                     line.backgroundColor = UIColor.lightGray
                     dateView.addSubview(line)
                 }
