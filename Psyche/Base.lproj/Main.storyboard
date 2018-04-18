@@ -1372,6 +1372,14 @@ Test 3</string>
                                             <segue destination="4fl-zg-UXU" kind="show" customClass="PlayAgainSegue" customModule="Psyche" customModuleProvider="target" id="flH-1B-IPE"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpg-ol-k78">
+                                        <rect key="frame" x="224" y="12" width="40" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Share"/>
+                                        <connections>
+                                            <action selector="systemShare:" destination="cLv-jf-eoN" eventType="touchUpInside" id="d4I-dq-Oh5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>

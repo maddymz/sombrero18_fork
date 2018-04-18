@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-import Social
+import TwitterKit
 
 class TriviaFinalViewController: UIViewController {
 
@@ -123,30 +123,42 @@ class TriviaFinalViewController: UIViewController {
             completeMessage.text = "It's ok, You can try again!"
         }
     }
-    
-    @IBAction func shareDialog(_ sender: Any) {
-        let option1 = true
-        if(option1) {
-            /**
-             SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-             [tweetSheet setInitialText:@"Testing"];
-             [self presentViewController:tweetSheet animated:YES completion:nil];
-             **/
-            
-            var tweet : SLComposeViewController = SLComposeViewController(forServiceType: "SLServiceTypeTwitter")
-            tweet.setInitialText("I beat \(String(describing: opponentName.text)) with a score of \(String(describing: finalScoreLabel.text))!")
-            tweet.add(takeScreenshot()!)
-            var link = URL(string: "https://www.nasa.gov/psyche")
-            tweet.add(link!)
-            
-            self.present(tweet,animated: true, completion: nil)
-        }
-        else{
-        let message = "I beat \(String(describing: opponentName.text)) with a score of \(String(describing: finalScoreLabel.text))!"
+    @IBAction func systemShare(_ sender: Any) {
+        let message = "I beat \(self.opponentName.text!) with a score of \(self.finalScoreLabel.text!)! #Psyche"
         let image:UIImage = takeScreenshot()!
         let activityController = UIActivityViewController(activityItems: [message, image],
                                                           applicationActivities: nil)
         present(activityController, animated: true, completion: nil)
+    }
+    
+    @IBAction func shareDialog(_ sender: Any) {
+        let option1 = true //Set to true when not on simulator
+        if(option1) {
+            
+            if (TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers()) {
+                // App must have at least one logged-in user to compose a Tweet
+                let composer = TWTRComposerViewController(initialText: "I beat \(self.opponentName.text!) with a score of \(self.finalScoreLabel.text!)! #Psyche", image: self.takeScreenshot(), videoData : nil)
+                present(composer, animated: true, completion: nil)
+            } else {
+                // Log in, and then check again
+                TWTRTwitter.sharedInstance().logIn { session, error in
+                    if session != nil { // Log in succeeded
+                        let composer = TWTRComposerViewController(initialText: "I beat \(self.opponentName.text!) with a score of \(self.finalScoreLabel.text!)! #Psyche", image: self.takeScreenshot(), videoData : nil)
+                        //composer.delegate = self
+                        self.present(composer, animated: true, completion: nil)
+                    } else {
+                        let alert = UIAlertController(title: "No Twitter Accounts Available", message: "You must log in before presenting a composer.", preferredStyle: .alert)
+                        self.present(alert, animated: false, completion: nil)
+                    }
+                }
+            }
+        }
+        else{
+            let message = "I beat \(self.opponentName.text!) with a score of \(self.finalScoreLabel.text!)! #Psyche"
+            let image:UIImage = takeScreenshot()!
+            let activityController = UIActivityViewController(activityItems: [message, image],
+                                                              applicationActivities: nil)
+            present(activityController, animated: true, completion: nil)
         }
     }
     
@@ -160,7 +172,7 @@ class TriviaFinalViewController: UIViewController {
         screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         if let image = screenshotImage, shouldSave {
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
         return screenshotImage
     }

@@ -25,12 +25,16 @@ PODS:
   - ORStackView (3.0.1):
     - FLKAutoLayout (~> 0.2)
   - SwiftyJSON (3.1.4)
+  - TwitterCore (3.1.0)
+  - TwitterKit (3.3.0):
+    - TwitterCore (>= 3.1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
   - FMMosaicLayout
   - ORStackView (~> 3.0)
   - SwiftyJSON (~> 3.1.1)
+  - TwitterKit
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -38,7 +42,9 @@ SPEC CHECKSUMS:
   FMMosaicLayout: c0febf6876c987c425d7e2176d034fa7a2c98cb5
   ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
+  TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
-PODFILE CHECKSUM: da689ca6b11565ccf345c29d244c87c304ae785c
+PODFILE CHECKSUM: 7cda48a9180277eb54915645ee902a9e2d84ecc2
 
 COCOAPODS: 1.4.0

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,10 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        TWTRTwitter.sharedInstance().start(withConsumerKey: "F4jAel6EzmqsS5qBfe99sI5VX", consumerSecret: "x1h1YucRjVKyumulYqP27zObQ2Ir1TmdP84le0Emx6tvfxcnmE")
+        
         //ViewControllerBased status bar to NO in info.plist
         UIApplication.shared.statusBarStyle = .lightContent
         
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -46,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
     
     // MARK: - Core Data stack
     
