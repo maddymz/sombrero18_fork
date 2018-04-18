@@ -194,7 +194,7 @@ class TriviaGameViewController: UIViewController {
         super.viewDidLoad()
         
         // countdown clock
-        let center = CGPoint(x: 187, y: 60)
+        let center = CGPoint(x: view.frame.width/2, y: 60)
         
         // create track layer
         let trackLayer = CAShapeLayer()
