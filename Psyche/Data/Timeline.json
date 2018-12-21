@@ -1,0 +1,153 @@
+[
+    {
+        "phase": {
+            "phaseInfo": "Phase A",
+            "dateInfo": "Sept 2015 - Dec 2016",
+            "titleInfo": "Concept Study",
+            "phaseBulletSub": ["Mission Selected","Proposed Mission"]
+        },
+        "phaseBullet": {[
+            "titleOne": "Mission Selected",
+            "Mission Selected": "In September of 2015, the Psyche Mission (as it was proposed in Step 1) was selected by NASA to develop a detailed concept study for consideration for NASA’s Discovery Program. (Step 1 is the initial proposal stage; the team had been working on the idea since 2011 and submitted a 256 page Step 1 proposal that was selected for the Phase A concept study.)\\n\\n A large team worked on the study, led by the Principal Investigator, Lindy Elkins-Tanton, and consisting of an expansive team that included scientists, engineers, project managers, schedulers, financial modelers, graphic designers, and marketing leads from ASU, JPL, SSL, as well as more than a dozen other universities and research organizations.",
+            "titleTwo": "Proposed Selected",
+            "Proposed Mission": "In November of 2016, the team presented the proposed mission to 30 NASA reviewers during a nine-hour “site visit” which included a tour of SSL’s high bay, where the Psyche chassis will be built.\\n\\nThe site visit is an intense, highly technical in-person review done by a select group of science, technical, and industry experts. They review every detail of the proposed mission, from concept and design, to execution and science application, as well as how the mission personnel from different institutions work together as a team.",
+            
+            "Instrument & Spacecraft":"",
+            "Critical Build" : "",
+            "Instruments":"",
+            "Critical Design Review":"",
+            "Spacecraft Ships to Launch Site":"",
+            "Launch":"",
+            "Using Gravity": "",
+            "Arrival at Psyche":"",
+            "Orbiting Psyche":"",
+            "Final Phase":""
+        }]
+    },
+    {
+        "phase": {
+            "phaseInfo": "Phase B",
+            "dateInfo": "Jan 2017 - May 2019",
+            "titleInfo": "Preliminary Design of All Instruments & Spacecraft",
+            "phaseBulletSub": ["Instrument & Spacecraft"]
+        },
+        "phaseBullet": {
+            "titleOne": "Instrument & Spacecraft",
+            "Instrument & Spacecraft":  "Science and engineering teams on the mission are designing the spacecraft and the instruments that will be used to analyze the asteroid.\\n\\nMarch 2019, the team will undergo project and flight system Preliminary Design Review.\\n\\nMay 2019, the team reaches Key Decision Point C, which will give the team the official approval to move to the next phase (Phase C).",
+            "Critical Build" : "",
+            "Instruments":"",
+            "Critical Design Review":"",
+            "Spacecraft Ships to Launch Site":"",
+            "Launch":"",
+            "Using Gravity": "",
+            "Arrival at Psyche":"",
+            "Orbiting Psyche":"",
+            "Final Phase":"",
+            "Mission Selected ": "",
+            "Proposed Mission":""
+            
+        }
+    },
+    {
+        "phase": {
+            "phaseInfo": "Phase C",
+            "dateInfo": "May 2019 - Jan 2021",
+            "titleInfo": "Critical Design & Build of All Instruments & Spacecraft",
+            "phaseBulletSub": ["Critical Build", "Instruments", "Critical Design Review"]
+        },
+        "phaseBullet": {
+            "titleOne": "Critical Build",
+            "Critical Build": "Science and engineering teams begin to build their instruments.\\n\\nThe instruments consist of a magnetometer, a multispectral imager, and a gamma ray and neutron spectrometer.",
+            "titleTwo": "Instruments",
+            "Instruments": "The mission will use an X-band radio telecommunications system to measure Psyche’s gravity field to high precision. When combined with topography derived from onboard imagery, this will provide information on the interior structure of Psyche.\\n\\nThe mission will also test a sophisticated new laser communication technology that encodes data in photons (rather than radio waves) to communicate between a probe in deep space and Earth. Using light instead of radio allows the spacecraft to communicate more data in a given amount of time.",
+            "titleThree": "Critical Design Review",
+            "Critical Design Review": "April 2020, the teams will undergo Project and Flight System Critical Design Review, this is an integral step in the instrument engineering process.\\n\\nThe bus or “body” of the spacecraft will be completed by May 2020.\\n\\nIn January 2021, the team will conduct the Systems Integration Review to ensure that the system is ready to be integrated. The last step in Phase C is Key Decision Point D that will give the team the official approval to move to the next phase.",
+            
+            "Instruments & Spacecraft" :"",
+            "Spacecraft Ships to Launch Site":"",
+            "Launch":"",
+            "Using Gravity": "",
+            "Arrival at Psyche":"",
+            "Orbiting Psyche":"",
+            "Final Phase":"",
+            "Mission Selected ": "",
+            "Proposed Mission":""
+            
+        }
+    },
+    {
+        "phase": {
+            "phaseInfo": "Phase D",
+            "dateInfo": "Jan 2021 - July 2022",
+            "titleInfo": "Instrument & Spacecraft Build & Assembly",
+            "phaseBulletSub": ["Instruments & Spacecraft", "Spacecraft Ships to Launch Site", "Launch"]
+        },
+        "phaseBullet": {
+            "titleOne": "Instruments & Spacecraft",
+            "Instruments & Spacecraft":  "During this phase, all the spacecraft subsystems are integrated onto the spacecraft bus.\\n\\nThe spacecraft undergoes vibration testing.\\n\\nThe spacecraft undergoes environmental thermal-vacuum testing.\\n\\nThe spacecraft undergoes electromagnetic interference, electromagnetic compatibility testing.\\n\\nIn May 2022 the team will conduct the Operations Readiness Review to ensure the system, procedures, and all supporting software and personnel are ready and fully operational. Before launch, the team will conduct Key Decision Point E that will determine readiness to conduct post launch operations.",
+            "titleTwo": "Spacecraft Ships to Launch Site",
+            "Spacecraft Ships to Launch Site": "The Psyche spacecraft, now fully assembled, includes solar panels, which fold during transport and launch.\\n\\nThe spacecraft measures about 81 feet long (24.76 meters) when the solar panels are unfolded. This is about the size of a singles tennis court.\\n\\nThe body of the spacecraft is about 10 feet long (3.1 meters) and almost eight feet (2.4 meters) wide.",
+            "titleThree": "Launch",
+            "Launch": "At the launch site the team will conduct an entire re-check of the spacecraft before integrating into the launch vehicle.\\n\\nThe spacecraft will launch August of 2022.\\n\\nOnce in space, the spacecraft will travel using solar-electric propulsion.\\n\\nIt will arrive at the asteroid, located in the main asteroid belt between Mars and Jupiter, in early January of 2026.",
+            
+            "Instrument & Spacecraft":"",
+            "Critical Build" : "",
+            "Instruments":"",
+            "Critical Design Review":"",
+            "Using Gravity": "",
+            "Arrival at Psyche":"",
+            "Orbiting Psyche":"",
+            "Final Phase":"",
+            "Mission Selected ": "",
+            "Proposed Mission":""
+        }
+    },
+    {
+        "phase": {
+            "phaseInfo": "Phase E",
+            "dateInfo": "May 2023",
+            "titleInfo": "Mars Gravity Assist",
+            "phaseBulletSub": ["Using Gravity", "Arrival at Psyche", "Orbiting Psyche"]
+        },
+        "phaseBullet": {
+            "titleOne": "Using Gravity",
+            "Using Gravity": "Phase E begins after the Post Launch Assessment Review is conducted.\\n\\nThe spacecraft will use the gravity of Mars to increase speed and to set its trajectory to intersect with Psyche’s orbit around the Sun.\\n\\nIt does this by entering and leaving the gravitational field of Mars.\\n\\nThis slingshot maneuver will save propellant, time and expense.",
+            "titleTwo": "Arrival at Psyche",
+            "Arrival at Psyche":"Leading up to arrival at Psyche, the spacecraft will spend 100 days in the approach phase\\n\\nThe spacecraft will also measure the asteroid’s spin axis and rotation.",
+            "titleThree": "Orbiting Psyche",
+            "Orbiting Psyche":  "The spacecraft will orbit the asteroid for 21 months.\\n\\nIt will perform science operations from four different orbits, each successively closer to the asteroid.\\n\\nIn each orbit, the instruments on board will send data back to Earth to be analyzed by the mission’s science team.",
+            "Instrument & Spacecraft":"",
+            "Critical Build" : "",
+            "Instruments":"",
+            "Critical Design Review":"",
+            "Spacecraft Ships to Launch Site":"",
+            "Launch":"",
+            "Final Phase":"",
+            "Mission Selected ": "",
+            "Proposed Mission":""
+        }
+    },
+    {
+        "phase": {
+            "phaseInfo": "Phase F",
+            "dateInfo": "Nov 2027 - Aug 2028",
+            "titleInfo": "Mission Closeout",
+            "phaseBulletSub": ["Final Phase"]
+        },
+        "phaseBullet": {
+            "titleOne": "Final Phase",
+            "Final Phase":"In this final phase, the mission team will provide all remaining deliverables and safely decomission the space flight systems.",
+            "Instrument & Spacecraft":"",
+            "Critical Build" : "",
+            "Instruments":"",
+            "Critical Design Review":"",
+            "Spacecraft Ships to Launch Site":"",
+            "Launch":"",
+            "Using Gravity": "",
+            "Arrival at Psyche":"",
+            "Orbiting Psyche":"",
+            "Mission Selected ": "",
+            "Proposed Mission":""
+        }
+    }
+]
