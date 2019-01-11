@@ -17,7 +17,7 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
     var level = 4
     
     // Data model: These strings will be the data for the table view cells
-    let opponentList = Opponents()
+    let opponentList = Opponent()
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var gradient: UIImageView!
@@ -27,7 +27,7 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("opponent data:", opponentList.oppData)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TriviaInfo")
@@ -98,7 +98,7 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
     
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.opponentList.opponents.count + 1
+        return self.opponentList.oppData.count + 1
     }
     
     // create a cell for each table view row
@@ -109,7 +109,7 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
             return cell
         }
         else{
-            let opponent = opponentList.opponents[indexPath.row-1]
+            let opponent = opponentList.oppData[indexPath.row-1]
             
             if(indexPath.row-1 < level){
                 let cell:UnlockedTriviaOpponentTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "UnlockedOpponentCell") as! UnlockedTriviaOpponentTableViewCell!
@@ -138,7 +138,7 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
         if segue.identifier == "toGame"{
                 let sender = sender as! UIButton
                 let receiver = segue.destination as! TriviaCategoryViewController
-                receiver.opponent = opponentList.opponents[sender.tag]
+                receiver.opponent = opponentList.oppData[sender.tag]
         }
 
     }

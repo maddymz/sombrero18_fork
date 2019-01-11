@@ -31,7 +31,7 @@ class TriviaFinalViewController: UIViewController {
     
     @IBOutlet weak var opponentQuote: UILabel!
     var category: String?
-    var opponent: Opponent?
+    var opponent: OpponentData?
     var profile_image = 1
     var finalScore = 0;
     
@@ -91,7 +91,7 @@ class TriviaFinalViewController: UIViewController {
             try context.save() // Save profile info to core data
         } catch { }
         
-        opponentAvatar.image = opponent?.unlockedImage
+        opponentAvatar.image = UIImage(named: (opponent?.unlockedImage)!)
         if(profile_image == 1){
             profile.image = #imageLiteral(resourceName: "Asteroid_Large")
         }

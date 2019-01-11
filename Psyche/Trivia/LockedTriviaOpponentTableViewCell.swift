@@ -18,8 +18,8 @@ class LockedTriviaOpponentTableViewCell: UITableViewCell {
     @IBOutlet weak var professionLabel: UILabel!
     
     
-    func setOpponent(opponent: Opponent){
-        picture.image = opponent.lockedImage
+    func setOpponent(opponent: OpponentData){
+        picture.image = UIImage(named: opponent.lockedImage)
         name.text = opponent.name
         if(opponent.difficulty == 1){
             difficulty.text = "Easy"

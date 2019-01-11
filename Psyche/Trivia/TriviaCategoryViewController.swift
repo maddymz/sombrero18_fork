@@ -25,7 +25,7 @@ class TriviaCategoryViewController: UIViewController {
     @IBOutlet weak var spaceButton: UIButton!
     
     //Opponent passed in through segue
-    var opponent: Opponent?
+    var opponent: OpponentData?
     
     //Image chosen by user, will be updated in core date in viewDidLoad
     var profile_image = 1
@@ -63,7 +63,7 @@ class TriviaCategoryViewController: UIViewController {
         }
         
         //set player and opponent
-        opponentAvatar.image = opponent?.unlockedImage
+        opponentAvatar.image = UIImage(named: (opponent?.unlockedImage)!)
         if(profile_image == 1){
             profile.image = #imageLiteral(resourceName: "Asteroid_Large")
         }

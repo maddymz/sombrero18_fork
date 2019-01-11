@@ -13,7 +13,7 @@ class TriviaGameViewController: UIViewController {
     
     //Game set variables
     var category: String?
-    var opponent: Opponent?
+    var opponent: OpponentData?
     var profile_image = 1
     var questions :[[String]] = []
     var multiplier = 1
@@ -190,6 +190,14 @@ class TriviaGameViewController: UIViewController {
 
     }
     
+    struct QuizData: Decodable {
+        var psyche1: [String: Any]
+        var psyche2: [String: Any]
+        var psyche3: [String: Any]
+        var psyche
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -247,7 +255,7 @@ class TriviaGameViewController: UIViewController {
             
         }
         
-        opponentAvatar.image = opponent?.unlockedImage
+        opponentAvatar.image = UIImage(named: (opponent?.unlockedImage)!)
         if(profile_image == 1){
             profile.image = #imageLiteral(resourceName: "Asteroid_Large")
         }
@@ -372,7 +380,7 @@ class TriviaGameViewController: UIViewController {
     @IBAction func action(_ sender: AnyObject){
         runAnimatePause()
         
-        var chosenButton = sender as! UIButton
+        let chosenButton = sender as! UIButton
         
         //CARD FLIP
         UIView.animate(withDuration: 0.4, animations: {
