@@ -171,7 +171,7 @@ class TriviaFinalViewController: UIViewController {
         layer.render(in:context)
         screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        if let image = screenshotImage, shouldSave {
+        if let _ = screenshotImage, shouldSave {
             //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
         return screenshotImage

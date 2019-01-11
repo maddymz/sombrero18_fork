@@ -189,18 +189,30 @@ class TriviaGameViewController: UIViewController {
         timer.invalidate()
 
     }
-    
+    // data model to hold the parsed json data: by Madhukar raj 01/11/2019
     struct QuizData: Decodable {
-        var psyche1: [String: Any]
-        var psyche2: [String: Any]
-        var psyche3: [String: Any]
-        var psyche
-        
+        var psyche1: [[String]]
+        var psyche2: [[String]]
+        var psyche3: [[String]]
+        var psyche4: [[String]]
+        var space1: [[String]]
+        var space2: [[String]]
+        var space3: [[String]]
+        var space4: [[String]]
+        var science1: [[String]]
+        var science2: [[String]]
+        var science3: [[String]]
+        var science4: [[String]]
+        var nasa1: [[String]]
+        var nasa2: [[String]]
+        var nasa3: [[String]]
+        var nasa4: [[String]]
     }
+    var quizDict = [String: [[String]]]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // countdown clock
         let center = CGPoint(x: view.frame.width/2, y: 60)
         
@@ -251,10 +263,27 @@ class TriviaGameViewController: UIViewController {
                     print("no avatar")
                 }
             }
-        } catch {
-            
+        } catch let error {
+            print("fetch error:", error)
         }
-        
+        // parse the quiz data from json : by madhukar raj 01/11/2019
+        if let quizUrl = Bundle.main.url(forResource: "Quiz", withExtension: "json", subdirectory: "/Data"){
+            do {
+                let quizJsonData = try Data(contentsOf: quizUrl)
+                let opponentDecoder  = JSONDecoder()
+                let quizDecodeData = try opponentDecoder.decode([QuizData].self, from: quizJsonData)
+                
+                for data in quizDecodeData {
+                    print("parsed quiz data:", data.psyche1)
+                    quizDict = ["psyche1" : data.psyche1 , "psyche2" : data.psyche2, "psyche3" : data.psyche3, "psyche4" : data.psyche4,
+                    "nasa1" : data.nasa1, "nasa2" : data.nasa2, "nasa3" : data.nasa3, "nasa4" : data.nasa4,
+                    "space1" : data.space1, "space2" : data.space2, "space3" : data.space3,"space4" : data.space4,
+                    "science1" : data.science1, "science2" : data.science2, "science3" : data.science3, "science4" : data.science4]
+                }
+            }catch let parseError {
+                print("quiz parsing error:", parseError)
+            }
+        }
         opponentAvatar.image = UIImage(named: (opponent?.unlockedImage)!)
         if(profile_image == 1){
             profile.image = #imageLiteral(resourceName: "Asteroid_Large")
@@ -275,7 +304,7 @@ class TriviaGameViewController: UIViewController {
             profile.image = #imageLiteral(resourceName: "Sun_Large")
         }
         opponentName.text = opponent?.fname
-        self.questions = myDict[category! + String(opponent!.difficulty)]!
+        self.questions = quizDict[category! + String(opponent!.difficulty)]!
         
         if(opponent?.difficulty == 1){
             multiplier = 5
@@ -342,7 +371,6 @@ class TriviaGameViewController: UIViewController {
             })
         }
 
-        
         //check if question contains 2 or 4 answers
         if(questions[currentQuestion].count == 6)
         {
