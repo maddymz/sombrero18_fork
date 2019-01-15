@@ -51,17 +51,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     struct PhaseBullet: Decodable {
-        let titleOneLabel, phaseBulletTitleOneBullet: String?
-        let titleTwoLabel, titleTwoBullet, titleThreeLabel, titleThreeBullet: String
-        let titleOneBullet, titleOne, tittleOneBullet: String?
-        
-        enum CodingKeys: String, CodingKey {
-            case titleOneLabel
-            case phaseBulletTitleOneBullet = "titleOneBullet"
-            case titleTwoLabel, titleTwoBullet, titleThreeLabel, titleThreeBullet
-            case titleOneBullet = "TitleOneBullet"
-            case titleOne, tittleOneBullet
-        }
+        let titleOneLabel, titleOneBullet, titleTwoLabel, titleTwoBullet, titleThreeLabel, titleThreeBullet: String?
     }
     
     var cellItems = [TimelineStruct]()
@@ -182,16 +172,16 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         // CELL DATA ========
         
         cell.dateLabel.text = item.phase.dateInfo
-        cell.phaseLabel.text = item.phase.phaseInfo
-        cell.titleLabel.text = item.phase.titleInfo
+        cell.phaseLabel.text = item.phase.phaseInfo.uppercased()
+        cell.titleLabel.text = item.phase.titleInfo.uppercased()
         cell.photoImageView.image = UIImage(named: item.photo)
         
         
-        cell.titleOneLabel.text = item.phaseBullet.titleOneLabel
+        cell.titleOneLabel.text = item.phaseBullet.titleOneLabel!
         cell.bulletsLabel.text = item.phaseBullet.titleOneBullet
-        cell.titleTwoLabel.text = item.phaseBullet.titleTwoLabel
+        cell.titleTwoLabel.text = item.phaseBullet.titleTwoLabel!
         cell.bulletTwoLabel.text = item.phaseBullet.titleTwoBullet
-        cell.titleThreeLabel.text = item.phaseBullet.titleThreeLabel
+        cell.titleThreeLabel.text = item.phaseBullet.titleThreeLabel!
         cell.bulletThreeLabel.text = item.phaseBullet.titleThreeBullet
         
         var totalSecondViewHeights = cell.titleOneLabel.bounds.height
@@ -238,8 +228,8 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
             selectedIndex = indexPath.row
             
             // Update countdown clock to match phase that was just tapped
-            let item = items[selectedIndex]
-            countdownClock.changeCountdown(phase: item.phase!, date: item.date)
+            let item = cellItems[selectedIndex]
+            countdownClock.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
         }
         self.tableView.beginUpdates()
         self.tableView.reloadRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
