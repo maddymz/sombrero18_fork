@@ -15,8 +15,6 @@
 		170B330C20756DA50080FA6E /* LockedTriviaOpponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B330820756DA50080FA6E /* LockedTriviaOpponentTableViewCell.swift */; };
 		170B330D20756DA50080FA6E /* UnlockedTriviaOpponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B330920756DA50080FA6E /* UnlockedTriviaOpponentTableViewCell.swift */; };
 		170D74FC202396BD0026E232 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170D74FB202396BD0026E232 /* GalleryViewController.swift */; };
-		175B1B7A206C0E830046A81D /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B1B75206C0E820046A81D /* TimelineItem.swift */; };
-		175B1B7B206C0E830046A81D /* TextContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B1B76206C0E820046A81D /* TextContent.swift */; };
 		175B1B7C206C0E830046A81D /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B1B77206C0E820046A81D /* TimelineTableViewController.swift */; };
 		175B1B7D206C0E830046A81D /* TimelineItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B1B78206C0E820046A81D /* TimelineItemTableViewCell.swift */; };
 		178847921FE255AD00916C4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178847911FE255AD00916C4D /* AppDelegate.swift */; };
@@ -57,8 +55,6 @@
 		170B330820756DA50080FA6E /* LockedTriviaOpponentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockedTriviaOpponentTableViewCell.swift; sourceTree = "<group>"; };
 		170B330920756DA50080FA6E /* UnlockedTriviaOpponentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockedTriviaOpponentTableViewCell.swift; sourceTree = "<group>"; };
 		170D74FB202396BD0026E232 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
-		175B1B75206C0E820046A81D /* TimelineItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineItem.swift; sourceTree = "<group>"; };
-		175B1B76206C0E820046A81D /* TextContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextContent.swift; sourceTree = "<group>"; };
 		175B1B77206C0E820046A81D /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		175B1B78206C0E820046A81D /* TimelineItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineItemTableViewCell.swift; sourceTree = "<group>"; };
 		1788478E1FE255AD00916C4D /* Psyche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Psyche.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,10 +106,8 @@
 		1713C9A420841F940077D347 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
-				175B1B75206C0E820046A81D /* TimelineItem.swift */,
 				175B1B78206C0E820046A81D /* TimelineItemTableViewCell.swift */,
 				175B1B77206C0E820046A81D /* TimelineTableViewController.swift */,
-				175B1B76206C0E820046A81D /* TextContent.swift */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -377,7 +371,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				175B1B7B206C0E830046A81D /* TextContent.swift in Sources */,
 				424B94DB20717C2300739FF1 /* TriviaInitViewController.swift in Sources */,
 				7EBBA7CE207D4917007853F5 /* data+gallery.swift in Sources */,
 				175B1B7D206C0E830046A81D /* TimelineItemTableViewCell.swift in Sources */,
@@ -392,7 +385,6 @@
 				17F1D257207B39EE00B9B6A9 /* TriviaFinalViewController.swift in Sources */,
 				170B330A20756DA50080FA6E /* TriviaOpponentViewController.swift in Sources */,
 				424B94DD2071933B00739FF1 /* TriviaExitViewController.swift in Sources */,
-				175B1B7A206C0E830046A81D /* TimelineItem.swift in Sources */,
 				178847921FE255AD00916C4D /* AppDelegate.swift in Sources */,
 				17F1D24F2075DE2D00B9B6A9 /* TriviaCategoryViewController.swift in Sources */,
 				17C34E42205A490B00712D00 /* LoadingViewController.swift in Sources */,

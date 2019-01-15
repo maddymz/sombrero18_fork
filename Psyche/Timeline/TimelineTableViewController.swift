@@ -30,7 +30,6 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     // MARK: Properties
     var selectedIndex = -1
-    var items = [TimelineItem]()
     //var cellHeights = [482,276,552,664,482,168]
     var cellHeights = [470,192,552,664,482,94]
     let firstViewHeight:CGFloat = CGFloat(320)
