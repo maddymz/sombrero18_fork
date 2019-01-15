@@ -8,11 +8,13 @@
 
 import UIKit
 import Foundation
+import WebKit
 
-class TimelineTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TimelineTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WKUIDelegate {
     
     //timeline tableview
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var wkWebview: WKWebView!
     
     //Menu
     @IBOutlet var Menu: UIView!
@@ -56,6 +58,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // Remove separator line between cells
         self.tableView.separatorStyle = .none
