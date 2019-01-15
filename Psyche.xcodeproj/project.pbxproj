@@ -36,7 +36,7 @@
 		42B9D343207DBF090086EAC6 /* Psyche.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42B9D341207DBF090086EAC6 /* Psyche.xcdatamodeld */; };
 		42F8ADE92063154600809E0F /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F8ADE82063154600809E0F /* RobotoMono-Regular.ttf */; };
 		4ACB6C32F9D0DB70D77DAAB0 /* Pods_Psyche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE854616BEDDF09064D09BA5 /* Pods_Psyche.framework */; };
-		6B56016B21C8160900EB2CB6 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 6B56016A21C8160900EB2CB6 /* Data */; };
+		6BA026E021EDC8D500276D49 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 6BA026DF21EDC8D500276D49 /* Data */; };
 		7E3AAB78207ED3E200EFB8B0 /* movie.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 7E3AAB77207ED3E100EFB8B0 /* movie.m4v */; };
 		7E71D95A207F2E6600A33C4A /* videoplayback (1).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D959207F2E6600A33C4A /* videoplayback (1).mp4 */; };
 		7E71D95C207F2EF100A33C4A /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D95B207F2EF100A33C4A /* videoplayback.mp4 */; };
@@ -79,7 +79,7 @@
 		42B9D342207DBF090086EAC6 /* Psyche.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Psyche.xcdatamodel; sourceTree = "<group>"; };
 		42F8ADE82063154600809E0F /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
 		47E261C9C69D5AF064A576FC /* Pods-Psyche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.release.xcconfig"; sourceTree = "<group>"; };
-		6B56016A21C8160900EB2CB6 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = ../../../Downloads/Archive/Data; sourceTree = "<group>"; };
+		6BA026DF21EDC8D500276D49 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		7E3AAB77207ED3E100EFB8B0 /* movie.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = movie.m4v; sourceTree = "<group>"; };
 		7E71D959207F2E6600A33C4A /* videoplayback (1).mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "videoplayback (1).mp4"; sourceTree = "<group>"; };
 		7E71D95B207F2EF100A33C4A /* videoplayback.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback.mp4; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		178847901FE255AD00916C4D /* Psyche */ = {
 			isa = PBXGroup;
 			children = (
-				6B56016A21C8160900EB2CB6 /* Data */,
+				6BA026DF21EDC8D500276D49 /* Data */,
 				1713C9A420841F940077D347 /* Timeline */,
 				42B9188A207C0D550038D3A9 /* Custom UI Components */,
 				424B94E02071AE3800739FF1 /* Trivia */,
@@ -280,7 +280,7 @@
 			files = (
 				1788479C1FE255AD00916C4D /* LaunchScreen.storyboard in Resources */,
 				42F8ADE92063154600809E0F /* RobotoMono-Regular.ttf in Resources */,
-				6B56016B21C8160900EB2CB6 /* Data in Resources */,
+				6BA026E021EDC8D500276D49 /* Data in Resources */,
 				7E71D962207F42A400A33C4A /* loop.gif in Resources */,
 				7E3AAB78207ED3E200EFB8B0 /* movie.m4v in Resources */,
 				178847991FE255AD00916C4D /* Assets.xcassets in Resources */,
