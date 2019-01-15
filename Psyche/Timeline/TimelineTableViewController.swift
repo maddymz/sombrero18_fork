@@ -38,7 +38,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     let bulletsContentSpacing = 12
     let bulletToNextTitleSpacing = -24
     
-    //struct model to hold json data form Timeline.josn: by Madhukar Raj 01/14/2019
+    //struct model to hold json data from Timeline.josn: by Madhukar Raj 01/14/2019
     struct TimelineStruct: Decodable {
         let phase: Phase
         let phaseBullet: PhaseBullet
@@ -53,22 +53,15 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     struct PhaseBullet: Decodable {
         let titleOneLabel, titleOneBullet, titleTwoLabel, titleTwoBullet, titleThreeLabel, titleThreeBullet: String?
     }
+    var cellItems = [TimelineStruct]() // josn struct model instance
     
-    var cellItems = [TimelineStruct]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         // Remove separator line between cells
         self.tableView.separatorStyle = .none
         
         // Load the timeline items
-//        loadTimelineItems()
         tableView.reloadData()
         
         view.addSubview(countdownClock)
@@ -88,9 +81,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
                 let timelinejsonData = try Data(contentsOf: timelineDataUrl)
                 let timelineDecoder = JSONDecoder()
                 let timelineDecodedData =  try timelineDecoder.decode([TimelineStruct].self, from: timelinejsonData)
-                print("timeline JSON data", timelineDecodedData)
                 
-                print("item count" , timelineDecodedData.count)
                 cellItems = timelineDecodedData
             }catch let parseError {
                 print("Error in parsing json:", parseError)
@@ -103,9 +94,6 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -126,10 +114,8 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         // Fetches the appropriate TimelineItem for the data source layout.
         let item = cellItems[indexPath.row]
-        print("one cell item:   ", item)
         
-        
-        // CELL STYLE ========
+        // =====================CELL STYLE ====================
         
         // prevent highlighting when pressed
         cell.selectionStyle = .none
@@ -169,8 +155,8 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         cell.titleThreeTopConstraint.constant = CGFloat(bulletsContentSpacing + bulletToNextTitleSpacing)
         
         
-        // CELL DATA ========
-        
+        // ===================CELL DATA =====================
+        // modified for json data: by Madhukar Raj 01/14/2019
         cell.dateLabel.text = item.phase.dateInfo
         cell.phaseLabel.text = item.phase.phaseInfo.uppercased()
         cell.titleLabel.text = item.phase.titleInfo.uppercased()
@@ -201,7 +187,6 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         print(item.phase.phaseInfo + "]==[: " + String(describing: totalSecondViewHeights) + sectionsHeights + sectionsSpacings)
         
-        //cell.firstViewHeightConstraint.constant = CGFloat(cell.showDetails ? 324 : 300)
        
         return cell
     }
@@ -210,9 +195,6 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     // Functions controlling collapse / expand behavior
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (selectedIndex == indexPath.row) {
-            // Total expanded cell height
-            // return firstViewHeight + firstViewHeightMargin + 240 // default height
-            //countdownClock.changeCountdown(phase: items[indexPath.row].phase!, date: items[indexPath.row].date)
             return firstViewHeight + CGFloat(cellHeights[indexPath.row])
         } else {
             // Collapsed cell height
@@ -235,202 +217,6 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         self.tableView.reloadRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
         self.tableView.endUpdates()
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-    
-    /*
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    */
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: Private Methods
-//    private func loadTimelineItems() {
-//        let dates = [
-//            TextContent.PhaseA[1],
-//            TextContent.PhaseB[1],
-//            TextContent.PhaseC[1],
-//            TextContent.PhaseD[1],
-//            TextContent.PhaseE[1],
-//            TextContent.PhaseF[1]
-//        ]
-//        let phases = [
-//            TextContent.PhaseA[0],
-//            TextContent.PhaseB[0],
-//            TextContent.PhaseC[0],
-//            TextContent.PhaseD[0],
-//            TextContent.PhaseE[0],
-//            TextContent.PhaseF[0]
-//        ]
-//        let titles = [
-//            TextContent.PhaseA[2],
-//            TextContent.PhaseB[2],
-//            TextContent.PhaseC[2],
-//            TextContent.PhaseD[2],
-//            TextContent.PhaseE[2],
-//            TextContent.PhaseF[2]
-//        ]
-//        let shortenedTitles = [
-//            TextContent.PhaseA[2],
-//            "Preliminary Design",
-//            "Critical Design & Build",
-//            "Build & Assembly",
-//            TextContent.PhaseE[2],
-//            TextContent.PhaseF[2],
-//        ]
-//
-//        /*
-//        var varbullets = titles
-//        var tempbullet:String = ""
-//        for i in 0 ... TextContent.PhaseABullets.count - 1 {
-//            tempbullet += "\u{2022} " + TextContent.PhaseABullets[i] + "\n"
-//        }
-//        varbullets += [tempbullet]
-//        */
-//
-//        let bulletCharacter : String = "\u{2022}"
-//        let prefix : String = ""
-//        let delimiter : String = "\n\n"
-//
-//        var varbullets = [String]()
-//        for i in 0 ... 5 {
-//            var tempBullet : String = ""
-//            for j in 0 ... TextContent.AllBullets[i].count - 1 {
-//                tempBullet += prefix + TextContent.AllBullets[i][j] + delimiter
-//                print("BULLET: " + tempBullet)
-//            }
-//            varbullets += [tempBullet]
-//        }
-//        // Add additional info for Phase D and E (workaround for complex bullet structures)
-//        varbullets[3] += "-\n" + TextContent.PhaseDSubA[1] + "\n" + TextContent.PhaseDSubA[0].uppercased() + "\n"
-//        for i in 0 ... TextContent.PhaseDSubABullets.count - 1 {
-//            varbullets[3] += prefix + TextContent.PhaseDSubABullets[i] + delimiter
-//        }
-//        varbullets[3] += "-\n" + TextContent.PhaseDSubB[1] + "\n" + TextContent.PhaseDSubB[0].uppercased() + "\n"
-//        for i in 0 ... TextContent.PhaseDSubBBullets.count - 1 {
-//            varbullets[3] += prefix + TextContent.PhaseDSubBBullets[i] + delimiter
-//        }
-//        varbullets[4] += "-\n" + TextContent.PhaseESubA[1] + "\n" + TextContent.PhaseESubA[0].uppercased() + "\n"
-//        for i in 0 ... TextContent.PhaseESubABullets.count - 1 {
-//            varbullets[4] += prefix + TextContent.PhaseESubABullets[i] + delimiter
-//        }
-//        varbullets[4] += "-\n" + TextContent.PhaseESubB[1] + "\n" + TextContent.PhaseESubB[0].uppercased() + "\n"
-//        for i in 0 ... TextContent.PhaseESubBBullets.count - 1 {
-//            varbullets[4] += prefix + TextContent.PhaseESubBBullets[i] + delimiter
-//        }
-//        //print(varbullets)
-//
-//        // Reformatted version
-//        var reformattedBullets : [[[String]]] =
-//        [
-//            [ ["", ""], ["", ""], ["", ""] ],
-//            [ ["", ""], ["", ""], ["", ""] ],
-//            [ ["", ""], ["", ""], ["", ""] ],
-//            [ ["", ""], ["", ""], ["", ""] ],
-//            [ ["", ""], ["", ""], ["", ""] ],
-//            [ ["", ""], ["", ""], ["", ""] ],
-//        ]
-//        for i in 0 ... 5 { // Iterate through phases
-//            //let currentPhase = TextContent.ReformattedBullets[i]
-//            for j in 0 ... 2 { // Iterate through title/bullet pairs
-//                let currentPair = TextContent.ReformattedBullets[i][j]
-//                reformattedBullets[i][j][0] = currentPair[0]    // assign title
-//                for k in 1 ... currentPair.count - 1 {
-//                    reformattedBullets[i][j][1] += prefix + currentPair[k] + delimiter  // build up bullet
-//                }
-//            }
-//        }
-//
-//
-//        // Old bullets code block using only the first bullet of each phase description.
-//        /*
-//        let bullets = [
-//            TextContent.PhaseABullets[0],
-//            TextContent.PhaseBBullets[0],
-//            TextContent.PhaseCBullets[0],
-//            TextContent.PhaseDBullets[0],
-//            TextContent.PhaseEBullets[0],
-//            TextContent.PhaseFBullets[0]
-//        ]
-//        */
-//
-//        let photos = [
-//            UIImage(named: "team"),
-//            UIImage(named: "satellite"),
-//            UIImage(named: "diagram"),
-//            UIImage(named: "hibay"),
-//            UIImage(named: "trajectory"),
-//            UIImage(named: "nov_2027"),
-//        ]
-//
-//        // toggle between full titles and shortened titles
-//        var titlepick = titles
-//        if (shortenTitles) {
-//            titlepick = shortenedTitles
-//        }
-//
-//        /*
-//        let photo1 = UIImage(named: "asteroid")
-//        let bullet1 = TextContent.PhaseABullets[0]
-//        guard let item1 = TimelineItem(date: "Sept 2015 - Dec 2016", phase: "PHASE A", title: "CONCEPT STUDY", bullets: bullet1, photo: photo1) else {
-//            fatalError("Unable to instantiate item1")
-//        }
-//         */
-//
-//        for i in 0...5 {
-//            guard let item = TimelineItem(date: dates[i], phase: phases[i].uppercased(), title: titlepick[i].uppercased(), bullets: reformattedBullets[i], photo: photos[i]) else {
-//                fatalError("Unable to instantiate item \(i)")
-//            }
-//            items += [item]
-//        }
-//
-//        //items += [item1]
-//    }
-    
     
     //menu functions (include in all pages with hamburger)
     @IBAction func menuClicked(_ sender: Any) {
