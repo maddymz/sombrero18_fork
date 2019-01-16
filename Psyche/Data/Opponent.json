@@ -1,0 +1,100 @@
+[
+    {
+        "name": "Neil deGrasse Tyson",
+        "difficulty": 1,
+        "highScore": 160,
+        "lockedImage": "SallyRideLockBW",
+        "unlockedImage": "Neil_Gradient",
+        "blurb": "Neil deGrasse Tyson is an American astrophysicist, author, and science communicator.",
+        "quote": "We are part of this universe; we are in this universe, but perhaps more important than both of those facts, is that the universe is in us.",
+        "profession": "Astrophysicist",
+        "fname": "Neil",
+        "level": 1
+    },
+    {
+        "name": "Neil Armstrong",
+        "difficulty": 1,
+        "highScore": 280,
+        "lockedImage": "NeilArmstrongLockBW",
+        "unlockedImage": "NeilArmstrong_Gradient",
+        "blurb": "Neil Armstrong was an astronaut and aeronautical engineer, and first to walk on the Moon.",
+        "quote": "That's one small step for a man, one giant leap for mankind.",
+        "profession": "Astronaut",
+        "fname": "Neil",
+        "level": 2
+    },
+    {
+        "name": "Dr. Lindy Elkins-Tanton",
+        "difficulty": 2,
+        "highScore": 335,
+        "lockedImage": "Lindy_Lock",
+        "unlockedImage": "LindyGradient",
+        "blurb": "Dr. Lindy Elkins-Tanton is the Principal Investigator of the Psyche mission.",
+        "quote": "Think BIG, because humanity needs that.",
+        "profession": "Principal Investigator",
+        "fname": "Lindy",
+        "level": 3
+    },
+    {
+        "name": "Edwin Hubble",
+        "difficulty": 2,
+        "highScore": 560,
+        "lockedImage": "EdwinHubbleLockBW",
+        "unlockedImage": "EdwinHubbleGradient",
+        "blurb": "Hubble discovered that many objects previously thought to be clouds of dust and gas and classified as \"nebulae\" were actually galaxies beyond the Milky Way.",
+        "quote": "Equipped with his five senses, man explores the universe around him and calls the adventure Science.",
+        "profession": "Astronomer",
+        "fname": "Edwin",
+        "level": 4
+    },
+    {
+        "name": "Sally Ride",
+        "difficulty": 2,
+        "highScore": 740,
+        "lockedImage": "SallyRideLockBW",
+        "unlockedImage": "Sally_Gradient",
+        "blurb": "Sally Ride was a physicist and astronaut, and became the first American woman in space in 1983.",
+        "quote": "When you're getting ready to launch into space, you're sitting on a big explosion waiting to happen.",
+        "profession": "Astronaut",
+        "fname": "Sally",
+        "level": 5
+    },
+    {
+        "name": "Carl Sagan",
+        "difficulty": 3,
+        "highScore": 930,
+        "lockedImage": "CarlSagan_Lock",
+        "unlockedImage": "CarlSaganGradient",
+        "blurb": "Carl Sagan assembled the 1st physical messages sent into space: the Pioneer plaque & Golden Record.",
+        "quote": "Look again at that dot. That's here. That's home. That's us.",
+        "profession": "Astronomer",
+        "fname": "Carl",
+        "level": 6
+    },
+    {
+        "name": "Katherine Johnson",
+        "difficulty": 3,
+        "highScore": 1080,
+        "lockedImage": "KatherineJohnsonLockBW",
+        "unlockedImage": "KatherineJohnsonGradient",
+        "blurb": "Katherine Johnson performed many calculations for NASA, including the plans for a mission to Mars.",
+        "quote": "Everything was so new - the whole idea of going into space was new and daring. There were no textbooks, so we had to write them.",
+        "profession": "Mathematician",
+        "fname": "Katherine",
+        "level": 7
+    },
+    {
+        "name": "Annibale de Gasparis",
+        "difficulty": 4,
+        "highScore": 1230,
+        "lockedImage": "AnnibaledeGasparis_Lock",
+        "unlockedImage": "AnnibaledeGasparisGradient",
+        "blurb": "Annibale de Gasparis, an Italian astronomer, discovered visually Psyche (16).",
+        "quote": "Andiamo in un mondo interamente metal.",
+        "profession": "Astronomer",
+        "fname": "Annibale",
+        "level": 8
+    }
+    
+]
+ 
