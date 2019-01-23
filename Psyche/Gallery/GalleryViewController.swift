@@ -15,7 +15,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     //Collection View
     @IBOutlet weak var collectionView: UICollectionView!
     
-
+    
     //menu items
     @IBOutlet var Menu: UIView!
     @IBOutlet weak var menuBlur: UIVisualEffectView!
@@ -31,7 +31,86 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     @IBOutlet weak var fadeBack: UIVisualEffectView!
     var playerLayer : AVPlayerLayer?
     
-
+    //struct model to hold teh gallery json data: by Madhukar Raj 01/17/2019
+    struct GalleryStruct: Decodable {
+        let id: Int
+        let date, dateGmt, modified, modifiedGmt: String
+        let slug: String
+        let link: String
+        let title: String
+        //        let meta: [JSONAny]
+        let description, caption, photoCredit: String
+        let videoURL: String
+        let altText: String
+        let mediaType: MediaType
+        let mimeType: MIMEType
+        let mediaDetails: MediaDetails
+        let sourceURL: String
+        
+        enum CodingKeys: String, CodingKey {
+            case id, date
+            case dateGmt = "date_gmt"
+            case modified
+            case modifiedGmt = "modified_gmt"
+            case slug, link, title, description, caption
+            case photoCredit = "photo_credit"
+            case videoURL = "video_url"
+            case altText = "alt_text"
+            case mediaType = "media_type"
+            case mimeType = "mime_type"
+            case mediaDetails = "media_details"
+            case sourceURL = "source_url"
+        }
+    }
+    
+    struct MediaDetails: Decodable {
+        let width, height: Int
+        let file: String
+        let sizes: Sizes
+    }
+    
+    struct Sizes: Decodable {
+        let thumbnail, medium: Excerpt
+        let mediumLarge, large, hero: Excerpt?
+        let heroSm, excerpt, square, portrait: Excerpt
+        let full: Excerpt
+        
+        enum CodingKeys: String, CodingKey {
+            case thumbnail, medium
+            case mediumLarge = "medium_large"
+            case large, hero
+            case heroSm = "hero-sm"
+            case excerpt, square, portrait, full
+        }
+    }
+    
+    struct Excerpt: Decodable {
+        let file: String
+        let width, height: Int
+        let mimeType: MIMEType
+        let sourceURL: String
+        
+        enum CodingKeys: String, CodingKey {
+            case file, width, height
+            case mimeType = "mime_type"
+            case sourceURL = "source_url"
+        }
+    }
+    
+    enum MIMEType: String, Decodable {
+        case imageJPEG = "image/jpeg"
+        case imagePNG = "image/png"
+    }
+    
+    enum MediaType: String, Decodable {
+        case image = "image"
+    }
+    
+    var gallery = [GalleryStruct]()
+    var glleryData = [GalleryStruct]()
+    var datesFormJson = [String]()
+    var caption = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +134,33 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         secondViewer.alpha = 0.0
         secondViewer.frame = CGRect(x:-375, y:70, width: self.view.frame.width, height:self.view.frame.height)
         
+        let url = URL(string: "https://test-psyche.ws.asu.edu/wp-json/psyche/v1/gallery")
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error == nil {
+                print("gallery api response:", data as Any)
+                do {
+                    let galleryJsonDecoder = JSONDecoder()
+                    let decodedData = try galleryJsonDecoder.decode([GalleryStruct].self, from: data!)
+                    print("decoded response:", decodedData)
+                   
+                    self.gallery = decodedData
+                    for data in decodedData {
+                        print("api element:", data)
+                        self.glleryData = [data]
+//                        self.datesFormJson.append(self.gallery[i].date)
+//                        self.caption.append(self.gallery[i].description)
+                    }
+                    print("galery dates:", self.datesFormJson)
+                    print("gallery captions:", self.caption)
+//                    print("gallery item:", self.gallery[0])
+                }catch let parseError {
+                    print("parse error  :",parseError)
+                }
+            }else {
+                print("response error:", error as Any)
+            }
+        }
+        task.resume()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -89,8 +195,11 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             video.isHidden = true
             imageViewer.isHidden = false
             imageViewer.image = UIImage(named: imageArray[(indexPath.row%imageArray.count)])
-            dateLabel.text = dates[indexPath.row + 4]
-            captionText.text = captions[indexPath.row + 4]
+            dateLabel.text = self.glleryData[0].date
+            print("date label", dateLabel.text!)
+            
+            captionText.text = self.glleryData[0].caption
+            print("capriontext:", captionText.text)
             imageViewer.layer.cornerRadius = 8
             imageViewer.clipsToBounds = true
         }
@@ -100,7 +209,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         UIView.animate(withDuration: 0.5, animations: {
             self.secondViewer.alpha = 1.0
         })
-
+        
     }
     
     //hide SecondView
@@ -139,8 +248,8 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         video.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
         playerLayer!.masksToBounds = true
         playerLayer!.cornerRadius = 20
-
-
+        
+        
         
         
         self.secondViewer.layer.addSublayer(playerLayer!)
@@ -184,9 +293,9 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     //CHANGE CELL
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) 
         cell.layer.cornerRadius = 8
-        var imageView = cell.viewWithTag(2) as! UIImageView
+        let imageView = cell.viewWithTag(2) as! UIImageView
         
         if(isVideo[indexPath.row]!)
         {
@@ -200,7 +309,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //NUMBER OF PHOTOS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count
+        return self.gallery.count
     }
     
     //INSETS BORDER SIZES

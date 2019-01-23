@@ -37,6 +37,7 @@
 		42F8ADE92063154600809E0F /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F8ADE82063154600809E0F /* RobotoMono-Regular.ttf */; };
 		4ACB6C32F9D0DB70D77DAAB0 /* Pods_Psyche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE854616BEDDF09064D09BA5 /* Pods_Psyche.framework */; };
 		6B7C258521EF65A10085AC0A /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C258421EF65A10085AC0A /* Data */; };
+		6B7C259321EFEB620085AC0A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C259221EFEB620085AC0A /* Api.swift */; };
 		7E3AAB78207ED3E200EFB8B0 /* movie.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 7E3AAB77207ED3E100EFB8B0 /* movie.m4v */; };
 		7E71D95A207F2E6600A33C4A /* videoplayback (1).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D959207F2E6600A33C4A /* videoplayback (1).mp4 */; };
 		7E71D95C207F2EF100A33C4A /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D95B207F2EF100A33C4A /* videoplayback.mp4 */; };
@@ -80,6 +81,7 @@
 		42F8ADE82063154600809E0F /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
 		47E261C9C69D5AF064A576FC /* Pods-Psyche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.release.xcconfig"; sourceTree = "<group>"; };
 		6B7C258421EF65A10085AC0A /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
+		6B7C259221EFEB620085AC0A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		7E3AAB77207ED3E100EFB8B0 /* movie.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = movie.m4v; sourceTree = "<group>"; };
 		7E71D959207F2E6600A33C4A /* videoplayback (1).mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "videoplayback (1).mp4"; sourceTree = "<group>"; };
 		7E71D95B207F2EF100A33C4A /* videoplayback.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback.mp4; sourceTree = "<group>"; };
@@ -133,6 +135,8 @@
 		178847901FE255AD00916C4D /* Psyche */ = {
 			isa = PBXGroup;
 			children = (
+				6B7C259121EFEB380085AC0A /* API */,
+				6B7C258E21EFE12B0085AC0A /* Gallery */,
 				6B7C258421EF65A10085AC0A /* Data */,
 				1713C9A420841F940077D347 /* Timeline */,
 				42B9188A207C0D550038D3A9 /* Custom UI Components */,
@@ -143,7 +147,6 @@
 				1788479D1FE255AD00916C4D /* Info.plist */,
 				178847911FE255AD00916C4D /* AppDelegate.swift */,
 				043E1F8220343C4300455B26 /* swift+gif.swift */,
-				7EBBA7CD207D4917007853F5 /* data+gallery.swift */,
 				0406D8A120357F770087D5BC /* UIViewExtensions.swift */,
 				178847981FE255AD00916C4D /* Assets.xcassets */,
 				178847A51FE25BDA00916C4D /* HomeViewController.swift */,
@@ -156,7 +159,6 @@
 				7E71D95D207F34C300A33C4A /* stop.mp4 */,
 				7E71D959207F2E6600A33C4A /* videoplayback (1).mp4 */,
 				42164EC9206C249600E2BCD2 /* Psyche-Bridging-Header.h */,
-				170D74FB202396BD0026E232 /* GalleryViewController.swift */,
 				17F1D2522076A7DC00B9B6A9 /* sideMenuHelper.swift */,
 				17F1D258207D555000B9B6A9 /* CustomSegues.swift */,
 				42B9D341207DBF090086EAC6 /* Psyche.xcdatamodeld */,
@@ -206,6 +208,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6B7C258E21EFE12B0085AC0A /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				170D74FB202396BD0026E232 /* GalleryViewController.swift */,
+				7EBBA7CD207D4917007853F5 /* data+gallery.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		6B7C259121EFEB380085AC0A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6B7C259221EFEB620085AC0A /* Api.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		EB6D03473893B8501298CBB1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,7 +269,7 @@
 				TargetAttributes = {
 					1788478D1FE255AD00916C4D = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -371,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B7C259321EFEB620085AC0A /* Api.swift in Sources */,
 				424B94DB20717C2300739FF1 /* TriviaInitViewController.swift in Sources */,
 				7EBBA7CE207D4917007853F5 /* data+gallery.swift in Sources */,
 				175B1B7D206C0E830046A81D /* TimelineItemTableViewCell.swift in Sources */,
@@ -536,6 +556,16 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLKAutoLayout\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMMosaicLayout\"/**",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ORStackView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+					"\"${PODS_ROOT}/TwitterCore/iOS\"",
+					"\"${PODS_ROOT}/TwitterKit/iOS\"",
+				);
 				INFOPLIST_FILE = Psyche/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = asu.Psyche;
