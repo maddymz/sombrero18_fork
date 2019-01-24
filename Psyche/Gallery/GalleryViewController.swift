@@ -107,9 +107,9 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     }
     
     var gallery = [GalleryStruct]()
-    var glleryData = [GalleryStruct]()
-    var datesFormJson = [String]()
-    var caption = [String]()
+//    var glleryData = [GalleryStruct]()
+//    var datesFormJson = [String]()
+//    var caption = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,14 +144,9 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
                     print("decoded response:", decodedData)
                    
                     self.gallery = decodedData
-                    for data in decodedData {
-                        print("api element:", data)
-                        self.glleryData = [data]
-//                        self.datesFormJson.append(self.gallery[i].date)
-//                        self.caption.append(self.gallery[i].description)
-                    }
-                    print("galery dates:", self.datesFormJson)
-                    print("gallery captions:", self.caption)
+                    print("gallery response count :", self.gallery.count)
+//                    print("galery dates:", self.datesFormJson)
+//                    print("gallery captions:", self.caption)
 //                    print("gallery item:", self.gallery[0])
                 }catch let parseError {
                     print("parse error  :",parseError)
@@ -195,10 +190,10 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             video.isHidden = true
             imageViewer.isHidden = false
             imageViewer.image = UIImage(named: imageArray[(indexPath.row%imageArray.count)])
-            dateLabel.text = self.glleryData[0].date
+            dateLabel.text = self.gallery[(indexPath.row)].date
             print("date label", dateLabel.text!)
             
-            captionText.text = self.glleryData[0].caption
+            captionText.text = self.gallery[(indexPath.row)].caption
             print("capriontext:", captionText.text)
             imageViewer.layer.cornerRadius = 8
             imageViewer.clipsToBounds = true
@@ -248,10 +243,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         video.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
         playerLayer!.masksToBounds = true
         playerLayer!.cornerRadius = 20
-        
-        
-        
-        
+
         self.secondViewer.layer.addSublayer(playerLayer!)
         player.play()
         UIView.animate(withDuration: 1.0, animations: {
@@ -295,21 +287,30 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) 
         cell.layer.cornerRadius = 8
+     
         let imageView = cell.viewWithTag(2) as! UIImageView
         
-        if(isVideo[indexPath.row]!)
-        {
-            imageView.loadGif(name: imageArray[(indexPath.row)])
+        if let stringUrl = self.gallery[(indexPath.row)].sourceURL as String? {
+            if let imgData = NSData(contentsOf: NSURL(string: stringUrl)! as URL) {
+                imageView.image = UIImage(data: imgData as Data)
+            }
         }
-        else{
-            imageView.image = UIImage(named: imageArray[(indexPath.row)])
-        }
+//        if(isVideo[indexPath.row]!)
+//        {
+////            imageView.loadGif(name: self.gallery[(indexPath.row)])
+//        }
+//        else{
+//          
+////            imageView.image = UIImage(named: self.gallery[(indexPath.row)].)
+//        }
         return cell
     }
     
     //NUMBER OF PHOTOS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("itme count:", self.gallery.count)
         return self.gallery.count
+        
     }
     
     //INSETS BORDER SIZES
