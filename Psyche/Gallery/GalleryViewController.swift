@@ -107,6 +107,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     }
     
     var gallery = [GalleryStruct]()
+    let queue = DispatchQueue(label: "galleryApiCall")
 //    var glleryData = [GalleryStruct]()
 //    var datesFormJson = [String]()
 //    var caption = [String]()
@@ -117,7 +118,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         //MosaicLayout and imageArray Initialization
         let mosaicLayout : FMMosaicLayout = FMMosaicLayout()
         collectionView.collectionViewLayout = mosaicLayout
-        
         //Side Menu
         //Add and Hide Menu
         Menu.layer.zPosition = 4;
@@ -133,8 +133,12 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         view.addSubview(secondViewer)
         secondViewer.alpha = 0.0
         secondViewer.frame = CGRect(x:-375, y:70, width: self.view.frame.width, height:self.view.frame.height)
-        
+        self.galleryApiCall()
+    }
+    
+    func galleryApiCall (){
         let url = URL(string: "https://test-psyche.ws.asu.edu/wp-json/psyche/v1/gallery")
+        let semaphore = DispatchSemaphore(value: 0)
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             if error == nil {
                 print("gallery api response:", data as Any)
@@ -142,12 +146,10 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
                     let galleryJsonDecoder = JSONDecoder()
                     let decodedData = try galleryJsonDecoder.decode([GalleryStruct].self, from: data!)
                     print("decoded response:", decodedData)
-                   
+                    
                     self.gallery = decodedData
                     print("gallery response count :", self.gallery.count)
-//                    print("galery dates:", self.datesFormJson)
-//                    print("gallery captions:", self.caption)
-//                    print("gallery item:", self.gallery[0])
+                    semaphore.signal()
                 }catch let parseError {
                     print("parse error  :",parseError)
                 }
@@ -156,6 +158,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             }
         }
         task.resume()
+        semaphore.wait()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -176,10 +179,11 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     //clicked thumbnail reveal secondView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if(isVideo[indexPath.row]!){
+        if(self.gallery[(indexPath.row)].videoURL != ""){
             //imageViewer.loadGif(name: imageArray[(indexPath.row)])
-            dateLabel.text = dates[indexPath.row + 4]
-            captionText.text = captions[indexPath.row + 4]
+            dateLabel.text = self.gallery[(indexPath.row)].date
+            
+            captionText.text = self.gallery[(indexPath.row)].description 
             //imageViewer.layer.cornerRadius = 8
             //imageViewer.clipsToBounds = true
             selected = indexPath.row
@@ -189,11 +193,16 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         else{
             video.isHidden = true
             imageViewer.isHidden = false
-            imageViewer.image = UIImage(named: imageArray[(indexPath.row%imageArray.count)])
+//            imageViewer.image = UIImage(named: gallery[(indexPath.row)].)
+            if let stringUrl = self.gallery[(indexPath.row)].sourceURL as String? {
+                if let imgData = NSData(contentsOf: NSURL(string: stringUrl)! as URL) {
+                    imageViewer.image = UIImage(data: imgData as Data)
+                }
+            }
             dateLabel.text = self.gallery[(indexPath.row)].date
             print("date label", dateLabel.text!)
             
-            captionText.text = self.gallery[(indexPath.row)].caption
+            captionText.text = self.gallery[(indexPath.row)].description
             print("capriontext:", captionText.text)
             imageViewer.layer.cornerRadius = 8
             imageViewer.clipsToBounds = true
@@ -308,7 +317,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //NUMBER OF PHOTOS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("itme count:", self.gallery.count)
+        print("item count:", self.gallery.count)
         return self.gallery.count
         
     }
