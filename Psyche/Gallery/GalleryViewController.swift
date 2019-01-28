@@ -10,18 +10,6 @@ import UIKit
 import FMMosaicLayout
 import AVFoundation
 
-//extension to convert the html content form api resopnse to string: by Madhukar Raj 01/28/2019
-extension String{
-    func convertHtml() -> NSAttributedString{
-        guard let data = data(using: .utf8) else { return NSAttributedString() }
-        do{
-            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
-        }catch{
-            return NSAttributedString()
-        }
-    }
-}
-
 class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
     
     //Collection View
@@ -189,9 +177,10 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         
         if(self.gallery[(indexPath.row)].videoURL != ""){
             //imageViewer.loadGif(name: imageArray[(indexPath.row)])
-            dateLabel.text = self.gallery[(indexPath.row)].date
+//            dateLabel.text = self.gallery[(indexPath.row)].date
+            dateLabel.text = ""
             
-            captionText.attributedText = self.gallery[(indexPath.row)].description.convertHtml()
+            captionText.attributedText = self.gallery[(indexPath.row)].description.convertHtml(family: nil , size: 10)
             //imageViewer.layer.cornerRadius = 8
             //imageViewer.clipsToBounds = true
             selected = indexPath.row
@@ -209,10 +198,11 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             }
             
           
-            dateLabel.text = self.gallery[(indexPath.row)].date
+//            dateLabel.text = self.gallery[(indexPath.row)].date
+            dateLabel.text = ""
             print("date label", dateLabel.text!)
             
-            captionText.attributedText = self.gallery[(indexPath.row)].description.convertHtml()
+            captionText.attributedText = self.gallery[(indexPath.row)].description.convertHtml(family: nil, size: 10)
             print("capriontext:", captionText.text)
             imageViewer.layer.cornerRadius = 8
             imageViewer.clipsToBounds = true
