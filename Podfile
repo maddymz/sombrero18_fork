@@ -10,5 +10,6 @@ target 'Psyche' do
   pod 'SDWebImage', '~> 4.0'
   pod 'FMMosaicLayout'
   pod 'TwitterKit'
+  pod 'Atributika'
 
 end

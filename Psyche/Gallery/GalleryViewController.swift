@@ -10,6 +10,7 @@ import UIKit
 import FMMosaicLayout
 import AVFoundation
 import SDWebImage
+import Atributika
 class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
     
     //Collection View
@@ -278,20 +279,15 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         cell.layer.cornerRadius = 8
      
         let imageView = cell.viewWithTag(2) as! UIImageView
+      if(self.gallery[(indexPath.row)].videoURL != "")
+     {
+            imageView.loadGif(name: self.gallery[(indexPath.row)].videoURL)
+      }
+      else{
+        
         imageView.sd_setImage(with: URL(string: self.gallery[(indexPath.row)].sourceURL ))
-//        if let stringUrl = self.gallery[(indexPath.row)].sourceURL as String? {
-//            if let imgData = NSData(contentsOf: NSURL(string: stringUrl)! as URL) {
-//                imageView.image = UIImage(data: imgData as Data)
-//            }
-//        }
-//        if(isVideo[indexPath.row]!)
-//        {
-////            imageView.loadGif(name: self.gallery[(indexPath.row)])
-//        }
-//        else{
-//          
-////            imageView.image = UIImage(named: self.gallery[(indexPath.row)].)
-//        }
+
+       }
         return cell
     }
     

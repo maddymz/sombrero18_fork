@@ -372,6 +372,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Psyche/Pods-Psyche-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Atributika/Atributika.framework",
 				"${BUILT_PRODUCTS_DIR}/FLKAutoLayout/FLKAutoLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/FMMosaicLayout/FMMosaicLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/ORStackView/ORStackView.framework",
@@ -385,6 +386,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Atributika.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLKAutoLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMMosaicLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ORStackView.framework",
@@ -582,6 +584,7 @@
 					"\"${PODS_ROOT}/TwitterCore/iOS\"",
 					"\"${PODS_ROOT}/TwitterKit/iOS\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Atributika\"",
 				);
 				INFOPLIST_FILE = Psyche/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -613,6 +616,7 @@
 					"\"${PODS_ROOT}/TwitterCore/iOS\"",
 					"\"${PODS_ROOT}/TwitterKit/iOS\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Atributika\"",
 				);
 				INFOPLIST_FILE = Psyche/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

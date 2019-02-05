@@ -144,6 +144,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Atributika/Atributika.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FLKAutoLayout/FLKAutoLayout.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FMMosaicLayout/FMMosaicLayout.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ORStackView/ORStackView.framework"
@@ -154,6 +155,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Atributika/Atributika.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FLKAutoLayout/FLKAutoLayout.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FMMosaicLayout/FMMosaicLayout.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ORStackView/ORStackView.framework"

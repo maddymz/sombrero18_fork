@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Atributika (4.6.8)
   - FLKAutoLayout (0.2.1)
   - FMMosaicLayout (0.1.4)
   - ORStackView (3.0.1):
@@ -34,6 +35,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
+  - Atributika
   - FMMosaicLayout
   - ORStackView (~> 3.0)
   - SDWebImage (~> 4.0)
@@ -43,6 +45,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - Atributika
     - FLKAutoLayout
     - FMMosaicLayout
     - ORStackView
@@ -53,6 +56,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Atributika: 7510276c8c58194244f1b111f1c9b90350bc37a9
   FLKAutoLayout: 9db6b30c2008d230da608e62c607b11c23b942e6
   FMMosaicLayout: c0febf6876c987c425d7e2176d034fa7a2c98cb5
   ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
@@ -61,6 +65,6 @@ SPEC CHECKSUMS:
   TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
   TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
 
-PODFILE CHECKSUM: 8337037f46162686ed84cb127222121f7bf79b05
+PODFILE CHECKSUM: 434750a55ab1411fb88c42652420a831626f9866
 
 COCOAPODS: 1.5.3
