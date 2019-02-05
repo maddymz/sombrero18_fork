@@ -10,8 +10,7 @@ import UIKit
 import FMMosaicLayout
 import AVFoundation
 import SDWebImage
-import Atributika
-class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
+class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITextViewDelegate{
     
     //Collection View
     @IBOutlet weak var collectionView: UICollectionView!
@@ -32,6 +31,8 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     @IBOutlet weak var video: UIButton!
     @IBOutlet weak var fadeBack: UIVisualEffectView!
     var playerLayer : AVPlayerLayer?
+    
+    
     
     //struct model to hold the gallery json data: by Madhukar Raj 01/17/2019
     struct GalleryStruct: Decodable {
@@ -113,6 +114,12 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        captionText.delegate = self
+        captionText.isUserInteractionEnabled = true // default: true
+        captionText.isEditable = false // default: true
+        captionText.isSelectable = true // default: true
+        captionText.dataDetectorTypes = [.link]
+        
         //MosaicLayout and imageArray Initialization
         let mosaicLayout : FMMosaicLayout = FMMosaicLayout()
         collectionView.collectionViewLayout = mosaicLayout
@@ -141,6 +148,11 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
                 fatalError("error: \(error.localizedDescription)")
             }
         }
+    }
+    
+    func textView(_ captionText: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        print("Link Selected!")
+        return true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
