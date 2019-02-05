@@ -22,9 +22,10 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     
     //second view outlets
+   
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var secondViewer: UIView!
     @IBOutlet weak var imageViewer: UIImageView!
-    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionText: UITextView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var video: UIButton!
@@ -160,9 +161,14 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if(self.gallery[(indexPath.row)].videoURL != ""){
-            dateLabel.text = ""
-            captionText.attributedText = self.gallery[(indexPath.row)].description.convertHtml(family: nil , size: 10)
-
+            titleLabel.text = self.gallery[(indexPath.row)].title
+            titleLabel.textColor = UIColor.black
+            titleLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(18))
+            if (self.gallery[(indexPath.row)].description == ""){
+                captionText.attributedText = self.gallery[(indexPath.row)].altText.convertHtml(family: nil , size: 10)
+            }else {
+                captionText.attributedText = self.gallery[(indexPath.row)].description.convertHtml(family: nil , size: 10)
+            }
             selected = indexPath.row
             playVideo(self)
         }
@@ -170,9 +176,15 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             video.isHidden = true
             imageViewer.isHidden = false
             imageViewer.sd_setImage(with: URL(string: self.gallery[(indexPath.row)].sourceURL ))
-            dateLabel.text = ""
-            print("date label", dateLabel.text!)
-            captionText.attributedText = self.gallery[(indexPath.row)].description.convertHtml(family: nil, size: 10)
+            titleLabel.text = self.gallery[(indexPath.row)].title
+            titleLabel.textColor = UIColor.black
+            titleLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(18))
+            print("date label", titleLabel.text!)
+            if (self.gallery[(indexPath.row)].description == ""){
+                captionText.attributedText = self.gallery[(indexPath.row)].altText.convertHtml(family: nil , size: 10)
+            } else {
+                captionText.attributedText = self.gallery[(indexPath.row)].description.convertHtml(family: nil, size: 10)
+            }
             print("capriontext:", captionText.text)
             imageViewer.layer.cornerRadius = 8
             imageViewer.clipsToBounds = true
