@@ -24,27 +24,43 @@ PODS:
   - FMMosaicLayout (0.1.4)
   - ORStackView (3.0.1):
     - FLKAutoLayout (~> 0.2)
+  - SDWebImage (4.4.5):
+    - SDWebImage/Core (= 4.4.5)
+  - SDWebImage/Core (4.4.5)
   - SwiftyJSON (3.1.4)
-  - TwitterCore (3.1.0)
-  - TwitterKit (3.3.0):
-    - TwitterCore (>= 3.1.0)
+  - TwitterCore (3.2.0)
+  - TwitterKit (3.4.2):
+    - TwitterCore (>= 3.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
   - FMMosaicLayout
   - ORStackView (~> 3.0)
+  - SDWebImage (~> 4.0)
   - SwiftyJSON (~> 3.1.1)
   - TwitterKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - FLKAutoLayout
+    - FMMosaicLayout
+    - ORStackView
+    - SDWebImage
+    - SwiftyJSON
+    - TwitterCore
+    - TwitterKit
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   FLKAutoLayout: 9db6b30c2008d230da608e62c607b11c23b942e6
   FMMosaicLayout: c0febf6876c987c425d7e2176d034fa7a2c98cb5
   ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
+  SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
-  TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
+  TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
+  TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
 
-PODFILE CHECKSUM: 7cda48a9180277eb54915645ee902a9e2d84ecc2
+PODFILE CHECKSUM: 8337037f46162686ed84cb127222121f7bf79b05
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

@@ -9,7 +9,7 @@
 import UIKit
 import FMMosaicLayout
 import AVFoundation
-
+import SDWebImage
 class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
     
     //Collection View
@@ -31,7 +31,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     @IBOutlet weak var fadeBack: UIVisualEffectView!
     var playerLayer : AVPlayerLayer?
     
-    //struct model to hold teh gallery json data: by Madhukar Raj 01/17/2019
+    //struct model to hold the gallery json data: by Madhukar Raj 01/17/2019
     struct GalleryStruct: Decodable {
         let id: Int
         let date, dateGmt, modified, modifiedGmt: String
@@ -129,32 +129,16 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         view.addSubview(secondViewer)
         secondViewer.alpha = 0.0
         secondViewer.frame = CGRect(x:-375, y:70, width: self.view.frame.width, height:self.view.frame.height)
-        self.galleryApiCall()
-    }
-    
-    func galleryApiCall (){
-        let url = URL(string: "https://test-psyche.ws.asu.edu/wp-json/psyche/v1/gallery")
-        let semaphore = DispatchSemaphore(value: 0)
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            if error == nil {
-                print("gallery api response:", data as Any)
-                do {
-                    let galleryJsonDecoder = JSONDecoder()
-                    let decodedData = try galleryJsonDecoder.decode([GalleryStruct].self, from: data!)
-                    print("decoded response:", decodedData)
-                    
-                    self.gallery = decodedData
-                    print("gallery response count :", self.gallery.count)
-                    semaphore.signal()
-                }catch let parseError {
-                    print("parse error  :",parseError)
-                }
-            }else {
-                print("response error:", error as Any)
+        Apicall.getRequest(for: 1){
+            (result) in
+            switch result {
+            case.success(let galleryData):
+                self.gallery = galleryData
+                self.collectionView.reloadData()
+            case.failure(let error):
+                fatalError("error: \(error.localizedDescription)")
             }
         }
-        task.resume()
-        semaphore.wait()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -176,39 +160,23 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if(self.gallery[(indexPath.row)].videoURL != ""){
-            //imageViewer.loadGif(name: imageArray[(indexPath.row)])
-//            dateLabel.text = self.gallery[(indexPath.row)].date
             dateLabel.text = ""
-            
             captionText.attributedText = self.gallery[(indexPath.row)].description.convertHtml(family: nil , size: 10)
-            //imageViewer.layer.cornerRadius = 8
-            //imageViewer.clipsToBounds = true
+
             selected = indexPath.row
-            //video.isHidden = false
             playVideo(self)
         }
         else{
             video.isHidden = true
             imageViewer.isHidden = false
-//            imageViewer.image = UIImage(named: gallery[(indexPath.row)].)
-            if let stringUrl = self.gallery[(indexPath.row)].sourceURL as String? {
-                if let imgData = NSData(contentsOf: NSURL(string: stringUrl)! as URL) {
-                    imageViewer.image = UIImage(data: imgData as Data)
-                }
-            }
-            
-          
-//            dateLabel.text = self.gallery[(indexPath.row)].date
+            imageViewer.sd_setImage(with: URL(string: self.gallery[(indexPath.row)].sourceURL ))
             dateLabel.text = ""
             print("date label", dateLabel.text!)
-            
             captionText.attributedText = self.gallery[(indexPath.row)].description.convertHtml(family: nil, size: 10)
             print("capriontext:", captionText.text)
             imageViewer.layer.cornerRadius = 8
             imageViewer.clipsToBounds = true
         }
-        
-        //self.secondViewer.layer.zPosition = 3;
         self.secondViewer.transform = CGAffineTransform(translationX: 375, y: 0)
         UIView.animate(withDuration: 0.5, animations: {
             self.secondViewer.alpha = 1.0
@@ -298,12 +266,12 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         cell.layer.cornerRadius = 8
      
         let imageView = cell.viewWithTag(2) as! UIImageView
-        
-        if let stringUrl = self.gallery[(indexPath.row)].sourceURL as String? {
-            if let imgData = NSData(contentsOf: NSURL(string: stringUrl)! as URL) {
-                imageView.image = UIImage(data: imgData as Data)
-            }
-        }
+        imageView.sd_setImage(with: URL(string: self.gallery[(indexPath.row)].sourceURL ))
+//        if let stringUrl = self.gallery[(indexPath.row)].sourceURL as String? {
+//            if let imgData = NSData(contentsOf: NSURL(string: stringUrl)! as URL) {
+//                imageView.image = UIImage(data: imgData as Data)
+//            }
+//        }
 //        if(isVideo[indexPath.row]!)
 //        {
 ////            imageView.loadGif(name: self.gallery[(indexPath.row)])
