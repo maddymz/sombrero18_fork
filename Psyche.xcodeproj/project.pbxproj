@@ -10,6 +10,7 @@
 		0406D8A220357F780087D5BC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406D8A120357F770087D5BC /* UIViewExtensions.swift */; };
 		043E1F812033CB7F00455B26 /* output.gif in Resources */ = {isa = PBXBuildFile; fileRef = 043E1F802033CB7E00455B26 /* output.gif */; };
 		043E1F8320343C4300455B26 /* swift+gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E1F8220343C4300455B26 /* swift+gif.swift */; };
+		0743E449155192E1CFCB7476 /* Pods_Psyche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C0D23FF9E76362FA1AA9A9D /* Pods_Psyche.framework */; };
 		170B330A20756DA50080FA6E /* TriviaOpponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B330620756DA40080FA6E /* TriviaOpponentViewController.swift */; };
 		170B330B20756DA50080FA6E /* TriviaOpponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B330720756DA40080FA6E /* TriviaOpponentData.swift */; };
 		170B330C20756DA50080FA6E /* LockedTriviaOpponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B330820756DA50080FA6E /* LockedTriviaOpponentTableViewCell.swift */; };
@@ -45,7 +46,6 @@
 		7E71D962207F42A400A33C4A /* loop.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D961207F42A400A33C4A /* loop.gif */; };
 		7EBBA7CE207D4917007853F5 /* data+gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBBA7CD207D4917007853F5 /* data+gallery.swift */; };
 		B7F5C00D21FFC5B900FA473B /* HtmlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */; };
-		FD641E4AD0E1DDA46D69BDA8 /* Pods_Psyche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D119E59E1A8457CA825E826B /* Pods_Psyche.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +72,8 @@
 		17F1D2522076A7DC00B9B6A9 /* sideMenuHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideMenuHelper.swift; sourceTree = "<group>"; };
 		17F1D256207B39EE00B9B6A9 /* TriviaFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaFinalViewController.swift; sourceTree = "<group>"; };
 		17F1D258207D555000B9B6A9 /* CustomSegues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegues.swift; sourceTree = "<group>"; };
+		18F23DCECE4D2BFD80DB52A4 /* Pods-Psyche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.release.xcconfig"; sourceTree = "<group>"; };
+		3C0D23FF9E76362FA1AA9A9D /* Pods_Psyche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psyche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42164EC9206C249600E2BCD2 /* Psyche-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Psyche-Bridging-Header.h"; sourceTree = "<group>"; };
 		424B94DA20717C2300739FF1 /* TriviaInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaInitViewController.swift; sourceTree = "<group>"; };
 		424B94DC2071933B00739FF1 /* TriviaExitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaExitViewController.swift; sourceTree = "<group>"; };
@@ -89,10 +91,8 @@
 		7E71D95F207F3D6600A33C4A /* ONe.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ONe.gif; sourceTree = "<group>"; };
 		7E71D961207F42A400A33C4A /* loop.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loop.gif; sourceTree = "<group>"; };
 		7EBBA7CD207D4917007853F5 /* data+gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "data+gallery.swift"; sourceTree = "<group>"; };
-		91B9164D5CC53168993CF4E2 /* Pods-Psyche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.release.xcconfig"; sourceTree = "<group>"; };
-		A4FE210927F58A7B18873C9A /* Pods-Psyche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.debug.xcconfig"; sourceTree = "<group>"; };
+		8912B4ECB3CED3082787308D /* Pods-Psyche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.debug.xcconfig"; sourceTree = "<group>"; };
 		B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlExtension.swift; sourceTree = "<group>"; };
-		D119E59E1A8457CA825E826B /* Pods_Psyche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psyche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD641E4AD0E1DDA46D69BDA8 /* Pods_Psyche.framework in Frameworks */,
+				0743E449155192E1CFCB7476 /* Pods_Psyche.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +121,8 @@
 			children = (
 				178847901FE255AD00916C4D /* Psyche */,
 				1788478F1FE255AD00916C4D /* Products */,
-				CFD15E2E28019B36DBDBDC51 /* Pods */,
-				686DC4F26D20D36DADB6E9B8 /* Frameworks */,
+				9C117ADB03DE55D2AE3F3572 /* Pods */,
+				62E1C7105FF65F66A1C97FF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,10 +202,10 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
-		686DC4F26D20D36DADB6E9B8 /* Frameworks */ = {
+		62E1C7105FF65F66A1C97FF9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D119E59E1A8457CA825E826B /* Pods_Psyche.framework */,
+				3C0D23FF9E76362FA1AA9A9D /* Pods_Psyche.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,11 +228,11 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		CFD15E2E28019B36DBDBDC51 /* Pods */ = {
+		9C117ADB03DE55D2AE3F3572 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A4FE210927F58A7B18873C9A /* Pods-Psyche.debug.xcconfig */,
-				91B9164D5CC53168993CF4E2 /* Pods-Psyche.release.xcconfig */,
+				8912B4ECB3CED3082787308D /* Pods-Psyche.debug.xcconfig */,
+				18F23DCECE4D2BFD80DB52A4 /* Pods-Psyche.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -244,12 +244,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 178847A01FE255AD00916C4D /* Build configuration list for PBXNativeTarget "Psyche" */;
 			buildPhases = (
-				4FDF38ED9E7E248C3EE478B1 /* [CP] Check Pods Manifest.lock */,
+				3B4D094930343FD63862933A /* [CP] Check Pods Manifest.lock */,
 				1788478A1FE255AD00916C4D /* Sources */,
 				1788478B1FE255AD00916C4D /* Frameworks */,
 				1788478C1FE255AD00916C4D /* Resources */,
-				D9D8F22C4ABDFAAD65DE4802 /* [CP] Embed Pods Frameworks */,
-				3ACDE89FF7D9A83B3638BB24 /* [CP] Copy Pods Resources */,
+				BF9C2900B41D5648C56FB1BD /* [CP] Embed Pods Frameworks */,
+				028C5646EE486B58F7CC2B35 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,7 +318,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3ACDE89FF7D9A83B3638BB24 /* [CP] Copy Pods Resources */ = {
+		028C5646EE486B58F7CC2B35 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -340,7 +340,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Psyche/Pods-Psyche-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4FDF38ED9E7E248C3EE478B1 /* [CP] Check Pods Manifest.lock */ = {
+		3B4D094930343FD63862933A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -362,7 +362,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D9D8F22C4ABDFAAD65DE4802 /* [CP] Embed Pods Frameworks */ = {
+		BF9C2900B41D5648C56FB1BD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -372,7 +372,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Psyche/Pods-Psyche-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Atributika/Atributika.framework",
 				"${BUILT_PRODUCTS_DIR}/FLKAutoLayout/FLKAutoLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/FMMosaicLayout/FMMosaicLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/ORStackView/ORStackView.framework",
@@ -386,7 +385,6 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Atributika.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLKAutoLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMMosaicLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ORStackView.framework",
@@ -567,7 +565,7 @@
 		};
 		178847A11FE255AD00916C4D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4FE210927F58A7B18873C9A /* Pods-Psyche.debug.xcconfig */;
+			baseConfigurationReference = 8912B4ECB3CED3082787308D /* Pods-Psyche.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -599,7 +597,7 @@
 		};
 		178847A21FE255AD00916C4D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91B9164D5CC53168993CF4E2 /* Pods-Psyche.release.xcconfig */;
+			baseConfigurationReference = 18F23DCECE4D2BFD80DB52A4 /* Pods-Psyche.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
