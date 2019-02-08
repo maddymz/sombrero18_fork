@@ -235,7 +235,8 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             debugPrint("video.m4v not found")
             return
         }
-        let player = AVPlayer(url: URL(fileURLWithPath: path))
+        let videoUrl = self.gallery[(selected)].videoURL
+        let player = AVPlayer(url: URL(string: videoUrl)!)
         
         playerLayer = AVPlayerLayer(player: player)
         //playerLayer.frame = self.view.bounds
@@ -291,15 +292,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         cell.layer.cornerRadius = 8
      
         let imageView = cell.viewWithTag(2) as! UIImageView
-      if(self.gallery[(indexPath.row)].videoURL != "")
-     {
-            imageView.loadGif(name: self.gallery[(indexPath.row)].videoURL)
-      }
-      else{
-        
         imageView.sd_setImage(with: URL(string: self.gallery[(indexPath.row)].sourceURL ))
-
-       }
         return cell
     }
     
