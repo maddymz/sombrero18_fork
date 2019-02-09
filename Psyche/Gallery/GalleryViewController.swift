@@ -10,6 +10,8 @@ import UIKit
 import FMMosaicLayout
 import AVFoundation
 import SDWebImage
+import HCVimeoVideoExtractor
+import YoutubeSourceParserKit
 class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITextViewDelegate{
     
     //Collection View
@@ -119,6 +121,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         captionText.isEditable = false // default: true
         captionText.isSelectable = true // default: true
         captionText.dataDetectorTypes = [.link]
+//        activityIndicator.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5 )
         
         //MosaicLayout and imageArray Initialization
         let mosaicLayout : FMMosaicLayout = FMMosaicLayout()
@@ -138,8 +141,10 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         view.addSubview(secondViewer)
         secondViewer.alpha = 0.0
         secondViewer.frame = CGRect(x:-375, y:70, width: self.view.frame.width, height:self.view.frame.height)
+        
         Apicall.getRequest(for: 1){
             (result) in
+//            self.activityIndicator.startAnimating()
             switch result {
             case.success(let galleryData):
                 self.gallery = galleryData
@@ -231,30 +236,96 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         video.isHidden = false;
         imageViewer.isHidden = true;
         
-        guard let path = Bundle.main.path(forResource: videoName[selected], ofType: videoType[selected]) else {
-            debugPrint("video.m4v not found")
-            return
-        }
+//        guard let path = Bundle.main.path(forResource: videoName[selected], ofType: videoType[selected]) else {
+//            debugPrint("video.m4v not found")
+//            return
+//        }
         let videoUrl = self.gallery[(selected)].videoURL
-        let player = AVPlayer(url: URL(string: videoUrl)!)
+        let index = videoUrl.firstIndex(of: ".") ?? videoUrl.endIndex
+        print("index:", index)
         
-        playerLayer = AVPlayerLayer(player: player)
-        //playerLayer.frame = self.view.bounds
-        let wsize = self.view.frame.width
-        //let hsize = self.view.frame.height
-        playerLayer!.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
-        video.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
-        playerLayer!.masksToBounds = true
-        playerLayer!.cornerRadius = 20
-
-        self.secondViewer.layer.addSublayer(playerLayer!)
-        player.play()
-        UIView.animate(withDuration: 1.0, animations: {
-            //self.imageViewer.alpha = 0.0
-            //self.fadeBack.effect = UIBlurEffect(style: .dark)
-        })
-        playing = true
+        let urlSource = String(videoUrl[..<index])
+        let substring = urlSource.split(separator: "/")
+        print("usrlorigin:",substring[1])
+        print("urlsource", urlSource)
+        /*
+         **madhukar raj: 02/08/2019
+         **switch case
+         **handles the video playback
+         **based on urls form vimeo and youtube
+        */
+        switch substring[1] {
+        case "vimeo":
+            let url = URL(string: videoUrl)!
+            // this function call extracts teh video extension from the vimeo url: by Madhukar Raj 02/08/2019
+            HCVimeoVideoExtractor.fetchVideoURLFrom(url: url, completion: { ( video:HCVimeoVideo?, error:Error?) -> Void in
+                if let err = error {
+                    print("Error = \(err.localizedDescription)")
+                    return
+                }
+                
+                guard let vid = video else {
+                    print("Invalid video object")
+                    return
+                }
+                
+                print("Title = \(vid.title), url = \(vid.videoURL), thumbnail = \(vid.thumbnailURL)")
+                
+                if let videoURL = vid.videoURL[.Quality540p] {
+                    let player = AVPlayer(url: videoURL)
+                    self.playerLayer = AVPlayerLayer(player: player)
+                    //playerLayer.frame = self.view.bounds
+                    let wsize = self.view.frame.width
+                    //let hsize = self.view.frame.height
+                    self.playerLayer!.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
+                    self.video.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
+                    self.playerLayer!.masksToBounds = true
+                    self.playerLayer!.cornerRadius = 20
+                    
+                    self.secondViewer.layer.addSublayer(self.playerLayer!)
+                    player.play()
+                    UIView.animate(withDuration: 1.0, animations: {
+                        //self.imageViewer.alpha = 0.0
+                        //self.fadeBack.effect = UIBlurEffect(style: .dark)
+                    })
+                    playing = true
+                }
+            })
+        case "youtu" :
+            let testURL = NSURL(string: videoUrl)!
+            Youtube.h264videosWithYoutubeURL(youtubeURL: testURL) { (videoInfo, error) -> Void in
+                if let videoURLString = videoInfo?["url"] as? String,
+                    let videoTitle = videoInfo?["title"] as? String {
+                    print("video title \(videoTitle)")
+                    print("video url \(videoURLString)")
+                    print("video info: ", videoInfo!)
+                }
+                let youtubeUrl = URL(string: (videoInfo?["url"] as? String)!)
+                let player = AVPlayer(url: youtubeUrl!)
+                self.playerLayer = AVPlayerLayer(player: player)
+                //playerLayer.frame = self.view.bounds
+                let wsize = self.view.frame.width
+                //let hsize = self.view.frame.height
+                self.playerLayer!.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
+                self.video.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
+                self.playerLayer!.masksToBounds = true
+                self.playerLayer!.cornerRadius = 20
+                
+                self.secondViewer.layer.addSublayer(self.playerLayer!)
+                player.play()
+                UIView.animate(withDuration: 1.0, animations: {
+                    //self.imageViewer.alpha = 0.0
+                    //self.fadeBack.effect = UIBlurEffect(style: .dark)
+                })
+                playing = true
+            }
+        default:
+            print("url error!!")
+        }
+       
     }
+   
+
     
     @IBAction func toggleState(_ sender: Any) {
         if(playing){
