@@ -43,7 +43,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         let slug: String
         let link: String
         let title: String
-        //        let meta: [JSONAny]
         let description, caption, photoCredit: String
         let videoURL: String
         let altText: String
@@ -57,7 +56,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             case dateGmt = "date_gmt"
             case modified
             case modifiedGmt = "modified_gmt"
-            case slug, link, title, description, caption
+            case slug, link, title,description, caption
             case photoCredit = "photo_credit"
             case videoURL = "video_url"
             case altText = "alt_text"
@@ -72,33 +71,42 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         let width, height: Int
         let file: String
         let sizes: Sizes
+        let hwstringSmall: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case width, height, file, sizes
+            case hwstringSmall = "hwstring_small"
+        }
     }
     
     struct Sizes: Decodable {
-        let thumbnail, medium: Excerpt
+        let thumbnail: Excerpt
         let mediumLarge, large, hero: Excerpt?
-        let heroSm, excerpt, square, portrait: Excerpt
+        let heroSm, excerpt: Excerpt
         let full: Excerpt
         
         enum CodingKeys: String, CodingKey {
-            case thumbnail, medium
+            case thumbnail
             case mediumLarge = "medium_large"
             case large, hero
             case heroSm = "hero-sm"
-            case excerpt, square, portrait, full
+            case excerpt,full
         }
     }
     
     struct Excerpt: Decodable {
         let file: String
         let width, height: Int
-        let mimeType: MIMEType
+        let mimeType: MIMEType?
         let sourceURL: String
+        let path: String?
+        let url: String?
         
         enum CodingKeys: String, CodingKey {
             case file, width, height
             case mimeType = "mime_type"
             case sourceURL = "source_url"
+            case path, url
         }
     }
     
@@ -245,79 +253,70 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         print("index:", index)
         
         let urlSource = String(videoUrl[..<index])
-        let substring = urlSource.split(separator: "/")
+        let substring = videoUrl.split(separator: "/")
+        let host = substring[1].split(separator: ".")
+        let finalString = host[1].split(separator: ".")
+        print("finalstring:", finalString)
+        print("host:", host)
+        print("substring:", substring)
         print("usrlorigin:",substring[1])
         print("urlsource", urlSource)
+       
+        func play(videoUrl: URL){
+            let player = AVPlayer(url: videoUrl)
+            self.playerLayer = AVPlayerLayer(player: player)
+            //playerLayer.frame = self.view.bounds
+            let wsize = self.view.frame.width
+            //let hsize = self.view.frame.height
+            self.playerLayer!.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
+            self.video.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
+            self.playerLayer!.masksToBounds = true
+            self.playerLayer!.cornerRadius = 20
+            
+            self.secondViewer.layer.addSublayer(self.playerLayer!)
+            player.play()
+            UIView.animate(withDuration: 1.0, animations: {
+                //self.imageViewer.alpha = 0.0
+                //self.fadeBack.effect = UIBlurEffect(style: .dark)
+            })
+            playing = true
+        }
         /*
          **madhukar raj: 02/08/2019
          **switch case
          **handles the video playback
          **based on urls form vimeo and youtube
         */
-        switch substring[1] {
-        case "vimeo":
+        
+        switch true {
+        case substring[1].contains("vimeo"):
             let url = URL(string: videoUrl)!
-            // this function call extracts teh video extension from the vimeo url: by Madhukar Raj 02/08/2019
+            // this function call extracts the video extension from the vimeo url: by Madhukar Raj 02/08/2019
             HCVimeoVideoExtractor.fetchVideoURLFrom(url: url, completion: { ( video:HCVimeoVideo?, error:Error?) -> Void in
                 if let err = error {
                     print("Error = \(err.localizedDescription)")
                     return
                 }
-                
                 guard let vid = video else {
                     print("Invalid video object")
                     return
                 }
-                
                 print("Title = \(vid.title), url = \(vid.videoURL), thumbnail = \(vid.thumbnailURL)")
-                
                 if let videoURL = vid.videoURL[.Quality540p] {
-                    let player = AVPlayer(url: videoURL)
-                    self.playerLayer = AVPlayerLayer(player: player)
-                    //playerLayer.frame = self.view.bounds
-                    let wsize = self.view.frame.width
-                    //let hsize = self.view.frame.height
-                    self.playerLayer!.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
-                    self.video.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
-                    self.playerLayer!.masksToBounds = true
-                    self.playerLayer!.cornerRadius = 20
-                    
-                    self.secondViewer.layer.addSublayer(self.playerLayer!)
-                    player.play()
-                    UIView.animate(withDuration: 1.0, animations: {
-                        //self.imageViewer.alpha = 0.0
-                        //self.fadeBack.effect = UIBlurEffect(style: .dark)
-                    })
-                    playing = true
+                    play(videoUrl: videoURL)
                 }
             })
-        case "youtu" :
+        case substring[1].contains("youtu") :
             let testURL = NSURL(string: videoUrl)!
             Youtube.h264videosWithYoutubeURL(youtubeURL: testURL) { (videoInfo, error) -> Void in
-                if let videoURLString = videoInfo?["url"] as? String,
-                    let videoTitle = videoInfo?["title"] as? String {
-                    print("video title \(videoTitle)")
-                    print("video url \(videoURLString)")
-                    print("video info: ", videoInfo!)
-                }
                 let youtubeUrl = URL(string: (videoInfo?["url"] as? String)!)
-                let player = AVPlayer(url: youtubeUrl!)
-                self.playerLayer = AVPlayerLayer(player: player)
-                //playerLayer.frame = self.view.bounds
-                let wsize = self.view.frame.width
-                //let hsize = self.view.frame.height
-                self.playerLayer!.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
-                self.video.frame = CGRect(x: 27, y: 48, width: (wsize-55), height: (wsize-55))
-                self.playerLayer!.masksToBounds = true
-                self.playerLayer!.cornerRadius = 20
-                
-                self.secondViewer.layer.addSublayer(self.playerLayer!)
-                player.play()
-                UIView.animate(withDuration: 1.0, animations: {
-                    //self.imageViewer.alpha = 0.0
-                    //self.fadeBack.effect = UIBlurEffect(style: .dark)
-                })
-                playing = true
+                play(videoUrl: youtubeUrl!)
+            }
+        case substring[1].contains("youtube") :
+            let testURL = NSURL(string: videoUrl)!
+            Youtube.h264videosWithYoutubeURL(youtubeURL: testURL) { (videoInfo, error) -> Void in
+                let youtubeUrl = URL(string: (videoInfo?["url"] as? String)!)
+               play(videoUrl: youtubeUrl!)
             }
         default:
             print("url error!!")

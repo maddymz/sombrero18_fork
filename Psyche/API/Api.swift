@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 class Apicall: GalleryViewController {
     enum Result<Value> {
         case success(Value)
@@ -15,8 +14,18 @@ class Apicall: GalleryViewController {
     }
     
    class func getRequest(for userId: Int, completion: ((Result<[GalleryStruct]>) -> Void)?) {
-        let url = URL(string: "https://test-psyche.ws.asu.edu/wp-json/psyche/v1/gallery")!
-        let request = URLRequest(url: url)        
+//        let url = URL(string: "https://psyche.asu.edu/wp-json/psyche/v1/gallery")!
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "psyche.asu.edu"
+        components.path = "/wp-json/psyche/v1/gallery"
+        components.queryItems = [
+            URLQueryItem(name: "page", value: "1"),
+            URLQueryItem(name: "per_page" , value: "100")
+        ]
+        let url = components.url!
+        print("url :", url)
+        let request = URLRequest(url: url)
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         let task = session.dataTask(with: request) { (responseData, response, responseError) in

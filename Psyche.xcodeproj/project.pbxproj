@@ -45,8 +45,7 @@
 		7E71D960207F3D6700A33C4A /* ONe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D95F207F3D6600A33C4A /* ONe.gif */; };
 		7E71D962207F42A400A33C4A /* loop.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D961207F42A400A33C4A /* loop.gif */; };
 		7EBBA7CE207D4917007853F5 /* data+gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBBA7CD207D4917007853F5 /* data+gallery.swift */; };
-		B709FD7A220E3BD900A684B4 /* HCVimeoVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709FD78220E3BD900A684B4 /* HCVimeoVideo.swift */; };
-		B709FD7B220E3BD900A684B4 /* HCVimeoVideoExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709FD79220E3BD900A684B4 /* HCVimeoVideoExtractor.swift */; };
+		B725FF7622122A7B0088456A /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B725FF7522122A7B0088456A /* Urls.swift */; };
 		B7F5C00D21FFC5B900FA473B /* HtmlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,8 +91,7 @@
 		7E71D961207F42A400A33C4A /* loop.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loop.gif; sourceTree = "<group>"; };
 		7EBBA7CD207D4917007853F5 /* data+gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "data+gallery.swift"; sourceTree = "<group>"; };
 		A4C6D0B6D6F2EEC9D96D0F6E /* Pods-Psyche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.debug.xcconfig"; sourceTree = "<group>"; };
-		B709FD78220E3BD900A684B4 /* HCVimeoVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HCVimeoVideo.swift; path = ../../../../vimeoextractor/HCVimeoVideoExtractor/HCVimeoVideoExtractor/Classes/HCVimeoVideo.swift; sourceTree = "<group>"; };
-		B709FD79220E3BD900A684B4 /* HCVimeoVideoExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HCVimeoVideoExtractor.swift; path = ../../../../vimeoextractor/HCVimeoVideoExtractor/HCVimeoVideoExtractor/Classes/HCVimeoVideoExtractor.swift; sourceTree = "<group>"; };
+		B725FF7522122A7B0088456A /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
 		B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlExtension.swift; sourceTree = "<group>"; };
 		EBCBCFD4C2D84175D328683A /* Pods_Psyche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psyche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5249A49C383D9033E2B2629 /* Pods-Psyche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 		178847901FE255AD00916C4D /* Psyche */ = {
 			isa = PBXGroup;
 			children = (
-				B709FD77220E385600A684B4 /* UrlExtractor */,
 				6B7C259121EFEB380085AC0A /* API */,
 				6B7C258E21EFE12B0085AC0A /* Gallery */,
 				6B7C258421EF65A10085AC0A /* Data */,
@@ -229,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				6B7C259221EFEB620085AC0A /* Api.swift */,
+				B725FF7522122A7B0088456A /* Urls.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -240,15 +238,6 @@
 				F5249A49C383D9033E2B2629 /* Pods-Psyche.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		B709FD77220E385600A684B4 /* UrlExtractor */ = {
-			isa = PBXGroup;
-			children = (
-				B709FD78220E3BD900A684B4 /* HCVimeoVideo.swift */,
-				B709FD79220E3BD900A684B4 /* HCVimeoVideoExtractor.swift */,
-			);
-			path = UrlExtractor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,7 +416,6 @@
 				424B94DB20717C2300739FF1 /* TriviaInitViewController.swift in Sources */,
 				7EBBA7CE207D4917007853F5 /* data+gallery.swift in Sources */,
 				175B1B7D206C0E830046A81D /* TimelineItemTableViewCell.swift in Sources */,
-				B709FD7B220E3BD900A684B4 /* HCVimeoVideoExtractor.swift in Sources */,
 				170B330B20756DA50080FA6E /* TriviaOpponentData.swift in Sources */,
 				42B9188C207C0D820038D3A9 /* CountdownClockHome.swift in Sources */,
 				42009ECB207E961900DBCFB1 /* CustomSegues.swift in Sources */,
@@ -440,9 +428,9 @@
 				17F1D257207B39EE00B9B6A9 /* TriviaFinalViewController.swift in Sources */,
 				170B330A20756DA50080FA6E /* TriviaOpponentViewController.swift in Sources */,
 				424B94DD2071933B00739FF1 /* TriviaExitViewController.swift in Sources */,
+				B725FF7622122A7B0088456A /* Urls.swift in Sources */,
 				178847921FE255AD00916C4D /* AppDelegate.swift in Sources */,
 				17F1D24F2075DE2D00B9B6A9 /* TriviaCategoryViewController.swift in Sources */,
-				B709FD7A220E3BD900A684B4 /* HCVimeoVideo.swift in Sources */,
 				17C34E42205A490B00712D00 /* LoadingViewController.swift in Sources */,
 				175B1B7C206C0E830046A81D /* TimelineTableViewController.swift in Sources */,
 				42B9D343207DBF090086EAC6 /* Psyche.xcdatamodeld in Sources */,
