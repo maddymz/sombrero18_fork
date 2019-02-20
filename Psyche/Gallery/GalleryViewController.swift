@@ -207,6 +207,8 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         else{
             video.isHidden = true
             imageViewer.isHidden = false
+            imageViewer.sd_setShowActivityIndicatorView(true)
+            imageViewer.sd_setIndicatorStyle(.gray)
             imageViewer.sd_setImage(with: URL(string: self.gallery[(indexPath.row)].sourceURL ))
             titleLabel.text = self.gallery[(indexPath.row)].title
             titleLabel.textColor = UIColor.black
@@ -368,6 +370,8 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         cell.layer.cornerRadius = 8
      
         let imageView = cell.viewWithTag(2) as! UIImageView
+        imageView.sd_setShowActivityIndicatorView(true)
+        imageView.sd_setIndicatorStyle(.gray)
         imageView.sd_setImage(with: URL(string: self.gallery[(indexPath.row)].sourceURL ))
         return cell
     }
