@@ -25,6 +25,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //second view outlets
    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var secondViewer: UIView!
     @IBOutlet weak var imageViewer: UIImageView!
@@ -123,7 +124,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         captionText.delegate = self
         captionText.isUserInteractionEnabled = true // default: true
         captionText.isEditable = false // default: true
@@ -149,13 +149,14 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         view.addSubview(secondViewer)
         secondViewer.alpha = 0.0
         secondViewer.frame = CGRect(x:-375, y:70, width: self.view.frame.width, height:self.view.frame.height)
-        
+        self.activityIndicator.startAnimating()
         Apicall.getRequest(for: 1){
             (result) in
 //            self.activityIndicator.startAnimating()
             switch result {
             case.success(let galleryData):
                 self.gallery = galleryData
+                self.activityIndicator.stopAnimating()
                 self.collectionView.reloadData()
             case.failure(let error):
                 fatalError("error: \(error.localizedDescription)")
