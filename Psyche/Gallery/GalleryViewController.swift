@@ -25,7 +25,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //second view outlets
    
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var secondViewer: UIView!
     @IBOutlet weak var imageViewer: UIImageView!
@@ -34,7 +33,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     @IBOutlet weak var video: UIButton!
     @IBOutlet weak var fadeBack: UIVisualEffectView!
     var playerLayer : AVPlayerLayer?
-    
+    var activityIndicator = UIActivityIndicatorView()
     
     
     //struct model to hold the gallery json data: by Madhukar Raj 01/17/2019
@@ -124,6 +123,12 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle:.gray)
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        activityIndicator.center = CGPoint(x: 187.5,  y: 271.5 )
+        collectionView .addSubview(activityIndicator)
+        
+    
         captionText.delegate = self
         captionText.isUserInteractionEnabled = true // default: true
         captionText.isEditable = false // default: true
