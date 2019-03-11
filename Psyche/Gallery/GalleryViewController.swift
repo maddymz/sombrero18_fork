@@ -434,30 +434,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         }
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        self.isWaiting = true
-        if indexPath.row == self.gallery.count - 2 && !isWaiting {
-            isWaiting = true
-            self.pageNumber += 1
-            doPaging(pageNo: self.pageNumber)
-        }
-    }
-    func doPaging(pageNo: Int){
-        Apicall.getRequest(pagenum: self.pageNumber){
-            (result) in
-            //            self.activityIndicator.startAnimating()
-            switch result {
-            case.success(let galleryData):
-                self.gallery = galleryData
-//                self.activityIndicator.stopAnimating()
-                self.collectionView.reloadData()
-                self.isWaiting = false
-            case.failure(let error):
-                fatalError("error: \(error.localizedDescription)")
-            }
-        }
-    }
     //NUMBER OF PHOTOS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("item count:", self.gallery.count)
