@@ -13,7 +13,7 @@ class Apicall: GalleryViewController {
         case failure(Error)
     }
     
-    class func getRequest(pagenum: Int, completion: ((Result<[GalleryStruct]>) -> Void)?) {
+   class func getRequest(pagenum: Int, completion: ((Result<[GalleryStruct]>) -> Void)?) {
 //        let url = URL(string: "https://psyche.asu.edu/wp-json/psyche/v1/gallery")!
         var components = URLComponents()
         components.scheme = "https"
@@ -21,6 +21,7 @@ class Apicall: GalleryViewController {
         components.path = "/wp-json/psyche/v1/gallery"
         components.queryItems = [
             URLQueryItem(name: "page", value: String(pagenum)),
+            URLQueryItem(name: "per_page" , value: "100")
         ]
         let url = components.url!
         print("url :", url)

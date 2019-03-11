@@ -23,11 +23,9 @@ PODS:
   - FLKAutoLayout (0.2.1)
   - FMMosaicLayout (0.1.4)
   - HCVimeoVideoExtractor (0.0.1)
+  - Kingfisher (5.1.0)
   - ORStackView (3.0.1):
     - FLKAutoLayout (~> 0.2)
-  - SDWebImage (4.4.5):
-    - SDWebImage/Core (= 4.4.5)
-  - SDWebImage/Core (4.4.5)
   - SwiftyJSON (3.1.4)
   - TwitterCore (3.2.0)
   - TwitterKit (3.4.2):
@@ -38,8 +36,8 @@ DEPENDENCIES:
   - AFNetworking (~> 2.6)
   - FMMosaicLayout
   - HCVimeoVideoExtractor
+  - Kingfisher (~> 5.0)
   - ORStackView (~> 3.0)
-  - SDWebImage (~> 4.0)
   - SwiftyJSON (~> 3.1.1)
   - TwitterKit
   - YoutubeSourceParserKit
@@ -50,8 +48,8 @@ SPEC REPOS:
     - FLKAutoLayout
     - FMMosaicLayout
     - HCVimeoVideoExtractor
+    - Kingfisher
     - ORStackView
-    - SDWebImage
     - SwiftyJSON
     - TwitterCore
     - TwitterKit
@@ -62,13 +60,13 @@ SPEC CHECKSUMS:
   FLKAutoLayout: 9db6b30c2008d230da608e62c607b11c23b942e6
   FMMosaicLayout: c0febf6876c987c425d7e2176d034fa7a2c98cb5
   HCVimeoVideoExtractor: d3c251280f7027ffd324266e1930b3618e0adb46
+  Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
   ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
-  SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
   TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
   YoutubeSourceParserKit: d1506222a62718ed41f18ab52ebbc1b1d9ecabcc
 
-PODFILE CHECKSUM: 174d96c71eefe2cbce88067035c1f64fd2d17d2e
+PODFILE CHECKSUM: 0bce17dc3a6430ab1de8bf42233d38b3158520e9
 
 COCOAPODS: 1.5.3

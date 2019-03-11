@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "36EC84F8351FEC0230D085F7CF713F2D"
+               BlueprintIdentifier = "73DD176432235B3D6FE5AF1760EF66C5"
                BuildableName = "YoutubeSourceParserKit.framework"
                BlueprintName = "YoutubeSourceParserKit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "36EC84F8351FEC0230D085F7CF713F2D"
+            BlueprintIdentifier = "73DD176432235B3D6FE5AF1760EF66C5"
             BuildableName = "YoutubeSourceParserKit.framework"
             BlueprintName = "YoutubeSourceParserKit"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "36EC84F8351FEC0230D085F7CF713F2D"
+            BlueprintIdentifier = "73DD176432235B3D6FE5AF1760EF66C5"
             BuildableName = "YoutubeSourceParserKit.framework"
             BlueprintName = "YoutubeSourceParserKit"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -9,9 +9,9 @@
 import UIKit
 import FMMosaicLayout
 import AVFoundation
-import SDWebImage
 import HCVimeoVideoExtractor
 import YoutubeSourceParserKit
+import Kingfisher
 class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITextViewDelegate{
     
     //Collection View
@@ -33,6 +33,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     @IBOutlet weak var video: UIButton!
     @IBOutlet weak var fadeBack: UIVisualEffectView!
     var playerLayer : AVPlayerLayer?
+    var activityIndicator = UIActivityIndicatorView()
     var isWaiting: Bool = true
     var pageNumber: Int = 1
     
@@ -209,9 +210,26 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         else{
             video.isHidden = true
             imageViewer.isHidden = false
-            imageViewer.sd_setShowActivityIndicatorView(true)
-            imageViewer.sd_setIndicatorStyle(.gray)
-            imageViewer.sd_setImage(with: URL(string: self.gallery[(indexPath.row)].sourceURL ))
+            let processor = DownsamplingImageProcessor(size: CGSize(width: 150, height: 150))
+            imageViewer.kf.indicatorType = .activity
+            imageViewer.kf.setImage(
+                with: URL(string: self.gallery[(indexPath.row)].sourceURL ),
+                //            placeholder: UIImage(named: "placeholderImage"),
+                options: [
+                    .processor(processor),
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(1)),
+                    .cacheOriginalImage
+                ])
+            {
+                result in
+                switch result {
+                case .success(let value):
+                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                case .failure(let error):
+                    print("Job failed: \(error.localizedDescription)")
+                }
+            }
             titleLabel.text = self.gallery[(indexPath.row)].title
             titleLabel.textColor = UIColor.black
             titleLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(18))
@@ -334,7 +352,30 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
        
     }
    
-
+    //method to implement on scroll image load - by Madhukar Raj 03/11/2019s
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        self.isWaiting = true
+        if indexPath.row == self.gallery.count - 2 && !isWaiting {
+            isWaiting = true
+            self.pageNumber += 1
+            doPaging(pageNo: self.pageNumber)
+        }
+    }
+    func doPaging(pageNo: Int){
+        Apicall.getRequest(pagenum: self.pageNumber){
+            (result) in
+            //            self.activityIndicator.startAnimating()
+            switch result {
+            case.success(let galleryData):
+                self.gallery = galleryData
+                //                self.activityIndicator.stopAnimating()
+                self.collectionView.reloadData()
+                self.isWaiting = false
+            case.failure(let error):
+                fatalError("error: \(error.localizedDescription)")
+            }
+        }
+    }
     
     @IBAction func toggleState(_ sender: Any) {
         if(playing){
@@ -370,10 +411,27 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) 
         cell.layer.cornerRadius = 8
-        let imageView = cell.viewWithTag(2) as! UIImageView
-        imageView.sd_setShowActivityIndicatorView(true)
-        imageView.sd_setIndicatorStyle(.gray)
-        imageView.sd_setImage(with: URL(string: self.gallery[(indexPath.row)].sourceURL ))
+     
+        var imageView = cell.viewWithTag(2) as! UIImageView
+        let processor = DownsamplingImageProcessor(size: CGSize(width: 150, height: 150))
+        imageView.kf.indicatorType = .activity
+        imageView.kf.setImage(
+            with: URL(string: self.gallery[(indexPath.row)].sourceURL ),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+        {
+            result in
+            switch result {
+            case .success(let value):
+                print("Task done for: \(value.source.url?.absoluteString ?? "")")
+            case .failure(let error):
+                print("Job failed: \(error.localizedDescription)")
+            }
+        }
         return cell
     }
     
