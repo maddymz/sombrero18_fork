@@ -25,7 +25,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //second view outlets
    
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var secondViewer: UIView!
     @IBOutlet weak var imageViewer: UIImageView!
@@ -126,6 +125,12 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle:.gray)
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        activityIndicator.center = CGPoint(x: 187.5,  y: 271.5 )
+        collectionView .addSubview(activityIndicator)
+        
+    
         captionText.delegate = self
         captionText.isUserInteractionEnabled = true // default: true
         captionText.isEditable = false // default: true
@@ -204,6 +209,8 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         else{
             video.isHidden = true
             imageViewer.isHidden = false
+            imageViewer.sd_setShowActivityIndicatorView(true)
+            imageViewer.sd_setIndicatorStyle(.gray)
             imageViewer.sd_setImage(with: URL(string: self.gallery[(indexPath.row)].sourceURL ))
             titleLabel.text = self.gallery[(indexPath.row)].title
             titleLabel.textColor = UIColor.black
@@ -364,6 +371,8 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) 
         cell.layer.cornerRadius = 8
         let imageView = cell.viewWithTag(2) as! UIImageView
+        imageView.sd_setShowActivityIndicatorView(true)
+        imageView.sd_setIndicatorStyle(.gray)
         imageView.sd_setImage(with: URL(string: self.gallery[(indexPath.row)].sourceURL ))
         return cell
     }
