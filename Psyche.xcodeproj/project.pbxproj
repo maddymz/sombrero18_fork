@@ -38,7 +38,6 @@
 		6B7C259321EFEB620085AC0A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C259221EFEB620085AC0A /* Api.swift */; };
 		7DA4EC440A0174E88F40ED1C /* Pods_Psyche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBCBCFD4C2D84175D328683A /* Pods_Psyche.framework */; };
 		7E71D960207F3D6700A33C4A /* ONe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D95F207F3D6600A33C4A /* ONe.gif */; };
-		7EBBA7CE207D4917007853F5 /* data+gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBBA7CD207D4917007853F5 /* data+gallery.swift */; };
 		B7F5C00D21FFC5B900FA473B /* HtmlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +75,6 @@
 		6B7C258421EF65A10085AC0A /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		6B7C259221EFEB620085AC0A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		7E71D95F207F3D6600A33C4A /* ONe.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ONe.gif; sourceTree = "<group>"; };
-		7EBBA7CD207D4917007853F5 /* data+gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "data+gallery.swift"; sourceTree = "<group>"; };
 		A4C6D0B6D6F2EEC9D96D0F6E /* Pods-Psyche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.debug.xcconfig"; sourceTree = "<group>"; };
 		B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlExtension.swift; sourceTree = "<group>"; };
 		EBCBCFD4C2D84175D328683A /* Pods_Psyche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psyche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				170D74FB202396BD0026E232 /* GalleryViewController.swift */,
-				7EBBA7CD207D4917007853F5 /* data+gallery.swift */,
 				B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */,
 			);
 			path = Gallery;
@@ -387,7 +384,6 @@
 			files = (
 				6B7C259321EFEB620085AC0A /* Api.swift in Sources */,
 				424B94DB20717C2300739FF1 /* TriviaInitViewController.swift in Sources */,
-				7EBBA7CE207D4917007853F5 /* data+gallery.swift in Sources */,
 				175B1B7D206C0E830046A81D /* TimelineItemTableViewCell.swift in Sources */,
 				170B330B20756DA50080FA6E /* TriviaOpponentData.swift in Sources */,
 				42B9188C207C0D820038D3A9 /* CountdownClockHome.swift in Sources */,
