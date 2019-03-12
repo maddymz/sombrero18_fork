@@ -12,7 +12,7 @@ import AVFoundation
 import HCVimeoVideoExtractor
 import YoutubeSourceParserKit
 import Kingfisher
-class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITextViewDelegate{
+class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITextViewDelegate, UIScrollViewDelegate{
     
     //Collection View
     @IBOutlet weak var collectionView: UICollectionView!
@@ -123,7 +123,8 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     }
     
     var gallery = [GalleryStruct]()
-
+    var collectionviewitems: [Any ] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator = UIActivityIndicatorView(activityIndicatorStyle:.gray)
@@ -131,7 +132,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         activityIndicator.center = CGPoint(x: 187.5,  y: 271.5 )
         collectionView .addSubview(activityIndicator)
         
-    
         captionText.delegate = self
         captionText.isUserInteractionEnabled = true // default: true
         captionText.isEditable = false // default: true
@@ -160,10 +160,11 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         self.activityIndicator.startAnimating()
         Apicall.getRequest(pagenum: self.pageNumber){
             (result) in
-//            self.activityIndicator.startAnimating()
+            self.activityIndicator.startAnimating()
             switch result {
             case.success(let galleryData):
-                self.gallery = galleryData
+                self.gallery = self.gallery + galleryData
+                self.activityIndicator.stopAnimating()
                 self.activityIndicator.stopAnimating()
                 self.collectionView.reloadData()
             case.failure(let error):
@@ -353,24 +354,25 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     }
    
     //method to implement on scroll image load - by Madhukar Raj 03/11/2019s
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        self.isWaiting = true
-        if indexPath.row == self.gallery.count - 2 && !isWaiting {
-            isWaiting = true
-            self.pageNumber += 1
-            doPaging(pageNo: self.pageNumber)
-        }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print("scroll ended!!!")
+        self.pageNumber += 1
+        doPaging(pageNo: self.pageNumber)
     }
+ 
     func doPaging(pageNo: Int){
         Apicall.getRequest(pagenum: self.pageNumber){
             (result) in
-            //            self.activityIndicator.startAnimating()
+         self.activityIndicator.startAnimating()
             switch result {
             case.success(let galleryData):
-                self.gallery = galleryData
-                //                self.activityIndicator.stopAnimating()
-                self.collectionView.reloadData()
-                self.isWaiting = false
+                if(!galleryData.isEmpty){
+                    self.gallery = self.gallery + galleryData
+                    self.activityIndicator.stopAnimating()
+                    self.collectionView.reloadData()
+                    self.isWaiting = false
+                }
+              
             case.failure(let error):
                 fatalError("error: \(error.localizedDescription)")
             }
@@ -432,6 +434,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
                 print("Job failed: \(error.localizedDescription)")
             }
         }
+        
         return cell
     }
     //NUMBER OF PHOTOS
