@@ -36,6 +36,8 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     var activityIndicator = UIActivityIndicatorView()
     var isWaiting: Bool = true
     var pageNumber: Int = 1
+    var playing: Bool = false
+    var selected : Int = 0
     
     
     
@@ -165,7 +167,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             case.success(let galleryData):
                 self.gallery = self.gallery + galleryData
                 self.activityIndicator.stopAnimating()
-                self.activityIndicator.stopAnimating()
                 self.collectionView.reloadData()
             case.failure(let error):
                 fatalError("error: \(error.localizedDescription)")
@@ -215,7 +216,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             imageViewer.kf.indicatorType = .activity
             imageViewer.kf.setImage(
                 with: URL(string: self.gallery[(indexPath.row)].sourceURL ),
-                //            placeholder: UIImage(named: "placeholderImage"),
                 options: [
                     .processor(processor),
                     .scaleFactor(UIScreen.main.scale),
@@ -273,10 +273,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         video.isHidden = false;
         imageViewer.isHidden = true;
         
-//        guard let path = Bundle.main.path(forResource: videoName[selected], ofType: videoType[selected]) else {
-//            debugPrint("video.m4v not found")
-//            return
-//        }
         let videoUrl = self.gallery[(selected)].videoURL
         let index = videoUrl.firstIndex(of: ".") ?? videoUrl.endIndex
         print("index:", index)
@@ -305,8 +301,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             self.secondViewer.layer.addSublayer(self.playerLayer!)
             player.play()
             UIView.animate(withDuration: 1.0, animations: {
-                //self.imageViewer.alpha = 0.0
-                //self.fadeBack.effect = UIBlurEffect(style: .dark)
             })
             playing = true
         }

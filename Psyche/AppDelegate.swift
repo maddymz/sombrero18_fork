@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 import TwitterKit
-import SDWebImage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,19 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         TWTRTwitter.sharedInstance().start(withConsumerKey: "F4jAel6EzmqsS5qBfe99sI5VX", consumerSecret: "x1h1YucRjVKyumulYqP27zObQ2Ir1TmdP84le0Emx6tvfxcnmE")
-        
-        //handle high memory usage by SDWebimgae- by Madhukar Raj 03/11/2019
-//        SDImageCache.shared().config.maxCacheAge = 3600 * 24 * 7 //1 Week
-//        
-//        SDImageCache.shared().maxMemoryCost = 1024 * 1024 * 20 //Aprox 20 images
-//        
-//        //SDImageCache.shared().config.shouldCacheImagesInMemory = false //Default True => Store images in RAM cache for Fast performance
-//        
-//        SDImageCache.shared().config.shouldDecompressImages = false
-//        
-//        SDWebImageDownloader.shared().shouldDecompressImages = false
-//        
-//        SDImageCache.shared().config.diskCacheReadingOptions = NSData.ReadingOptions.mappedIfSafe
         
         //ViewControllerBased status bar to NO in info.plist
         UIApplication.shared.statusBarStyle = .lightContent
@@ -113,49 +99,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    
-    
-
-    
-
 }
-
-//extension UINavigationBar {
-//
-//    func setGradientBackground(colors: [UIColor]) {
-//
-//        var updatedFrame = bounds
-//        updatedFrame.size.height += self.frame.origin.y
-//        let gradientLayer = CAGradientLayer(frame: updatedFrame, colors: colors)
-//
-//        setBackgroundImage(gradientLayer.creatGradientImage(), for: UIBarMetrics.default)
-//    }
-//}
-//
-//extension CAGradientLayer {
-//
-//    convenience init(frame: CGRect, colors: [UIColor]) {
-//        self.init()
-//        self.frame = frame
-//        self.colors = []
-//        for color in colors {
-//            self.colors?.append(color.cgColor)
-//        }
-//        startPoint = CGPoint(x: 0, y: 0)
-//        endPoint = CGPoint(x: 0, y: 1)
-//    }
-//
-//    func creatGradientImage() -> UIImage? {
-//
-//        var image: UIImage? = nil
-//        UIGraphicsBeginImageContext(bounds.size)
-//        if let context = UIGraphicsGetCurrentContext() {
-//            render(in: context)
-//            image = UIGraphicsGetImageFromCurrentImageContext()
-//        }
-//        UIGraphicsEndImageContext()
-//        return image
-//    }
-//
-//}
-//
