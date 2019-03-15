@@ -38,6 +38,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     var pageNumber: Int = 1
     var playing: Bool = false
     var selected : Int = 0
+    var scrollstatus: Bool = true
     
     
     
@@ -348,27 +349,29 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     }
    
     //method to implement on scroll image load - by Madhukar Raj 03/11/2019s
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print("scroll ended!!!")
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.pageNumber += 1
         doPaging(pageNo: self.pageNumber)
+        self.scrollstatus = true
     }
- 
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.scrollstatus = false
+    }
     func doPaging(pageNo: Int){
-        Apicall.getRequest(pagenum: self.pageNumber){
-            (result) in
-         self.activityIndicator.startAnimating()
-            switch result {
-            case.success(let galleryData):
-                if(!galleryData.isEmpty){
-                    self.gallery = self.gallery + galleryData
-                    self.activityIndicator.stopAnimating()
-                    self.collectionView.reloadData()
-                    self.isWaiting = false
+        if (self.scrollstatus){
+            Apicall.getRequest(pagenum: self.pageNumber){
+                (result) in
+                self.activityIndicator.startAnimating()
+                switch result {
+                case.success(let galleryData):
+                    if(!galleryData.isEmpty){
+                        self.gallery = self.gallery + galleryData
+                        self.activityIndicator.stopAnimating()
+                        self.collectionView.reloadData()
+                    }
+                case.failure(let error):
+                    fatalError("error: \(error.localizedDescription)")
                 }
-              
-            case.failure(let error):
-                fatalError("error: \(error.localizedDescription)")
             }
         }
     }
