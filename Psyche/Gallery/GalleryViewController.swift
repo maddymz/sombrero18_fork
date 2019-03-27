@@ -140,7 +140,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         captionText.isEditable = false // default: true
         captionText.isSelectable = true // default: true
         captionText.dataDetectorTypes = [.link]
-//        activityIndicator.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5 )
         
         //MosaicLayout and imageArray Initialization
         let mosaicLayout : FMMosaicLayout = FMMosaicLayout()
@@ -213,7 +212,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         else{
             video.isHidden = true
             imageViewer.isHidden = false
-            let processor = DownsamplingImageProcessor(size: CGSize(width: 150, height: 150))
+            let processor = DownsamplingImageProcessor(size: CGSize(width: 250, height: 250))
             imageViewer.kf.indicatorType = .activity
             imageViewer.kf.setImage(
                 with: URL(string: self.gallery[(indexPath.row)].sourceURL ),
@@ -352,28 +351,21 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.pageNumber += 1
         doPaging(pageNo: self.pageNumber)
-        self.scrollstatus = true
     }
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        self.scrollstatus = false
-    }
+
     func doPaging(pageNo: Int){
-        if (self.scrollstatus){
             Apicall.getRequest(pagenum: self.pageNumber){
                 (result) in
-                self.activityIndicator.startAnimating()
                 switch result {
                 case.success(let galleryData):
                     if(!galleryData.isEmpty){
                         self.gallery = self.gallery + galleryData
-                        self.activityIndicator.stopAnimating()
                         self.collectionView.reloadData()
                     }
                 case.failure(let error):
                     fatalError("error: \(error.localizedDescription)")
                 }
             }
-        }
     }
     
     @IBAction func toggleState(_ sender: Any) {
@@ -412,7 +404,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         cell.layer.cornerRadius = 8
      
         var imageView = cell.viewWithTag(2) as! UIImageView
-        let processor = DownsamplingImageProcessor(size: CGSize(width: 150, height: 150))
+        let processor = DownsamplingImageProcessor(size: CGSize(width: 250, height: 250))
         imageView.kf.indicatorType = .activity
         imageView.kf.setImage(
             with: URL(string: self.gallery[(indexPath.row)].sourceURL ),
