@@ -119,6 +119,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     enum MIMEType: String, Decodable {
         case imageJPEG = "image/jpeg"
         case imagePNG = "image/png"
+        case imageGIF = "image/gif"
     }
     
     enum MediaType: String, Decodable {
