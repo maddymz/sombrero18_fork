@@ -122,10 +122,11 @@ class CountdownClockTimeline : UIView {
         dateComponents.year = 2027
         dateComponents.month = 11
         phases.append(("F", Calendar.current.date(from: dateComponents)!))
+        print("phases", phases)
         
         let date = Date() // Current date
         // Remove all phases that already passed
-        for i in 0 ... phases.count - 1 {
+        for i in 0 ..< phases.count - 1 {
             if phases[i].1 < date {
                 phases.remove(at: i)
             }
