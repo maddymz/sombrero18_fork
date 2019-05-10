@@ -29,8 +29,10 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     var secondsMLabel = UILabel()
     
     var phases: [(label: String, phase: String, date: Date)] = [] // Array of tuples
+    var removedPhases : [String] = [] // Array contains removed phases
     var dateLabels = [String]() // Array of names for dates
     var currentDateIndex = 0 // Index of date being displayed
+    var index = -1
     var dateViews = [DateView]()
     
     weak var countdownTimer: Timer? // Timer that ticks every second and updates the label
@@ -199,7 +201,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     }
     
     func updatePhaseImg() {
-        let phase = phases[currentDateIndex].1
+        let phase = removedPhases[currentDateIndex]
         phaseImg.image = UIImage(named: "Phase_\(phase)")
     }
     
@@ -222,7 +224,8 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         dropdownView.addSubview(scrollView)
         
         phases.forEach { (phase) in
-            if (j != currentDateIndex) {
+            print("CURRENTINDEX", currentDateIndex)
+            if (j != index) {
                 let result = dateToString(date: phase.2)
                 
                 let dateView = DateView()
@@ -230,7 +233,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
                 let dateLabel = UILabel()
                 dateLabel.frame = CGRect(x: dateLabelX, y: dateLabelYConst, width: 100, height: 100)
                 
-                if (result.0 != "") { // years > 0
+//                if (result.0 != "") { // years > 0
                     let yearLabel = UILabel()
                     yearLabel.frame = CGRect(x: yearLabelX, y: timeLabelYConst, width: 100, height: 100)
                     let yearMLabel = UILabel()
@@ -275,47 +278,47 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
                     dateView.yearLabel = yearLabel
                     dateView.dayLabel = dayLabel
                     dateView.hourLabel = hourLabel
-                } else { // years == 0
-                    
-                    let dayLabel = UILabel()
-                    dayLabel.frame = CGRect(x: yearLabelX, y: timeLabelYConst, width: 100, height: 100)
-                    let dayMLabel = UILabel()
-                    dayMLabel.frame = CGRect(x: yearMLabelX + timeMLabelXConst, y: timeMLabelYConst, width: 100, height: 100)
-                    
-                    let timeLabel = UILabel()
-                    timeLabel.frame = CGRect(x: dayLabelX, y: timeLabelYConst, width: 300, height: 100)
-                    let timeMLabel = UILabel()
-                    timeMLabel.frame = CGRect(x: dayMLabelX + timeMLabelXConst, y: timeMLabelYConst, width: 200, height: 100)
-                    let secondsMLabel = UILabel()
-                    secondsMLabel.frame = CGRect(x: secondsMLabelX, y: timeMLabelYConst, width: 200, height: 100)
-                    
-                    dayLabel.text = result.1
-                    timeLabel.text = result.2
-                    timeLabel.textColor = UIColor.gray
-                    dayLabel.textColor = UIColor.gray
-                    
-                    dayMLabel.text = "DAYS"
-                    timeMLabel.text = "HOURS     MINUTES"
-                    secondsMLabel.text = "SECONDS"
-                    timeMLabel.textColor = UIColor.gray
-                    dayMLabel.textColor = UIColor.gray
-                    secondsMLabel.textColor = UIColor.gray
-                    
-                    timeLabel.font = UIFont(name: "Roboto Mono", size: 34)
-                    dayLabel.font = UIFont(name: "Roboto Mono", size: 34)
-                    timeMLabel.font = UIFont(name: "Roboto Mono", size: 10)
-                    dayMLabel.font = UIFont(name: "Roboto Mono", size: 10)
-                    secondsMLabel.font = UIFont(name: "Roboto Mono", size: 10)
-                    
-                    dateView.addSubview(timeLabel)
-                    dateView.addSubview(timeMLabel)
-                    dateView.addSubview(dayLabel)
-                    dateView.addSubview(dayMLabel)
-                    dateView.addSubview(secondsMLabel)
-                    
-                    dateView.dayLabel = dayLabel
-                    dateView.hourLabel = timeLabel
-                }
+//                } else { // years == 0
+//
+//                    let dayLabel = UILabel()
+//                    dayLabel.frame = CGRect(x: yearLabelX, y: timeLabelYConst, width: 100, height: 100)
+//                    let dayMLabel = UILabel()
+//                    dayMLabel.frame = CGRect(x: yearMLabelX + timeMLabelXConst, y: timeMLabelYConst, width: 100, height: 100)
+//
+//                    let timeLabel = UILabel()
+//                    timeLabel.frame = CGRect(x: dayLabelX, y: timeLabelYConst, width: 300, height: 100)
+//                    let timeMLabel = UILabel()
+//                    timeMLabel.frame = CGRect(x: dayMLabelX + timeMLabelXConst, y: timeMLabelYConst, width: 200, height: 100)
+//                    let secondsMLabel = UILabel()
+//                    secondsMLabel.frame = CGRect(x: secondsMLabelX, y: timeMLabelYConst, width: 200, height: 100)
+//
+//                    dayLabel.text = result.1
+//                    timeLabel.text = result.2
+//                    timeLabel.textColor = UIColor.gray
+//                    dayLabel.textColor = UIColor.gray
+//
+//                    dayMLabel.text = "DAYS"
+//                    timeMLabel.text = "HOURS     MINUTES"
+//                    secondsMLabel.text = "SECONDS"
+//                    timeMLabel.textColor = UIColor.gray
+//                    dayMLabel.textColor = UIColor.gray
+//                    secondsMLabel.textColor = UIColor.gray
+//
+//                    timeLabel.font = UIFont(name: "Roboto Mono", size: 34)
+//                    dayLabel.font = UIFont(name: "Roboto Mono", size: 34)
+//                    timeMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+//                    dayMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+//                    secondsMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+//
+//                    dateView.addSubview(timeLabel)
+//                    dateView.addSubview(timeMLabel)
+//                    dateView.addSubview(dayLabel)
+//                    dateView.addSubview(dayMLabel)
+//                    dateView.addSubview(secondsMLabel)
+//
+//                    dateView.dayLabel = dayLabel
+//                    dateView.hourLabel = timeLabel
+//                }
                 
                 dateLabel.text = phase.0
                 dateLabel.textColor = UIColor.black
@@ -352,17 +355,17 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         tempDiff -= days * 86400
         let hours = tempDiff / 3600 // 3600 = 60 * 60
         
-        if (years > 0) {
-            return ("\(years)", "\(days)", "\(hours)")
-        } else {
-            tempDiff -= hours * 3600
-            let minutes = tempDiff / 60
-            tempDiff -= minutes * 60
-            let seconds = tempDiff
-            
-            let time = String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
-            return ("", "\(days)", "\(time)")
-        }
+//        if (years > 0) {
+        return ("\(years)", "\(days)", "\(hours)")
+//        } else {
+//            tempDiff -= hours * 3600
+//            let minutes = tempDiff / 60
+//            tempDiff -= minutes * 60
+//            let seconds = tempDiff
+//
+//            let time = String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
+//            return ("", "\(days)", "\(time)")
+//        }
     }
     
     // Adds countdown dates to phases array
@@ -379,43 +382,63 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
          */
         
         var dateComponents = DateComponents()
-        dateComponents.year = 2019
-        dateComponents.month = 5
+        dateComponents.year = 2017
+        dateComponents.month = 1
         dateComponents.day = 1
         dateComponents.timeZone = TimeZone(abbreviation: "CST")
         dateComponents.hour = 0
         dateComponents.minute = 0
-        phases.append(("BUILD", "C", Calendar.current.date(from: dateComponents)!))
+        phases.append(("PHASE B", "B", Calendar.current.date(from: dateComponents)!))
+        
+        dateComponents.year = 2019
+        dateComponents.month = 5
+        dateComponents.day = 25
+        phases.append(("PHASE C", "C", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2021
         dateComponents.month = 1
-        phases.append(("ASSEMBLY", "D", Calendar.current.date(from: dateComponents)!))
+        dateComponents.day = 21
+        phases.append(("PHASE D", "D", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2022
         dateComponents.month = 8
+        dateComponents.day = 6
         phases.append(("LAUNCH", "D", Calendar.current.date(from: dateComponents)!))
         
-        dateComponents.year = 2023
-        dateComponents.month = 5
-        phases.append(("MARS ASSIST", "E", Calendar.current.date(from: dateComponents)!))
+        dateComponents.year = 2022
+        dateComponents.month = 10
+        dateComponents.day = 1
+        phases.append(("PHASE E", "E", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2026
         dateComponents.month = 1
-        phases.append(("ARRIVAL", "E", Calendar.current.date(from: dateComponents)!))
+        dateComponents.day = 14
+        phases.append(("CAPTURE", "E", Calendar.current.date(from: dateComponents)!))
         
-        dateComponents.year = 2026
-        dateComponents.month = 1
-        phases.append(("ORBITING", "E", Calendar.current.date(from: dateComponents)!))
+        dateComponents.year = 2027
+        dateComponents.month = 10
+        dateComponents.day = 31
+        phases.append(("MISSION END", "E", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2027
         dateComponents.month = 11
+        dateComponents.day = 1
+        phases.append(("PHASE", "F", Calendar.current.date(from: dateComponents)!))
+       
+        dateComponents.year = 2028
+        dateComponents.month = 8
+        dateComponents.day = 1
         phases.append(("CLOSEOUT", "F", Calendar.current.date(from: dateComponents)!))
+        
         
         let date = Date() // Current date
         // Remove all phases that already passed
-        for i in 0 ..< phases.count - 1 {
-            if phases[i].2 < date {
-                phases.remove(at: i)
+        for phase in  phases{
+            if phase.2 < date {
+                removedPhases = [phase.1]
+                print("removed pahses home", removedPhases)
+                phases = phases.filter {$0 != phase}
+                print("phases", phases)
             }
         }
     }
@@ -449,19 +472,19 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
                 diff -= days * 86400
                 let hours = diff / 3600 // 3600 = 60 * 60
                 
-                if (years > 0) {
+//                if (years > 0) {
                     dateView.yearLabel?.text = "\(years)"
                     dateView.dayLabel?.text = "\(days)"
                     dateView.hourLabel?.text = "\(hours)"
-                } else {
-                    diff -= hours * 3600
-                    let minutes = diff / 60
-                    diff -= minutes * 60
-                    let seconds = diff
-                    
-                    dateView.dayLabel?.text = "\(days)"
-                    dateView.hourLabel?.text = String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
-                }
+//                } else {
+//                    diff -= hours * 3600
+//                    let minutes = diff / 60
+//                    diff -= minutes * 60
+//                    let seconds = diff
+//                    
+//                    dateView.dayLabel?.text = "\(days)"
+//                    dateView.hourLabel?.text = String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
+//                }
             }
         }
     }

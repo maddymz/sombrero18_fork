@@ -19,7 +19,8 @@ class CountdownClockTimeline : UIView {
     var timerMLabel = UILabel()
     var secondsMLabel = UILabel()
     
-    var phases: [(phase: String, startDate: Date, endDate: Date)] = [] // Array of tuples
+    var phases: [(phase: String, startDate: Date)] = [] // Array of tuples
+    var removedPhases : [String] = [] // Array contains removed phases
     var currentDateIndex = 0 // Index of date being displayed
     
     weak var countdownTimer: Timer? // Timer that ticks every second and updates the label
@@ -85,10 +86,19 @@ class CountdownClockTimeline : UIView {
     }
     
     func updatePhaseImg() {
-        let phase = phases[currentDateIndex].0
+        let phase = removedPhases[currentDateIndex]
         phaseImg.image = UIImage(named: "Phase_\(phase)")
     }
     
+    func updatetimelinePhaseImg() {
+        let phase = phases[currentDateIndex].0
+        phaseImg.image = UIImage(named: "Phase_\(phase)")
+        
+        let width = Int(self.frame.width)
+        let space = (width - 15 * 2 - 25 - 164 - 82) / 3
+        daysMLabel.frame = CGRect(x: 40 + space * 2 + 10, y: 41, width: 110, height: 21)
+        daysMLabel.text = "DAYS TO PHASE \(phase)"
+    }
     // Adds countdown dates to phases array
     func addDates() {
         
@@ -103,57 +113,46 @@ class CountdownClockTimeline : UIView {
          */
         
         var startDateComponents = DateComponents()
-        var endDateComponents = DateComponents()
         startDateComponents.year = 2017
         startDateComponents.month = 1
         startDateComponents.day = 1
-        endDateComponents.year = 2019
-        endDateComponents.month = 5
-        endDateComponents.day = 24
         startDateComponents.timeZone = TimeZone(abbreviation: "CST")
         startDateComponents.hour = 0
         startDateComponents.minute = 0
-        phases.append(("B", Calendar.current.date(from: startDateComponents)!, Calendar.current.date(from: endDateComponents)!))
+        phases.append(("B", Calendar.current.date(from: startDateComponents)!))
         
         startDateComponents.year = 2019
         startDateComponents.month = 5
         startDateComponents.day = 25
-        endDateComponents.year = 2021
-        endDateComponents.month = 1
-        endDateComponents.day = 21
-        phases.append(("C", Calendar.current.date(from: startDateComponents)!, Calendar.current.date(from: endDateComponents)!))
+        phases.append(("C", Calendar.current.date(from: startDateComponents)!))
         
         startDateComponents.year = 2021
         startDateComponents.month = 1
         startDateComponents.day = 22
-        endDateComponents.year = 2022
-        endDateComponents.month = 9
-        endDateComponents.day = 30
-        phases.append(("D", Calendar.current.date(from: startDateComponents)!, Calendar.current.date(from: endDateComponents)!))
+        phases.append(("D", Calendar.current.date(from: startDateComponents)!))
         
         startDateComponents.year = 2022
         startDateComponents.month = 10
         startDateComponents.day = 1
-        endDateComponents.year = 2027
-        endDateComponents.month = 10
-        endDateComponents.day = 31
-        phases.append(("E", Calendar.current.date(from: startDateComponents)!, Calendar.current.date(from: endDateComponents)!))
+        phases.append(("E", Calendar.current.date(from: startDateComponents)!))
         
         startDateComponents.year = 2027
         startDateComponents.month = 11
         startDateComponents.day = 1
-        endDateComponents.year = 2028
-        endDateComponents.month = 8
-        endDateComponents.day = 1
-        phases.append(("F", Calendar.current.date(from: startDateComponents)!, Calendar.current.date(from: endDateComponents)!))
-        print("phases", phases)
+        phases.append(("F", Calendar.current.date(from: startDateComponents)!))
         
+//        let testDate = "2019-05-26"
+//        let tdateformatter = DateFormatter()
+//        tdateformatter.dateFormat = "yyyy-MM-dd"
+//        let newdate = tdateformatter.date(from: testDate)
+//        print("newdate ", newdate)
         let date = Date() // Current date
-        print("date", date)
         // Remove all phases that already passed
-        for i in 0 ..< phases.count - 1 {
-            if phases[i].1 < date {
-                phases.remove(at: i)
+        for element in phases {
+//            print("phasedate", phases[i].1)
+            if element.1 < date {
+                removedPhases = [element.0]
+                phases = phases.filter{$0 != element}
             }
         }
     }
@@ -166,7 +165,9 @@ class CountdownClockTimeline : UIView {
     
     // Updates all the timer labels
     func updateTimerLabel(t: Timer) {
+//        print("dateinit", Date.init())
         var diff = Int(phases[currentDateIndex].1.timeIntervalSince(Date.init()))
+//        print("diff", diff)
         
         let days = diff / 86400 // 86400 = 60 * 60 * 24
         diff -= days * 86400
@@ -188,7 +189,7 @@ class CountdownClockTimeline : UIView {
         for i in 0 ... phases.count - 1 {
             if phases[i].0 == phaseStr {
                 currentDateIndex = i
-                updatePhaseImg()
+                updatetimelinePhaseImg()
                 countdownTimer?.fire() // Trigger timer right away, otherwise there is a 1 second delay
                 break
             }
