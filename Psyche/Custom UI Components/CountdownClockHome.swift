@@ -83,7 +83,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         let space = (width - 15 * 2 - 25 - 164 - 82) / 3
         
         yearLabelX = 40 + space * 2 + 10
-        yearMLabelX = yearLabelX
+        yearMLabelX = 40 + space + 10
         dayLabelX = 40 + space * 2 + 82 + space
         dayMLabelX = dayLabelX
         secondsMLabelX = width - 41 - 15
@@ -92,8 +92,8 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         
         daysLabel.frame = CGRect(x: yearLabelX, y: 9, width: 100, height: 33)
         
-        daysMLabel.frame = CGRect(x: yearMLabelX + 3, y: 41, width: 42, height: 21)
-        daysMLabel.text = "DAYS"
+        daysMLabel.frame = CGRect(x: yearMLabelX + 3, y: 41, width: 110, height: 21)
+        daysMLabel.text = "DAYS TO NEXT PHASE"
         
         timerLabel.frame = CGRect(x: dayLabelX, y: 11, width: 164, height: 29)
         

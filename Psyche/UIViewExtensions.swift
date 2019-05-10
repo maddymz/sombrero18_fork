@@ -48,8 +48,7 @@ extension UIView {
             "1. Multispectral Imager.\n" +
             "2. Gamma Ray and Neutron Spectrometer.\n" +
             "3. Magnetometer.\n" +
-            "4. X-band Gravity Science Investigation.\n" +
-            "______________________"
+            "4. X-band Gravity Science Investigation.\n"
         
         return returnString
     }
@@ -77,8 +76,7 @@ extension UIView {
             "THE PSYCHE MISSION TEAM:\n\n" +
             "In addition to Elkins-Tanton, ASU SESE scientists on the Psyche mission team include Jim Bell, deputy principal investigator and co-investigator, co-investigator Erik Asphaug, and co-investigator David Williams.\n\n" +
             "NASA’s Jet Propulsion Laboratory managed by Caltech is the managing organization and will build the spacecraft with industry partner Space Systems Loral (SSL). JPL’s contribution to the Psyche mission team includes over 75 people, led by project manager Henry Stone, project scientist Carol Polanskey, project systems engineer David Oh and deputy project manager Bob Mase. SSL contribution to the Psyche mission team includes over 50 people led by SEP Chassis deputy program manager Peter Lord and SEP Chassis program manager Steve Scott.\n\n" +
-            "Other co-investigators are David Bercovici (Yale University), Bruce Bills (JPL), Richard Binzel (Massachusetts Institute of Technology), William Bottke (Southwest Research Institute — SwRI), Ralf Jaumann (Deutsches Zentrum für Luft — und Raumfahrt), Insoo Jun (JPL), David Lawrence (Johns Hopkins University/Applied Physics Laboratory — APL), Simon Marchi (SwRI), Timothy McCoy (Smithsonian Institution), Ryan Park (JPL), Patrick Peplowski (APL), Thomas Prettyman, (Planetary Science Institute), Carol Raymond (JPL), Chris Russell (UCLA), Benjamin Weiss (MIT), Dan Wenkert (JPL), Mark Wieczorek (Institut de Physique du Globe de Paris), and Maria Zuber (MIT).\n" +
-            "______________________"
+            "Other co-investigators are David Bercovici (Yale University), Bruce Bills (JPL), Richard Binzel (Massachusetts Institute of Technology), William Bottke (Southwest Research Institute — SwRI), Ralf Jaumann (Deutsches Zentrum für Luft — und Raumfahrt), Insoo Jun (JPL), David Lawrence (Johns Hopkins University/Applied Physics Laboratory — APL), Simon Marchi (SwRI), Timothy McCoy (Smithsonian Institution), Ryan Park (JPL), Patrick Peplowski (APL), Thomas Prettyman, (Planetary Science Institute), Carol Raymond (JPL), Chris Russell (UCLA), Benjamin Weiss (MIT), Dan Wenkert (JPL), Mark Wieczorek (Institut de Physique du Globe de Paris), and Maria Zuber (MIT).\n"
         
         return returnString
     }
@@ -97,8 +95,7 @@ extension UIView {
             "With the project’s end in mind and a vision of success, I charted a path forward. All the other aspects of project planning, schedule (scope, roles and responsibilities, etc.) fall into place once you know what, why and when. Often for me taking the first step is the hardest, so getting back to basics and answering simple questions like “WHY?” help me to get organized, motivate teams and ultimately deliver what we promise.\n\n" +
             "NEW KIND OF TEAM:\n\n" +
             "At ASU we needed to create a team that hasn’t existed at the university before. We needed to recruit financial team members to create, edit, manage and track our budget. Because we were going to be managing nine subcontractors we needed to enlist a strong contracts team. The university’s portion of the work includes planning and managing the science team, developing the imager, and design, development, and management of our science data center. Our scope also includes student collaborations and outreach, so we need project team members that help integrate and develop teams of faculty, graduate students, undergrads and postdocs; all of these teams are part of our educational and public outreach. All told we need an interdisciplinary cross-section of stakeholders for ASU to perform our role for our real-life mission to visit an asteroid! This is just the ASU portion of the team. The Psyche spacecraft build and mission management is led by Jet Propulsion Laboratory and our spectacular project manager at JPL is Henry Stone. A further, and critical, aspect of team management for a mission became immediately apparent: integration across our many institutions.\n\n" +
-            "The Psyche Mission’s project “phase B” — the preliminary design phase, is in full swing. All the things we said we were going to do are starting to materialize. It’s really happening! When I’m in the day-to-day efforts of working with schedules, budgets, stakeholders and meeting minutes, Psyche often feels like any other project, but when I review the overall timeline or hear words like ‘launch,’ I can’t help to scream in my head OMG ROCKET SCIENCE!!!!! I’m so grateful and excited to be a part of this project!\n" +
-            "______________________"
+            "The Psyche Mission’s project “phase B” — the preliminary design phase, is in full swing. All the things we said we were going to do are starting to materialize. It’s really happening! When I’m in the day-to-day efforts of working with schedules, budgets, stakeholders and meeting minutes, Psyche often feels like any other project, but when I review the overall timeline or hear words like ‘launch,’ I can’t help to scream in my head OMG ROCKET SCIENCE!!!!! I’m so grateful and excited to be a part of this project!\n"
         
         return returnString
     }
@@ -117,8 +114,7 @@ extension UIView {
             "But what does this bizarre asteroid actually look like up close? We'll find out when the Psyche spacecraft reaches its target circa 2030, but for the moment, there is much speculation about its appearance. To bridge that gap, Rubin and Elkins-Tanton worked together to interweave hard science with the creative flourish and eye-catching imagery Rubin is known for in the film world.\n\n" +
             "In this way, Rubin balanced observations of the asteroid with the dramatic visual language of movies. He has employed similar film-centric techniques to other NASA mission concepts, including proposed trips to Mars and Saturn's moons Enceladus and Pandora, drawing inspiration from other vivid science illustrators, such as space art pioneer Chesley Bonestell.\n\n" +
             "\"What I was bringing to the project was a cinematic sensibility,\" Rubin said. \"It requires finish. It's carrying something through from the purely objective to something more natural and emotional. I worked very hard on the Psyche project, in order to get that kind of engagement. To make you feel, as you watch the video, anticipation, a little bit of tension, and some surprise.\"\n\n" +
-            "Hopefully, NASA continues to channel the instincts of film insiders in mission concept artwork. Not only does it inspire public engagement, it makes the anticipation of discovering what these distant objects really look like, compared to our imaginings, that much more exciting.\n" +
-            "______________________"
+            "Hopefully, NASA continues to channel the instincts of film insiders in mission concept artwork. Not only does it inspire public engagement, it makes the anticipation of discovering what these distant objects really look like, compared to our imaginings, that much more exciting.\n"
         
         return returnString
         

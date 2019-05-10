@@ -19,7 +19,7 @@ class CountdownClockTimeline : UIView {
     var timerMLabel = UILabel()
     var secondsMLabel = UILabel()
     
-    var phases: [(phase: String, date: Date)] = [] // Array of tuples
+    var phases: [(phase: String, startDate: Date, endDate: Date)] = [] // Array of tuples
     var currentDateIndex = 0 // Index of date being displayed
     
     weak var countdownTimer: Timer? // Timer that ticks every second and updates the label
@@ -38,8 +38,8 @@ class CountdownClockTimeline : UIView {
         
         daysLabel.frame = CGRect(x: 40 + space * 2 + 10, y: 9, width: 100, height: 33)
         
-        daysMLabel.frame = CGRect(x: 40 + space * 2 + 10 + 3, y: 41, width: 42, height: 21)
-        daysMLabel.text = "DAYS"
+        daysMLabel.frame = CGRect(x: 40 + space + 10, y: 41, width: 110, height: 21)
+        daysMLabel.text = "DAYS TO NEXT PHASE"
         
         timerLabel.frame = CGRect(x: 40 + space * 2 + 82 + space, y: 11, width: 176, height: 29)
         
@@ -102,29 +102,54 @@ class CountdownClockTimeline : UIView {
          CLOSEOUT - phase F Nov 2027
          */
         
-        var dateComponents = DateComponents()
-        dateComponents.year = 2019
-        dateComponents.month = 5
-        dateComponents.day = 1
-        dateComponents.timeZone = TimeZone(abbreviation: "CST")
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-        phases.append(("C", Calendar.current.date(from: dateComponents)!))
+        var startDateComponents = DateComponents()
+        var endDateComponents = DateComponents()
+        startDateComponents.year = 2017
+        startDateComponents.month = 1
+        startDateComponents.day = 1
+        endDateComponents.year = 2019
+        endDateComponents.month = 5
+        endDateComponents.day = 24
+        startDateComponents.timeZone = TimeZone(abbreviation: "CST")
+        startDateComponents.hour = 0
+        startDateComponents.minute = 0
+        phases.append(("B", Calendar.current.date(from: startDateComponents)!, Calendar.current.date(from: endDateComponents)!))
         
-        dateComponents.year = 2021
-        dateComponents.month = 1
-        phases.append(("D", Calendar.current.date(from: dateComponents)!))
+        startDateComponents.year = 2019
+        startDateComponents.month = 5
+        startDateComponents.day = 25
+        endDateComponents.year = 2021
+        endDateComponents.month = 1
+        endDateComponents.day = 21
+        phases.append(("C", Calendar.current.date(from: startDateComponents)!, Calendar.current.date(from: endDateComponents)!))
         
-        dateComponents.year = 2023
-        dateComponents.month = 5
-        phases.append(("E", Calendar.current.date(from: dateComponents)!))
+        startDateComponents.year = 2021
+        startDateComponents.month = 1
+        startDateComponents.day = 22
+        endDateComponents.year = 2022
+        endDateComponents.month = 9
+        endDateComponents.day = 30
+        phases.append(("D", Calendar.current.date(from: startDateComponents)!, Calendar.current.date(from: endDateComponents)!))
         
-        dateComponents.year = 2027
-        dateComponents.month = 11
-        phases.append(("F", Calendar.current.date(from: dateComponents)!))
+        startDateComponents.year = 2022
+        startDateComponents.month = 10
+        startDateComponents.day = 1
+        endDateComponents.year = 2027
+        endDateComponents.month = 10
+        endDateComponents.day = 31
+        phases.append(("E", Calendar.current.date(from: startDateComponents)!, Calendar.current.date(from: endDateComponents)!))
+        
+        startDateComponents.year = 2027
+        startDateComponents.month = 11
+        startDateComponents.day = 1
+        endDateComponents.year = 2028
+        endDateComponents.month = 8
+        endDateComponents.day = 1
+        phases.append(("F", Calendar.current.date(from: startDateComponents)!, Calendar.current.date(from: endDateComponents)!))
         print("phases", phases)
         
         let date = Date() // Current date
+        print("date", date)
         // Remove all phases that already passed
         for i in 0 ..< phases.count - 1 {
             if phases[i].1 < date {
