@@ -43,7 +43,11 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var Menu: UIView!
     @IBOutlet weak var menuBlur: UIVisualEffectView!
     
+    struct homepageStruct: Decodable {
+        let astroid, spacecraft, science, depth: String
+    }
     
+    var homeData = [homepageStruct]()
     // actions
     @IBAction func panPerformed(_ sender: UIPanGestureRecognizer) {
         if sender.state == .began || sender.state == .changed {
@@ -102,6 +106,18 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        //parse json from homepage.json
+        if let homeDataUrl = Bundle.main.url(forResource: "Homepage", withExtension: "json", subdirectory: "/Data"){
+            do {
+                let homepageData = try Data(contentsOf: homeDataUrl)
+                let homepageDecoder = JSONDecoder()
+                let homeDecodedData =  try homepageDecoder.decode(homepageStruct.self, from: homepageData)
+                homeData = [homeDecodedData]
+            }catch let parseError {
+                print("Error in parsing json:", parseError)
+            }
+        }
         
         //add and hide menu
         Menu.layer.zPosition = 2;
@@ -144,7 +160,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         blurTextY.constant = -170
         blurText.textContainer.lineFragmentPadding = 0
         blurText.textContainerInset = .zero
-        blurText.text = blurText.fillTextZero()
+        blurTitle.text = "Psyche in depth"
+        blurText.text = homeData[0].depth
         DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(500000)) {
             self.blurText.flashScrollIndicators()
         }
@@ -186,17 +203,17 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(view.frame.width))
         if (pageControl.currentPage == 0) {
-            blurTitle.text = "Psyche in Depth"
-            blurText.text = blurText.fillTextZero()
+            blurTitle.text = "Psyche in depth"
+            blurText.text = homeData[0].depth
         } else if (pageControl.currentPage == 1) {
-            blurTitle.text = "ASU to Lead Psyche Mission"
-            blurText.text = blurText.fillTextOne()
+            blurTitle.text = "The Astroid"
+            blurText.text = homeData[0].astroid
         } else if (pageControl.currentPage == 2) {
-            blurTitle.text = "Project Management Basics"
-            blurText.text = blurText.fillTextTwo()
+            blurTitle.text = "The Spacecraft"
+            blurText.text = homeData[0].spacecraft
         } else if (pageControl.currentPage == 3) {
-            blurTitle.text = "The Artists Helping NASA"
-            blurText.text = blurText.fillTextThree()
+            blurTitle.text = "The Science"
+            blurText.text = homeData[0].science
         }
     }
     
