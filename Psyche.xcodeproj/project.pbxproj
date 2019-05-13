@@ -38,7 +38,7 @@
 		7DA4EC440A0174E88F40ED1C /* Pods_Psyche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBCBCFD4C2D84175D328683A /* Pods_Psyche.framework */; };
 		7E71D960207F3D6700A33C4A /* ONe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D95F207F3D6600A33C4A /* ONe.gif */; };
 		B7F5C00D21FFC5B900FA473B /* HtmlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */; };
-		B7F702ED2283A99E00071252 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7F702EC2283A99E00071252 /* Assets.xcassets */; };
+		B7FE03DE228A220C006EDE41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7FE03DD228A220C006EDE41 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +76,7 @@
 		7E71D95F207F3D6600A33C4A /* ONe.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ONe.gif; sourceTree = "<group>"; };
 		A4C6D0B6D6F2EEC9D96D0F6E /* Pods-Psyche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.debug.xcconfig"; sourceTree = "<group>"; };
 		B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlExtension.swift; sourceTree = "<group>"; };
-		B7F702EC2283A99E00071252 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		B7FE03DD228A220C006EDE41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBCBCFD4C2D84175D328683A /* Pods_Psyche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psyche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5249A49C383D9033E2B2629 /* Pods-Psyche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +123,7 @@
 		178847901FE255AD00916C4D /* Psyche */ = {
 			isa = PBXGroup;
 			children = (
+				B7FE03DD228A220C006EDE41 /* Assets.xcassets */,
 				6B7C259121EFEB380085AC0A /* API */,
 				6B7C258E21EFE12B0085AC0A /* Gallery */,
 				6B7C258421EF65A10085AC0A /* Data */,
@@ -131,7 +132,6 @@
 				424B94E02071AE3800739FF1 /* Trivia */,
 				42F8ADE72063151E00809E0F /* fonts */,
 				178847951FE255AD00916C4D /* Main.storyboard */,
-				B7F702EC2283A99E00071252 /* Assets.xcassets */,
 				1788479A1FE255AD00916C4D /* LaunchScreen.storyboard */,
 				1788479D1FE255AD00916C4D /* Info.plist */,
 				178847911FE255AD00916C4D /* AppDelegate.swift */,
@@ -283,7 +283,7 @@
 				42F8ADE92063154600809E0F /* RobotoMono-Regular.ttf in Resources */,
 				6B7C258521EF65A10085AC0A /* Data in Resources */,
 				178847971FE255AD00916C4D /* Main.storyboard in Resources */,
-				B7F702ED2283A99E00071252 /* Assets.xcassets in Resources */,
+				B7FE03DE228A220C006EDE41 /* Assets.xcassets in Resources */,
 				7E71D960207F3D6700A33C4A /* ONe.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
