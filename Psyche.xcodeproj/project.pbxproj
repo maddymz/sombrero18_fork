@@ -39,6 +39,7 @@
 		7E71D960207F3D6700A33C4A /* ONe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D95F207F3D6600A33C4A /* ONe.gif */; };
 		B7F5C00D21FFC5B900FA473B /* HtmlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */; };
 		B7FE03DE228A220C006EDE41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7FE03DD228A220C006EDE41 /* Assets.xcassets */; };
+		B7FE03E2228A3E4D006EDE41 /* SocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FE03E1228A3E4D006EDE41 /* SocialMediaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		A4C6D0B6D6F2EEC9D96D0F6E /* Pods-Psyche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.debug.xcconfig"; sourceTree = "<group>"; };
 		B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlExtension.swift; sourceTree = "<group>"; };
 		B7FE03DD228A220C006EDE41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B7FE03E1228A3E4D006EDE41 /* SocialMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaViewController.swift; sourceTree = "<group>"; };
 		EBCBCFD4C2D84175D328683A /* Pods_Psyche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psyche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5249A49C383D9033E2B2629 /* Pods-Psyche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 		178847901FE255AD00916C4D /* Psyche */ = {
 			isa = PBXGroup;
 			children = (
+				B7FE03E0228A3DAF006EDE41 /* Social */,
 				B7FE03DD228A220C006EDE41 /* Assets.xcassets */,
 				6B7C259121EFEB380085AC0A /* API */,
 				6B7C258E21EFE12B0085AC0A /* Gallery */,
@@ -214,6 +217,14 @@
 				F5249A49C383D9033E2B2629 /* Pods-Psyche.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B7FE03E0228A3DAF006EDE41 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				B7FE03E1228A3E4D006EDE41 /* SocialMediaViewController.swift */,
+			);
+			path = Social;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +413,7 @@
 				17C34E42205A490B00712D00 /* LoadingViewController.swift in Sources */,
 				175B1B7C206C0E830046A81D /* TimelineTableViewController.swift in Sources */,
 				42B9D343207DBF090086EAC6 /* Psyche.xcdatamodeld in Sources */,
+				B7FE03E2228A3E4D006EDE41 /* SocialMediaViewController.swift in Sources */,
 				17F1D2512075FD8400B9B6A9 /* TriviaGameViewController.swift in Sources */,
 				17F1D2532076A7DC00B9B6A9 /* sideMenuHelper.swift in Sources */,
 				178847A61FE25BDA00916C4D /* HomeViewController.swift in Sources */,
