@@ -154,3 +154,21 @@ class PlayAgainSegue: UIStoryboardSegue{
         })
     }
 }
+
+class socialmediaSegue: UIStoryboardSegue {
+    override func perform() {
+        let src = self.source as! HomeViewController
+        let dst = self.destination as! SocialMediaViewController
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+    }
+}
+
+class unwinedSocialmediaSegue: UIStoryboardSegue {
+    override func perform() {
+        let src = self.source as! SocialMediaViewController
+        let dst = self.destination as!  HomeViewController
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+    }
+}

@@ -573,7 +573,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Atributika\"",
 				);
 				INFOPLIST_FILE = Psyche/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = asu.nasa.psyche;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -606,7 +606,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Atributika\"",
 				);
 				INFOPLIST_FILE = Psyche/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = asu.nasa.psyche;
 				PRODUCT_NAME = "$(TARGET_NAME)";

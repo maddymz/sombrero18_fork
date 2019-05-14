@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import WebKit
 
 class SocialMediaViewController: UIViewController {
-
+    
+  
+    @IBOutlet weak var wbView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+        let url = URL(string: "https://facebook.com/nasapsyche")!
+        let reqObj = URLRequest(url: url)
+        wbView.load(reqObj)
+        
     }
+    
+   
+    
     
 
     /*

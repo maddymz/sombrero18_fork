@@ -162,6 +162,14 @@
         ],
         "psyche3": [
             [
+                "The gravity on Psyche is ___.",
+                "4.32 m/s2",
+                "1.60 m/s2",
+                "9.88 m/s2",
+                "0.144 m/s2",
+                "4"
+            ],
+            [
                 "What periodic element is responsible for the solar electric propulsion that Psyche will use?",
                 "Nitrogen",
                 "Xenon",
@@ -244,6 +252,14 @@
         ],
         "psyche4": [
             [
+                "Which of these is not a basic type of asteroid?",
+                "S-type",
+                "C-type",
+                "M-type",
+                "K-type",
+                "4"
+            ],
+            [
                 "What periodic element is responsible for the solar electric propulsion that Psyche will use?",
                 "Nitrogen",
                 "Xenon",
@@ -265,7 +281,7 @@
                 "Barnaba Oriani",
                 "Giovanni Battista Donati",
                 "Francesco de Vico",
-                "A1"
+                "1"
             ],
             [
                 "When did scientists have good evidence for Psyche's metal composition?",
@@ -290,6 +306,12 @@
                 "Optical",
                 "High-rate RF",
                 "1"
+            ],
+            [
+                "True or False: the surface gravity on Psyche is much more than on Earth",
+                "True",
+                "False",
+                "2"
             ],
             [
                 "The team responsible for developing the Psyche Gamma Ray and Neutron Spectrometer is based at:",
@@ -322,6 +344,12 @@
                 "Outer Planets Flagship",
                 "Discovery",
                 "4"
+            ],
+            [
+                "True or false: The Psyche asteroid is less massive than Earth’s moon",
+                "True",
+                "False",
+                "1"
             ]
         ],
         "nasa1": [
@@ -432,7 +460,7 @@
                 "4"
             ],
             [
-                "True or False: the Earth is not a perfect sphere.",
+                "True or False: The Earth is not a perfect sphere.",
                 "True",
                 "False",
                 "1"
@@ -485,6 +513,14 @@
             ]
         ],
         "nasa3": [
+            [
+                "What U.S. president established NASA?",
+                "Dwight D. Eisenhower",
+                "Ronald Reagan",
+                "John F. Kennedy",
+                "Harry S. Truman",
+                "1"
+            ],
             [
                 "Who was the first American in space?",
                 "James A Lovell, Jr.",
@@ -566,6 +602,14 @@
         ],
         "nasa4": [
             [
+                "Roughly, what is the top speed of a spacecraft using ion propulsion?",
+                "18,000 mph",
+                "60,000 mph",
+                "200,000 mph",
+                "100,000 mph",
+                "3"
+            ],
+            [
                 "Who was the first American in space?",
                 "James A Lovell, Jr.",
                 "Buzz Aldrin",
@@ -585,6 +629,14 @@
                 "True or False: A spacecraft sent to Jupiter would land on the surface of the planet.",
                 "True",
                 "False",
+                "2"
+            ],
+            [
+                "What color are the hottest stars?",
+                "Red",
+                "Blue",
+                "Yellow",
+                "Green",
                 "2"
             ],
             [
@@ -610,6 +662,14 @@
                 "Core",
                 "All of the above",
                 "1"
+            ],
+            [
+                "What comet flies by Earth every 75 years?",
+                "Comet ISON",
+                "Halley’s Comet",
+                "Encke's Comet",
+                "Comet Hale–Bopp",
+                "2"
             ],
             [
                 "By the beginning of the year 2000, how many women had been in space?",
@@ -810,6 +870,14 @@
         ],
         "space3": [
             [
+                "What is the largest object in our asteroid belt?",
+                "Vesta",
+                "Eres",
+                "Psyche",
+                "Ceres",
+                "4"
+            ],
+            [
                 "Who was the first American in space?",
                 "James A Lovell, Jr.",
                 "Buzz Aldrin",
@@ -964,24 +1032,6 @@
                 "4"
             ],
             [
-                "What is the name of the black hole at the center of our galaxy?",
-                "Fornax A",
-                "Messier 105",
-                "Sagittarius A",
-                "Sagittarius B",
-                "3"
-            ]
-        ],
-        "science1": [
-            [
-                "Which of the following is not a form of energy we get from the Sun?",
-                "Heat",
-                "Kinetic",
-                "Potential",
-                "Light",
-                "3"
-            ],
-            [
                 "What is the largest object in our asteroid belt?",
                 "Vesta",
                 "Eres",
@@ -1004,6 +1054,48 @@
                 "Earth",
                 "Mercury",
                 "2"
+            ],
+            [
+                "What is the name of the black hole at the center of our galaxy?",
+                "Fornax A",
+                "Messier 105",
+                "Sagittarius A",
+                "Sagittarius B",
+                "3"
+            ]
+        ],
+        "science1": [
+            [
+                "Which of the following is not a form of energy we get from the Sun?",
+                "Heat",
+                "Kinetic",
+                "Potential",
+                "Light",
+                "3"
+            ],
+            [
+                "What is not a function of our skeletal system?",
+                "Movement",
+                "Support",
+                "Protection",
+                "Digesting",
+                "4"
+            ],
+            [
+                "Which of the following eats dead organic matter and puts it back into the soil?",
+                "Decomposers",
+                "Consumers",
+                "Scavengers",
+                "Producers",
+                "1"
+            ],
+            [
+                "What substance or chemical is in your mouth to help soften food and begin carbohydrate digestion?",
+                "Saliva",
+                "Water",
+                "Blood",
+                "Acids",
+                "1"
             ],
             [
                 "What element is not found on the sun?",
@@ -1128,12 +1220,12 @@
                 "1"
             ],
             [
-                "What comet flies by Earth every 75 years?",
-                "Comet ISON",
-                "Halley’s Comet",
-                "Encke's Comet",
-                "Comet Hale–Bopp",
-                "2"
+                "How do plants get energy?",
+                "From the soil",
+                "Through the roots",
+                "Through photosynthesis",
+                "They don't need energy",
+                "3"
             ]
         ],
         "science3": [
@@ -1146,20 +1238,20 @@
                 "2"
             ],
             [
-                "What color are the hottest stars?",
-                "Red",
-                "Blue",
-                "Yellow",
-                "Green",
-                "2"
+                "Which of the following biomes receives the most amount of rainfall during the year?",
+                "Desert",
+                "Tundra",
+                "Grassland",
+                "Forests",
+                "4"
             ],
             [
-                "What U.S. president established NASA?",
-                "Dwight D. Eisenhower",
-                "Ronald Reagan",
-                "John F. Kennedy",
-                "Harry S. Truman",
-                "1"
+                "What organ is in control of all other organs?",
+                "Heart",
+                "Stomach",
+                "Brain",
+                "Lungs",
+                "3"
             ],
             [
                 "In what type of rock would you most likely find a fossil?",
@@ -1186,12 +1278,12 @@
                 "1"
             ],
             [
-                "The gravity on Psyche is ___.",
-                "4.32 m/s2",
-                "1.60 m/s2",
-                "9.88 m/s2",
-                "0.144 m/s2",
-                "4"
+                "For humans, walking on two legs is:",
+                "An artform",
+                "A learned behavior",
+                "An instinct",
+                "Necessary",
+                "3"
             ],
             [
                 "True or False: Spectroscopy studies the way matter absorbs and emits light.",
@@ -1200,20 +1292,28 @@
                 "1"
             ],
             [
-                "Roughly, what is the top speed of a spacecraft using ion propulsion?",
-                "18,000 mph",
-                "60,000 mph",
-                "200,000 mph",
-                "100,000 mph",
-                "3"
+                "Coprolite, fossilized scat, is considered what type of fossil?",
+                "Cast",
+                "Mold",
+                "Body",
+                "Trace",
+                "4"
             ],
             [
-                "Which of these is not a basic type of asteroid?",
-                "S-type",
-                "C-type",
-                "M-type",
-                "K-type",
-                "4"
+                "Which two chromosomes do all male humans have?",
+                "XX",
+                "XY",
+                "YY",
+                "YZ",
+                "2"
+            ],
+            [
+                "An example of a Carbohydrate rich food is",
+                "Cereal",
+                "Chicken",
+                "Avocado",
+                "Steak",
+                "1"
             ]
         ],
         "science4": [
@@ -1226,20 +1326,20 @@
                 "2"
             ],
             [
-                "What color are the hottest stars?",
-                "Red",
-                "Blue",
-                "Yellow",
-                "Green",
+                "What is a Calorie?",
+                "Type of fat",
+                "Measurement of Energy",
+                "Type of digestion",
+                "Type of sugar",
                 "2"
             ],
             [
-                "What U.S. president established NASA?",
-                "Dwight D. Eisenhower",
-                "Ronald Reagan",
-                "John F. Kennedy",
-                "Harry S. Truman",
-                "1"
+                "Which of the following bodies of water is a saltwater ecosystem?",
+                "Curie Lake",
+                "Einstein Ocean",
+                "Newton's Pond",
+                "Darwin River",
+                "2"
             ],
             [
                 "In what type of rock would you most likely find a fossil?",
@@ -1258,6 +1358,14 @@
                 "3"
             ],
             [
+                "An electric eel can produce up to __ volts of electricity.",
+                "65",
+                "6500",
+                "6",
+                "650",
+                "4"
+            ],
+            [
                 "What does a magnetometer do?",
                 "Measures magnetic fields",
                 "Creates magnetic fields",
@@ -1266,12 +1374,12 @@
                 "1"
             ],
             [
-                "The gravity on Psyche is ___.",
-                "4.32 m/s2",
-                "1.60 m/s2",
-                "9.88 m/s2",
-                "0.144 m/s2",
-                "4"
+                "Which of the three main sources of energy provides the most calories per gram?",
+                "Fats",
+                "Proteins",
+                "Carbohydrates",
+                "None provide calories",
+                "1"
             ],
             [
                 "True or False:  Spectroscopy studies the way matter absorbs and emits light.",
@@ -1280,21 +1388,36 @@
                 "1"
             ],
             [
-                "Roughly, what is the top speed of a spacecraft using ion propulsion?",
-                "18,000 mph",
-                "60,000 mph",
-                "200,000 mph",
-                "100,000 mph",
-                "3"
+                "What is a calorie?",
+                "Type of fat",
+                "Measurement of Energy",
+                "Type of digestion",
+                "Type of sugar",
+                "2"
             ],
             [
-                "Which of these is not a basic type of asteroid?",
-                "S-type",
-                "C-type",
-                "M-type",
-                "K-type",
+                "True or False: Human DNA, when uncoiled, can stretch from Pluto to the Sun and back.",
+                "True",
+                "False",
+                "1"
+            ],
+            [
+                "What is the average time for a plastic bottle to decompose?",
+                "500 years",
+                "275 years",
+                "300 years",
+                "450 years",
                 "4"
+            ],
+            [
+                "How fast is the average human sneeze?",
+                "80 mph",
+                "90 mph",
+                "100 mph",
+                "110 mph",
+                "3"
             ]
         ]
     }
 ]
+ 
