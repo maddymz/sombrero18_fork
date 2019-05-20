@@ -302,7 +302,7 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_instagram"/>
                             <connections>
-                                <action selector="openInsta:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v0N-hs-XGA"/>
+                                <segue destination="FYn-vf-pgd" kind="custom" identifier="instagram" customClass="socialmediaSegue" customModule="Psyche" customModuleProvider="target" id="DT7-52-13P"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwD-Ir-Vij">
@@ -311,7 +311,7 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_youtube"/>
                             <connections>
-                                <action selector="openYoutube:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hiu-OA-dWC"/>
+                                <segue destination="FYn-vf-pgd" kind="custom" identifier="youtube" customClass="socialmediaSegue" customModule="Psyche" customModuleProvider="target" id="cAV-Af-ffN"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONNECT WITH US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCA-fy-BQd">
@@ -327,7 +327,7 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_twitter"/>
                             <connections>
-                                <action selector="openTwitter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tnZ-pP-OmV"/>
+                                <segue destination="FYn-vf-pgd" kind="custom" identifier="twitter" customClass="socialmediaSegue" customModule="Psyche" customModuleProvider="target" id="LcJ-dx-Syx"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irA-xv-9YM">
@@ -335,6 +335,9 @@ Test 3</string>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_facebook"/>
+                            <connections>
+                                <segue destination="FYn-vf-pgd" kind="custom" identifier="facebook" customClass="socialmediaSegue" customModule="Psyche" customModuleProvider="target" id="V5L-YQ-gvj"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWB-FS-3Tz">
                             <rect key="frame" x="224" y="23" width="30" height="30"/>
@@ -697,7 +700,7 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_instagram"/>
                             <connections>
-                                <action selector="openInsta:" destination="YRO-ac-t4q" eventType="touchUpInside" id="vnk-4n-v4L"/>
+                                <segue destination="wNV-XZ-lVH" kind="custom" identifier="instagram" customClass="socialmediaSegueTimeline" customModule="Psyche" customModuleProvider="target" id="MTM-HU-18E"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nC-Pp-zKc">
@@ -706,7 +709,7 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_youtube"/>
                             <connections>
-                                <action selector="openYoutube:" destination="YRO-ac-t4q" eventType="touchUpInside" id="4rg-wa-IiD"/>
+                                <segue destination="wNV-XZ-lVH" kind="custom" identifier="youtube" customClass="socialmediaSegueTimeline" customModule="Psyche" customModuleProvider="target" id="VVS-ca-qYv"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONNECT WITH US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPg-M0-6YO">
@@ -722,7 +725,7 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_twitter"/>
                             <connections>
-                                <action selector="openTwitter:" destination="YRO-ac-t4q" eventType="touchUpInside" id="KUI-4p-24e"/>
+                                <segue destination="wNV-XZ-lVH" kind="custom" identifier="twitter" customClass="socialmediaSegueTimeline" customModule="Psyche" customModuleProvider="target" id="mlh-HH-RI8"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IL2-wl-uy1">
@@ -731,7 +734,7 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_facebook"/>
                             <connections>
-                                <action selector="openFB:" destination="YRO-ac-t4q" eventType="touchUpInside" id="zSI-zs-4UJ"/>
+                                <segue destination="wNV-XZ-lVH" kind="custom" identifier="facebook" customClass="socialmediaSegueTimeline" customModule="Psyche" customModuleProvider="target" id="rhv-Gl-DYl"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUA-Gb-Tm4">
@@ -1719,7 +1722,7 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_instagram"/>
                             <connections>
-                                <action selector="openInsta:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="aNI-oH-VOc"/>
+                                <segue destination="F6s-ZF-Gq8" kind="custom" identifier="instagram" customClass="socialmediaSegueGallery" customModule="Psyche" customModuleProvider="target" id="RC9-Kn-PEc"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSm-OU-jtp">
@@ -1728,7 +1731,7 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_youtube"/>
                             <connections>
-                                <action selector="openYoutube:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="nSd-n0-JX7"/>
+                                <segue destination="F6s-ZF-Gq8" kind="custom" identifier="youtube" customClass="socialmediaSegueGallery" customModule="Psyche" customModuleProvider="target" id="TBp-6z-7aq"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONNECT WITH US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMX-uh-Kpu">
@@ -1744,7 +1747,7 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_twitter"/>
                             <connections>
-                                <action selector="openTwitter:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="3J8-8T-kMh"/>
+                                <segue destination="F6s-ZF-Gq8" kind="custom" identifier="twiter" customClass="socialmediaSegueGallery" customModule="Psyche" customModuleProvider="target" id="IFk-sX-MRW"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsx-Tx-797">
@@ -1753,7 +1756,7 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_facebook"/>
                             <connections>
-                                <action selector="openFB:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="hrQ-9N-Rxs"/>
+                                <segue destination="F6s-ZF-Gq8" kind="custom" identifier="facebook" customClass="socialmediaSegueGallery" customModule="Psyche" customModuleProvider="target" id="xJ0-bY-Hqd"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM9-NK-L1W">
@@ -1886,6 +1889,124 @@ Test 3</string>
                 </view>
             </objects>
             <point key="canvasLocation" x="1665" y="75"/>
+        </scene>
+        <!--Social Media Timeline View Controller-->
+        <scene sceneID="Lhk-dT-tCg">
+            <objects>
+                <viewController id="wNV-XZ-lVH" customClass="SocialMediaTimelineViewController" customModule="Psyche" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7BG-Hz-7BE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19a-gq-if2">
+                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Loading_6" translatesAutoresizingMaskIntoConstraints="NO" id="kDN-um-bD5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WK8-55-JMG">
+                                <rect key="frame" x="16" y="25" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="WhiteX"/>
+                                <connections>
+                                    <segue destination="YRO-ac-t4q" kind="custom" customClass="unwinedSocialmediaSegueTimeline" customModule="Psyche" customModuleProvider="target" id="KAT-Xh-0JF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4f-NA-Osa" userLabel="NASA_Logo">
+                                <rect key="frame" x="314" y="20" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="NASA-insignia30x30-1"/>
+                                <connections>
+                                    <action selector="openNASA:" destination="YRO-ac-t4q" eventType="touchUpInside" id="6D8-JU-OIz"/>
+                                    <action selector="openNASA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="km5-pN-1ap"/>
+                                    <action selector="openNASA:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="oKs-a5-N5R"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Our Social Media" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZU5-Ix-3NU">
+                                <rect key="frame" x="116" y="25" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="axp-OQ-UF5"/>
+                    </view>
+                    <connections>
+                        <outlet property="socialMediaTitle" destination="ZU5-Ix-3NU" id="7KZ-PJ-9md"/>
+                        <outlet property="wbView" destination="19a-gq-if2" id="ect-c4-1qz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KlH-vL-EI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2425" y="60"/>
+        </scene>
+        <!--Social Media Gallery View Controller-->
+        <scene sceneID="SFC-Hw-vHn">
+            <objects>
+                <viewController id="F6s-ZF-Gq8" customClass="SocialMediaGalleryViewController" customModule="Psyche" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DSM-tx-5AU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYP-1q-qpc">
+                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Loading_6" translatesAutoresizingMaskIntoConstraints="NO" id="KdT-f2-dr0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3u-fb-GSh">
+                                <rect key="frame" x="16" y="25" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="WhiteX"/>
+                                <connections>
+                                    <segue destination="Tbu-MQ-uGJ" kind="custom" customClass="unwinedSocialmediaSegueGallery" customModule="Psyche" customModuleProvider="target" id="ERQ-IM-jOR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGy-Uv-kA6" userLabel="NASA_Logo">
+                                <rect key="frame" x="314" y="20" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="NASA-insignia30x30-1"/>
+                                <connections>
+                                    <action selector="openNASA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IAh-DN-znL"/>
+                                    <action selector="openNASA:" destination="YRO-ac-t4q" eventType="touchUpInside" id="SnH-dE-u4h"/>
+                                    <action selector="openNASA:" destination="Tbu-MQ-uGJ" eventType="touchUpInside" id="ihh-NP-RFx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Our Social Media" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAl-39-ker">
+                                <rect key="frame" x="116" y="25" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HGP-jq-PrL"/>
+                    </view>
+                    <connections>
+                        <outlet property="socialMediaTitle" destination="NAl-39-ker" id="REU-3q-ZGY"/>
+                        <outlet property="wbView" destination="KYP-1q-qpc" id="0Zj-rJ-nqu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aIf-iK-Qb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3350" y="-104"/>
         </scene>
         <!--Trivia Init View Controller-->
         <scene sceneID="6MM-Na-h2N">
@@ -2178,7 +2299,7 @@ Test 3</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="WhiteX"/>
                                 <connections>
-                                    <action selector="backBtnPressed:" destination="pi3-bh-trm" eventType="touchUpInside" id="WuZ-Ha-HCt"/>
+                                    <segue destination="qqq-cO-b09" kind="custom" customClass="unwinedSocialmediaSegue" customModule="Psyche" customModuleProvider="target" id="Jz8-vd-ITI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2186,6 +2307,7 @@ Test 3</string>
                         <viewLayoutGuide key="safeArea" id="WdG-TH-eCw"/>
                     </view>
                     <connections>
+                        <outlet property="socialMediaTitle" destination="dpb-dM-NwV" id="uNV-eK-8z6"/>
                         <outlet property="wbView" destination="sAH-A1-jY8" id="dE5-8q-bAg"/>
                     </connections>
                 </viewController>
@@ -2234,10 +2356,15 @@ Test 3</string>
         <image name="new-timeline-second" width="50" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qW7-CE-FaO"/>
+        <segue reference="DT7-52-13P"/>
+        <segue reference="nWd-5Z-J5P"/>
         <segue reference="99g-zA-NbL"/>
-        <segue reference="azk-ax-l3W"/>
+        <segue reference="TBp-6z-7aq"/>
+        <segue reference="VVS-ca-qYv"/>
+        <segue reference="Jz8-vd-ITI"/>
+        <segue reference="ERQ-IM-jOR"/>
         <segue reference="pzT-gL-PoK"/>
         <segue reference="MwH-6p-iZZ"/>
+        <segue reference="KAT-Xh-0JF"/>
     </inferredMetricsTieBreakers>
 </document>

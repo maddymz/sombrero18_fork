@@ -1,27 +1,24 @@
 //
-//  SocialMediaViewController.swift
+//  SocialMediaTimelineViewController.swift
 //  Psyche
 //
-//  Created by psyche-admin on 5/13/19.
+//  Created by psyche-admin on 5/20/19.
 //  Copyright © 2019 ASU. All rights reserved.
 //
 
-import UIKit
 import WebKit
+import UIKit
 
-class SocialMediaViewController: UIViewController {
-    
-  
+class SocialMediaTimelineViewController: UIViewController {
+
     @IBOutlet weak var wbView: WKWebView!
-    @IBOutlet weak var socialMediaTitle: UILabel!
     
+    @IBOutlet weak var socialMediaTitle: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
     }
-    
-   
-    
     
 
     /*

@@ -157,28 +157,29 @@ class PlayAgainSegue: UIStoryboardSegue{
 
 class socialmediaSegue: UIStoryboardSegue {
     override func perform() {
+        
         let src = self.source as! HomeViewController
         let dst = self.destination as! SocialMediaViewController
         
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
         
         if self.identifier == "facebook"{
-            dst.SocialMediaTitle.text = "Facebook"
+            dst.socialMediaTitle.text = "Facebook"
             let url = URL(string: "https://facebook.com/nasapsyche")!
             let reqObj = URLRequest(url: url)
             dst.wbView.load(reqObj)
         }else if self.identifier == "twitter" {
-            dst.SocialMediaTitle.text = "Twitter"
+            dst.socialMediaTitle.text = "Twitter"
             let url = URL(string: "https://twitter.com/nasapsyche")!
             let reqObj = URLRequest(url: url)
             dst.wbView.load(reqObj)
         } else if self.identifier == "instagram"{
-            dst.SocialMediaTitle.text = "Instagram"
+            dst.socialMediaTitle.text = "Instagram"
             let url = URL(string: "https://instagram.com/nasapsyche")!
             let reqObj = URLRequest(url: url)
             dst.wbView.load(reqObj)
         } else {
-            dst.SocialMediaTitle.text = "Youtube"
+            dst.socialMediaTitle.text = "Youtube"
             let url = URL(string: "https://www.youtube.com/channel/UC2BGcbPW8mxryXnjQcBqk6A")!
             let reqObj = URLRequest(url: url)
             dst.wbView.load(reqObj)
@@ -193,10 +194,97 @@ class unwinedSocialmediaSegue: UIStoryboardSegue {
         let src = self.source as! SocialMediaViewController
         let dst = self.destination as!  LoadingViewController
         
-        dst.showAnimation = false
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
-        src.present(dst, animated: false, completion: nil)
-        
-        
+        src.dismiss(animated: false, completion: nil)
     }
 }
+
+class socialmediaSegueTimeline: UIStoryboardSegue {
+    override func perform() {
+        
+        let src = self.source as! TimelineTableViewController
+        let dst = self.destination as! SocialMediaTimelineViewController
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        
+        if self.identifier == "facebook"{
+            dst.socialMediaTitle.text = "Facebook"
+            let url = URL(string: "https://facebook.com/nasapsyche")!
+            let reqObj = URLRequest(url: url)
+            dst.wbView.load(reqObj)
+        }else if self.identifier == "twitter" {
+            dst.socialMediaTitle.text = "Twitter"
+            let url = URL(string: "https://twitter.com/nasapsyche")!
+            let reqObj = URLRequest(url: url)
+            dst.wbView.load(reqObj)
+        } else if self.identifier == "instagram"{
+            dst.socialMediaTitle.text = "Instagram"
+            let url = URL(string: "https://instagram.com/nasapsyche")!
+            let reqObj = URLRequest(url: url)
+            dst.wbView.load(reqObj)
+        } else {
+            dst.socialMediaTitle.text = "Youtube"
+            let url = URL(string: "https://www.youtube.com/channel/UC2BGcbPW8mxryXnjQcBqk6A")!
+            let reqObj = URLRequest(url: url)
+            dst.wbView.load(reqObj)
+        }
+        
+        src.present(dst, animated: false, completion: nil)
+    }
+}
+
+class unwinedSocialmediaSegueTimeline: UIStoryboardSegue {
+    override func perform() {
+        let src = self.source as! SocialMediaTimelineViewController
+        let dst = self.destination as!  TimelineTableViewController
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        src.dismiss(animated: false, completion: nil)
+    }
+}
+
+
+class socialmediaSegueGallery: UIStoryboardSegue {
+    override func perform() {
+        
+        let src = self.source as! GalleryViewController
+        let dst = self.destination as! SocialMediaGalleryViewController
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        
+        if self.identifier == "facebook"{
+            dst.socialMediaTitle.text = "Facebook"
+            let url = URL(string: "https://facebook.com/nasapsyche")!
+            let reqObj = URLRequest(url: url)
+            dst.wbView.load(reqObj)
+        }else if self.identifier == "twitter" {
+            dst.socialMediaTitle.text = "Twitter"
+            let url = URL(string: "https://twitter.com/nasapsyche")!
+            let reqObj = URLRequest(url: url)
+            dst.wbView.load(reqObj)
+        } else if self.identifier == "instagram"{
+            dst.socialMediaTitle.text = "Instagram"
+            let url = URL(string: "https://instagram.com/nasapsyche")!
+            let reqObj = URLRequest(url: url)
+            dst.wbView.load(reqObj)
+        } else {
+            dst.socialMediaTitle.text = "Youtube"
+            let url = URL(string: "https://www.youtube.com/channel/UC2BGcbPW8mxryXnjQcBqk6A")!
+            let reqObj = URLRequest(url: url)
+            dst.wbView.load(reqObj)
+        }
+        
+        src.present(dst, animated: false, completion: nil)
+    }
+}
+
+class unwinedSocialmediaSegueGallery: UIStoryboardSegue {
+    override func perform() {
+        let src = self.source as! SocialMediaGalleryViewController
+        let dst = self.destination as!  GalleryViewController
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        src.dismiss(animated: false, completion: nil)
+    }
+}
+
