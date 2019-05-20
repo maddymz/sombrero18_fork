@@ -38,6 +38,7 @@
 		7E71D960207F3D6700A33C4A /* ONe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D95F207F3D6600A33C4A /* ONe.gif */; };
 		B7540FF42293515E00F722F3 /* SocialMediaTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7540FF32293515E00F722F3 /* SocialMediaTimelineViewController.swift */; };
 		B7540FF62293517700F722F3 /* SocialMediaGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7540FF52293517700F722F3 /* SocialMediaGalleryViewController.swift */; };
+		B754100922936F8B00F722F3 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = B754100822936F8B00F722F3 /* Data */; };
 		B7F5C00D21FFC5B900FA473B /* HtmlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */; };
 		B7FE03DE228A220C006EDE41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7FE03DD228A220C006EDE41 /* Assets.xcassets */; };
 		B7FE03E2228A3E4D006EDE41 /* SocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FE03E1228A3E4D006EDE41 /* SocialMediaViewController.swift */; };
@@ -78,10 +79,7 @@
 		A4C6D0B6D6F2EEC9D96D0F6E /* Pods-Psyche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.debug.xcconfig"; sourceTree = "<group>"; };
 		B7540FF32293515E00F722F3 /* SocialMediaTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaTimelineViewController.swift; sourceTree = "<group>"; };
 		B7540FF52293517700F722F3 /* SocialMediaGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaGalleryViewController.swift; sourceTree = "<group>"; };
-		B7540FF82293627B00F722F3 /* Quiz.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Quiz.json; sourceTree = "<group>"; };
-		B7540FF92293627B00F722F3 /* Opponent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Opponent.json; sourceTree = "<group>"; };
-		B7540FFA2293627B00F722F3 /* Timeline.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Timeline.json; sourceTree = "<group>"; };
-		B7540FFB2293627B00F722F3 /* Homepage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Homepage.json; sourceTree = "<group>"; };
+		B754100822936F8B00F722F3 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlExtension.swift; sourceTree = "<group>"; };
 		B7FE03DD228A220C006EDE41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7FE03E1228A3E4D006EDE41 /* SocialMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +129,7 @@
 		178847901FE255AD00916C4D /* Psyche */ = {
 			isa = PBXGroup;
 			children = (
-				B7540FFC2293628B00F722F3 /* Data */,
+				B754100822936F8B00F722F3 /* Data */,
 				B7FE03E0228A3DAF006EDE41 /* Social */,
 				B7FE03DD228A220C006EDE41 /* Assets.xcassets */,
 				6B7C259121EFEB380085AC0A /* API */,
@@ -233,17 +231,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		B7540FFC2293628B00F722F3 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				B7540FFB2293627B00F722F3 /* Homepage.json */,
-				B7540FF92293627B00F722F3 /* Opponent.json */,
-				B7540FF82293627B00F722F3 /* Quiz.json */,
-				B7540FFA2293627B00F722F3 /* Timeline.json */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		B7FE03E0228A3DAF006EDE41 /* Social */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B754100922936F8B00F722F3 /* Data in Resources */,
 				1788479C1FE255AD00916C4D /* LaunchScreen.storyboard in Resources */,
 				42F8ADE92063154600809E0F /* RobotoMono-Regular.ttf in Resources */,
 				178847971FE255AD00916C4D /* Main.storyboard in Resources */,
