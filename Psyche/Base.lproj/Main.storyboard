@@ -340,7 +340,7 @@ Test 3</string>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWB-FS-3Tz">
-                            <rect key="frame" x="224" y="23" width="30" height="30"/>
+                            <rect key="frame" x="215" y="23" width="30" height="30"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="33"/>
                             <state key="normal" title="×">
@@ -738,7 +738,7 @@ Test 3</string>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUA-Gb-Tm4">
-                            <rect key="frame" x="224" y="23" width="30" height="30"/>
+                            <rect key="frame" x="217" y="23" width="30" height="30"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="33"/>
                             <state key="normal" title="×">
@@ -1760,7 +1760,7 @@ Test 3</string>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM9-NK-L1W">
-                            <rect key="frame" x="224" y="23" width="30" height="30"/>
+                            <rect key="frame" x="215" y="23" width="30" height="30"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="33"/>
                             <state key="normal" title="×">
