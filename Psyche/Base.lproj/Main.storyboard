@@ -1747,7 +1747,7 @@ Test 3</string>
                             <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                             <state key="normal" image="SocialMediaIcons_twitter"/>
                             <connections>
-                                <segue destination="F6s-ZF-Gq8" kind="custom" identifier="twiter" customClass="socialmediaSegueGallery" customModule="Psyche" customModuleProvider="target" id="IFk-sX-MRW"/>
+                                <segue destination="F6s-ZF-Gq8" kind="custom" identifier="twitter" customClass="socialmediaSegueGallery" customModule="Psyche" customModuleProvider="target" id="IFk-sX-MRW"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsx-Tx-797">
@@ -2359,12 +2359,12 @@ Test 3</string>
         <segue reference="DT7-52-13P"/>
         <segue reference="nWd-5Z-J5P"/>
         <segue reference="99g-zA-NbL"/>
-        <segue reference="TBp-6z-7aq"/>
+        <segue reference="xJ0-bY-Hqd"/>
         <segue reference="VVS-ca-qYv"/>
         <segue reference="Jz8-vd-ITI"/>
-        <segue reference="ERQ-IM-jOR"/>
+        <segue reference="d5N-7C-AG6"/>
         <segue reference="pzT-gL-PoK"/>
         <segue reference="MwH-6p-iZZ"/>
-        <segue reference="KAT-Xh-0JF"/>
+        <segue reference="cB4-P1-gm3"/>
     </inferredMetricsTieBreakers>
 </document>
