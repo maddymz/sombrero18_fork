@@ -224,7 +224,6 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         dropdownView.addSubview(scrollView)
         
         phases.forEach { (phase) in
-            print("CURRENTINDEX", currentDateIndex)
             if (j != index) {
                 let result = dateToString(date: phase.2)
                 
@@ -436,9 +435,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         for phase in  phases{
             if phase.2 < date {
                 removedPhases = [phase.1]
-                print("removed pahses home", removedPhases)
                 phases = phases.filter {$0 != phase}
-                print("phases", phases)
             }
         }
     }
