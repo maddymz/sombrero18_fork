@@ -206,7 +206,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             blurTitle.text = "Psyche in depth"
             blurText.text = homeData[0].depth
         } else if (pageControl.currentPage == 1) {
-            blurTitle.text = "The Astroid"
+            blurTitle.text = "The Asteroid"
             blurText.text = homeData[0].astroid
         } else if (pageControl.currentPage == 2) {
             blurTitle.text = "The Spacecraft"
