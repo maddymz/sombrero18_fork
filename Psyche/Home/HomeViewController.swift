@@ -429,7 +429,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         }
         blurText.textContainer.lineFragmentPadding = 0
         blurText.textContainerInset = .zero
-        blurTitle.text = "Psyche in depth"
+        blurTitle.text = "Psyche in Depth"
         blurText.text = homeData[0].depth
         DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(500000)) {
             self.blurText.flashScrollIndicators()
@@ -489,7 +489,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(view.frame.width))
         if (pageControl.currentPage == 0) {
-            blurTitle.text = "Psyche in depth"
+            blurTitle.text = "Psyche in Depth"
             blurText.text = homeData[0].depth
         } else if (pageControl.currentPage == 1) {
             blurTitle.text = "The Asteroid"

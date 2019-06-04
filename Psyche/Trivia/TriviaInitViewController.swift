@@ -22,6 +22,7 @@ class TriviaInitViewController: UIViewController {
         setGradientBackground()
         setStyle()
         setLabelText()
+        screenLayout()
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,6 +71,29 @@ class TriviaInitViewController: UIViewController {
         descLabel.text = "Test your knowledge against \(role) like \(player)!"
     }
     
+    // handle screen layout
+    func screenLayout(){
+        let screen = mainView.layoutMarginsGuide
+    
+        
+        if UIDevice.current.screenType == .iPhone_XR{
+            mainView.leadingAnchor.constraint(equalTo: screen.leadingAnchor, constant: 47).isActive = true
+            mainView.trailingAnchor.constraint(equalTo: screen.trailingAnchor, constant: 48).isActive = true
+            mainView.topAnchor.constraint(equalTo: screen.topAnchor, constant: 174).isActive = true
+            mainView.bottomAnchor.constraint(equalTo: screen.bottomAnchor, constant: 204).isActive = true
+        } else if UIDevice.current.screenType == .iPhone_XSMax {
+            mainView.leadingAnchor.constraint(equalTo: screen.leadingAnchor, constant: 47).isActive = true
+            mainView.trailingAnchor.constraint(equalTo: screen.trailingAnchor, constant: 48).isActive = true
+            mainView.topAnchor.constraint(equalTo: screen.topAnchor, constant: 174).isActive = true
+            mainView.bottomAnchor.constraint(equalTo: screen.bottomAnchor, constant: 204).isActive = true
+        } else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
+            mainView.leadingAnchor.constraint(equalTo: screen.leadingAnchor, constant: 47).isActive = true
+            mainView.trailingAnchor.constraint(equalTo: screen.trailingAnchor, constant: 48).isActive = true
+            mainView.topAnchor.constraint(equalTo: screen.topAnchor, constant: 174).isActive = true
+            mainView.bottomAnchor.constraint(equalTo: screen.bottomAnchor, constant: 204).isActive = true
+        }
+        
+    }
     @IBAction func openNASA(_ sender: Any) {
         menuHelper.openNASA(vc: self)
     }
