@@ -132,8 +132,8 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator = UIActivityIndicatorView(activityIndicatorStyle:.gray)
-        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        activityIndicator.center = CGPoint(x: 187.5,  y: 271.5 )
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40 )
+        activityIndicator.center = CGPoint(x:  view.frame.width/2,  y: view.frame.height/2 )
         collectionView .addSubview(activityIndicator)
         
         captionText.delegate = self

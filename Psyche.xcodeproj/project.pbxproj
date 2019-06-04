@@ -36,6 +36,7 @@
 		6B7C259321EFEB620085AC0A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C259221EFEB620085AC0A /* Api.swift */; };
 		7DA4EC440A0174E88F40ED1C /* Pods_Psyche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBCBCFD4C2D84175D328683A /* Pods_Psyche.framework */; };
 		7E71D960207F3D6700A33C4A /* ONe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D95F207F3D6600A33C4A /* ONe.gif */; };
+		B73BC359229F4CFC005F3307 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73BC358229F4CFC005F3307 /* UIDeviceExtension.swift */; };
 		B7540FF42293515E00F722F3 /* SocialMediaTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7540FF32293515E00F722F3 /* SocialMediaTimelineViewController.swift */; };
 		B7540FF62293517700F722F3 /* SocialMediaGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7540FF52293517700F722F3 /* SocialMediaGalleryViewController.swift */; };
 		B754100922936F8B00F722F3 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = B754100822936F8B00F722F3 /* Data */; };
@@ -77,6 +78,7 @@
 		6B7C259221EFEB620085AC0A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		7E71D95F207F3D6600A33C4A /* ONe.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ONe.gif; sourceTree = "<group>"; };
 		A4C6D0B6D6F2EEC9D96D0F6E /* Pods-Psyche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.debug.xcconfig"; sourceTree = "<group>"; };
+		B73BC358229F4CFC005F3307 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		B7540FF32293515E00F722F3 /* SocialMediaTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaTimelineViewController.swift; sourceTree = "<group>"; };
 		B7540FF52293517700F722F3 /* SocialMediaGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaGalleryViewController.swift; sourceTree = "<group>"; };
 		B754100822936F8B00F722F3 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		178847901FE255AD00916C4D /* Psyche */ = {
 			isa = PBXGroup;
 			children = (
+				B73BC357229F4CD6005F3307 /* Extensions */,
 				B754100822936F8B00F722F3 /* Data */,
 				B7FE03E0228A3DAF006EDE41 /* Social */,
 				B7FE03DD228A220C006EDE41 /* Assets.xcassets */,
@@ -219,6 +222,14 @@
 				F5249A49C383D9033E2B2629 /* Pods-Psyche.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B73BC357229F4CD6005F3307 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B73BC358229F4CFC005F3307 /* UIDeviceExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B7540FF72293624200F722F3 /* Home */ = {
@@ -428,6 +439,7 @@
 				17F1D24F2075DE2D00B9B6A9 /* TriviaCategoryViewController.swift in Sources */,
 				17C34E42205A490B00712D00 /* LoadingViewController.swift in Sources */,
 				175B1B7C206C0E830046A81D /* TimelineTableViewController.swift in Sources */,
+				B73BC359229F4CFC005F3307 /* UIDeviceExtension.swift in Sources */,
 				42B9D343207DBF090086EAC6 /* Psyche.xcdatamodeld in Sources */,
 				B7FE03E2228A3E4D006EDE41 /* SocialMediaViewController.swift in Sources */,
 				17F1D2512075FD8400B9B6A9 /* TriviaGameViewController.swift in Sources */,

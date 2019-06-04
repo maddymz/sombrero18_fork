@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import WebKit
 
-class TimelineTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WKUIDelegate {
+class TimelineTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WKUIDelegate{
     
     //timeline tableview
     @IBOutlet weak var tableView: UITableView!
@@ -29,11 +29,14 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     let adjustTitleSize = true // set to true to set title font size to 23, false to keep original
     let fixExpandedCellHeights = true // set to true to fix cell heights to predetermined values, false to adjust dynamically (not recommended)
     
-    
+    var uiDevice = UIDevice.init()
     // MARK: Properties
     var selectedIndex = -1
     //var cellHeights = [482,276,552,664,482,168]
     var cellHeights = [470,192,552,664,482,94]
+    var cellHeightsSmallScreen = [540,200,620,750,510,94]
+    
+    
     let firstViewHeight:CGFloat = CGFloat(320)
     let firstViewHeightMargin:CGFloat = CGFloat(0)
     let bulletsContentSpacing = 12
@@ -144,7 +147,11 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         // Grab new bulletsLabel height
         if (!fixExpandedCellHeights) {
-            cellHeights[indexPath.row] = Int(cell.bulletsLabel.bounds.height)
+            if UIDevice.current.screenType == .iPhones_5_5s_5c_SE{
+                cellHeightsSmallScreen[indexPath.row] = Int(cell.bulletsLabel.bounds.height)
+            }else {
+                cellHeights[indexPath.row] = Int(cell.bulletsLabel.bounds.height)
+            }
             print("cellHeights: [" + (item.phase.phaseInfo) + "] " + String(cellHeights[indexPath.row]))
         }
         
@@ -197,7 +204,11 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     // Functions controlling collapse / expand behavior
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (selectedIndex == indexPath.row) {
-            return firstViewHeight + CGFloat(cellHeights[indexPath.row])
+            if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+                return firstViewHeight + CGFloat(cellHeightsSmallScreen[indexPath.row])
+            }else {
+                return firstViewHeight + CGFloat(cellHeights[indexPath.row])
+            }
         } else {
             // Collapsed cell height
             return firstViewHeight + firstViewHeightMargin
