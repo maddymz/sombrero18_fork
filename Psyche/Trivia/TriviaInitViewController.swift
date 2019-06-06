@@ -16,6 +16,7 @@ class TriviaInitViewController: UIViewController {
     @IBOutlet weak var letsPlayBtn: UIButton!
     @IBOutlet weak var descLabel: UILabel!
     
+    @IBOutlet weak var TriviaAlertTitle: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,26 +72,32 @@ class TriviaInitViewController: UIViewController {
         descLabel.text = "Test your knowledge against \(role) like \(player)!"
     }
     
-    // handle screen layout
+    // handle screen layout - by Madhukar Raj , 06/03/2019
     func screenLayout(){
-        let screen = mainView.layoutMarginsGuide
-    
+        
+        let guide = view.safeAreaLayoutGuide
+        mainView.translatesAutoresizingMaskIntoConstraints = false
         
         if UIDevice.current.screenType == .iPhone_XR{
-            mainView.leadingAnchor.constraint(equalTo: screen.leadingAnchor, constant: 47).isActive = true
-            mainView.trailingAnchor.constraint(equalTo: screen.trailingAnchor, constant: 48).isActive = true
-            mainView.topAnchor.constraint(equalTo: screen.topAnchor, constant: 174).isActive = true
-            mainView.bottomAnchor.constraint(equalTo: screen.bottomAnchor, constant: 204).isActive = true
+            mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 48).isActive = true
+            mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -47).isActive = true
+            mainView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 205).isActive = true
+            mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -300).isActive = true
         } else if UIDevice.current.screenType == .iPhone_XSMax {
-            mainView.leadingAnchor.constraint(equalTo: screen.leadingAnchor, constant: 47).isActive = true
-            mainView.trailingAnchor.constraint(equalTo: screen.trailingAnchor, constant: 48).isActive = true
-            mainView.topAnchor.constraint(equalTo: screen.topAnchor, constant: 174).isActive = true
-            mainView.bottomAnchor.constraint(equalTo: screen.bottomAnchor, constant: 204).isActive = true
+            mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 48).isActive = true
+            mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -47).isActive = true
+            mainView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 205).isActive = true
+            mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -300).isActive = true
         } else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
-            mainView.leadingAnchor.constraint(equalTo: screen.leadingAnchor, constant: 47).isActive = true
-            mainView.trailingAnchor.constraint(equalTo: screen.trailingAnchor, constant: 48).isActive = true
-            mainView.topAnchor.constraint(equalTo: screen.topAnchor, constant: 174).isActive = true
-            mainView.bottomAnchor.constraint(equalTo: screen.bottomAnchor, constant: 204).isActive = true
+            mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 48).isActive = true
+            mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -47).isActive = true
+            mainView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 205).isActive = true
+            mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -200    ).isActive = true
+        } else if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 28).isActive = true
+            mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -27).isActive = true
+            mainView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 105).isActive = true
+            mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -150   ).isActive = true
         }
         
     }

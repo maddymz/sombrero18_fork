@@ -24,7 +24,6 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var playerHighScore: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("opponent data:", opponentList.oppData)
