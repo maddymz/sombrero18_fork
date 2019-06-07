@@ -156,10 +156,58 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                 }
             }
         } else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
-            blurY.constant = 430
-            blurHeight.constant = 630
-            blurTextHeight.constant = 40
-            blurTextY.constant = -200
+           
+            if sender.state == .began || sender.state == .changed {
+                let translation = sender.translation(in: self.view).y
+                
+                if translation < 0 {
+                    if blurY.constant > 8 {
+                        UIView.animate(withDuration: 0.2, animations: {
+                            self.blurY.constant += translation / 10
+                            self.view.layoutIfNeeded()
+                            
+                            self.blurTextY.constant -= translation / 20
+                            self.blurTextHeight.constant -= translation / 10
+                        })
+                    }
+                } else {
+                    if blurY.constant < 390 {
+                        UIView.animate(withDuration: 0.2, animations: {
+                            self.blurY.constant += translation / 10
+                            self.view.layoutIfNeeded()
+                            
+                            self.blurTextY.constant -= translation / 20
+                            self.blurTextHeight.constant -= translation / 10
+                        })
+                    }
+                }
+            } else if sender.state == .ended {
+                if blurY.constant < 265 {
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self.blurY.constant = 17
+                        self.view.layoutIfNeeded()
+                        self.arrowImage.image = UIImage(named: "ArrowF")
+                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
+                        self.blurTextY.constant = 0
+                        self.blurTextHeight.constant = 450
+                        self.blurText.isScrollEnabled = true
+                    })
+                } else {
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self.blurY.constant = 430
+                        self.view.layoutIfNeeded()
+                        self.arrowImage.image = UIImage(named: "Arrow")
+                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
+                        self.blurTextY.constant = -200
+                        self.blurTextHeight.constant = 60
+                        self.blurText.isScrollEnabled = false
+                        
+                    })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(500000)) {
+                    self.blurText.flashScrollIndicators()
+                }
+            }
         }else if UIDevice.current.screenType == .iPhones_X_XS{
             if sender.state == .began || sender.state == .changed {
                 let translation = sender.translation(in: self.view).y

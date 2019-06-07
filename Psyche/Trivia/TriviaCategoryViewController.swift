@@ -84,6 +84,83 @@ class TriviaCategoryViewController: UIViewController {
         }
         opponentName.text = opponent?.fname
         opponentBlurb.text = opponent?.blurb
+        
+        screenLayout()
+    }
+    
+    
+    // handle screen layout - by Madhukar Raj , 06/06/2019
+    func screenLayout(){
+        
+        let guide = view.safeAreaLayoutGuide
+        scienceButton.translatesAutoresizingMaskIntoConstraints = false
+        psycheButton.translatesAutoresizingMaskIntoConstraints = false
+        nasaButton.translatesAutoresizingMaskIntoConstraints = false
+        spaceButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        if UIDevice.current.screenType == .iPhone_XR{
+            scienceButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            scienceButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
+            psycheButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            psycheButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
+            nasaButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            nasaButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
+            spaceButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            spaceButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
+            scienceButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 361).isActive = true
+            scienceButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 30).isActive = true
+            nasaButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 600).isActive = true
+            nasaButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 30).isActive = true
+            psycheButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 361).isActive = true
+            psycheButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -30).isActive = true
+            spaceButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 600).isActive = true
+            spaceButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -30).isActive = true
+           
+        } else if UIDevice.current.screenType == .iPhone_XSMax {
+            scienceButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            scienceButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
+            psycheButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            psycheButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
+            nasaButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            nasaButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
+            spaceButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            spaceButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
+            scienceButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 361).isActive = true
+            scienceButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 30).isActive = true
+            nasaButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 600).isActive = true
+            nasaButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 30).isActive = true
+            psycheButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 361).isActive = true
+            psycheButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -30).isActive = true
+            spaceButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 600).isActive = true
+            spaceButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -30).isActive = true
+
+            
+        } else if UIDevice.current.screenType == .iPhones_X_XS {
+            scienceButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            scienceButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
+            psycheButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            psycheButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
+            nasaButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            nasaButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
+            spaceButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            spaceButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
+            scienceButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 361).isActive = true
+            scienceButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 30).isActive = true
+            nasaButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 550).isActive = true
+            nasaButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 30).isActive = true
+            psycheButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 361).isActive = true
+            psycheButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -30).isActive = true
+            spaceButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 550).isActive = true
+            spaceButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -30).isActive = true
+        } else if UIDevice.current.screenType == .iPhones_6_6s_7_8 {
+
+        }else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
+           
+            
+        }else if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

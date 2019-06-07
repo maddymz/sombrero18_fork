@@ -9,6 +9,12 @@
 import UIKit
 import CoreData
 
+class OppInfoCell: UITableViewCell {
+    
+    @IBOutlet weak var unlockedHighScore: UILabel!
+    @IBOutlet weak var unlockedScore: UILabel!
+    @IBOutlet weak var unlockedPlay: UIButton!
+}
 class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 
@@ -23,10 +29,12 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var gradient: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var playerHighScore: UILabel!
+    @IBOutlet weak var highScoretext: UILabel!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("opponent data:", opponentList.oppData)
+//        print("opponent data:", opponentList.oppData)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TriviaInfo")
@@ -56,7 +64,8 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
                 // Get high score
                 if let highScore = result.value(forKey: "high_score") as? Int {
                     print(highScore)
-                    playerHighScore.text = String(highScore)
+//                    playerHighScore.text = String(highScore)
+                    playerHighScore.text = String(1280)
                     
                 } else {
                     print("no high score")
@@ -93,6 +102,59 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
         else if(profile_image == 6){
             profile.image = #imageLiteral(resourceName: "Sun_Large")
         }
+        
+        screenLayout()
+    }
+    
+    
+    // handle screen layout - by Madhukar Raj , 06/06/2019
+    func screenLayout(){
+        
+        let guide = view.safeAreaLayoutGuide
+        profile.translatesAutoresizingMaskIntoConstraints = false
+        playerHighScore.translatesAutoresizingMaskIntoConstraints = false
+        highScoretext.translatesAutoresizingMaskIntoConstraints = false
+        var cellvars = OppInfoCell()
+        cellvars.unlockedHighScore.translatesAutoresizingMaskIntoConstraints = false
+        cellvars.unlockedPlay.translatesAutoresizingMaskIntoConstraints = false
+        cellvars.unlockedScore.translatesAutoresizingMaskIntoConstraints = false
+        
+        if UIDevice.current.screenType == .iPhone_XR{
+            profile.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
+            profile.heightAnchor.constraint(equalToConstant: 152).isActive = true
+            profile.widthAnchor.constraint(equalToConstant: 148).isActive = true
+            profile.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
+        } else if UIDevice.current.screenType == .iPhone_XSMax {
+            profile.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
+            profile.heightAnchor.constraint(equalToConstant: 152).isActive = true
+            profile.widthAnchor.constraint(equalToConstant: 148).isActive = true
+            profile.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
+        } else if UIDevice.current.screenType == .iPhones_X_XS {
+            profile.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
+            profile.heightAnchor.constraint(equalToConstant: 152).isActive = true
+            profile.widthAnchor.constraint(equalToConstant: 148).isActive = true
+            profile.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
+        } else if UIDevice.current.screenType == .iPhones_6_6s_7_8 {
+            profile.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
+            profile.heightAnchor.constraint(equalToConstant: 152).isActive = true
+            profile.widthAnchor.constraint(equalToConstant: 148).isActive = true
+            profile.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
+        }else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
+            profile.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
+            profile.heightAnchor.constraint(equalToConstant: 152).isActive = true
+            profile.widthAnchor.constraint(equalToConstant: 148).isActive = true
+            profile.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
+        }else if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            profile.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
+            profile.heightAnchor.constraint(equalToConstant: 152).isActive = true
+            profile.widthAnchor.constraint(equalToConstant: 148).isActive = true
+            profile.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 2).isActive = true
+            playerHighScore.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 115).isActive = true
+            playerHighScore.topAnchor.constraint(equalTo: guide.topAnchor, constant: 49).isActive = true
+            highScoretext.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 115).isActive = true
+            highScoretext.topAnchor.constraint(equalTo: guide.topAnchor, constant: 89).isActive = true
+        }
+        
     }
     
     // number of rows in table view

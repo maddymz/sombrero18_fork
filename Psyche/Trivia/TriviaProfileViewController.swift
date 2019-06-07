@@ -90,25 +90,30 @@ class TriviaProfileViewController: UIViewController {
         mainView.translatesAutoresizingMaskIntoConstraints = false
         
         if UIDevice.current.screenType == .iPhone_XR{
-            mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 48).isActive = true
-            mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -47).isActive = true
+            mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 69).isActive = true
+            mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -70).isActive = true
             mainView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 150).isActive = true
-            mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -200).isActive = true
+            mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -240).isActive = true
         } else if UIDevice.current.screenType == .iPhone_XSMax {
-            mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 48).isActive = true
-            mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -47).isActive = true
+            mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 69).isActive = true
+            mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -70).isActive = true
             mainView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 150).isActive = true
-            mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -200).isActive = true
+            mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -240).isActive = true
         } else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
-            mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 48).isActive = true
-            mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -47).isActive = true
+            mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 69).isActive = true
+            mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -70).isActive = true
             mainView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 100).isActive = true
-            mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -150).isActive = true
+            mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -200).isActive = true
         } else if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
             mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 28).isActive = true
             mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -27).isActive = true
             mainView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 70).isActive = true
             mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -70).isActive = true
+        } else if UIDevice.current.screenType == .iPhones_X_XS {
+            mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 48).isActive = true
+            mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -47).isActive = true
+            mainView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 150).isActive = true
+            mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -160).isActive = true
         }
         
     }
