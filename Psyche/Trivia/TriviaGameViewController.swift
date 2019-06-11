@@ -215,7 +215,7 @@ class TriviaGameViewController: UIViewController {
         super.viewDidLoad()
         // countdown clock
         let center = CGPoint(x: view.frame.width/2, y: 60)
-        
+        self.performSegue(withIdentifier: "showScore", sender: self)
         // create track layer
         let trackLayer = CAShapeLayer()
         let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: -1.5706795, clockwise: false)
@@ -320,10 +320,40 @@ class TriviaGameViewController: UIViewController {
         
         //start game with new question
         newQuestion()
+        screenLayout()
     }
     
     func newQuestion(){
-
+        
+        //iphone 5
+        let guide = view.safeAreaLayoutGuide
+        questionNo.translatesAutoresizingMaskIntoConstraints = false
+        question.translatesAutoresizingMaskIntoConstraints = false
+        answer1.translatesAutoresizingMaskIntoConstraints = false
+        answer2.translatesAutoresizingMaskIntoConstraints = false
+        answer3.translatesAutoresizingMaskIntoConstraints = false
+        answer4.translatesAutoresizingMaskIntoConstraints = false
+        questionNo.topAnchor.constraint(equalTo: guide.topAnchor, constant: 270).isActive = true
+        questionNo.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 35).isActive = true
+        questionNo.widthAnchor.constraint(equalToConstant: 174).isActive = true
+        questionNo.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        question.topAnchor.constraint(equalTo: guide.topAnchor, constant: 305).isActive = true
+        question.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 35).isActive = true
+        question.widthAnchor.constraint(equalToConstant: 240).isActive = true
+        question.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        answer1.topAnchor.constraint(equalTo: guide.topAnchor, constant: 381).isActive = true
+        answer1.widthAnchor.constraint(equalToConstant: 248).isActive = true
+        answer1.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 35).isActive = true
+        answer2.topAnchor.constraint(equalTo: guide.topAnchor, constant: 413).isActive = true
+        answer2.widthAnchor.constraint(equalToConstant: 248).isActive = true
+        answer2.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 35).isActive = true
+        answer3.topAnchor.constraint(equalTo: guide.topAnchor, constant: 445).isActive = true
+        answer3.widthAnchor.constraint(equalToConstant: 248).isActive = true
+        answer3.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 35).isActive = true
+        answer4.topAnchor.constraint(equalTo: guide.topAnchor, constant: 477).isActive = true
+        answer4.widthAnchor.constraint(equalToConstant: 248).isActive = true
+        answer4.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 35).isActive = true
+        
         //set up question visuals
         answer1.layer.borderWidth = 1
         answer2.layer.borderWidth = 1
@@ -506,15 +536,45 @@ class TriviaGameViewController: UIViewController {
     }
     
     // handle screen layout - by Madhukar Raj , 06/03/2019
-//    func screenLayout(){
-//
-//        let guide = view.safeAreaLayoutGuide
+    func screenLayout(){
+
+        let guide = view.safeAreaLayoutGuide
 //        question.translatesAutoresizingMaskIntoConstraints = false
-//      if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
-//        question.heightAnchor.constraint(equalToConstant: 30).isActive = true
-//
-//        }
-//    }
+//        answer1.translatesAutoresizingMaskIntoConstraints = false
+//        answer2.translatesAutoresizingMaskIntoConstraints = false
+//        answer3.translatesAutoresizingMaskIntoConstraints = false
+//        answer4.translatesAutoresizingMaskIntoConstraints = false
+        opponentAvatar.translatesAutoresizingMaskIntoConstraints = false
+        opponentName.translatesAutoresizingMaskIntoConstraints = false
+        profile.translatesAutoresizingMaskIntoConstraints = false
+        profileName.translatesAutoresizingMaskIntoConstraints = false
+        opponentScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        playerScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        questionCard.translatesAutoresizingMaskIntoConstraints = false
+        
+      if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+        opponentAvatar.widthAnchor.constraint(equalToConstant: 130).isActive = true
+        opponentAvatar.heightAnchor.constraint(equalToConstant: 130).isActive = true
+        opponentAvatar.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+        opponentAvatar.topAnchor.constraint(equalTo: guide.topAnchor, constant: 15).isActive = true
+        opponentName.topAnchor.constraint(equalTo: guide.topAnchor, constant: 150).isActive = true
+        opponentName.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -60).isActive = true
+        opponentScoreLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 170).isActive = true
+        opponentScoreLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -50).isActive = true
+        profile.widthAnchor.constraint(equalToConstant: 130).isActive = true
+        profile.heightAnchor.constraint(equalToConstant: 130).isActive = true
+        profile.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 10).isActive = true
+        profile.topAnchor.constraint(equalTo: guide.topAnchor, constant: 15).isActive = true
+        profileName.topAnchor.constraint(equalTo: guide.topAnchor, constant: 150).isActive = true
+        profileName.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 40).isActive = true
+        playerScoreLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 170).isActive = true
+        playerScoreLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 60).isActive = true
+        questionCard.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        questionCard.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 16).isActive = true
+        questionCard.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -16).isActive = true
+        questionCard.topAnchor.constraint(equalTo: guide.topAnchor, constant: 230).isActive = true
+        }
+    }
     
         
 }

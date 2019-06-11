@@ -44,6 +44,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var blurTextWidth: NSLayoutConstraint!
     @IBOutlet var Menu: UIView!
     @IBOutlet weak var menuBlur: UIVisualEffectView!
+    @IBOutlet weak var nasaLogo: UIButton!
     
     struct homepageStruct: Decodable {
         let asteroid, spacecraft, science, depth: String
@@ -88,6 +89,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurTextY.constant = 18
                         self.blurTextHeight.constant = 420
                         self.blurText.isScrollEnabled = true
+                        self.pageControl.isHidden = true
+
                     })
                 } else {
                     UIView.animate(withDuration: 0.2, animations: {
@@ -139,6 +142,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 600
                         self.blurText.isScrollEnabled = true
+                        self.pageControl.isHidden = true
+
                     })
                 } else {
                     UIView.animate(withDuration: 0.2, animations: {
@@ -191,6 +196,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 450
                         self.blurText.isScrollEnabled = true
+                        self.pageControl.isHidden = true
+
                     })
                 } else {
                     UIView.animate(withDuration: 0.2, animations: {
@@ -243,6 +250,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 500
                         self.blurText.isScrollEnabled = true
+                        self.pageControl.isHidden = true
+
                     })
                 } else {
                     UIView.animate(withDuration: 0.2, animations: {
@@ -294,6 +303,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 650
                         self.blurText.isScrollEnabled = true
+                        self.pageControl.isHidden = true
+
                     })
                 } else {
                     UIView.animate(withDuration: 0.2, animations: {
@@ -345,6 +356,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 300
                         self.blurText.isScrollEnabled = true
+                        self.pageControl.isHidden = true
                     })
                 } else {
                     UIView.animate(withDuration: 0.2, animations: {
@@ -355,6 +367,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurTextY.constant = -125
                         self.blurTextHeight.constant = 30
                         self.blurText.isScrollEnabled = false
+
                     })
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(500000)) {
@@ -365,8 +378,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    // methods
     
+    // methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -456,24 +470,18 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             blurTextWidth.constant = 255
             blurTextX.constant = 4
             
+            
             let anchor = view.layoutMarginsGuide
-//            let blurMargins = blurText.layoutMarginsGuide
+            nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            nasaLogo.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 22).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
             pageControl.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 141)
             pageControl.trailingAnchor.constraint(equalTo: anchor.trailingAnchor, constant: 140)
             pageControl.bottomAnchor.constraint(equalTo: anchor.bottomAnchor, constant: 127)
             pageControl.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 8)
-            
-            
-//            let anchor = view.layoutMarginsGuide
-//
-//            blurText.centerYAnchor.constraint(equalTo: anchor.centerYAnchor, constant: 18)
-//            blurText.centerXAnchor.constraint(equalTo: anchor.centerXAnchor, constant: 7.5)
-//            blurText.widthAnchor.constraint(equalToConstant: 255)
-//            blurText.heightAnchor.constraint(equalToConstant: 37)
-
-           
-            
-            
+   
         }
         blurText.textContainer.lineFragmentPadding = 0
         blurText.textContainerInset = .zero

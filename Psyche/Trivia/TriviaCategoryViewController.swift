@@ -18,7 +18,6 @@ class TriviaCategoryViewController: UIViewController {
     @IBOutlet weak var opponentName: UILabel!
     @IBOutlet weak var opponentBlurb: UILabel!
     
-    @IBOutlet weak var vLabel: UILabel!
     //Category buttons
     @IBOutlet weak var scienceButton: UIButton!
     @IBOutlet weak var psycheButton: UIButton!

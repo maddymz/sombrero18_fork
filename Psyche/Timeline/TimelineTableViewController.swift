@@ -21,7 +21,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var menuBlur: UIVisualEffectView!
     
     // Countdown clock
-    let countdownClock = CountdownClockTimeline(frame: CGRect(x: 0, y: 64, width: 375, height: 61))
+    let countdownClock = CountdownClockTimeline(frame: CGRect(x: 0, y: 64, width: 325, height: 61))
     
     // MARK: Demo Options
     let debugColors = false // set to true to keep colorful ui element bgs, false to change all bgs to transparent

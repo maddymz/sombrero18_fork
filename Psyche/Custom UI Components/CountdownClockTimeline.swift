@@ -47,7 +47,7 @@ class CountdownClockTimeline : UIView {
         timerMLabel.frame = CGRect(x: 40 + space * 2 + 82 + space + 2, y: 41, width: 110, height: 21)
         timerMLabel.text = "HOURS     MINUTES"
         
-        secondsMLabel.frame = CGRect(x: 317, y: 41, width: 50, height: 21)
+        secondsMLabel.frame = CGRect(x: width - 41 - 15, y: 41, width: 50, height: 21)
         secondsMLabel.text = "SECONDS"
         
         daysLabel.font = UIFont(name: "Roboto Mono", size: 34)

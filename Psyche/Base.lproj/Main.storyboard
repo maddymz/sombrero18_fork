@@ -213,6 +213,7 @@ Test 3</string>
                         <outlet property="gradientView" destination="PNr-RE-cx4" id="u6L-ma-SfV"/>
                         <outlet property="mainView" destination="8bC-Xf-vdC" id="pOA-l6-jXm"/>
                         <outlet property="menuBlur" destination="goc-dJ-qaO" id="Xlz-zo-oZZ"/>
+                        <outlet property="nasaLogo" destination="kCr-JS-BYE" id="ijq-6l-xfS"/>
                         <outlet property="pageControl" destination="eQp-e7-CAL" id="Dnp-WW-1Qv"/>
                         <outlet property="scrollView" destination="iij-lS-rpX" id="M0M-tv-Raf"/>
                         <outlet property="stackView" destination="Htd-pq-7pw" id="xyR-1y-2NA"/>
@@ -1121,7 +1122,6 @@ Test 3</string>
                         <outlet property="psycheButton" destination="tL4-uX-byd" id="Hn9-z5-u9i"/>
                         <outlet property="scienceButton" destination="yx4-i8-gYr" id="ybF-yG-oMm"/>
                         <outlet property="spaceButton" destination="Vbz-oQ-uCl" id="09H-rq-hCm"/>
-                        <outlet property="vLabel" destination="CYv-kH-u5K" id="o57-zv-Mem"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8R-16-v4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1142,7 +1142,7 @@ Test 3</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="QuestionCards_Question 10" translatesAutoresizingMaskIntoConstraints="NO" id="EbY-MY-s1i">
-                                <rect key="frame" x="16" y="248" width="288" height="294"/>
+                                <rect key="frame" x="16" y="248" width="288" height="278"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKn-Vj-diy">
@@ -1306,7 +1306,7 @@ Test 3</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Sm-dA-rce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6856.8000000000002" y="1773.4632683658172"/>
+            <point key="canvasLocation" x="6855" y="1772.5352112676057"/>
         </scene>
         <!--Trivia Final View Controller-->
         <scene sceneID="Hia-lo-6vF">
@@ -1466,7 +1466,9 @@ Test 3</string>
                         <outlet property="opponentScoreLabel" destination="sci-1Z-Wdh" id="AwX-Eh-PFs"/>
                         <outlet property="profile" destination="7H4-fM-YNQ" id="yah-Be-ne5"/>
                         <outlet property="profileName" destination="KhY-D5-EML" id="WOK-kC-Hxe"/>
+                        <outlet property="share" destination="tpg-ol-k78" id="BrH-r2-JQi"/>
                         <outlet property="shareButton" destination="oh9-a8-rxT" id="Lmx-wy-bhu"/>
+                        <outlet property="shareMessage" destination="0hf-Ml-SAb" id="fpZ-oM-P9h"/>
                         <outlet property="vsLabel" destination="doH-dN-AVf" id="Kvz-tf-QBF"/>
                     </connections>
                 </viewController>
@@ -2607,10 +2609,10 @@ yiTPAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAJNE
         <segue reference="5fb-a0-hGe"/>
         <segue reference="xJ0-bY-Hqd"/>
         <segue reference="rhv-Gl-DYl"/>
-        <segue reference="hRq-xg-zMh"/>
+        <segue reference="azk-ax-l3W"/>
         <segue reference="ERQ-IM-jOR"/>
         <segue reference="rMD-HD-iqJ"/>
-        <segue reference="MwH-6p-iZZ"/>
+        <segue reference="flH-1B-IPE"/>
         <segue reference="KAT-Xh-0JF"/>
     </inferredMetricsTieBreakers>
 </document>

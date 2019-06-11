@@ -25,7 +25,9 @@ class TriviaFinalViewController: UIViewController {
     
     @IBOutlet weak var completeMessage: UILabel!
     
+    @IBOutlet weak var shareMessage: UILabel!
     
+    @IBOutlet weak var share: UIButton!
     
     //category buttons
     
@@ -122,6 +124,8 @@ class TriviaFinalViewController: UIViewController {
         else{
             completeMessage.text = "It's ok, You can try again!"
         }
+        
+        screenLayout()
     }
     @IBAction func systemShare(_ sender: Any) {
         let message = "I beat \(self.opponentName.text!) with a score of \(self.finalScoreLabel.text!)! #Psyche"
@@ -182,6 +186,54 @@ class TriviaFinalViewController: UIViewController {
             if let vc = segue.destination as? LoadingViewController {
                 vc.showAnimation = false // This ensures that the LoadingViewController will not show the animation
             }
+        }
+    }
+    
+    // handle screen layout - by Madhukar Raj , 06/03/2019
+    func screenLayout(){
+        
+        let guide = view.safeAreaLayoutGuide
+        opponentAvatar.translatesAutoresizingMaskIntoConstraints = false
+        opponentName.translatesAutoresizingMaskIntoConstraints = false
+        profile.translatesAutoresizingMaskIntoConstraints = false
+        profileName.translatesAutoresizingMaskIntoConstraints = false
+        opponentScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        finalScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        completeMessage.translatesAutoresizingMaskIntoConstraints = false
+        mainView.translatesAutoresizingMaskIntoConstraints = false
+        shareMessage.translatesAutoresizingMaskIntoConstraints = false
+        share.translatesAutoresizingMaskIntoConstraints = false
+      
+        if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            opponentAvatar.widthAnchor.constraint(equalToConstant: 130).isActive = true
+            opponentAvatar.heightAnchor.constraint(equalToConstant: 130).isActive = true
+            opponentAvatar.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+            opponentAvatar.topAnchor.constraint(equalTo: guide.topAnchor, constant: 15).isActive = true
+            opponentName.topAnchor.constraint(equalTo: guide.topAnchor, constant: 150).isActive = true
+            opponentName.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -60).isActive = true
+            opponentScoreLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 170).isActive = true
+            opponentScoreLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -50).isActive = true
+            profile.widthAnchor.constraint(equalToConstant: 130).isActive = true
+            profile.heightAnchor.constraint(equalToConstant: 130).isActive = true
+            profile.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 10).isActive = true
+            profile.topAnchor.constraint(equalTo: guide.topAnchor, constant: 15).isActive = true
+            profileName.topAnchor.constraint(equalTo: guide.topAnchor, constant: 150).isActive = true
+            profileName.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 40).isActive = true
+            finalScoreLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 170).isActive = true
+            finalScoreLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 60).isActive = true
+            mainView.widthAnchor.constraint(equalToConstant: 225).isActive = true
+            mainView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            completeMessage.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 5).isActive = true
+            completeMessage.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -5).isActive = true
+            completeMessage.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 20).isActive = true
+            shareMessage.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 5).isActive = true
+            shareMessage.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -5).isActive = true
+            shareMessage.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 110).isActive = true
+            mainView.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 3).isActive = true
+            mainView.centerYAnchor.constraint(equalTo: guide.centerYAnchor, constant: 50).isActive = true
+            share.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 5).isActive = true
+            share.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -5).isActive = true
+            
         }
     }
 }
