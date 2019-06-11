@@ -11,9 +11,7 @@ import CoreData
 
 class OppInfoCell: UITableViewCell {
     
-    @IBOutlet weak var unlockedHighScore: UILabel!
-    @IBOutlet weak var unlockedScore: UILabel!
-    @IBOutlet weak var unlockedPlay: UIButton!
+
 }
 class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -114,10 +112,12 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
         profile.translatesAutoresizingMaskIntoConstraints = false
         playerHighScore.translatesAutoresizingMaskIntoConstraints = false
         highScoretext.translatesAutoresizingMaskIntoConstraints = false
-        var cellvars = OppInfoCell()
-        cellvars.unlockedHighScore.translatesAutoresizingMaskIntoConstraints = false
-        cellvars.unlockedPlay.translatesAutoresizingMaskIntoConstraints = false
-        cellvars.unlockedScore.translatesAutoresizingMaskIntoConstraints = false
+//        var cellvars = OppInfoCell()
+//        cellvars.unlockedHighScore.translatesAutoresizingMaskIntoConstraints = false
+//        cellvars.unlockedPlay.translatesAutoresizingMaskIntoConstraints = false
+//        cellvars.unlockedScore.translatesAutoresizingMaskIntoConstraints = false
+        
+        
         
         if UIDevice.current.screenType == .iPhone_XR{
             profile.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
@@ -176,6 +176,26 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
                 let cell:UnlockedTriviaOpponentTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "UnlockedOpponentCell") as! UnlockedTriviaOpponentTableViewCell!
                 cell.setOpponent(opponent: opponent)
                 cell.playButton.tag = indexPath.row-1
+                
+                if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+                    let guide = cell.safeAreaLayoutGuide
+                    cell.playButton.translatesAutoresizingMaskIntoConstraints = false
+                    cell.highScore.translatesAutoresizingMaskIntoConstraints = false
+                    cell.score.translatesAutoresizingMaskIntoConstraints = false
+                    cell.name.translatesAutoresizingMaskIntoConstraints = false
+                    cell.name.widthAnchor.constraint(equalToConstant: 100).isActive = true
+                    cell.name.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 92).isActive = true
+                    cell.score.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -35).isActive = true
+                    cell.highScore.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -2).isActive = true
+                    cell.highScore.widthAnchor.constraint(equalToConstant: 30).isActive = true
+                    cell.highScore.heightAnchor.constraint(equalToConstant: 33).isActive = true
+                    
+                    cell.playButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -5).isActive = true
+                    cell.playButton.widthAnchor.constraint(equalToConstant: 77).isActive = true
+                    cell.playButton.heightAnchor.constraint(equalToConstant: 25).isActive = true
+                    cell.playButton.centerYAnchor.constraint(equalTo: guide.centerYAnchor, constant: 20).isActive = true
+                }
+         
                 return cell
             }
             else{
@@ -184,6 +204,20 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
                     cell.backgroundView = UIImageView.init(image: UIImage.init(named: "FakeShadowRectangle"))
                 }
                 cell.setOpponent(opponent: opponent)
+                
+                if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+                    let guide = cell.safeAreaLayoutGuide
+                    cell.highScore.translatesAutoresizingMaskIntoConstraints = false
+                    cell.score.translatesAutoresizingMaskIntoConstraints = false
+                    cell.name.translatesAutoresizingMaskIntoConstraints = false
+                    cell.name.widthAnchor.constraint(equalToConstant: 100).isActive = true
+                    cell.name.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 92).isActive = true
+                    cell.score.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -35).isActive = true
+                    cell.highScore.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -2).isActive = true
+                    cell.highScore.widthAnchor.constraint(equalToConstant: 30).isActive = true
+                    cell.highScore.heightAnchor.constraint(equalToConstant: 33).isActive = true
+                }
+       
                 return cell
             }
         }

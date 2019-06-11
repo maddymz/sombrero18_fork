@@ -18,6 +18,7 @@ class TriviaCategoryViewController: UIViewController {
     @IBOutlet weak var opponentName: UILabel!
     @IBOutlet weak var opponentBlurb: UILabel!
     
+    @IBOutlet weak var vLabel: UILabel!
     //Category buttons
     @IBOutlet weak var scienceButton: UIButton!
     @IBOutlet weak var psycheButton: UIButton!
@@ -97,6 +98,11 @@ class TriviaCategoryViewController: UIViewController {
         psycheButton.translatesAutoresizingMaskIntoConstraints = false
         nasaButton.translatesAutoresizingMaskIntoConstraints = false
         spaceButton.translatesAutoresizingMaskIntoConstraints = false
+        profile.translatesAutoresizingMaskIntoConstraints = false
+        profileName.translatesAutoresizingMaskIntoConstraints = false
+        opponentAvatar.translatesAutoresizingMaskIntoConstraints = false
+        opponentName.translatesAutoresizingMaskIntoConstraints = false
+        opponentBlurb.translatesAutoresizingMaskIntoConstraints = false
         
         if UIDevice.current.screenType == .iPhone_XR{
             scienceButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
@@ -158,7 +164,37 @@ class TriviaCategoryViewController: UIViewController {
            
             
         }else if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
-            
+            scienceButton.heightAnchor.constraint(equalToConstant: 155).isActive = true
+            scienceButton.widthAnchor.constraint(equalToConstant: 136).isActive = true
+            psycheButton.heightAnchor.constraint(equalToConstant: 155).isActive = true
+            psycheButton.widthAnchor.constraint(equalToConstant: 136).isActive = true
+            nasaButton.heightAnchor.constraint(equalToConstant: 155).isActive = true
+            nasaButton.widthAnchor.constraint(equalToConstant: 136).isActive = true
+            spaceButton.heightAnchor.constraint(equalToConstant: 155).isActive = true
+            spaceButton.widthAnchor.constraint(equalToConstant: 136).isActive = true
+            scienceButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 310).isActive = true
+            scienceButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 25).isActive = true
+            nasaButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 460).isActive = true
+            nasaButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 25).isActive = true
+            psycheButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 310).isActive = true
+            psycheButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -25).isActive = true
+            spaceButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 460).isActive = true
+            spaceButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -25).isActive = true
+            opponentAvatar.widthAnchor.constraint(equalToConstant: 130).isActive = true
+            opponentAvatar.heightAnchor.constraint(equalToConstant: 130).isActive = true
+            opponentAvatar.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+            opponentAvatar.topAnchor.constraint(equalTo: guide.topAnchor, constant: 15).isActive = true
+            opponentName.topAnchor.constraint(equalTo: guide.topAnchor, constant: 150).isActive = true
+            opponentName.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -60).isActive = true
+            profile.widthAnchor.constraint(equalToConstant: 130).isActive = true
+            profile.heightAnchor.constraint(equalToConstant: 130).isActive = true
+            profile.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 10).isActive = true
+            profile.topAnchor.constraint(equalTo: guide.topAnchor, constant: 15).isActive = true
+            profileName.topAnchor.constraint(equalTo: guide.topAnchor, constant: 150).isActive = true
+            profileName.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 40).isActive = true
+            opponentBlurb.widthAnchor.constraint(equalToConstant: 268).isActive = true
+            opponentBlurb.topAnchor.constraint(equalTo: guide.topAnchor, constant: 190).isActive = true
+            opponentBlurb.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 30).isActive = true
         }
         
     }

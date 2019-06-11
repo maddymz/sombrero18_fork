@@ -16,7 +16,7 @@ class LockedTriviaOpponentTableViewCell: UITableViewCell {
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var levelImage: UIImageView!
     @IBOutlet weak var professionLabel: UILabel!
-    
+    @IBOutlet weak var highScore: UILabel!
     
     func setOpponent(opponent: OpponentData){
         picture.image = UIImage(named: opponent.lockedImage)

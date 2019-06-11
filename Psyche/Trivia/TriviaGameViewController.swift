@@ -504,5 +504,18 @@ class TriviaGameViewController: UIViewController {
     @IBAction func prepareForUnwind(segue:UIStoryboardSegue){
         
     }
+    
+    // handle screen layout - by Madhukar Raj , 06/03/2019
+//    func screenLayout(){
+//
+//        let guide = view.safeAreaLayoutGuide
+//        question.translatesAutoresizingMaskIntoConstraints = false
+//      if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+//        question.heightAnchor.constraint(equalToConstant: 30).isActive = true
+//
+//        }
+//    }
+    
+        
 }
     
