@@ -101,6 +101,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurTextY.constant = -170
                         self.blurTextHeight.constant = 40
                         self.blurText.isScrollEnabled = false
+                        self.pageControl.isHidden = false
+
                     })
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(500000)) {
@@ -154,6 +156,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurTextY.constant = -260
                         self.blurTextHeight.constant = 80
                         self.blurText.isScrollEnabled = false
+                        self.pageControl.isHidden = false
                     })
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(500000)) {
@@ -208,6 +211,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurTextY.constant = -200
                         self.blurTextHeight.constant = 60
                         self.blurText.isScrollEnabled = false
+                        self.pageControl.isHidden = false
                         
                     })
                 }
@@ -262,6 +266,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurTextY.constant = -230
                         self.blurTextHeight.constant = 60
                         self.blurText.isScrollEnabled = false
+                        self.pageControl.isHidden = false
                     })
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(500000)) {
@@ -315,6 +320,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurTextY.constant = -260
                         self.blurTextHeight.constant = 80
                         self.blurText.isScrollEnabled = false
+                        self.pageControl.isHidden = false
                     })
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(500000)) {
@@ -367,6 +373,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurTextY.constant = -125
                         self.blurTextHeight.constant = 30
                         self.blurText.isScrollEnabled = false
+                        self.pageControl.isHidden = false
 
                     })
                 }
@@ -426,22 +433,18 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
 //        gifView.loadGif(name: "ONe")
         
         // animations
-//        gifView.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
-//        timeBar.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
+        timeBar.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
         //blurView.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
         //arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
         
-        // blur view
-//        blurY.constant = 390
-//        blurHeight.constant = 554
-//        blurTextHeight.constant = 40
-//        blurTextY.constant = -170
-        
+
+        let anchor = view.layoutMarginsGuide
         if UIDevice.current.screenType == .iPhones_6_6s_7_8 {
             blurY.constant = 390
             blurHeight.constant = 554
             blurTextHeight.constant = 40
             blurTextY.constant = -170
+        
         } else if UIDevice.current.screenType == .iPhone_XR {
             blurY.constant = 500
             blurHeight.constant = 780
@@ -471,7 +474,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             blurTextX.constant = 4
             
             
-            let anchor = view.layoutMarginsGuide
+       
             nasaLogo.translatesAutoresizingMaskIntoConstraints = false
             nasaLogo.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
             nasaLogo.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 22).isActive = true

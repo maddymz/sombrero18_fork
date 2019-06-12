@@ -21,7 +21,10 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var menuBlur: UIVisualEffectView!
     
     // Countdown clock
-    let countdownClock = CountdownClockTimeline(frame: CGRect(x: 0, y: 64, width: 325, height: 61))
+    
+    let countdownClockSmall = CountdownClockTimeline(frame: CGRect(x: 0, y: 64, width: 325, height: 61))
+    let countdownClockGeneral = CountdownClockTimeline(frame: CGRect(x: 0, y: 64, width: 375, height: 61))
+
     
     // MARK: Demo Options
     let debugColors = false // set to true to keep colorful ui element bgs, false to change all bgs to transparent
@@ -69,7 +72,11 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         // Load the timeline items
         tableView.reloadData()
         
-        view.addSubview(countdownClock)
+        if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            view.addSubview(countdownClockSmall)
+        }else {
+            view.addSubview(countdownClockGeneral)
+        }
         
         //add the menu
         Menu.layer.zPosition = 2;
@@ -224,7 +231,11 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
             
             // Update countdown clock to match phase that was just tapped
             let item = cellItems[selectedIndex]
-            countdownClock.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
+            if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+                countdownClockSmall.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
+            }else {
+                countdownClockGeneral.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
+            }
         }
         self.tableView.beginUpdates()
         self.tableView.reloadRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)

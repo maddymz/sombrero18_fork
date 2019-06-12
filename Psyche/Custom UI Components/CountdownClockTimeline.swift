@@ -39,15 +39,22 @@ class CountdownClockTimeline : UIView {
         
         daysLabel.frame = CGRect(x: 40 + space * 2 + 10, y: 9, width: 100, height: 33)
         
-        daysMLabel.frame = CGRect(x: 40 + space + 10, y: 41, width: 110, height: 21)
+//        daysMLabel.frame = CGRect(x: 40 + space + 10, y: 41, width: 110, height: 21)
         daysMLabel.text = "DAYS TO NEXT PHASE"
         
         timerLabel.frame = CGRect(x: 40 + space * 2 + 82 + space, y: 11, width: 176, height: 29)
         
         timerMLabel.frame = CGRect(x: 40 + space * 2 + 82 + space + 2, y: 41, width: 110, height: 21)
         timerMLabel.text = "HOURS     MINUTES"
-        
-        secondsMLabel.frame = CGRect(x: width - 41 - 15, y: 41, width: 50, height: 21)
+        if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            secondsMLabel.frame = CGRect(x: width - 41 - 15, y: 41, width: 50, height: 21)
+            daysMLabel.frame = CGRect(x: 40 + space + 10, y: 41, width: 70, height: 21)
+
+        }else {
+            secondsMLabel.frame = CGRect(x: 317, y: 41, width: 50, height: 21)
+            daysMLabel.frame = CGRect(x: 40 + space + 10, y: 41, width: 110, height: 21)
+
+        }
         secondsMLabel.text = "SECONDS"
         
         daysLabel.font = UIFont(name: "Roboto Mono", size: 34)

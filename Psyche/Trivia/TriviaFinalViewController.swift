@@ -191,20 +191,18 @@ class TriviaFinalViewController: UIViewController {
     
     // handle screen layout - by Madhukar Raj , 06/03/2019
     func screenLayout(){
-        
-        let guide = view.safeAreaLayoutGuide
-        opponentAvatar.translatesAutoresizingMaskIntoConstraints = false
-        opponentName.translatesAutoresizingMaskIntoConstraints = false
-        profile.translatesAutoresizingMaskIntoConstraints = false
-        profileName.translatesAutoresizingMaskIntoConstraints = false
-        opponentScoreLabel.translatesAutoresizingMaskIntoConstraints = false
-        finalScoreLabel.translatesAutoresizingMaskIntoConstraints = false
-        completeMessage.translatesAutoresizingMaskIntoConstraints = false
-        mainView.translatesAutoresizingMaskIntoConstraints = false
-        shareMessage.translatesAutoresizingMaskIntoConstraints = false
-        share.translatesAutoresizingMaskIntoConstraints = false
-      
         if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            let guide = view.safeAreaLayoutGuide
+            opponentAvatar.translatesAutoresizingMaskIntoConstraints = false
+            opponentName.translatesAutoresizingMaskIntoConstraints = false
+            profile.translatesAutoresizingMaskIntoConstraints = false
+            profileName.translatesAutoresizingMaskIntoConstraints = false
+            opponentScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+            finalScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+            completeMessage.translatesAutoresizingMaskIntoConstraints = false
+            mainView.translatesAutoresizingMaskIntoConstraints = false
+            shareMessage.translatesAutoresizingMaskIntoConstraints = false
+            share.translatesAutoresizingMaskIntoConstraints = false
             opponentAvatar.widthAnchor.constraint(equalToConstant: 130).isActive = true
             opponentAvatar.heightAnchor.constraint(equalToConstant: 130).isActive = true
             opponentAvatar.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true

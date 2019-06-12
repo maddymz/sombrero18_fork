@@ -22,6 +22,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     @IBOutlet var Menu: UIView!
     @IBOutlet weak var menuBlur: UIVisualEffectView!
     
+    @IBOutlet weak var videoIcon: UIImageView!
     
     //second view outlets
    
@@ -131,6 +132,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: [])
         activityIndicator = UIActivityIndicatorView(activityIndicatorStyle:.gray)
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40 )
         activityIndicator.center = CGPoint(x:  view.frame.width/2,  y: view.frame.height/2 )
@@ -403,8 +405,9 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) 
         cell.layer.cornerRadius = 8
-     
+        self.videoIcon.image = UIImage(named: "ic_video")
         var imageView = cell.viewWithTag(2) as! UIImageView
+        
         let processor = DownsamplingImageProcessor(size: CGSize(width: 250, height: 250))
         imageView.kf.indicatorType = .activity
         imageView.kf.setImage(
@@ -424,7 +427,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
                 print("Job failed: \(error.localizedDescription)")
             }
         }
-        
         return cell
     }
     //NUMBER OF PHOTOS

@@ -110,15 +110,8 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
         
         let guide = view.safeAreaLayoutGuide
         profile.translatesAutoresizingMaskIntoConstraints = false
-        playerHighScore.translatesAutoresizingMaskIntoConstraints = false
-        highScoretext.translatesAutoresizingMaskIntoConstraints = false
-//        var cellvars = OppInfoCell()
-//        cellvars.unlockedHighScore.translatesAutoresizingMaskIntoConstraints = false
-//        cellvars.unlockedPlay.translatesAutoresizingMaskIntoConstraints = false
-//        cellvars.unlockedScore.translatesAutoresizingMaskIntoConstraints = false
         
-        
-        
+
         if UIDevice.current.screenType == .iPhone_XR{
             profile.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
             profile.heightAnchor.constraint(equalToConstant: 152).isActive = true
@@ -145,6 +138,8 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
             profile.widthAnchor.constraint(equalToConstant: 148).isActive = true
             profile.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
         }else if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            playerHighScore.translatesAutoresizingMaskIntoConstraints = false
+            highScoretext.translatesAutoresizingMaskIntoConstraints = false
             profile.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
             profile.heightAnchor.constraint(equalToConstant: 152).isActive = true
             profile.widthAnchor.constraint(equalToConstant: 148).isActive = true
