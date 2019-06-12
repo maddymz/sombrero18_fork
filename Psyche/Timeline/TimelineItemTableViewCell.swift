@@ -72,5 +72,7 @@ class TimelineItemTableViewCell: UITableViewCell {
             secondViewHeightConstraint.priority = UILayoutPriority(rawValue: UILayoutPriority.RawValue(showDetails ? 250 : 999))
         }
     }
+    
+ 
 
 }

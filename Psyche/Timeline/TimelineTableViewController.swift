@@ -14,12 +14,14 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     //timeline tableview
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var wkWebview: WKWebView!
     
     //Menu
     @IBOutlet var Menu: UIView!
     @IBOutlet weak var menuBlur: UIVisualEffectView!
+    @IBOutlet weak var nasaTitle: UILabel!
+    @IBOutlet weak var nasaLogo: UIButton!
     
+    @IBOutlet weak var menuhamburger: UIButton!
     // Countdown clock
     
     let countdownClockSmall = CountdownClockTimeline(frame: CGRect(x: 0, y: 64, width: 325, height: 61))
@@ -65,7 +67,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        screenLayout()
         // Remove separator line between cells
         self.tableView.separatorStyle = .none
         
@@ -101,6 +103,55 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
 
+    // handle screen layout - by Madhukar Raj , 06/03/2019
+    func screenLayout(){
+        
+        let guide = view.safeAreaLayoutGuide
+        
+        
+        if UIDevice.current.screenType == .iPhone_XR{
+            nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            nasaTitle.translatesAutoresizingMaskIntoConstraints = false
+            menuhamburger.translatesAutoresizingMaskIntoConstraints = false
+            nasaTitle.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
+            nasaTitle.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 175).isActive = true
+            menuhamburger.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
+            menuhamburger.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 15).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -5).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
+        } else if UIDevice.current.screenType == .iPhone_XSMax {
+            nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            nasaTitle.translatesAutoresizingMaskIntoConstraints = false
+            menuhamburger.translatesAutoresizingMaskIntoConstraints = false
+            nasaTitle.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
+            nasaTitle.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 175).isActive = true
+            menuhamburger.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
+            menuhamburger.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 15).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -5).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
+        } else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
+            
+        } else if UIDevice.current.screenType == .iPhones_X_XS{
+            nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            nasaTitle.translatesAutoresizingMaskIntoConstraints = false
+            menuhamburger.translatesAutoresizingMaskIntoConstraints = false
+            nasaTitle.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
+            nasaTitle.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 150).isActive = true
+            menuhamburger.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
+            menuhamburger.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 15).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -5).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
+        }else if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            
+        }
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

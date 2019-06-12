@@ -28,7 +28,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var timeBar: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var gifView: UIImageView!
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var blurHeight: NSLayoutConstraint!
     @IBOutlet weak var blurY: NSLayoutConstraint!
@@ -46,6 +45,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var menuBlur: UIVisualEffectView!
     @IBOutlet weak var nasaLogo: UIButton!
     
+    @IBOutlet weak var nasaTitle: UILabel!
+    @IBOutlet weak var menuhamburger: UIButton!
     struct homepageStruct: Decodable {
         let asteroid, spacecraft, science, depth: String
     }
@@ -450,21 +451,60 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             blurHeight.constant = 780
             blurTextHeight.constant = 80
             blurTextY.constant = -260
+            nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            nasaTitle.translatesAutoresizingMaskIntoConstraints = false
+            menuhamburger.translatesAutoresizingMaskIntoConstraints = false
+            nasaTitle.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
+            nasaTitle.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 120).isActive = true
+            menuhamburger.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
+            menuhamburger.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 15).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 27).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
         } else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
             blurY.constant = 430
             blurHeight.constant = 630
             blurTextHeight.constant = 40
             blurTextY.constant = -200
+            nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            nasaLogo.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 27).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
         }else if UIDevice.current.screenType == .iPhones_X_XS{
             blurY.constant = 460
             blurHeight.constant = 700
             blurTextHeight.constant = 60
             blurTextY.constant = -230
+            nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            nasaTitle.translatesAutoresizingMaskIntoConstraints = false
+            menuhamburger.translatesAutoresizingMaskIntoConstraints = false
+            nasaTitle.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
+            nasaTitle.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 100).isActive = true
+            menuhamburger.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
+            menuhamburger.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 15).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -40).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 27).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
         }else if UIDevice.current.screenType == .iPhone_XSMax{
             blurY.constant = 500
             blurHeight.constant = 780
             blurTextHeight.constant = 80
             blurTextY.constant = -260
+//            let margin = view.safeAreaLayoutGuide
+            nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            nasaTitle.translatesAutoresizingMaskIntoConstraints = false
+            menuhamburger.translatesAutoresizingMaskIntoConstraints = false
+            nasaTitle.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
+            nasaTitle.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 120).isActive = true
+            menuhamburger.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
+            menuhamburger.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 15).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 27).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
         } else if UIDevice.current.screenType == .iPhones_5_5s_5c_SE{
             blurY.constant = 305
             blurHeight.constant = 450

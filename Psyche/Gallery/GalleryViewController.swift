@@ -22,7 +22,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     @IBOutlet var Menu: UIView!
     @IBOutlet weak var menuBlur: UIVisualEffectView!
     
-    @IBOutlet weak var videoIcon: UIImageView!
+
     
     //second view outlets
    
@@ -405,7 +405,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) 
         cell.layer.cornerRadius = 8
-        self.videoIcon.image = UIImage(named: "ic_video")
         var imageView = cell.viewWithTag(2) as! UIImageView
         
         let processor = DownsamplingImageProcessor(size: CGSize(width: 250, height: 250))
