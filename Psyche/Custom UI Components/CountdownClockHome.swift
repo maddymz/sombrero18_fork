@@ -94,7 +94,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         
         daysLabel.frame = CGRect(x: yearLabelX, y: 9, width: 100, height: 33)
         
-        daysMLabel.frame = CGRect(x: yearMLabelX + 3, y: 41, width: 110, height: 21)
+//        daysMLabel.frame = CGRect(x: yearMLabelX + 3, y: 41, width: 110, height: 21)
         daysMLabel.text = "DAYS TO NEXT PHASE"
         
         timerLabel.frame = CGRect(x: dayLabelX, y: 11, width: 164, height: 29)
@@ -104,6 +104,14 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         
         secondsMLabel.frame = CGRect(x: secondsMLabelX, y: 41, width: 43, height: 21)
         secondsMLabel.text = "SECONDS"
+        
+        if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            daysMLabel.frame = CGRect(x: yearMLabelX + 3, y: 41, width: 50, height: 21)
+
+        } else {
+            daysMLabel.frame = CGRect(x: yearMLabelX + 3, y: 41, width: 110, height: 21)
+
+        }
         
         daysLabel.font = UIFont(name: "Roboto Mono", size: 34)
         daysMLabel.font = UIFont(name: "Roboto Mono", size: 10)

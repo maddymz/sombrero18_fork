@@ -40,6 +40,7 @@
 		B7540FF42293515E00F722F3 /* SocialMediaTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7540FF32293515E00F722F3 /* SocialMediaTimelineViewController.swift */; };
 		B7540FF62293517700F722F3 /* SocialMediaGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7540FF52293517700F722F3 /* SocialMediaGalleryViewController.swift */; };
 		B754100922936F8B00F722F3 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = B754100822936F8B00F722F3 /* Data */; };
+		B7F499C222B1BC47002FF9BA /* FlashExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F499C122B1BC47002FF9BA /* FlashExtension.swift */; };
 		B7F5C00D21FFC5B900FA473B /* HtmlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */; };
 		B7FE03DE228A220C006EDE41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7FE03DD228A220C006EDE41 /* Assets.xcassets */; };
 		B7FE03E2228A3E4D006EDE41 /* SocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FE03E1228A3E4D006EDE41 /* SocialMediaViewController.swift */; };
@@ -82,6 +83,7 @@
 		B7540FF32293515E00F722F3 /* SocialMediaTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaTimelineViewController.swift; sourceTree = "<group>"; };
 		B7540FF52293517700F722F3 /* SocialMediaGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaGalleryViewController.swift; sourceTree = "<group>"; };
 		B754100822936F8B00F722F3 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
+		B7F499C122B1BC47002FF9BA /* FlashExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashExtension.swift; sourceTree = "<group>"; };
 		B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlExtension.swift; sourceTree = "<group>"; };
 		B7FE03DD228A220C006EDE41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7FE03E1228A3E4D006EDE41 /* SocialMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				B73BC358229F4CFC005F3307 /* UIDeviceExtension.swift */,
+				B7F499C122B1BC47002FF9BA /* FlashExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				42B9D343207DBF090086EAC6 /* Psyche.xcdatamodeld in Sources */,
 				B7FE03E2228A3E4D006EDE41 /* SocialMediaViewController.swift in Sources */,
 				17F1D2512075FD8400B9B6A9 /* TriviaGameViewController.swift in Sources */,
+				B7F499C222B1BC47002FF9BA /* FlashExtension.swift in Sources */,
 				17F1D2532076A7DC00B9B6A9 /* sideMenuHelper.swift in Sources */,
 				178847A61FE25BDA00916C4D /* HomeViewController.swift in Sources */,
 				043E1F8320343C4300455B26 /* swift+gif.swift in Sources */,

@@ -37,7 +37,6 @@ class CountdownClockTimeline : UIView {
         
         let space = (width - 15 * 2 - 25 - 164 - 82) / 3
         
-        daysLabel.frame = CGRect(x: 40 + space * 2 + 10, y: 9, width: 100, height: 33)
         
 //        daysMLabel.frame = CGRect(x: 40 + space + 10, y: 41, width: 110, height: 21)
         daysMLabel.text = "DAYS TO NEXT PHASE"
@@ -49,10 +48,13 @@ class CountdownClockTimeline : UIView {
         if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
             secondsMLabel.frame = CGRect(x: width - 41 - 15, y: 41, width: 50, height: 21)
             daysMLabel.frame = CGRect(x: 40 + space + 10, y: 41, width: 70, height: 21)
+            daysLabel.frame = CGRect(x: 40 + space * 2 + 2, y: 9, width: 100, height: 33)
 
         }else {
             secondsMLabel.frame = CGRect(x: 317, y: 41, width: 50, height: 21)
             daysMLabel.frame = CGRect(x: 40 + space + 10, y: 41, width: 110, height: 21)
+            daysLabel.frame = CGRect(x: 40 + space * 2 + 10, y: 9, width: 100, height: 33)
+
 
         }
         secondsMLabel.text = "SECONDS"
@@ -103,7 +105,12 @@ class CountdownClockTimeline : UIView {
         
         let width = Int(self.frame.width)
         let space = (width - 15 * 2 - 25 - 164 - 82) / 3
-        daysMLabel.frame = CGRect(x: 40 + space * 2 + 10, y: 41, width: 110, height: 21)
+        
+        if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            daysMLabel.frame = CGRect(x: 40 + space * 2 + 5, y: 41, width: 50, height: 21)
+        }else {
+             daysMLabel.frame = CGRect(x: 40 + space * 2 + 10, y: 41, width: 110, height: 21)
+        }
         daysMLabel.text = "DAYS TO PHASE \(phase)"
     }
     // Adds countdown dates to phases array
