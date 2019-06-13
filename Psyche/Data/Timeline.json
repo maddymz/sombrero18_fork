@@ -24,7 +24,7 @@
     },
     "phaseBullet": {
         "titleOneLabel": "Instrument & Spacecraft",
-        "titleOneBullet": "Science and engineering teams on the mission are designing the spacecraft and the instruments that will be used to analyze the asteroid.\n\nMarch 2019, the team will undergo project and flight system Preliminary Design Review.\n\nMay 2019, the team reaches Key Decision Point C, which will give the team the official approval to move to the next phase (Phase C).\n\n",
+        "titleOneBullet": "Science and engineering teams on the mission design the spacecraft and the instruments that will be used to analyze the asteroid.\n\nMarch 2019, the team undergoes project and flight system Preliminary Design Review.\n\nMay 2019, the team reaches Key Decision Point C, which gives the team the official approval to move to the next phase (Phase C).\n\n",
         "titleTwoLabel": "",
         "titleTwoBullet":"",
         "titleThreeLabel": "",
@@ -45,41 +45,41 @@
         "titleTwoLabel": "Instruments",
         "titleTwoBullet": "The mission will use an X-band radio telecommunications system to measure Psyche’s gravity field to high precision. When combined with topography derived from onboard imagery, this will provide information on the interior structure of Psyche.\n\nThe mission will also test a sophisticated new laser communication technology that encodes data in photons (rather than radio waves) to communicate between a probe in deep space and Earth. Using light instead of radio allows the spacecraft to communicate more data in a given amount of time.\n\n",
         "titleThreeLabel": "Critical Design Review",
-        "titleThreeBullet": "April 2020, the teams will undergo Project and Flight System Critical Design Review, this is an integral step in the instrument engineering process.\n\nThe bus or “body” of the spacecraft will be completed by May 2020.\n\nIn January 2021, the team will conduct the Systems Integration Review to ensure that the system is ready to be integrated. The last step in Phase C is Key Decision Point D that will give the team the official approval to move to the next phase.\n\n"
+        "titleThreeBullet": "April 2020, the teams undergo Project and Flight System Critical Design Review, this is an integral step in the instrument engineering process.\n\nThe bus or “body” of the spacecraft is completed by May 2020.\n\nIn January 2021, the team conducts the Systems Integration Review to ensure that the system is ready to be integrated. The last step in Phase C is Key Decision Point D that gives the team the official approval to move to the next phase.\n\n"
     },
     "photo": "diagram"
 },
 {
     "phase": {
         "phaseInfo": "Phase D",
-        "dateInfo": "Jan 2021 - July 2022",
-        "titleInfo": "Build & Assembly",
+        "dateInfo": "Jan 2021 - September 2022",
+        "titleInfo": "Build, Assembly & Launch",
         "phaseBulletSub": ["Instruments & Spacecraft", "Spacecraft Ships to Launch Site", "Launch"]
     },
     "phaseBullet": {
         "titleOneLabel": "Instruments & Spacecraft",
-        "titleOneBullet": "During this phase, all the spacecraft subsystems are integrated onto the spacecraft bus.\n\nThe spacecraft undergoes vibration testing.\n\nThe spacecraft undergoes environmental thermal-vacuum testing.\n\nThe spacecraft undergoes electromagnetic interference, electromagnetic compatibility testing.\n\nIn May 2022 the team will conduct the Operations Readiness Review to ensure the system, procedures, and all supporting software and personnel are ready and fully operational. Before launch, the team will conduct Key Decision Point E that will determine readiness to conduct post launch operations.\n\n",
+        "titleOneBullet": "During this phase, all the spacecraft subsystems are integrated onto the spacecraft bus.\n\nThe spacecraft undergoes vibration testing.\n\nThe spacecraft undergoes environmental thermal-vacuum testing.\n\nThe spacecraft undergoes electromagnetic interference, electromagnetic compatibility testing.\n\nIn May 2022 the team conducts the Operations Readiness Review to ensure the system, procedures, and all supporting software and personnel are ready and fully operational. Before launch, the team conducts Key Decision Point E that will determine readiness to conduct post launch operations.\n\n",
         "titleTwoLabel": "Spacecraft Ships to Launch Site",
         "titleTwoBullet": "The Psyche spacecraft, now fully assembled, includes solar panels, which fold during transport and launch.\n\nThe spacecraft measures about 81 feet long (24.76 meters) when the solar panels are unfolded. This is about the size of a singles tennis court.\n\nThe body of the spacecraft is about 10 feet long (3.1 meters) and almost eight feet (2.4 meters) wide.\n\n",
         "titleThreeLabel": "Launch",
-        "titleThreeBullet": "At the launch site the team will conduct an entire re-check of the spacecraft before integrating into the launch vehicle.\n\nThe spacecraft will launch August of 2022.\n\nOnce in space, the spacecraft will travel using solar-electric propulsion.\n\nIt will arrive at the asteroid, located in the main asteroid belt between Mars and Jupiter, in early January of 2026.\n\n"
+        "titleThreeBullet": "At the launch site the team conducts an entire re-check of the spacecraft before integrating into the launch vehicle.\n\nThe spacecraft launches in August of 2022.\n\nOnce in space, the spacecraft travels using solar-electric propulsion.\n\nIt arrives at the asteroid, located in the main asteroid belt between Mars and Jupiter, in January of 2026.\n\n"
     },
     "photo": "hibay"
 },
 {
     "phase": {
         "phaseInfo": "Phase E",
-        "dateInfo": "May 2023",
-        "titleInfo": "Mars Gravity Assist",
+        "dateInfo": "Oct 2022 - Oct 2027",
+        "titleInfo": "Cruise, Arrival & Orbiting",
         "phaseBulletSub": ["Using Gravity", "Arrival at Psyche", "Orbiting Psyche"]
     },
     "phaseBullet": {
         "titleOneLabel": "Using Gravity",
-        "titleOneBullet": "Phase E begins after the Post Launch Assessment Review is conducted.\n\nThe spacecraft will use the gravity of Mars to increase speed and to set its trajectory to intersect with Psyche’s orbit around the Sun.\n\nIt does this by entering and leaving the gravitational field of Mars.\n\nThis slingshot maneuver will save propellant, time and expense.\n\n",
+        "titleOneBullet": "Phase E begins after the Post Launch Assessment Review is conducted.\n\nThe spacecraft uses the gravity of Mars to increase speed and to set its trajectory to intersect with Psyche’s orbit around the Sun.\n\nIt does this by entering and leaving the gravitational field of Mars.\n\nThis slingshot maneuver saves propellant, time and expense.\n\n",
         "titleTwoLabel": "Arrival at Psyche",
-        "titleTwoBullet": "Leading up to arrival at Psyche, the spacecraft will spend 100 days in the approach phase\n\nThe spacecraft will also measure the asteroid’s spin axis and rotation.\n\n",
+        "titleTwoBullet": "Leading up to arrival at Psyche, the spacecraft spends 100 days in the approach phase\n\nThe spacecraft also measures the asteroid’s spin axis and rotation.\n\n",
         "titleThreeLabel": "Orbiting Psyche",
-        "titleThreeBullet": "The spacecraft will orbit the asteroid for 21 months.\n\nIt will perform science operations from four different orbits, each successively closer to the asteroid.\n\nIn each orbit, the instruments on board will send data back to Earth to be analyzed by the mission’s science team.\n\n"
+        "titleThreeBullet": "The spacecraft orbits the asteroid for 21 months.\n\nIt performs science operations from four different orbits, each successively closer to the asteroid.\n\nIn each orbit, the instruments on board send data back to Earth to be analyzed by the mission’s science team.\n\n"
     },
     "photo": "trajectory"
 },
@@ -92,7 +92,7 @@
     },
     "phaseBullet": {
         "titleOneLabel": "Final Phase",
-        "titleOneBullet": "In this final phase, the mission team will provide all remaining deliverables and safely decomission the space flight systems.\n\n",
+        "titleOneBullet": "In this final phase, the mission team provides all remaining deliverables and safely decomission the space flight systems.\n\n",
         "titleTwoLabel": "",
         "titleTwoBullet":"",
         "titleThreeLabel": "",

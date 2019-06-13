@@ -203,6 +203,7 @@ class TriviaFinalViewController: UIViewController {
             mainView.translatesAutoresizingMaskIntoConstraints = false
             shareMessage.translatesAutoresizingMaskIntoConstraints = false
             share.translatesAutoresizingMaskIntoConstraints = false
+            self.opponentQuote.translatesAutoresizingMaskIntoConstraints = false
             opponentAvatar.widthAnchor.constraint(equalToConstant: 130).isActive = true
             opponentAvatar.heightAnchor.constraint(equalToConstant: 130).isActive = true
             opponentAvatar.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
@@ -221,17 +222,22 @@ class TriviaFinalViewController: UIViewController {
             finalScoreLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 60).isActive = true
             mainView.widthAnchor.constraint(equalToConstant: 225).isActive = true
             mainView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-            completeMessage.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 5).isActive = true
-            completeMessage.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -5).isActive = true
+            completeMessage.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 10).isActive = true
+            completeMessage.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -10).isActive = true
             completeMessage.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 20).isActive = true
-            shareMessage.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 5).isActive = true
-            shareMessage.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -5).isActive = true
-            shareMessage.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 110).isActive = true
+            completeMessage.font = UIFont(name: completeMessage.font.fontName, size: 20)
+            shareMessage.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 10).isActive = true
+            shareMessage.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -10).isActive = true
+            shareMessage.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 100).isActive = true
+            shareMessage.font = UIFont(name: completeMessage.font.fontName, size: 14)
             mainView.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 3).isActive = true
             mainView.centerYAnchor.constraint(equalTo: guide.centerYAnchor, constant: 50).isActive = true
             share.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 5).isActive = true
             share.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -5).isActive = true
-            
+            self.opponentQuote.font = UIFont(name: self.opponentQuote.font.fontName, size: 10)
+            self.opponentQuote.topAnchor.constraint(equalTo: guide.topAnchor, constant: 444).isActive = true
+            self.opponentQuote.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 4).isActive = true
+            self.opponentQuote.widthAnchor.constraint(equalToConstant: 232).isActive = true
         }
     }
 }

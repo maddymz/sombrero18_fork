@@ -1403,7 +1403,7 @@ Test 3</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFK-ed-aGs">
-                                <rect key="frame" x="47" y="444" width="280" height="92"/>
+                                <rect key="frame" x="47" y="444" width="232" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <string key="text">We are part of this universe; we are in this universe, but perhaps more important than both of those facts, is that the universe is in us. - Neil deGrasse Tyson</string>
                                 <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="11"/>
@@ -1487,7 +1487,7 @@ Test 3</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywV-AA-TkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7634.3999999999996" y="1771.6641679160421"/>
+            <point key="canvasLocation" x="7633.125" y="1771.4788732394366"/>
         </scene>
         <!--Gallery View Controller-->
         <scene sceneID="pv2-1t-n2l">

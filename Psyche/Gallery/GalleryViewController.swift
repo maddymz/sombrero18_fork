@@ -215,7 +215,26 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         else{
             video.isHidden = true
             imageViewer.isHidden = false
-            let processor = DownsamplingImageProcessor(size: CGSize(width: 250, height: 250))
+            if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+                let guide = secondViewer.safeAreaLayoutGuide
+                self.imageViewer.translatesAutoresizingMaskIntoConstraints = false
+                self.captionText.translatesAutoresizingMaskIntoConstraints = false
+                self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
+                self.imageViewer.heightAnchor.constraint(equalToConstant: 255).isActive = true
+                self.imageViewer.widthAnchor.constraint(equalToConstant: 255).isActive  = true
+                self.imageViewer.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
+                self.imageViewer.topAnchor.constraint(equalTo: guide.topAnchor, constant: 40).isActive = true
+                self.captionText.widthAnchor.constraint(equalToConstant: 255).isActive = true
+                self.captionText.heightAnchor.constraint(equalToConstant: 100).isActive = true
+                self.captionText.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 35).isActive = true
+                self.captionText.topAnchor.constraint(equalTo: guide.topAnchor, constant: 335).isActive  = true
+                self.titleLabel.widthAnchor.constraint(equalToConstant: 255).isActive = true
+                self.titleLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 306).isActive  = true
+                self.titleLabel.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
+                self.titleLabel.font = UIFont(name: self.titleLabel.font.fontName, size: 5)
+                
+            }
+            let processor = DownsamplingImageProcessor(size: CGSize(width: 255, height: 255))
             imageViewer.kf.indicatorType = .activity
             imageViewer.kf.setImage(
                 with: URL(string: self.gallery[(indexPath.row)].sourceURL ),

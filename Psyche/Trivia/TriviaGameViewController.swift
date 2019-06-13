@@ -77,27 +77,63 @@ class TriviaGameViewController: UIViewController {
                     self.questionNo.text = "Incorrect"
                     
                     //highlight correct answer
-                    if(String(self.answer1.tag) == self.correctAnswer ){
-                        self.answer1.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
-                        self.answer1.setTitleColor(.white, for: .normal)
-                        self.answer1.layer.borderWidth = 0
+                
+                    if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+                        self.answer1.translatesAutoresizingMaskIntoConstraints = false
+                        self.answer2.translatesAutoresizingMaskIntoConstraints = false
+                        self.answer3.translatesAutoresizingMaskIntoConstraints = false
+                        self.answer4.translatesAutoresizingMaskIntoConstraints = false
+                        
+                        self.answer1.widthAnchor.constraint(equalToConstant: 248).isActive = true
+                        self.answer2.widthAnchor.constraint(equalToConstant: 248).isActive = true
+                        self.answer3.widthAnchor.constraint(equalToConstant: 248).isActive = true
+                        self.answer4.widthAnchor.constraint(equalToConstant: 248).isActive = true
+                        self.answer1.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                        self.answer2.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                        self.answer3.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                        self.answer4.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                        if(String(self.answer1.tag) == self.correctAnswer ){
+                            self.answer1.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                            self.answer1.setTitleColor(.white, for: .normal)
+                            self.answer1.layer.borderWidth = 0
+                        }
+                        else if(String(self.answer2.tag) == self.correctAnswer){
+                            self.answer2.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                            self.answer2.setTitleColor(.white, for: .normal)
+                            self.answer2.layer.borderWidth = 0
+                        }
+                        else if(String(self.answer3.tag) == self.correctAnswer){
+                            self.answer3.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                            self.answer3.setTitleColor(.white, for: .normal)
+                            self.answer3.layer.borderWidth = 0
+                        }
+                        else if(String(self.answer4.tag) == self.correctAnswer){
+                            self.answer4.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                            self.answer4.setTitleColor(.white, for: .normal)
+                            self.answer4.layer.borderWidth = 0
+                        }
+                    } else {
+                        if(String(self.answer1.tag) == self.correctAnswer ){
+                            self.answer1.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                            self.answer1.setTitleColor(.white, for: .normal)
+                            self.answer1.layer.borderWidth = 0
+                        }
+                        else if(String(self.answer2.tag) == self.correctAnswer){
+                            self.answer2.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                            self.answer2.setTitleColor(.white, for: .normal)
+                            self.answer2.layer.borderWidth = 0
+                        }
+                        else if(String(self.answer3.tag) == self.correctAnswer){
+                            self.answer3.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                            self.answer3.setTitleColor(.white, for: .normal)
+                            self.answer3.layer.borderWidth = 0
+                        }
+                        else if(String(self.answer4.tag) == self.correctAnswer){
+                            self.answer4.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                            self.answer4.setTitleColor(.white, for: .normal)
+                            self.answer4.layer.borderWidth = 0
+                        }
                     }
-                    else if(String(self.answer2.tag) == self.correctAnswer){
-                        self.answer2.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
-                        self.answer2.setTitleColor(.white, for: .normal)
-                        self.answer2.layer.borderWidth = 0
-                    }
-                    else if(String(self.answer3.tag) == self.correctAnswer){
-                        self.answer3.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
-                        self.answer3.setTitleColor(.white, for: .normal)
-                        self.answer3.layer.borderWidth = 0
-                    }
-                    else if(String(self.answer4.tag) == self.correctAnswer){
-                        self.answer4.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
-                        self.answer4.setTitleColor(.white, for: .normal)
-                        self.answer4.layer.borderWidth = 0
-                    }
-                    
                     //disable buttons
                     self.answer1.isUserInteractionEnabled = false
                     self.answer2.isUserInteractionEnabled = false
@@ -173,7 +209,7 @@ class TriviaGameViewController: UIViewController {
             eEndAngle = 4.712505807162981
         }
         
-        let center = CGPoint(x: 187, y: 60)
+        let center = CGPoint(x: view.frame.width/2, y: 60)
         let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: CGFloat(eEndAngle), clockwise: false)
         
         // create circle layer
@@ -215,6 +251,7 @@ class TriviaGameViewController: UIViewController {
         super.viewDidLoad()
         // countdown clock
         let center = CGPoint(x: view.frame.width/2, y: 60)
+         self.performSegue(withIdentifier: "showScore", sender: self)
         // create track layer
         let trackLayer = CAShapeLayer()
         let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: -1.5706795, clockwise: false)
@@ -472,26 +509,63 @@ class TriviaGameViewController: UIViewController {
                 }
                 
                 //highlight correct answer
-                if(String(self.answer1.tag) == self.correctAnswer ){
-                    self.answer1.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
-                    self.answer1.setTitleColor(.white, for: .normal)
-                    self.answer1.layer.borderWidth = 0
+                if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+                    self.answer1.translatesAutoresizingMaskIntoConstraints = false
+                    self.answer2.translatesAutoresizingMaskIntoConstraints = false
+                    self.answer3.translatesAutoresizingMaskIntoConstraints = false
+                    self.answer4.translatesAutoresizingMaskIntoConstraints = false
+                    
+                    self.answer1.widthAnchor.constraint(equalToConstant: 248).isActive = true
+                    self.answer2.widthAnchor.constraint(equalToConstant: 248).isActive = true
+                    self.answer3.widthAnchor.constraint(equalToConstant: 248).isActive = true
+                    self.answer4.widthAnchor.constraint(equalToConstant: 248).isActive = true
+                    self.answer1.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                    self.answer2.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                    self.answer3.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                    self.answer4.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                    if(String(self.answer1.tag) == self.correctAnswer ){
+                        self.answer1.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                        self.answer1.setTitleColor(.white, for: .normal)
+                        self.answer1.layer.borderWidth = 0
+                    }
+                    else if(String(self.answer2.tag) == self.correctAnswer){
+                        self.answer2.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                        self.answer2.setTitleColor(.white, for: .normal)
+                        self.answer2.layer.borderWidth = 0
+                    }
+                    else if(String(self.answer3.tag) == self.correctAnswer){
+                        self.answer3.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                        self.answer3.setTitleColor(.white, for: .normal)
+                        self.answer3.layer.borderWidth = 0
+                    }
+                    else if(String(self.answer4.tag) == self.correctAnswer){
+                        self.answer4.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                        self.answer4.setTitleColor(.white, for: .normal)
+                        self.answer4.layer.borderWidth = 0
+                    }
+                } else {
+                    if(String(self.answer1.tag) == self.correctAnswer ){
+                        self.answer1.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                        self.answer1.setTitleColor(.white, for: .normal)
+                        self.answer1.layer.borderWidth = 0
+                    }
+                    else if(String(self.answer2.tag) == self.correctAnswer){
+                        self.answer2.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                        self.answer2.setTitleColor(.white, for: .normal)
+                        self.answer2.layer.borderWidth = 0
+                    }
+                    else if(String(self.answer3.tag) == self.correctAnswer){
+                        self.answer3.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                        self.answer3.setTitleColor(.white, for: .normal)
+                        self.answer3.layer.borderWidth = 0
+                    }
+                    else if(String(self.answer4.tag) == self.correctAnswer){
+                        self.answer4.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
+                        self.answer4.setTitleColor(.white, for: .normal)
+                        self.answer4.layer.borderWidth = 0
+                    }
                 }
-                else if(String(self.answer2.tag) == self.correctAnswer){
-                    self.answer2.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
-                    self.answer2.setTitleColor(.white, for: .normal)
-                    self.answer2.layer.borderWidth = 0
-                }
-                else if(String(self.answer3.tag) == self.correctAnswer){
-                    self.answer3.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
-                    self.answer3.setTitleColor(.white, for: .normal)
-                    self.answer3.layer.borderWidth = 0
-                }
-                else if(String(self.answer4.tag) == self.correctAnswer){
-                    self.answer4.setBackgroundImage(#imageLiteral(resourceName: "CorrectButtonFill"), for: .normal)
-                    self.answer4.setTitleColor(.white, for: .normal)
-                    self.answer4.layer.borderWidth = 0
-                }
+                
                 
                 //disable buttons
                 self.answer1.isUserInteractionEnabled = false

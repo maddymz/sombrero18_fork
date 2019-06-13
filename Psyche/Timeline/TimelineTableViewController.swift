@@ -147,10 +147,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
             nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
             nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
             nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
-        }else if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
-            
         }
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
