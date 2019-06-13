@@ -251,7 +251,6 @@ class TriviaGameViewController: UIViewController {
         super.viewDidLoad()
         // countdown clock
         let center = CGPoint(x: view.frame.width/2, y: 60)
-         self.performSegue(withIdentifier: "showScore", sender: self)
         // create track layer
         let trackLayer = CAShapeLayer()
         let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: -1.5706795, clockwise: false)
