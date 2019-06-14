@@ -29,7 +29,8 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var playerHighScore: UILabel!
     @IBOutlet weak var highScoretext: UILabel!
     
-
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var nasaLogo: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 //        print("opponent data:", opponentList.oppData)
@@ -111,22 +112,54 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
         let guide = view.safeAreaLayoutGuide
         profile.translatesAutoresizingMaskIntoConstraints = false
         
+        self.nasaLogo.translatesAutoresizingMaskIntoConstraints = true
+        self.backButton.translatesAutoresizingMaskIntoConstraints = true
 
         if UIDevice.current.screenType == .iPhone_XR{
+            self.nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            self.backButton.translatesAutoresizingMaskIntoConstraints = false
             profile.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
             profile.heightAnchor.constraint(equalToConstant: 152).isActive = true
             profile.widthAnchor.constraint(equalToConstant: 148).isActive = true
             profile.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
+            backButton.topAnchor.constraint(equalTo: guide.topAnchor, constant: 0).isActive = true
+            backButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 15).isActive = true
+            backButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            backButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
         } else if UIDevice.current.screenType == .iPhone_XSMax {
+            self.nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            self.backButton.translatesAutoresizingMaskIntoConstraints = false
             profile.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
             profile.heightAnchor.constraint(equalToConstant: 152).isActive = true
             profile.widthAnchor.constraint(equalToConstant: 148).isActive = true
             profile.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
+            backButton.topAnchor.constraint(equalTo: guide.topAnchor, constant: 0).isActive = true
+            backButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 15).isActive = true
+            backButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            backButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
         } else if UIDevice.current.screenType == .iPhones_X_XS {
+            self.nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            self.backButton.translatesAutoresizingMaskIntoConstraints = false
             profile.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
             profile.heightAnchor.constraint(equalToConstant: 152).isActive = true
             profile.widthAnchor.constraint(equalToConstant: 148).isActive = true
             profile.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
+            backButton.topAnchor.constraint(equalTo: guide.topAnchor, constant: 0).isActive = true
+            backButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 15).isActive = true
+            backButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            backButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
         } else if UIDevice.current.screenType == .iPhones_6_6s_7_8 {
             profile.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
             profile.heightAnchor.constraint(equalToConstant: 152).isActive = true

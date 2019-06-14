@@ -28,7 +28,8 @@ class TriviaFinalViewController: UIViewController {
     @IBOutlet weak var shareMessage: UILabel!
     
     @IBOutlet weak var share: UIButton!
-    
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var nasaLogo: UIImageView!
     //category buttons
     
     @IBOutlet weak var opponentQuote: UILabel!
@@ -219,12 +220,12 @@ class TriviaFinalViewController: UIViewController {
             profileName.topAnchor.constraint(equalTo: guide.topAnchor, constant: 150).isActive = true
             profileName.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 40).isActive = true
             finalScoreLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 170).isActive = true
-            finalScoreLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 60).isActive = true
+            finalScoreLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 55).isActive = true
             mainView.widthAnchor.constraint(equalToConstant: 225).isActive = true
             mainView.heightAnchor.constraint(equalToConstant: 200).isActive = true
             completeMessage.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 10).isActive = true
             completeMessage.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -10).isActive = true
-            completeMessage.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 20).isActive = true
+            completeMessage.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 25).isActive = true
             completeMessage.font = UIFont(name: completeMessage.font.fontName, size: 20)
             shareMessage.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 10).isActive = true
             shareMessage.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -10).isActive = true

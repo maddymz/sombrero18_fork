@@ -48,7 +48,6 @@ class TriviaGameViewController: UIViewController {
     @IBOutlet weak var answer3: UIButton!
     @IBOutlet weak var answer4: UIButton!
     
-
     // countdown clock
     @IBOutlet weak var timerLabel: UILabel!
     
@@ -209,21 +208,38 @@ class TriviaGameViewController: UIViewController {
             eEndAngle = 4.712505807162981
         }
         
-        let center = CGPoint(x: view.frame.width/2, y: 60)
-        let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: CGFloat(eEndAngle), clockwise: false)
+        if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            let center = CGPoint(x: view.frame.width/2, y: 60)
+            let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: CGFloat(eEndAngle), clockwise: false)
+            
+            // create circle layer
+            shapeLayer2.path = circularPath.cgPath
+            shapeLayer2.strokeColor = UIColor.white.cgColor
+            shapeLayer2.lineWidth = 7
+            shapeLayer2.fillColor = UIColor.clear.cgColor
+            shapeLayer2.lineCap = kCALineCapRound
+            shapeLayer2.strokeEnd = 1
+            
+            view.layer.addSublayer(shapeLayer2)
+            
+            timer.invalidate()
+        } else {
+            let center = CGPoint(x: view.frame.width/2, y: 70)
+            let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: CGFloat(eEndAngle), clockwise: false)
+            
+            // create circle layer
+            shapeLayer2.path = circularPath.cgPath
+            shapeLayer2.strokeColor = UIColor.white.cgColor
+            shapeLayer2.lineWidth = 7
+            shapeLayer2.fillColor = UIColor.clear.cgColor
+            shapeLayer2.lineCap = kCALineCapRound
+            shapeLayer2.strokeEnd = 1
+            
+            view.layer.addSublayer(shapeLayer2)
+            
+            timer.invalidate()
+        }
         
-        // create circle layer
-        shapeLayer2.path = circularPath.cgPath
-        shapeLayer2.strokeColor = UIColor.white.cgColor
-        shapeLayer2.lineWidth = 7
-        shapeLayer2.fillColor = UIColor.clear.cgColor
-        shapeLayer2.lineCap = kCALineCapRound
-        shapeLayer2.strokeEnd = 1
-        
-        view.layer.addSublayer(shapeLayer2)
-        
-        timer.invalidate()
-
     }
     // data model to hold the parsed json data: by Madhukar raj 01/11/2019
     struct QuizData: Decodable {
@@ -250,28 +266,54 @@ class TriviaGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // countdown clock
-        let center = CGPoint(x: view.frame.width/2, y: 60)
-        // create track layer
-        let trackLayer = CAShapeLayer()
-        let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: -1.5706795, clockwise: false)
-        
-        trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor(red: 230/255.5, green: 230/255.5, blue: 230/255.5, alpha: 0.3).cgColor
-        trackLayer.lineWidth = 3
-        trackLayer.fillColor = UIColor.clear.cgColor
-        trackLayer.lineCap = kCALineCapRound
-        
-        view.layer.addSublayer(trackLayer)
-        
-        // create circle layer
-        shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor.white.cgColor
-        shapeLayer.lineWidth = 7
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.lineCap = kCALineCapRound
-        shapeLayer.strokeEnd = 1
-        
-        view.layer.addSublayer(shapeLayer)
+        if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            let center = CGPoint(x: view.frame.width/2, y: 60)
+            // create track layer
+            let trackLayer = CAShapeLayer()
+            let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: -1.5706795, clockwise: false)
+            
+            trackLayer.path = circularPath.cgPath
+            trackLayer.strokeColor = UIColor(red: 230/255.5, green: 230/255.5, blue: 230/255.5, alpha: 0.3).cgColor
+            trackLayer.lineWidth = 3
+            trackLayer.fillColor = UIColor.clear.cgColor
+            trackLayer.lineCap = kCALineCapRound
+            
+            view.layer.addSublayer(trackLayer)
+            
+            // create circle layer
+            shapeLayer.path = circularPath.cgPath
+            shapeLayer.strokeColor = UIColor.white.cgColor
+            shapeLayer.lineWidth = 7
+            shapeLayer.fillColor = UIColor.clear.cgColor
+            shapeLayer.lineCap = kCALineCapRound
+            shapeLayer.strokeEnd = 1
+            
+            view.layer.addSublayer(shapeLayer)
+        } else {
+            let center = CGPoint(x: view.frame.width/2, y: 70)
+            // create track layer
+            let trackLayer = CAShapeLayer()
+            let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: -1.5706795, clockwise: false)
+            
+            trackLayer.path = circularPath.cgPath
+            trackLayer.strokeColor = UIColor(red: 230/255.5, green: 230/255.5, blue: 230/255.5, alpha: 0.3).cgColor
+            trackLayer.lineWidth = 3
+            trackLayer.fillColor = UIColor.clear.cgColor
+            trackLayer.lineCap = kCALineCapRound
+            
+            view.layer.addSublayer(trackLayer)
+            
+            // create circle layer
+            shapeLayer.path = circularPath.cgPath
+            shapeLayer.strokeColor = UIColor.white.cgColor
+            shapeLayer.lineWidth = 7
+            shapeLayer.fillColor = UIColor.clear.cgColor
+            shapeLayer.lineCap = kCALineCapRound
+            shapeLayer.strokeEnd = 1
+            
+            view.layer.addSublayer(shapeLayer)
+        }
+     
 
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -622,6 +664,8 @@ class TriviaGameViewController: UIViewController {
         opponentScoreLabel.translatesAutoresizingMaskIntoConstraints = false
         playerScoreLabel.translatesAutoresizingMaskIntoConstraints = false
         questionCard.translatesAutoresizingMaskIntoConstraints = false
+        self.question.translatesAutoresizingMaskIntoConstraints = false
+        self.timerLabel.translatesAutoresizingMaskIntoConstraints = false
         opponentAvatar.widthAnchor.constraint(equalToConstant: 130).isActive = true
         opponentAvatar.heightAnchor.constraint(equalToConstant: 130).isActive = true
         opponentAvatar.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
@@ -642,6 +686,9 @@ class TriviaGameViewController: UIViewController {
         questionCard.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 16).isActive = true
         questionCard.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -16).isActive = true
         questionCard.topAnchor.constraint(equalTo: guide.topAnchor, constant: 230).isActive = true
+        self.question.font = UIFont(name: self.question.font.fontName, size: 14)
+        self.timerLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 28).isActive = true
+        self.timerLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 151.5).isActive = true
         }
     }
     

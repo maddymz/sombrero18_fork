@@ -24,9 +24,11 @@ class TriviaCategoryViewController: UIViewController {
     @IBOutlet weak var nasaButton: UIButton!
     @IBOutlet weak var spaceButton: UIButton!
     
+    @IBOutlet weak var nasaLogo: UIImageView!
     //Opponent passed in through segue
     var opponent: OpponentData?
     
+    @IBOutlet weak var backButton: UIButton!
     //Image chosen by user, will be updated in core date in viewDidLoad
     var profile_image = 1
     
@@ -97,9 +99,14 @@ class TriviaCategoryViewController: UIViewController {
         psycheButton.translatesAutoresizingMaskIntoConstraints = false
         nasaButton.translatesAutoresizingMaskIntoConstraints = false
         spaceButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        
+        self.opponentBlurb.translatesAutoresizingMaskIntoConstraints = true
+        self.nasaLogo.translatesAutoresizingMaskIntoConstraints = true
+        self.backButton.translatesAutoresizingMaskIntoConstraints = true
+
         if UIDevice.current.screenType == .iPhone_XR{
+            self.nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            self.backButton.translatesAutoresizingMaskIntoConstraints = false
+            self.opponentBlurb.translatesAutoresizingMaskIntoConstraints = false
             scienceButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
             scienceButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
             psycheButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
@@ -116,8 +123,24 @@ class TriviaCategoryViewController: UIViewController {
             psycheButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -30).isActive = true
             spaceButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 600).isActive = true
             spaceButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -30).isActive = true
+            self.opponentBlurb.font = UIFont(name: self.opponentBlurb.font.fontName, size: 10)
+            self.opponentBlurb.font = UIFont(name: self.opponentBlurb.font.fontName, size: 10)
+            self.opponentBlurb.topAnchor.constraint(equalTo: guide.topAnchor, constant: 204).isActive = true
+            self.opponentBlurb.widthAnchor.constraint(equalToConstant: 300  ).isActive = true
+            self.opponentBlurb.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 40).isActive = true
+            backButton.topAnchor.constraint(equalTo: guide.topAnchor, constant: 0).isActive = true
+            backButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 15).isActive = true
+            backButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            backButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
            
         } else if UIDevice.current.screenType == .iPhone_XSMax {
+            self.nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            self.backButton.translatesAutoresizingMaskIntoConstraints = false
+            self.opponentBlurb.translatesAutoresizingMaskIntoConstraints = false
             scienceButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
             scienceButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
             psycheButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
@@ -134,9 +157,24 @@ class TriviaCategoryViewController: UIViewController {
             psycheButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -30).isActive = true
             spaceButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 600).isActive = true
             spaceButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -30).isActive = true
-
+            self.opponentBlurb.font = UIFont(name: self.opponentBlurb.font.fontName, size: 10)
+            self.opponentBlurb.font = UIFont(name: self.opponentBlurb.font.fontName, size: 10)
+            self.opponentBlurb.topAnchor.constraint(equalTo: guide.topAnchor, constant: 204).isActive = true
+            self.opponentBlurb.widthAnchor.constraint(equalToConstant: 300  ).isActive = true
+            self.opponentBlurb.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 40).isActive = true
+            backButton.topAnchor.constraint(equalTo: guide.topAnchor, constant: 0).isActive = true
+            backButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 15).isActive = true
+            backButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            backButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
             
         } else if UIDevice.current.screenType == .iPhones_X_XS {
+            self.nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            self.backButton.translatesAutoresizingMaskIntoConstraints = false
+            self.opponentBlurb.translatesAutoresizingMaskIntoConstraints = false
             scienceButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
             scienceButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
             psycheButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
@@ -153,6 +191,19 @@ class TriviaCategoryViewController: UIViewController {
             psycheButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -30).isActive = true
             spaceButton.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: 550).isActive = true
             spaceButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -30).isActive = true
+            self.opponentBlurb.font = UIFont(name: self.opponentBlurb.font.fontName, size: 10)
+            self.opponentBlurb.topAnchor.constraint(equalTo: guide.topAnchor, constant: 204).isActive = true
+            self.opponentBlurb.widthAnchor.constraint(equalToConstant: 300  ).isActive = true
+            self.opponentBlurb.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 40).isActive = true
+            backButton.topAnchor.constraint(equalTo: guide.topAnchor, constant: 0).isActive = true
+            backButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 15).isActive = true
+            backButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            backButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+            nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
+            nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
+            
         } else if UIDevice.current.screenType == .iPhones_6_6s_7_8 {
             scienceButton.heightAnchor.constraint(equalToConstant: 200).isActive = true
             scienceButton.widthAnchor.constraint(equalToConstant: 160).isActive = true

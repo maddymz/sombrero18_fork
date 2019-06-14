@@ -1014,9 +1014,11 @@ Test 3</string>
                     </view>
                     <navigationItem key="navigationItem" id="491-gV-Tjy"/>
                     <connections>
+                        <outlet property="backButton" destination="oop-s3-MpU" id="iC5-Qz-zck"/>
                         <outlet property="gradient" destination="8cD-h7-5Ne" id="W05-sT-2TH"/>
                         <outlet property="highScoretext" destination="d9Y-gY-kcv" id="1S7-74-XWZ"/>
                         <outlet property="nameLabel" destination="fCv-G1-ro7" id="CAE-WX-g0j"/>
+                        <outlet property="nasaLogo" destination="FWF-td-0tT" id="Z6o-Kw-cvH"/>
                         <outlet property="playerHighScore" destination="b3i-fi-zAu" id="CST-NE-IRV"/>
                         <outlet property="profile" destination="XcK-fO-tvY" id="uKe-PV-MPP"/>
                         <outlet property="tableView" destination="NOX-7B-UWO" id="ohH-ic-bdj"/>
@@ -1126,7 +1128,9 @@ Test 3</string>
                         <viewLayoutGuide key="safeArea" id="oZy-5i-rmD"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="xAP-an-LB8" id="0Bw-Ta-NxV"/>
                         <outlet property="nasaButton" destination="cSl-AD-Dgr" id="Z5N-qI-xad"/>
+                        <outlet property="nasaLogo" destination="pmI-em-Fjb" id="vLi-ci-pME"/>
                         <outlet property="opponentAvatar" destination="jLT-Lv-HaS" id="yjC-wx-bQ9"/>
                         <outlet property="opponentBlurb" destination="WRd-pM-g42" id="awp-PF-daV"/>
                         <outlet property="opponentName" destination="EQe-Qp-ROL" id="hur-Mf-2Zv"/>
@@ -1169,13 +1173,6 @@ Test 3</string>
                                 <rect key="frame" x="54" y="313" width="174" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="blahblahblahblah pretend there are real words here" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-Ws-j7M">
-                                <rect key="frame" x="54" y="357" width="210" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1287,10 +1284,17 @@ Test 3</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogx-tJ-X8F">
-                                <rect key="frame" x="140" y="49" width="42" height="21"/>
+                                <rect key="frame" x="140" y="58" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="blahblahblahblah pretend there are real words here" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-Ws-j7M">
+                                <rect key="frame" x="54" y="362" width="210" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1319,7 +1323,7 @@ Test 3</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Sm-dA-rce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6855" y="1772.5352112676057"/>
+            <point key="canvasLocation" x="6853.6000000000004" y="1771.6641679160421"/>
         </scene>
         <!--Trivia Final View Controller-->
         <scene sceneID="Hia-lo-6vF">
@@ -1403,7 +1407,7 @@ Test 3</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFK-ed-aGs">
-                                <rect key="frame" x="47" y="444" width="232" height="92"/>
+                                <rect key="frame" x="47" y="444" width="280" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <string key="text">We are part of this universe; we are in this universe, but perhaps more important than both of those facts, is that the universe is in us. - Neil deGrasse Tyson</string>
                                 <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="11"/>
@@ -1470,9 +1474,11 @@ Test 3</string>
                     </view>
                     <navigationItem key="navigationItem" id="QhC-wg-hm5"/>
                     <connections>
+                        <outlet property="backButton" destination="Kqq-Ov-u9x" id="nC8-GX-3V3"/>
                         <outlet property="completeMessage" destination="n7G-f1-PrC" id="cK9-Nu-2iJ"/>
                         <outlet property="finalScoreLabel" destination="21y-xj-dKs" id="1JH-Wc-gJZ"/>
                         <outlet property="mainView" destination="8CU-2z-Exa" id="Kj8-km-PqB"/>
+                        <outlet property="nasaLogo" destination="brQ-fX-ZYo" id="mRq-Yq-6CQ"/>
                         <outlet property="opponentAvatar" destination="NVY-kw-kZk" id="YxJ-21-piv"/>
                         <outlet property="opponentName" destination="6Oa-za-Qxd" id="aUo-M6-1QY"/>
                         <outlet property="opponentQuote" destination="pFK-ed-aGs" id="W2U-Q9-xrl"/>
@@ -1487,7 +1493,7 @@ Test 3</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywV-AA-TkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7633.125" y="1771.4788732394366"/>
+            <point key="canvasLocation" x="7634.3999999999996" y="1771.6641679160421"/>
         </scene>
         <!--Gallery View Controller-->
         <scene sceneID="pv2-1t-n2l">
@@ -2319,6 +2325,7 @@ Test 3</string>
                         <outlet property="backButton" destination="Uhn-pT-Sxf" id="eki-PE-D1c"/>
                         <outlet property="backgroundGradient" destination="3uO-gc-cJ8" id="Jn0-Es-kle"/>
                         <outlet property="mainView" destination="MRC-lx-U1P" id="ecq-H9-9hx"/>
+                        <outlet property="nasaLogo" destination="iLs-IS-Cer" id="VXN-wF-Iun"/>
                         <outlet property="readyBtn" destination="v4D-Eh-EtW" id="ReZ-ac-XJ0"/>
                         <outlet property="skipBtn" destination="jVT-W6-5Z7" id="pXz-CB-Lwp"/>
                         <outlet property="usernameField" destination="4aA-gt-jaE" id="FMa-Sc-fn4"/>
@@ -2618,6 +2625,7 @@ yiTPAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAJNE
         <image name="new-timeline-second" width="50" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="33B-pK-jLT"/>
         <segue reference="cAV-Af-ffN"/>
         <segue reference="qW7-CE-FaO"/>
         <segue reference="5fb-a0-hGe"/>
