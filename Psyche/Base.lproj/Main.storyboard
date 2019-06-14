@@ -1306,7 +1306,9 @@ Test 3</string>
                         <outlet property="answer2" destination="DtG-pK-uT3" id="doE-fe-dFR"/>
                         <outlet property="answer3" destination="WY2-qJ-9cr" id="kIj-7x-lwr"/>
                         <outlet property="answer4" destination="f8m-5I-kmC" id="14R-6F-TN4"/>
+                        <outlet property="closeButton" destination="dTB-jP-PXb" id="MG0-ua-M8K"/>
                         <outlet property="gradient" destination="gA0-V5-2cc" id="K4S-eE-MSl"/>
+                        <outlet property="nasaLogo" destination="Du1-gh-QLu" id="9dh-fG-Tmj"/>
                         <outlet property="opponentAvatar" destination="Nxk-Al-p28" id="GQD-VK-V4b"/>
                         <outlet property="opponentName" destination="uvn-ii-RtP" id="5vP-dz-l33"/>
                         <outlet property="opponentScoreLabel" destination="3xN-pN-x70" id="X5e-lm-gj1"/>
@@ -1474,7 +1476,7 @@ Test 3</string>
                     </view>
                     <navigationItem key="navigationItem" id="QhC-wg-hm5"/>
                     <connections>
-                        <outlet property="backButton" destination="Kqq-Ov-u9x" id="nC8-GX-3V3"/>
+                        <outlet property="closeButton" destination="Kqq-Ov-u9x" id="vgG-U9-Ehc"/>
                         <outlet property="completeMessage" destination="n7G-f1-PrC" id="cK9-Nu-2iJ"/>
                         <outlet property="finalScoreLabel" destination="21y-xj-dKs" id="1JH-Wc-gJZ"/>
                         <outlet property="mainView" destination="8CU-2z-Exa" id="Kj8-km-PqB"/>
@@ -2625,7 +2627,6 @@ yiTPAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAJNE
         <image name="new-timeline-second" width="50" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="33B-pK-jLT"/>
         <segue reference="cAV-Af-ffN"/>
         <segue reference="qW7-CE-FaO"/>
         <segue reference="5fb-a0-hGe"/>

@@ -38,6 +38,8 @@ class TriviaGameViewController: UIViewController {
     @IBOutlet weak var playerScoreLabel: UILabel!
     @IBOutlet weak var opponentScoreLabel: UILabel!
     
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var nasaLogo: UIImageView!
     //Question assets
     @IBOutlet weak var questionCard: UIImageView!
     @IBOutlet weak var questionCardsBack: UIImageView!
@@ -654,9 +656,9 @@ class TriviaGameViewController: UIViewController {
     
     // handle screen layout - by Madhukar Raj , 06/03/2019
     func screenLayout(){
-
-      if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
         let guide = view.safeAreaLayoutGuide
+        
+      if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
         opponentAvatar.translatesAutoresizingMaskIntoConstraints = false
         opponentName.translatesAutoresizingMaskIntoConstraints = false
         profile.translatesAutoresizingMaskIntoConstraints = false
@@ -689,6 +691,40 @@ class TriviaGameViewController: UIViewController {
         self.question.font = UIFont(name: self.question.font.fontName, size: 14)
         self.timerLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 28).isActive = true
         self.timerLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 151.5).isActive = true
+      } else if UIDevice.current.screenType == .iPhone_XSMax {
+        self.nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+        self.closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.topAnchor.constraint(equalTo: guide.topAnchor, constant: 0).isActive = true
+        closeButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 15).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        nasaLogo.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+        nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
+        nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
+        
+      } else if UIDevice.current.screenType == .iPhone_XR {
+        self.nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+        self.closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.topAnchor.constraint(equalTo: guide.topAnchor, constant: 0).isActive = true
+        closeButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 15).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        nasaLogo.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+        nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
+        nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
+      } else if UIDevice.current.screenType == .iPhones_X_XS {
+        self.nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+        self.closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.topAnchor.constraint(equalTo: guide.topAnchor, constant: 0).isActive = true
+        closeButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 15).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        nasaLogo.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
+        nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
+        nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
         }
     }
     
