@@ -50,6 +50,18 @@ class CountdownClockTimeline : UIView {
             daysMLabel.frame = CGRect(x: 40 + space + 10, y: 41, width: 70, height: 21)
             daysLabel.frame = CGRect(x: 40 + space * 2 + 2, y: 9, width: 100, height: 33)
 
+        }else if  UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus{
+            secondsMLabel.frame = CGRect(x: 355, y: 41, width: 50, height: 21)
+            daysMLabel.frame = CGRect(x: 40 + space + 10, y: 41, width: 110, height: 21)
+            daysLabel.frame = CGRect(x: 40 + space * 2 + 10, y: 9, width: 100, height: 33)
+        }else if UIDevice.current.screenType == .iPhone_XR{
+            secondsMLabel.frame = CGRect(x: 355, y: 41, width: 50, height: 21)
+            daysMLabel.frame = CGRect(x: 40 + space + 10, y: 41, width: 110, height: 21)
+            daysLabel.frame = CGRect(x: 40 + space * 2 + 10, y: 9, width: 100, height: 33)
+        }else if UIDevice.current.screenType == .iPhone_XSMax{
+            secondsMLabel.frame = CGRect(x: 355, y: 41, width: 50, height: 21)
+            daysMLabel.frame = CGRect(x: 40 + space + 10, y: 41, width: 110, height: 21)
+            daysLabel.frame = CGRect(x: 40 + space * 2 + 10, y: 9, width: 100, height: 33)
         }else {
             secondsMLabel.frame = CGRect(x: 317, y: 41, width: 50, height: 21)
             daysMLabel.frame = CGRect(x: 40 + space + 10, y: 41, width: 110, height: 21)

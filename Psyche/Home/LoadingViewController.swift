@@ -16,7 +16,11 @@ class LoadingViewController: UITabBarController {
     @IBOutlet var View4: UIView!
     @IBOutlet var View5: UIView!
     @IBOutlet var View6: UIView!
-
+    @IBOutlet weak var View1Bck: UIImageView!
+    @IBOutlet weak var View2Bck: UIImageView!
+    @IBOutlet weak var View3Bck: UIImageView!
+    @IBOutlet weak var View4Bck: UIImageView!
+    @IBOutlet weak var View5Bck: UIImageView!
     
     public var showAnimation = true
     
@@ -30,6 +34,22 @@ class LoadingViewController: UITabBarController {
   
     func showLoadingScreen(){
         //Add loading subviews to the main view
+        View1Bck.translatesAutoresizingMaskIntoConstraints = false
+        View2Bck.translatesAutoresizingMaskIntoConstraints = false
+        View3Bck.translatesAutoresizingMaskIntoConstraints = false
+        View4Bck.translatesAutoresizingMaskIntoConstraints = false
+        View5Bck.translatesAutoresizingMaskIntoConstraints = false
+        View1Bck.frame.size.width = view.frame.width
+        View1Bck.frame.size.height = view.frame.height
+        View2Bck.frame.size.width = view.frame.width
+        View2Bck.frame.size.height = view.frame.height
+        View3Bck.frame.size.width = view.frame.width
+        View3Bck.frame.size.height = view.frame.height
+        View4Bck.frame.size.width = view.frame.width
+        View4Bck.frame.size.height = view.frame.height
+        View5Bck.frame.size.width = view.frame.width
+        View5Bck.frame.size.height = view.frame.height
+        
         View1.frame.size.width = view.frame.width
         View1.frame.size.height = view.frame.height
         View1.alpha = 1

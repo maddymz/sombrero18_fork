@@ -26,6 +26,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     let countdownClockSmall = CountdownClockTimeline(frame: CGRect(x: 0, y: 64, width: 325, height: 61))
     let countdownClockGeneral = CountdownClockTimeline(frame: CGRect(x: 0, y: 64, width: 375, height: 61))
+    let countdownClockLargeScreen = CountdownClockTimeline(frame: CGRect(x: 0, y: 64, width: 414, height: 61))
 
     
     // MARK: Demo Options
@@ -76,6 +77,12 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
             view.addSubview(countdownClockSmall)
+        }else if UIDevice.current.screenType == .iPhone_XR{
+            view.addSubview(countdownClockLargeScreen)
+        }else if UIDevice.current.screenType == .iPhone_XSMax {
+            view.addSubview(countdownClockLargeScreen)
+        }else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
+            view.addSubview(countdownClockLargeScreen)
         }else {
             view.addSubview(countdownClockGeneral)
         }
@@ -279,8 +286,20 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
             
             // Update countdown clock to match phase that was just tapped
             let item = cellItems[selectedIndex]
+//            if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+//                countdownClockSmall.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
+//            }else {
+//                countdownClockGeneral.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
+//            }
+            
             if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
                 countdownClockSmall.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
+            }else if UIDevice.current.screenType == .iPhone_XR{
+                countdownClockLargeScreen.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
+            }else if UIDevice.current.screenType == .iPhone_XSMax {
+                countdownClockLargeScreen.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
+            }else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
+                countdownClockLargeScreen.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
             }else {
                 countdownClockGeneral.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
             }

@@ -36,12 +36,12 @@
 		6B7C259321EFEB620085AC0A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C259221EFEB620085AC0A /* Api.swift */; };
 		7DA4EC440A0174E88F40ED1C /* Pods_Psyche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBCBCFD4C2D84175D328683A /* Pods_Psyche.framework */; };
 		7E71D960207F3D6700A33C4A /* ONe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D95F207F3D6600A33C4A /* ONe.gif */; };
+		B737F58622BC05CE002A2F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B737F58522BC05CE002A2F67 /* Assets.xcassets */; };
 		B73BC359229F4CFC005F3307 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73BC358229F4CFC005F3307 /* UIDeviceExtension.swift */; };
 		B7540FF42293515E00F722F3 /* SocialMediaTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7540FF32293515E00F722F3 /* SocialMediaTimelineViewController.swift */; };
 		B7540FF62293517700F722F3 /* SocialMediaGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7540FF52293517700F722F3 /* SocialMediaGalleryViewController.swift */; };
 		B754100922936F8B00F722F3 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = B754100822936F8B00F722F3 /* Data */; };
 		B7F5C00D21FFC5B900FA473B /* HtmlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */; };
-		B7FE03DE228A220C006EDE41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7FE03DD228A220C006EDE41 /* Assets.xcassets */; };
 		B7FE03E2228A3E4D006EDE41 /* SocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FE03E1228A3E4D006EDE41 /* SocialMediaViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,12 +78,12 @@
 		6B7C259221EFEB620085AC0A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		7E71D95F207F3D6600A33C4A /* ONe.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ONe.gif; sourceTree = "<group>"; };
 		A4C6D0B6D6F2EEC9D96D0F6E /* Pods-Psyche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.debug.xcconfig"; sourceTree = "<group>"; };
+		B737F58522BC05CE002A2F67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B73BC358229F4CFC005F3307 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		B7540FF32293515E00F722F3 /* SocialMediaTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaTimelineViewController.swift; sourceTree = "<group>"; };
 		B7540FF52293517700F722F3 /* SocialMediaGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaGalleryViewController.swift; sourceTree = "<group>"; };
 		B754100822936F8B00F722F3 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlExtension.swift; sourceTree = "<group>"; };
-		B7FE03DD228A220C006EDE41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7FE03E1228A3E4D006EDE41 /* SocialMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaViewController.swift; sourceTree = "<group>"; };
 		EBCBCFD4C2D84175D328683A /* Pods_Psyche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psyche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5249A49C383D9033E2B2629 /* Pods-Psyche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,10 +131,10 @@
 		178847901FE255AD00916C4D /* Psyche */ = {
 			isa = PBXGroup;
 			children = (
+				B737F58522BC05CE002A2F67 /* Assets.xcassets */,
 				B73BC357229F4CD6005F3307 /* Extensions */,
 				B754100822936F8B00F722F3 /* Data */,
 				B7FE03E0228A3DAF006EDE41 /* Social */,
-				B7FE03DD228A220C006EDE41 /* Assets.xcassets */,
 				6B7C259121EFEB380085AC0A /* API */,
 				6B7C258E21EFE12B0085AC0A /* Gallery */,
 				1713C9A420841F940077D347 /* Timeline */,
@@ -319,7 +319,7 @@
 				1788479C1FE255AD00916C4D /* LaunchScreen.storyboard in Resources */,
 				42F8ADE92063154600809E0F /* RobotoMono-Regular.ttf in Resources */,
 				178847971FE255AD00916C4D /* Main.storyboard in Resources */,
-				B7FE03DE228A220C006EDE41 /* Assets.xcassets in Resources */,
+				B737F58622BC05CE002A2F67 /* Assets.xcassets in Resources */,
 				7E71D960207F3D6700A33C4A /* ONe.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

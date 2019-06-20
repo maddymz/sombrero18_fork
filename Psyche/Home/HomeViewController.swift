@@ -530,9 +530,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
             nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
             self.arrowImage.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 150).isActive = true
-            self.arrowImage.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 650).isActive = true
+            self.arrowImage.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 640).isActive = true
             self.swipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 151).isActive = true
-            self.swipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 675).isActive = true
+            self.swipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 665).isActive = true
         }else if UIDevice.current.screenType == .iPhone_XSMax{
             blurY.constant = 500
             blurHeight.constant = 780
