@@ -205,7 +205,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             titleLabel.textColor = UIColor.black
             titleLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(18))
             if (self.gallery[(indexPath.row)].description == ""){
-                captionText.attributedText = self.gallery[(indexPath.row)].altText.convertHtml(family: nil , size: 10)
+                captionText.attributedText = self.gallery[(indexPath.row)].altText.convertHtml(family: nil , size: 10) 
             }else {
                 captionText.attributedText = self.gallery[(indexPath.row)].description.convertHtml(family: nil , size: 10)
             }
@@ -262,7 +262,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             } else {
                 captionText.attributedText = self.gallery[(indexPath.row)].description.convertHtml(family: nil, size: 10)
             }
-            print("capriontext:", captionText.text)
+            print("captiontext:", captionText.text)
             imageViewer.layer.cornerRadius = 8
             imageViewer.clipsToBounds = true
         }
@@ -522,22 +522,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     @IBAction func news(_ sender: Any) {
         menuHelper.news(vc: self)
-    }
-    
-    @IBAction func openYoutube(_ sender: Any) {
-        menuHelper.openYoutube(vc: self)
-    }
-    
-    @IBAction func openTwitter(_ sender: Any) {
-        menuHelper.openTwitter(vc: self)
-    }
-    
-    @IBAction func openFB(_ sender: Any) {
-        menuHelper.openFB(vc: self)
-    }
-    
-    @IBAction func openInsta(_ sender: Any) {
-        menuHelper.openInsta(vc: self)
     }
     
     @IBAction func openNASA(_ sender: Any) {

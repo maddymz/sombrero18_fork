@@ -363,22 +363,6 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         menuHelper.news(vc: self)
     }
     
-    @IBAction func openYoutube(_ sender: Any) {
-        menuHelper.openYoutube(vc: self)
-    }
-    
-    @IBAction func openTwitter(_ sender: Any) {
-        menuHelper.openTwitter(vc: self)
-    }
-    
-    @IBAction func openFB(_ sender: Any) {
-        menuHelper.openFB(vc: self)
-    }
-    
-    @IBAction func openInsta(_ sender: Any) {
-        menuHelper.openInsta(vc: self)
-    }
-    
     @IBAction func openNASA(_ sender: Any) {
         menuHelper.openNASA(vc: self)
     }
