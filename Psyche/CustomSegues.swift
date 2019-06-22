@@ -288,3 +288,23 @@ class unwinedSocialmediaSegueGallery: UIStoryboardSegue {
     }
 }
 
+class AboutScreenSegue: UIStoryboardSegue {
+    override func perform() {
+        let src = self.source as! HomeViewController
+        let dst = self.destination as! AboutViewController
+        
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+         src.present(dst, animated: false, completion: nil)
+    }
+}
+
+class unwinedAboutScreenSegue: UIStoryboardSegue {
+    override func perform() {
+        let src = self.source as! AboutViewController
+        let dst = self.destination as!  LoadingViewController
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        src.dismiss(animated: false, completion: nil)
+    }
+}

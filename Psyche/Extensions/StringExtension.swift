@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-extension StringProtocol where Index == String.Index{ // for Swift 4.x syntax you will needed also to constrain the collection Index to String Index - `extension StringProtocol where Index == String.Index`
+//string extension to manipulate substring - added by Madhukar Raj - 06/20/2019
+extension StringProtocol where Index == String.Index{
     func index(of string: Self, options: String.CompareOptions = []) -> Index? {
         return range(of: string, options: options)?.lowerBound
     }

@@ -38,6 +38,7 @@
 		7E71D960207F3D6700A33C4A /* ONe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D95F207F3D6600A33C4A /* ONe.gif */; };
 		B737F58622BC05CE002A2F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B737F58522BC05CE002A2F67 /* Assets.xcassets */; };
 		B737F58C22BC5019002A2F67 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737F58B22BC5019002A2F67 /* StringExtension.swift */; };
+		B737F59122BD684B002A2F67 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737F59022BD684B002A2F67 /* AboutViewController.swift */; };
 		B73BC359229F4CFC005F3307 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73BC358229F4CFC005F3307 /* UIDeviceExtension.swift */; };
 		B7540FF42293515E00F722F3 /* SocialMediaTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7540FF32293515E00F722F3 /* SocialMediaTimelineViewController.swift */; };
 		B7540FF62293517700F722F3 /* SocialMediaGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7540FF52293517700F722F3 /* SocialMediaGalleryViewController.swift */; };
@@ -81,6 +82,7 @@
 		A4C6D0B6D6F2EEC9D96D0F6E /* Pods-Psyche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.debug.xcconfig"; sourceTree = "<group>"; };
 		B737F58522BC05CE002A2F67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B737F58B22BC5019002A2F67 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		B737F59022BD684B002A2F67 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B73BC358229F4CFC005F3307 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		B7540FF32293515E00F722F3 /* SocialMediaTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaTimelineViewController.swift; sourceTree = "<group>"; };
 		B7540FF52293517700F722F3 /* SocialMediaGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaGalleryViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		178847901FE255AD00916C4D /* Psyche */ = {
 			isa = PBXGroup;
 			children = (
+				B737F58D22BD67C8002A2F67 /* About */,
 				B737F58522BC05CE002A2F67 /* Assets.xcassets */,
 				B73BC357229F4CD6005F3307 /* Extensions */,
 				B754100822936F8B00F722F3 /* Data */,
@@ -224,6 +227,14 @@
 				F5249A49C383D9033E2B2629 /* Pods-Psyche.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B737F58D22BD67C8002A2F67 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				B737F59022BD684B002A2F67 /* AboutViewController.swift */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 		B73BC357229F4CD6005F3307 /* Extensions */ = {
@@ -429,6 +440,7 @@
 				42B9188C207C0D820038D3A9 /* CountdownClockHome.swift in Sources */,
 				42009ECB207E961900DBCFB1 /* CustomSegues.swift in Sources */,
 				170B330D20756DA50080FA6E /* UnlockedTriviaOpponentTableViewCell.swift in Sources */,
+				B737F59122BD684B002A2F67 /* AboutViewController.swift in Sources */,
 				B7F5C00D21FFC5B900FA473B /* HtmlExtension.swift in Sources */,
 				424B94DF2071950700739FF1 /* TriviaProfileViewController.swift in Sources */,
 				170B330C20756DA50080FA6E /* LockedTriviaOpponentTableViewCell.swift in Sources */,
