@@ -82,6 +82,86 @@
         ],
         "psyche2": [
             [
+                "How many instruments are on the Psyche spacecraft (not including its communication system)? ",
+                "6",
+                "8",
+                "3",
+                "5",
+                "3"
+            ],
+            [
+                "How many days will the Psyche spacecraft be in Orbit C?",
+                "100",
+                "76",
+                "56",
+                "83",
+                "1"
+            ],
+            [
+                "The Psyche mission has science goals.",
+                "True",
+                "False",
+                "1"
+            ],
+            [
+                "The Psyche Mission entered Phase C on May__, 2019.",
+                "20",
+                "23",
+                "15",
+                "25",
+                "4"
+            ],
+            [
+                "What happens to the Psyche spacecraft in Phase E of the mission?",
+                "The spacecraft is put together.",
+                "The spacecraft undergoes its final maintenance testing",
+                "The spacecraft arrives at (16) Psyche",
+                "The spacecraft is shutdown",
+                "3"
+            ],
+            [
+                "Why is the Psyche spacecraft flying by Mars?",
+                "To collect data",
+                " To take pictures",
+                " To get a gravity assist",
+                " To refuel",
+                "3"
+            ],
+            [
+                " How many mission phases are there",
+                "6",
+                "4",
+                "10",
+                "8",
+                "1"
+            ],
+            [
+                " What year is the Psyche program currently scheduled to end",
+                "2030",
+                "2028",
+                "2026",
+                "2034",
+                "2"
+            ],
+            [
+                "What color is not in the Psyche mission logo?",
+                "Pink",
+                "Purple",
+                "Green",
+                "Orange",
+                "3"
+            ],
+            [
+                "What is developed in Phase A of a mission?",
+                "a concept study",
+                "a blueprint of the spacecraft",
+                "a prototype of the spacecraft",
+                " a team of engineers",
+                "1"
+            ]
+        ],
+        "psyche3": [
+            [
                 "When was the Psyche Mission chosen by NASA?",
                 "01/04/2017",
                 "01/02/2017",
@@ -160,7 +240,163 @@
                 "2"
             ]
         ],
-        "psyche3": [
+        "psyche4": [
+            [
+                " The Psyche mission is sending a robotic spacecraft.",
+                "True",
+                "False",
+                "1"
+            ],
+            [
+                " On Psyche, lifting a car would feel like:",
+                "Lifting a basketball",
+                "Lifting a large dog",
+                "Lifting a truck",
+                "Lifting a marble",
+                "2"
+            ],
+            [
+                " What asteroid was discovered before Psyche?",
+                " Eunomia",
+                " Thetis",
+                " Melpomene",
+                " Fortuna",
+                "1"
+            ],
+            [
+                " Scientists know the exact origin of the Psyche asteroid.",
+                "True",
+                "False",
+                "2"
+            ],
+            [
+                "What year was the first asteroid discovered",
+                "1801",
+                "1764",
+                "1879",
+                "1901",
+                "1"
+            ],
+            [
+                "How many institutions are Psyche science partners?",
+                "15",
+                "28",
+                "10",
+                "36",
+                "1"
+            ],
+            [
+                "At what facility is the Gamma Ray and Neutron Spectrometer being built?",
+                "Applied Physics Lab at John Hopkins University",
+                "Arizona State University",
+                "University of California, Los Angeles",
+                "Massachusetts Institute of Technology",
+                "1"
+            ],
+            [
+                "Which of these is not one of the four largest asteroids?",
+                "Vesta",
+                "Pallas",
+                "Iris",
+                "Hygiea",
+                "3"
+            ],
+            [
+                "How far away is the asteroid belt from the Sun",
+                "3.7-4.5 AU",
+                "1.5-2.1 AU",
+                "6.2-8.1 AU",
+                "2.2-3.2 AU",
+                "4"
+            ],
+            [
+                "Asteroids are sometimes referred to as:",
+                "Space rocks",
+                "Minor planets",
+                "Minor moons",
+                "Planet debris",
+                "2"
+            ]
+        ],
+        "psyche5": [
+            [
+                "What will be used to determine the interior structure of the Psyche asteroid?",
+                "radio science",
+                "spectrometer",
+                "magnetometer",
+                "imager",
+                "1"
+            ],
+            [
+                "The Psyche asteroid is headed toward Earth.",
+                "True",
+                "False",
+                "2"
+            ],
+            [
+                "Which of these is not a tool on the Psyche spacecraft?",
+                "Gamma Ray and Neutron Spectrometer",
+                "Magnetometer",
+                "Weather Station",
+                "Multispectral Imager",
+                "3"
+            ],
+            [
+                "The Psyche spacecraft will get a gravity assist from Venus.",
+                "True",
+                "False",
+                "2"
+            ],
+            [
+                "What was the first NASA Discovery Mission?",
+                "Lucy",
+                "NEAR Shoemaker",
+                "Psyche",
+                "Mars Pathfinder",
+                "2"
+            ],
+            [
+                "When was NASA’s Discovery Program created?",
+                "1992",
+                "2001",
+                "1998",
+                "2006",
+                "1"
+            ],
+            [
+                "Psyche is the ___ mission to be selected by NASA’s Discovery Program.",
+                "14th",
+                "5th",
+                "11th",
+                "8th",
+                "1"
+            ],
+            [
+                "About how many years will it take the Psyche spacecraft to reach the asteroid?",
+                "6.1",
+                "2.8",
+                "3.5",
+                "4.4",
+                "3"
+            ],
+            [
+                "What are empty regions in the Asteroid Belt called?",
+                "Space Discontinuities",
+                "Belt Chasms",
+                "Asteroid Passages",
+                "Kirkwood Gaps",
+                "4"
+            ],
+            [
+                "What lies beyond the Kuiper belt?",
+                "Neptune",
+                "Oort Cloud",
+                "Main Asteroid Belt",
+                "Pluto",
+                "2"
+            ]
+        ],
+        "psyche6": [
             [
                 "The gravity on Psyche is ___.",
                 "4.32 m/s2",
@@ -250,7 +486,91 @@
                 "4"
             ]
         ],
-        "psyche4": [
+        "psyche7": [
+            [
+                "What are asteroids that orbit Jupiter called?",
+                "Capyses",
+                "Anchises",
+                "Trojans",
+                "Greeks",
+                "3"
+            ],
+            [
+                "In what asteroid belt is Psyche located?",
+                "Epsilon Belt",
+                "Vega Belt",
+                "Main Asteroid Belt",
+                "Kuiper Belt",
+                "3"
+            ],
+            [
+                "From what state will the Psyche spacecraft likely launch?",
+                "California",
+                "Florida",
+                "Arizona",
+                "Massachusetts",
+                "3"
+            ],
+            [
+                "What does a multispectral imager do?",
+                "Acquire images",
+                "Collect physical samples",
+                "Illuminate the spacecraft",
+                "Measure temperature",
+                "1"
+            ],
+            [
+                "The Psyche mission will continue indefinitely.",
+                "True",
+                "False",
+                "2"
+            ],
+            [
+                "The Greek goddess Psyche was the daughter of a ___",
+                "peasant",
+                "god",
+                "king",
+                "farmer",
+                "3"
+            ],
+            [
+                "What feature will not be found on the Psyche asteroid?",
+                "volcanoes",
+                "craters",
+                "trees",
+                "mountains",
+                "3"
+            ],
+            [
+                "Because Psyche and Earth orbit at different speeds, the distance from Earth to Psyche varies.",
+                "True",
+                "False",
+                "1"
+            ],
+            [
+                "According to Greek mythology, who made Psyche immortal?",
+                "Aphrodite",
+                "Eros",
+                "Hades",
+                "Zeus",
+                "4"
+            ],
+            [
+                "What is the name of the Greek goddess Psyche’s daughter?",
+                "Tyche",
+                "Hedone",
+                "Eos",
+                "Aphaea",
+                "2"
+            ],
+            [
+                " Scientists have combined radar and optical observations to generate a 3D model of Psyche.",
+                "True",
+                "False",
+                "1"
+            ]
+        ],
+        "psyche8": [
             [
                 "Which of these is not a basic type of asteroid?",
                 "S-type",
@@ -434,7 +754,7 @@
                 "4"
             ]
         ],
-        "nasa2": [
+        "nasa3": [
             [
                 "What project was selected for NASA’ s Discovery Program along with Psyche?",
                 "Stardust",
@@ -512,7 +832,7 @@
                 "1"
             ]
         ],
-        "nasa3": [
+        "nasa6": [
             [
                 "What U.S. president established NASA?",
                 "Dwight D. Eisenhower",
@@ -600,7 +920,7 @@
                 "3"
             ]
         ],
-        "nasa4": [
+        "nasa8": [
             [
                 "Roughly, what is the top speed of a spacecraft using ion propulsion?",
                 "18,000 mph",
@@ -704,6 +1024,336 @@
                 "3"
             ]
         ],
+        "nasa2": [
+            [
+                "How long does it take to put on a spacesuit completely?",
+                "10 minutes",
+                "90 minutes",
+                "25 minutes",
+                "45 minutes",
+                "4"
+            ],
+            [
+                "How much does a spacesuit weigh?",
+                "67 pounds",
+                "153 pounds",
+                "280 pounds",
+                "80 pounds",
+                "3"
+            ],
+            [
+                "Who was the first person to enter space?",
+                "Yuri Gagarin",
+                "Alan Shepard",
+                "John Glenn",
+                "Gherman Titov",
+                "1"
+            ],
+            [
+                "What year did humans first land on the moon?",
+                "1974",
+                "1981",
+                "1969",
+                "1953",
+                "3"
+            ],
+            [
+                "Who was the second person to walk on the moon?",
+                "Neil Armstrong",
+                "Buzz Aldrin",
+                "Charles Conrad",
+                "John Young",
+                "2"
+            ],
+            [
+                "Who led the NASA software team that wrote the code that took Apollo 11 to the moon?",
+                "Katie Bouman",
+                "Katherine Johnson",
+                "Nancy Roman",
+                "Margaret Hamilton",
+                "4"
+            ],
+            [
+                "What does NASA stand for?",
+                "National Aeronautics and Solar Alliances",
+                "National Aeronautics and Space Administration",
+                "National Aviation and System Advances",
+                "National Astronaut and System Analysis",
+                "2"
+            ],
+            [
+                "Why wasn’t Apollo 13 able to land on the moon?",
+                "Oxygen tank explosion",
+                "No landing grips",
+                "Incorrect orbit calculation",
+                "Space debris interference",
+                "1"
+            ],
+            [
+                "Where is NASA Headquarters located",
+                "Philadelphia, PA",
+                "Brevard, FL",
+                "Washington, D.C.",
+                "Los Angeles, CA",
+                "3"
+            ],
+            [
+                "Armalcolite was named after the crew of which mission?",
+                "Apollo 11",
+                "SMART-1",
+                "Kosmos 300",
+                "Luna 4",
+                "1"
+            ]
+        ],
+        "nasa4": [
+            [
+                "In which direction are rockets launched from Earth?",
+                "North",
+                "East",
+                "South",
+                "West",
+                "2"
+            ],
+            [
+                "What was the name of the first space shuttle launched by NASA?",
+                "Explorer",
+                "Independence",
+                "Columbia",
+                "Constitution",
+                "3"
+            ],
+            [
+                "What was the name of the first space probe to land on Venus?",
+                "Pathfinder",
+                "Magellan",
+                "Venera 7",
+                "Mariner 2",
+                "3"
+            ],
+            [
+                "What year was Pluto reclassified as a dwarf planet",
+                "1996",
+                "2001",
+                "2011",
+                "2006",
+                "4"
+            ],
+            [
+                "What was the first thing eaten in space?",
+                "Applesauce",
+                "Carrots",
+                "Bacon",
+                "Cereal",
+                "1"
+            ],
+            [
+                "As of 2019, how many women have been on the moon?",
+                "6",
+                "3",
+                "1",
+                "0",
+                "4"
+            ],
+            [
+                "Who was the first person to do a spacewalk?",
+                "Alexei Leonov",
+                "Neil Armstrong",
+                "Yuri Gagarin",
+                "Edward White",
+                "1"
+            ],
+            [
+                "Who built the Apollo 11 spacecraft?",
+                "SpaceX",
+                "Rockwell International Corporation",
+                "Virgin Galactic",
+                "Sierra Nevada Corporation",
+                "2"
+            ],
+            [
+                "Who was the second person to go in space?",
+                "Alan Bean",
+                "Gus Grissom",
+                "Alexei Leonov",
+                "Alan Shepard",
+                "4"
+            ],
+            [
+                "How many crewed Gemini missions were there",
+                "10",
+                "19",
+                "7",
+                "2",
+                "1"
+            ]
+        ],
+        "nasa5": [
+            [
+                "What was the original planned name for the space shuttle that was named Enterprise?",
+                "Washington",
+                "Spirit",
+                "Constitution",
+                "Freedom",
+                "3"
+            ],
+            [
+                "Astronauts in space have to use a special type of pen.",
+                "True",
+                "False",
+                "1"
+            ],
+            [
+                "What year was the Voyager 2 spacecraft launched?",
+                "1969",
+                "1977",
+                "1984",
+                "1992",
+                "2"
+            ],
+            [
+                "The International Space Station is visible in Earth’s sky.",
+                "True",
+                "False",
+                "1"
+            ],
+            [
+                "What is NASA’s longest running mission?",
+                "Juno",
+                "Voyager",
+                "Mars Exploration Rovers",
+                "Galileo",
+                "2"
+            ],
+            [
+                "Who was the first female pilot for NASA?",
+                "Amelia Earhart",
+                "Janice Voss",
+                "Eileen Collins",
+                "Shannon Lucid",
+                "3"
+            ],
+            [
+                "Who was the oldest astronaut to fly for NASA?",
+                "Dennis Tito",
+                "John Glenn",
+                "Franklin Musgrave",
+                "William Thorton",
+                "2"
+            ],
+            [
+                "What was the name of the probe that landed on a comet for the first time?",
+                "Philae",
+                "Odyssey",
+                "Curiosity",
+                "MAVEN",
+                "1"
+            ],
+            [
+                "How frequently does the International Space Station orbit Earth?",
+                "Every 45 minutes",
+                "Every 130 minutes",
+                "Every 64 minutes",
+                "Every 92 minutes",
+                "4"
+            ],
+            [
+                "What were Buzz Aldrin’s first words on the Moon?",
+                "Infinity and beyond.",
+                "I wonder if I can get in the bottom of this crater hole.",
+                "Hey, who’s been tracking up my lunar surface?",
+                "Beautiful view. Magnificent desolation.",
+                "4"
+            ]
+        ],
+        "nasa7": [
+            [
+                "Who was the second woman in space?",
+                "Valentina Tereshkova",
+                "Svetlana Savitskaya",
+                "Mae Jemison",
+                "Judith Resnik",
+                "2"
+            ],
+            [
+                "What year was the first spacewalk done?",
+                "1953",
+                "1965",
+                "1974",
+                "1941",
+                "2"
+            ],
+            [
+                "How many years did it take to build the International Space Station?",
+                "10",
+                "20",
+                "4",
+                "16",
+                "1"
+            ],
+            [
+                "Who was the first African American woman astronaut",
+                "Mae Jemison",
+                "Jeanette Epps",
+                "Stephanie Wilson",
+                "Joan Higginbotham",
+                "1"
+            ],
+            [
+                "Only one type of engineer works for NASA.",
+                "True",
+                "False",
+                "2"
+            ],
+            [
+                "NASA replaced what US federal agency",
+                "Federal Aeronautics Center",
+                "Space Explorations and Communications",
+                "National Advisory Committee for Aeronautics",
+                "American Space Agency",
+                "3"
+            ],
+            [
+                "What is NASA’s slogan?",
+                "Discovering Infinity",
+                "Exploring Our Universe",
+                "For the Benefit of All",
+                "Look Up",
+                "3"
+            ],
+            [
+                "Who designed the NASA logo?",
+                "James Modarelli",
+                "Frank Robinson",
+                "Paul Rand",
+                "Milton Glaser",
+                "1"
+            ],
+            [
+                "What year are the Voyager transmitters estimated to shut off?",
+                "2052",
+                "2025",
+                "2040",
+                "2033",
+                "2"
+            ],
+            [
+                "How high above Earth is the Hubble Space Telescope?",
+                "198 miles",
+                "427 miles",
+                "353 miles",
+                "281 miles",
+                "3"
+            ],
+            [
+                "The head of NASA is known as the:",
+                "Administrator",
+                "Chief Space Officer",
+                "President",
+                "Main Leader",
+                "1"
+            ]
+        ],
         "space1": [
             [
                 "What is the hottest planet in the solar system?",
@@ -786,7 +1436,7 @@
                 "4"
             ]
         ],
-        "space2": [
+        "space3": [
             [
                 "What was the name of the first probe to orbit Jupiter?",
                 "Virgil",
@@ -868,7 +1518,7 @@
                 "2"
             ]
         ],
-        "space3": [
+        "space6": [
             [
                 "What is the largest object in our asteroid belt?",
                 "Vesta",
@@ -958,7 +1608,7 @@
                 "3"
             ]
         ],
-        "space4": [
+        "space8": [
             [
                 "Who was the first American in space?",
                 "James A Lovell, Jr.",
@@ -1064,6 +1714,336 @@
                 "3"
             ]
         ],
+        "space2": [
+            [
+                "What is the coldest planet in our solar system?",
+                "Uranus",
+                "Neptune",
+                "Pluto",
+                "Saturn",
+                "1"
+            ],
+            [
+                "What is the closest planet to Earth?",
+                "Mars",
+                "Jupiter",
+                "Mercury",
+                "Venus",
+                "4"
+            ],
+            [
+                "Who discovered the first comet?",
+                "Maria Cunitz",
+                "Edward Barnard",
+                "Gottfried Kirch",
+                "Caroline Herschel",
+                "3"
+            ],
+            [
+                "What lies at the center of a galaxy?",
+                "a black hole",
+                "a sun",
+                "a planet",
+                "a supernova",
+                "1"
+            ],
+            [
+                "There are two main types of galaxies.",
+                "True",
+                "False",
+                "1"
+            ],
+            [
+                "What type of galaxy is the Milky Way?",
+                "Barred Spiral",
+                "Spiral",
+                "Elliptical",
+                "Irregular",
+                "2"
+            ],
+            [
+                "How many stars are there in our solar system?",
+                "18",
+                "13",
+                "1",
+                "9",
+                "3"
+            ],
+            [
+                "What are the names of the three stars in Orion’s belt",
+                "Deneb, Gamma Cygni, IRAS",
+                "Alcor, Arcturus, Mizar",
+                "Calvera, Polaris A, Ursae Minoris",
+                "Mintaka, Alnilam, and Alnitak",
+                "4"
+            ],
+            [
+                "What is the official name of the North Star?",
+                "Polaris",
+                "Dubhe",
+                "Merak",
+                "Sigma Octantis",
+                "1"
+            ],
+            [
+                "How many stars form the big dipper?",
+                "4",
+                "12",
+                "7",
+                "15",
+                "3"
+            ]
+        ],
+        "space4": [
+            [
+                "How many official constellations are there?",
+                "18",
+                "88",
+                "37",
+                "62",
+                "2"
+            ],
+            [
+                "How many dwarf planets are in our solar system",
+                "1",
+                "10",
+                "8",
+                "5",
+                "4"
+            ],
+            [
+                "Which dwarf planet is the largest?",
+                "Pluto",
+                "Ceres",
+                "Vesta",
+                "Eris",
+                "1"
+            ],
+            [
+                "Footprints on the Moon will disappear due to wind and rain.",
+                "True",
+                "False",
+                "2"
+            ],
+            [
+                "How long is a day on Saturn?",
+                "10.7 hours",
+                "24.3 hours",
+                "15.1 hours",
+                "31.5 hours",
+                "1"
+            ],
+            [
+                "How old are the rings of Saturn?",
+                "143.2 million years",
+                "227.8 million years",
+                "100.1 million years",
+                "68.7 million years",
+                "3"
+            ],
+            [
+                "How many rings does Uranus have?",
+                "17",
+                "13",
+                "1",
+                "6",
+                "2"
+            ],
+            [
+                "Scientists have evidence that ___ is the oldest planet in our solar system.",
+                "Jupiter",
+                "Venus",
+                "Earth",
+                "Saturn",
+                "1"
+            ],
+            [
+                "Which planet in our solar system has the greatest number of known volcanoes?",
+                "Venus",
+                "Mercury",
+                "Earth",
+                "Mars",
+                "1"
+            ],
+            [
+                "Neptune was named after the Roman God of the:",
+                "Wind",
+                "Sky",
+                "Sea",
+                "Sun",
+                "3"
+            ]
+        ],
+        "space5": [
+            [
+                "What spacecraft has flown past Neptune?",
+                "Juno",
+                "Voyager 2",
+                "Galileo",
+                "Pioneer 11",
+                "2"
+            ],
+            [
+                "What element makes up 80% of Neptune’s atmosphere?",
+                "Oxygen",
+                "Helium",
+                "Hydrogen",
+                "Nitrogen",
+                "3"
+            ],
+            [
+                "Who sent the first successful spacecraft to Venus?",
+                "U.S.",
+                "Soviet Union",
+                "Canada",
+                "England",
+                "1"
+            ],
+            [
+                "What is the name of the Russian space agency",
+                "Soviet Space Program",
+                "Sputnik",
+                "TASS",
+                "Roscosmos",
+                "4"
+            ],
+            [
+                "What are the rarest type of stars?",
+                "O-type",
+                "M-type",
+                "K-type",
+                "G-type",
+                "1"
+            ],
+            [
+                "What year was the first human spaceflight?",
+                "1969",
+                "1961",
+                "1972",
+                "1954",
+                "2"
+            ],
+            [
+                "The planet Mars is named after the Roman God of:",
+                "Agriculture",
+                "Wine",
+                "War",
+                "Commerce",
+                "3"
+            ],
+            [
+                "Which of these is not one of Uranus’s moons?",
+                "Titania",
+                "Deimos",
+                "Cressida",
+                "Oberon",
+                "2"
+            ],
+            [
+                "What was the first comet ever discovered?",
+                "Miss Mitchell’s Comet",
+                "Comet Wirtanen",
+                "Halley’s Comet",
+                "Kirch’s Comet",
+                "4"
+            ],
+            [
+                "What was the first spacecraft sent to Saturn?",
+                "Galileo",
+                "Pioneer 11",
+                "Voyager 2",
+                "Cassini",
+                "3"
+            ]
+        ],
+        "space7": [
+            [
+                "What is the name of the highest volcano in our solar system?",
+                "Olympus Mons",
+                "Mt. Everest",
+                "Maxwell Montes",
+                "Cho Oyu",
+                "1"
+            ],
+            [
+                "What is the name of the deepest crater on Earth",
+                "Chicxulub",
+                "Yucatan",
+                "Vredefort",
+                "Sudbury",
+                "3"
+            ],
+            [
+                "How many miles away is Venus from Earth?",
+                "194 million miles",
+                "314 million miles",
+                "162 million miles",
+                "261 million miles",
+                "3"
+            ],
+            [
+                "By the year 2018, how many satellites were there in space?",
+                "1,467",
+                "4,857",
+                "2,476",
+                "3,982",
+                "2"
+            ],
+            [
+                "How many miles away from the Sun is Mercury at its farthest distance?",
+                "29 million miles",
+                "35 million miles",
+                "43 million miles",
+                "56 million miles",
+                "3"
+            ],
+            [
+                "In 2008, there were ______ natural, confirmed moons in our solar system:",
+                "193",
+                "217",
+                "285",
+                "164",
+                "1"
+            ],
+            [
+                "According to theorists, what do white holes do?",
+                "Absorb light and matter",
+                "Emit light and matter",
+                "Aid in time travel",
+                "Create supernovas",
+                "2"
+            ],
+            [
+                "Jupiter is sometimes called a:",
+                "Raging Storm",
+                "Goldilocks Planet",
+                "Failed Star",
+                "Ice Giant",
+                "3"
+            ],
+            [
+                "What is the oldest known star nicknamed?",
+                "Betelgeuse",
+                "Arcturus",
+                "Polaris",
+                "Methuselah",
+                "4"
+            ],
+            [
+                "The sun is the source of solar wind.",
+                "True",
+                "False",
+                "1"
+            ],
+            [
+                "What is not a purpose of the Deep Space Network?",
+                "Support interplanetary spacecraft missions.",
+                "Provide radar observations.",
+                "Provide radio astronomy observations.",
+                "Send spacecraft to space.",
+                "4"
+            ]
+        ],
         "science1": [
             [
                 "Which of the following is not a form of energy we get from the Sun?",
@@ -1146,7 +2126,7 @@
                 "3"
             ]
         ],
-        "science2": [
+        "science3": [
             [
                 "What force pulls all objects toward the center of the Earth?",
                 "Gravity",
@@ -1228,7 +2208,7 @@
                 "3"
             ]
         ],
-        "science3": [
+        "science6": [
             [
                 "What cloud type can be described as wispy and thin?",
                 "Cumulous",
@@ -1316,7 +2296,7 @@
                 "1"
             ]
         ],
-        "science4": [
+        "science8": [
             [
                 "What cloud type can be described as wispy and thin?",
                 "Cumulous",
@@ -1417,7 +2397,336 @@
                 "110 mph",
                 "3"
             ]
+        ],
+        "science2": [
+            [
+                "What is the rarest blood type?",
+                "O-",
+                "AB-",
+                "B-",
+                "A+",
+                "2"
+            ],
+            [
+                " Brains have the same consistency as:",
+                "Jello",
+                "Slime",
+                "Toothpaste",
+                "Pudding",
+                "1"
+            ],
+            [
+                "How many vertebrae do humans have?",
+                "33",
+                "42",
+                "26",
+                "51",
+                "1"
+            ],
+            [
+                "What color has the shortest wavelength?",
+                "Red",
+                "Yellow",
+                "Violet",
+                "Green",
+                "3"
+            ],
+            [
+                "What muscle is nicknamed the kissing muscle?",
+                "Buccinator",
+                "Masseter",
+                "Orbicularis Oculi",
+                "Orbicularis Oris",
+                "4"
+            ],
+            [
+                "What branch of botany focuses on studying seeds?",
+                "Olericulture",
+                "Pomology",
+                "Carpology",
+                "Dendrology",
+                "3"
+            ],
+            [
+                "What dinosaur has three horns?",
+                "Protoceratops",
+                "Triceratops",
+                "Stegosaurus",
+                "Ankylosaurus",
+                "2"
+            ],
+            [
+                "In what era did non-bird dinosaurs live?",
+                "Mesozoic Era",
+                "Paleozoic Era",
+                "Cenozoic Era",
+                "Quaternary Era",
+                "1"
+            ],
+            [
+                "What carries blood to the heart?",
+                "Veins",
+                "Arteries",
+                "Capillaries",
+                "Arterioles",
+                "1"
+            ],
+            [
+                "What is the eighteenth element on the periodic table?",
+                "Chlorine",
+                "Argon",
+                "Bismuth",
+                "Neon",
+                "2"
+            ]
+        ],
+        "science4": [
+            [
+                "Which of the following is not an intermolecular bond?",
+                "Hydrogen",
+                "Van der Waals",
+                "Covalent",
+                "Dipole-Dipole",
+                "3"
+            ],
+            [
+                "What state of matter has the least amount of entropy?",
+                "Solids",
+                "Liquids",
+                "Gases",
+                "Plasma",
+                "1"
+            ],
+            [
+                "When ice is put into a hot drink, what happens?",
+                "The ice makes the hot drink cold.",
+                "Nothing happens to the hot drink. The ice only melts.",
+                "The hot drink loses energy by warming up the ice.",
+                "Nothing.",
+                "3"
+            ],
+            [
+                " What is the scientific term for goosebumps?",
+                "Varicella",
+                "Tussis",
+                "Contusions",
+                "Cutis Anserina",
+                "4"
+            ],
+            [
+                " What is the half-life of uranium-238?",
+                "900 million years",
+                "2.1 billion years",
+                "700 million years",
+                "4.5 billion years",
+                "4"
+            ],
+            [
+                "Who created the periodic table?",
+                "Robert Boyle",
+                "Dmitri Mendeleev",
+                "Antoine Lavoisier",
+                "Henry Vavendish",
+                "2"
+            ],
+            [
+                "How many muscles do humans have in the face?",
+                "43",
+                "31",
+                "14",
+                "24",
+                "1"
+            ],
+            [
+                "How old are the Chauvet cave paintings?",
+                "16,000 years old",
+                "32,000 years old",
+                "27,000 years old",
+                "20,000 years old",
+                "2"
+            ],
+            [
+                " Who discovered Ötzi the Iceman?",
+                "Archeologists",
+                "Paleontologists",
+                "A pair of hikers",
+                "A farmer",
+                "3"
+            ],
+            [
+                " The Australopithecus Lucy was named after a song by what famous band?",
+                "The Rolling Stones",
+                "Led Zeppelin",
+                "The Beatles",
+                "Queen",
+                "3"
+            ]
+        ],
+        "science5": [
+            [
+                "How many chromosomes do humans have?",
+                "23",
+                "46",
+                "94",
+                "65",
+                "2"
+            ],
+            [
+                "What was the first mammal to be cloned?",
+                "A dog",
+                "A cow",
+                "A sheep",
+                "A rabbit",
+                "3"
+            ],
+            [
+                "Who invented pasteurization?",
+                "Edward Jenner",
+                "Joseph Lister",
+                "Robert Koch",
+                "Louis Pasteur",
+                "4"
+            ],
+            [
+                "What makes blood red?",
+                "Oxygen",
+                "Hemoglobin",
+                "Carbon Dioxide",
+                "Glucose",
+                "2"
+            ],
+            [
+                " What is the largest organ in the human body?",
+                "Brain",
+                "Heart",
+                "Skin",
+                "Liver",
+                "3"
+            ],
+            [
+                "What is the strongest muscle in the human body relative to its size?",
+                "Masseter",
+                "Tongue",
+                "Nasalis",
+                "Auriculares",
+                "1"
+            ],
+            [
+                "What does LASER stand for?",
+                "Luminescence Amplified for Stationary Efficient Reporting",
+                "Light Amplification by Stimulated Emission of Radiation",
+                "Light Amplification through Simple Ejected Radiation",
+                "LASER does not stand for anything.",
+                "2"
+            ],
+            [
+                "Who discovered lithium?",
+                "Johan Arfwedson",
+                "Humphry Davy",
+                "Claude Geoffroy",
+                "Louis Vauquaelin",
+                "1"
+            ],
+            [
+                "What is the name of the fully preserved baby mammoth discovered in 2007?",
+                "Ellie",
+                "Peaches",
+                "Lyuba",
+                "Manfred",
+                "3"
+            ],
+            [
+                "Who is credited with discovering penicillin?",
+                "Edward Jenner",
+                "Robert Hooke",
+                "Van Leeuwenhoek",
+                "Alexander Flemming",
+                "4"
+            ]
+        ],
+        "science7": [
+            [
+                "Different parts of the tongue have different taste bud receptors.",
+                "True",
+                "False",
+                "2"
+            ],
+            [
+                " What is the smallest bone in the human body? ",
+                "Stirrup",
+                "Incus",
+                "Malleus",
+                "Cochlea",
+                "1"
+            ],
+            [
+                "What does mesentery do?",
+                "Anchors the intestines",
+                "Provides blood flow",
+                "Cushions muscles",
+                "Fights illness",
+                "1"
+            ],
+            [
+                "How many tectonic plates are there?",
+                "12",
+                "2",
+                "7",
+                "17",
+                "3"
+            ],
+            [
+                "How old is the earliest fossil ever found?",
+                "4.4 billion years old",
+                "3.5 billion years old",
+                "2.1 billion years old",
+                "1.7 billion years old",
+                "2"
+            ],
+            [
+                "What is the most common virus responsible for the common cold?",
+                "Tremovirus",
+                "Astrovirus",
+                "Adenovirus",
+                "Rhinovirus",
+                "4"
+            ],
+            [
+                " What is the oldest ocean?",
+                "Indian",
+                "Southern",
+                "Pacific",
+                "Atlantic",
+                "3"
+            ],
+            [
+                "What organ in the human body can regenerate itself?",
+                "Stomach",
+                "Appendix",
+                "Kidney",
+                "Liver",
+                "4"
+            ],
+            [
+                "Lightning is hotter than the sun.",
+                "True",
+                "False",
+                "1"
+            ],
+            [
+                "When placed in a discharge tube, what color does neon gas naturally produce?",
+                "Red",
+                "Green",
+                "White",
+                "Blue",
+                "1"
+            ],
+            [
+                "The term tropical cyclone is a generic term for both a hurricane and a typhoon.",
+                "True",
+                "False",
+                "1"
+            ]
         ]
     }
 ]
- 

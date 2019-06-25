@@ -40,10 +40,10 @@ extension String{
             
             let startindex = htmlCSSString.index(of: "<if")
             let endindex = htmlCSSString.index(of: "></p>")
-            htmlCSSString.removeSubrange(startindex!...endindex!)
+//            htmlCSSString.removeSubrange(startindex!...endindex!)
             let anchorTag = "<a class=" + "link" + " " +  "href=\(urlSubString)" + " " + "target=" + "_blank" + " " + "rel=noopener noreferrer" + ">View the full video</a>"
             
-            htmlCSSString.replaceSubrange(startindex!..<htmlCSSString.endIndex, with: anchorTag)
+//            htmlCSSString.replaceSubrange(startindex!..<htmlCSSString.endIndex, with: anchorTag)
             guard let data = htmlCSSString.data(using: String.Encoding.utf8) else {
                 return nil
             }

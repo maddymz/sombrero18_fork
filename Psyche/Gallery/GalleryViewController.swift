@@ -496,6 +496,14 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "aboutGallerySegue"{
+            let sender = sender as! UIButton
+            let receiver = segue.destination as! AboutViewController
+        }
+        
+    }
+    
     @IBAction func events(_ sender: Any) {
         menuHelper.events(vc: self)
     }

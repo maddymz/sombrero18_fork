@@ -249,18 +249,34 @@ class TriviaGameViewController: UIViewController {
         var psyche2: [[String]]
         var psyche3: [[String]]
         var psyche4: [[String]]
+        var psyche5: [[String]]
+        var psyche6: [[String]]
+        var psyche7: [[String]]
+        var psyche8: [[String]]
         var space1: [[String]]
         var space2: [[String]]
         var space3: [[String]]
         var space4: [[String]]
+        var space5: [[String]]
+        var space6: [[String]]
+        var space7: [[String]]
+        var space8: [[String]]
         var science1: [[String]]
         var science2: [[String]]
         var science3: [[String]]
         var science4: [[String]]
+        var science5: [[String]]
+        var science6: [[String]]
+        var science7: [[String]]
+        var science8: [[String]]
         var nasa1: [[String]]
         var nasa2: [[String]]
         var nasa3: [[String]]
         var nasa4: [[String]]
+        var nasa5: [[String]]
+        var nasa6: [[String]]
+        var nasa7: [[String]]
+        var nasa8: [[String]]
     }
     var quizDict = [String: [[String]]]()
     
@@ -351,13 +367,19 @@ class TriviaGameViewController: UIViewController {
                 let quizJsonData = try Data(contentsOf: quizUrl)
                 let opponentDecoder  = JSONDecoder()
                 let quizDecodeData = try opponentDecoder.decode([QuizData].self, from: quizJsonData)
-                
+            
                 for data in quizDecodeData {
-                    print("parsed quiz data:", data.psyche1)
-                    quizDict = ["psyche1" : data.psyche1 , "psyche2" : data.psyche2, "psyche3" : data.psyche3, "psyche4" : data.psyche4,
+                    print("psyche8", data.psyche8)
+                    quizDict = [
+                    "psyche1" : data.psyche1 , "psyche2" : data.psyche2, "psyche3" : data.psyche3, "psyche4" : data.psyche4,
+                    "psyche5": data.psyche5, "psyche6": data.psyche6, "psyche7": data.psyche7, "psyche8": data.psyche8,
                     "nasa1" : data.nasa1, "nasa2" : data.nasa2, "nasa3" : data.nasa3, "nasa4" : data.nasa4,
-                    "space1" : data.space1, "space2" : data.space2, "space3" : data.space3,"space4" : data.space4,
-                    "science1" : data.science1, "science2" : data.science2, "science3" : data.science3, "science4" : data.science4]
+                    "nasa5": data.nasa5, "nasa6": data.nasa6, "nasa7": data.nasa7, "nasa8": data.nasa8,
+                    "space1" : data.space1, "space2" : data.space2, "space3" : data.space3, "space4" : data.space4,
+                    "space5": data.space5, "space6": data.space6, "space7": data.space7, "space8": data.space8,
+                    "science1" : data.science1, "science2" : data.science2, "science3" : data.science3, "science4" : data.science4,
+                    "science5" : data.science5, "science6": data.science6, "science7": data.science7, "science8": data.science8,
+                    ]
                 }
             }catch let parseError {
                 print("quiz parsing error:", parseError)
@@ -383,7 +405,10 @@ class TriviaGameViewController: UIViewController {
             profile.image = #imageLiteral(resourceName: "Sun_Large")
         }
         opponentName.text = opponent?.fname
-        self.questions = quizDict[category! + String(opponent!.difficulty)]!
+        print("category" , self.category!)
+        print("opponent-level", String(self.opponent!.level))
+//        print("quizDict", self.quizDict)
+        self.questions =  quizDict[category! + String(opponent!.level)]!
         
         if(opponent?.difficulty == 1){
             multiplier = 5

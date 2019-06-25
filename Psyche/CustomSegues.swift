@@ -308,3 +308,45 @@ class unwinedAboutScreenSegue: UIStoryboardSegue {
         src.dismiss(animated: false, completion: nil)
     }
 }
+
+class AboutScreenSegueTimeline: UIStoryboardSegue {
+    override func perform() {
+        let src = self.source as! TimelineTableViewController
+        let dst = self.destination as! AboutViewController
+        
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        src.present(dst, animated: false, completion: nil)
+    }
+}
+
+class unwinedAboutScreenSegueTimeline: UIStoryboardSegue {
+    override func perform() {
+        let src = self.source as! AboutViewController
+        let dst = self.destination as!  TimelineTableViewController
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        src.dismiss(animated: false, completion: nil)
+    }
+}
+
+class AboutScreenSegueGallery: UIStoryboardSegue {
+    override func perform() {
+        let src = self.source as! GalleryViewController
+        let dst = self.destination as! AboutViewController
+        
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        src.present(dst, animated: false, completion: nil)
+    }
+}
+
+class unwinedAboutScreenSegueGallery: UIStoryboardSegue {
+    override func perform() {
+        let src = self.source as! AboutViewController
+        let dst = self.destination as!  GalleryViewController
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        src.dismiss(animated: false, completion: nil)
+    }
+}
