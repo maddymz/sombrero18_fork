@@ -82,8 +82,16 @@ class menuHelper{
     }
     
     static func showWarningAlert(vc: UIViewController, appURLStr: String, webURLStr: String) {
+        
+        var dialogMessage = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         // Declare Alert message
-        let dialogMessage = UIAlertController(title: "Leave Psyche?", message: "This app is trying to open the Psyche website. Are you sure you want to open it?", preferredStyle: .alert)
+        if webURLStr == "https://www.nasa.gov/" {
+             dialogMessage = UIAlertController(title: "Leave Psyche?", message: "This app is trying to open the NASA website. Are you sure you want to open it?", preferredStyle: .alert)
+
+        }else {
+             dialogMessage = UIAlertController(title: "Leave Psyche?", message: "This app is trying to open the Psyche website. Are you sure you want to open it?", preferredStyle: .alert)
+
+        }
         
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in

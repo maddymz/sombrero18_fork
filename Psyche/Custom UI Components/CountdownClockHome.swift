@@ -94,7 +94,6 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         
         daysLabel.frame = CGRect(x: yearLabelX, y: 9, width: 100, height: 33)
         
-//        daysMLabel.frame = CGRect(x: yearMLabelX + 3, y: 41, width: 110, height: 21)
         daysMLabel.text = "DAYS TO NEXT PHASE"
         
         timerLabel.frame = CGRect(x: dayLabelX, y: 11, width: 164, height: 29)
@@ -285,47 +284,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
                     dateView.yearLabel = yearLabel
                     dateView.dayLabel = dayLabel
                     dateView.hourLabel = hourLabel
-//                } else { // years == 0
-//
-//                    let dayLabel = UILabel()
-//                    dayLabel.frame = CGRect(x: yearLabelX, y: timeLabelYConst, width: 100, height: 100)
-//                    let dayMLabel = UILabel()
-//                    dayMLabel.frame = CGRect(x: yearMLabelX + timeMLabelXConst, y: timeMLabelYConst, width: 100, height: 100)
-//
-//                    let timeLabel = UILabel()
-//                    timeLabel.frame = CGRect(x: dayLabelX, y: timeLabelYConst, width: 300, height: 100)
-//                    let timeMLabel = UILabel()
-//                    timeMLabel.frame = CGRect(x: dayMLabelX + timeMLabelXConst, y: timeMLabelYConst, width: 200, height: 100)
-//                    let secondsMLabel = UILabel()
-//                    secondsMLabel.frame = CGRect(x: secondsMLabelX, y: timeMLabelYConst, width: 200, height: 100)
-//
-//                    dayLabel.text = result.1
-//                    timeLabel.text = result.2
-//                    timeLabel.textColor = UIColor.gray
-//                    dayLabel.textColor = UIColor.gray
-//
-//                    dayMLabel.text = "DAYS"
-//                    timeMLabel.text = "HOURS     MINUTES"
-//                    secondsMLabel.text = "SECONDS"
-//                    timeMLabel.textColor = UIColor.gray
-//                    dayMLabel.textColor = UIColor.gray
-//                    secondsMLabel.textColor = UIColor.gray
-//
-//                    timeLabel.font = UIFont(name: "Roboto Mono", size: 34)
-//                    dayLabel.font = UIFont(name: "Roboto Mono", size: 34)
-//                    timeMLabel.font = UIFont(name: "Roboto Mono", size: 10)
-//                    dayMLabel.font = UIFont(name: "Roboto Mono", size: 10)
-//                    secondsMLabel.font = UIFont(name: "Roboto Mono", size: 10)
-//
-//                    dateView.addSubview(timeLabel)
-//                    dateView.addSubview(timeMLabel)
-//                    dateView.addSubview(dayLabel)
-//                    dateView.addSubview(dayMLabel)
-//                    dateView.addSubview(secondsMLabel)
-//
-//                    dateView.dayLabel = dayLabel
-//                    dateView.hourLabel = timeLabel
-//                }
+
                 
                 dateLabel.text = phase.0
                 dateLabel.textColor = UIColor.black
@@ -362,17 +321,8 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         tempDiff -= days * 86400
         let hours = tempDiff / 3600 // 3600 = 60 * 60
         
-//        if (years > 0) {
         return ("\(years)", "\(days)", "\(hours)")
-//        } else {
-//            tempDiff -= hours * 3600
-//            let minutes = tempDiff / 60
-//            tempDiff -= minutes * 60
-//            let seconds = tempDiff
-//
-//            let time = String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
-//            return ("", "\(days)", "\(time)")
-//        }
+
     }
     
     // Adds countdown dates to phases array
@@ -477,19 +427,9 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
                 diff -= days * 86400
                 let hours = diff / 3600 // 3600 = 60 * 60
                 
-//                if (years > 0) {
                     dateView.yearLabel?.text = "\(years)"
                     dateView.dayLabel?.text = "\(days)"
                     dateView.hourLabel?.text = "\(hours)"
-//                } else {
-//                    diff -= hours * 3600
-//                    let minutes = diff / 60
-//                    diff -= minutes * 60
-//                    let seconds = diff
-//                    
-//                    dateView.dayLabel?.text = "\(days)"
-//                    dateView.hourLabel?.text = String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
-//                }
             }
         }
     }

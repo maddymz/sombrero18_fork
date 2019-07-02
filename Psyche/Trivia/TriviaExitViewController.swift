@@ -62,20 +62,25 @@ class TriviaExitViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toTabController"{
+        if segue.identifier == "toHomePage" {
             if let vc = segue.destination as? LoadingViewController {
                 vc.showAnimation = false // This ensures that the LoadingViewController will not show the animation
             }
         }
+
     }
+    
+//    @IBAction func unwinedToMainScreen (segue: UIStoryboardSegue){
+//        print("to the homescreen...!!!")
+//    }
     
     @IBAction func yesBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toTabController", sender: self) // Performs segue to the tab bar controller which goes to the home tab
+        performSegue(withIdentifier: "toHomePage", sender: self) // Performs segue to the tab bar controller which goes to the home tab
     }
-    
-//    @IBAction func noBtnPressed(_ sender: Any) {
-//        performSegue(withIdentifier: "toProfile", sender: self)
-//    }
+
+    @IBAction func noBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toProfile", sender: self)
+    }
     
     // Sets background color of orange to red gradient
     func setGradientBackground() {

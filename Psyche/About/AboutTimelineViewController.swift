@@ -1,57 +1,44 @@
 //
-//  AboutViewController.swift
+//  AboutTimelineViewController.swift
 //  Psyche
 //
-//  Created by psyche-admin on 6/21/19.
+//  Created by Madhukar Raj on 6/27/19.
 //  Copyright © 2019 ASU. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class AboutViewController: UIViewController {
+class AboutTimelineViewController: UIViewController {
 
-    @IBOutlet weak var devOne: UILabel!
-    
-    @IBOutlet weak var devTwo: UILabel!
-    
-    @IBOutlet weak var devThree: UILabel!
-    
-    @IBOutlet weak var version: UILabel!
-    
-    @IBOutlet weak var teamLable: UILabel!
-    @IBOutlet weak var devFour: UILabel!
-    
-    @IBOutlet weak var devFive: UILabel!
-    
     @IBOutlet weak var devSix: UILabel!
+    @IBOutlet weak var srDev: UILabel!
+    @IBOutlet weak var devThree: UILabel!
+    @IBOutlet weak var graphicDesign: UILabel!
     
-    @IBOutlet weak var devSeven: UILabel!
-    
-    
-    @IBOutlet weak var devEight: UILabel!
-    
-    
+    @IBOutlet weak var teamLabel: UILabel!
+    @IBOutlet weak var version: UILabel!
     @IBOutlet weak var bckGround: UIImageView!
-    
+    @IBOutlet weak var devFive: UILabel!
+    @IBOutlet weak var devFour: UILabel!
     @IBOutlet weak var devNine: UILabel!
-    @IBOutlet weak var srDevLabel: UILabel!
-    
+    @IBOutlet weak var devSeven: UILabel!
     @IBOutlet weak var devLabel: UILabel!
-    @IBOutlet weak var graphicDesignlabel: UILabel!
-    @IBOutlet weak var prManagerLabel: UILabel!
+    @IBOutlet weak var prManager: UILabel!
+    @IBOutlet weak var devOne: UILabel!
+    @IBOutlet weak var devTwo: UILabel!
+    @IBOutlet weak var devEight: UILabel!
     override func viewDidLoad() {
-        super.viewDidLoad()       
+        super.viewDidLoad()
+
         layout()
         animateContent()
-        
     }
-    
+
     func layout() {
         
-        self.bckGround.translatesAutoresizingMaskIntoConstraints = false
         self.version.translatesAutoresizingMaskIntoConstraints = false
         let guide = view.safeAreaLayoutGuide
+        self.bckGround.translatesAutoresizingMaskIntoConstraints = false
         self.bckGround.leadingAnchor.constraint(equalTo: view.leadingAnchor ).isActive = true
         self.bckGround.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         self.bckGround.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -66,23 +53,21 @@ class AboutViewController: UIViewController {
         self.devSeven.alpha = 0.0
         self.devEight.alpha = 0.0
         self.devNine.alpha = 0.0
-        self.srDevLabel.alpha = 0.0
-        self.prManagerLabel.alpha = 0.0
-        self.graphicDesignlabel.alpha = 0.0
+        self.srDev.alpha = 0.0
+        self.prManager.alpha = 0.0
+        self.graphicDesign.alpha = 0.0
         self.devLabel.alpha = 0.0
         
         if UIDevice.current.screenType == .iPhones_6_6s_7_8 {
-            self.srDevLabel.frame = CGRect(x: 120.26, y: 550, width: 132, height: 21)
-            self.prManagerLabel.frame = CGRect(x: 124.08, y: 550, width: 126, height: 21)
-            self.graphicDesignlabel.frame = CGRect(x: 116.43, y: 550, width: 142, height: 21)
+            self.srDev.frame = CGRect(x: 120.26, y: 550, width: 132, height: 21)
+            self.prManager.frame = CGRect(x: 124.08, y: 550, width: 126, height: 21)
+            self.graphicDesign.frame = CGRect(x: 116.43, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 143.18, y: 550, width: 87, height: 21)
             
-            self.teamLable.frame = CGRect(x: 141.84, y: 63, width: 91, height: 24)
+            self.teamLabel.frame = CGRect(x: 141.84, y: 63, width: 91, height: 24)
             self.version.frame = CGRect(x: 117.71, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
-
-            
             
             self.devOne.frame = CGRect(x: 124, y: 550, width: 125, height: 21)
             self.devTwo.frame = CGRect(x: 142, y: 550, width: 89, height: 21)
@@ -95,16 +80,15 @@ class AboutViewController: UIViewController {
             self.devNine.frame = CGRect(x: 140, y: 550, width: 94, height: 21)
             
         } else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
-            self.srDevLabel.frame = CGRect(x: 140.36, y: 550, width: 132, height: 21)
-            self.prManagerLabel.frame = CGRect(x: 143.7, y: 550, width: 126, height: 21)
-            self.graphicDesignlabel.frame = CGRect(x: 135.34, y: 550, width: 142, height: 21)
+            self.srDev.frame = CGRect(x: 140.36, y: 550, width: 132, height: 21)
+            self.prManager.frame = CGRect(x: 143.7, y: 550, width: 126, height: 21)
+            self.graphicDesign.frame = CGRect(x: 135.34, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 162.08, y: 550, width: 87, height: 21)
             
-            self.teamLable.frame = CGRect(x: 160.71, y: 63, width: 91, height: 24)
+            self.teamLabel.frame = CGRect(x: 160.71, y: 63, width: 91, height: 24)
             self.version.frame = CGRect(x: 138.43, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
-
             
             
             self.devOne.frame = CGRect(x: 143.7, y: 550, width: 125, height: 21)
@@ -117,16 +101,17 @@ class AboutViewController: UIViewController {
             self.devEight.frame = CGRect(x: 138.68, y: 550, width: 135, height: 21)
             self.devNine.frame = CGRect(x: 158.74, y: 550, width: 94, height: 21)
         }else if UIDevice.current.screenType == .iPhone_XSMax {
-            self.srDevLabel.frame = CGRect(x: 140.36, y: 550, width: 132, height: 21)
-            self.prManagerLabel.frame = CGRect(x: 143.7, y: 550, width: 126, height: 21)
-            self.graphicDesignlabel.frame = CGRect(x: 135.34, y: 550, width: 142, height: 21)
+            self.srDev.frame = CGRect(x: 140.36, y: 550, width: 132, height: 21)
+            self.prManager.frame = CGRect(x: 143.7, y: 550, width: 126, height: 21)
+            self.graphicDesign.frame = CGRect(x: 135.34, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 162.08, y: 550, width: 87, height: 21)
             
-            self.teamLable.frame = CGRect(x: 160.71, y: 63, width: 91, height: 24)
+            self.teamLabel.frame = CGRect(x: 160.71, y: 63, width: 91, height: 24)
             self.version.frame = CGRect(x: 138.43, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
 
+            
             self.devOne.frame = CGRect(x: 143.7, y: 550, width: 125, height: 21)
             self.devTwo.frame = CGRect(x: 162.08, y: 550, width: 89, height: 21)
             self.devThree.frame = CGRect(x: 170.44, y: 550, width: 72, height: 21)
@@ -137,16 +122,15 @@ class AboutViewController: UIViewController {
             self.devEight.frame = CGRect(x: 138.68, y: 550, width: 135, height: 21)
             self.devNine.frame = CGRect(x: 158.74, y: 550, width: 94, height: 21)
         }else if UIDevice.current.screenType == .iPhone_XR {
-            self.srDevLabel.frame = CGRect(x: 140.36, y: 550, width: 132, height: 21)
-            self.prManagerLabel.frame = CGRect(x: 143.7, y: 550, width: 126, height: 21)
-            self.graphicDesignlabel.frame = CGRect(x: 135.34, y: 550, width: 142, height: 21)
+            self.srDev.frame = CGRect(x: 140.36, y: 550, width: 132, height: 21)
+            self.prManager.frame = CGRect(x: 143.7, y: 550, width: 126, height: 21)
+            self.graphicDesign.frame = CGRect(x: 135.34, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 162.08, y: 550, width: 87, height: 21)
             
-            self.teamLable.frame = CGRect(x: 160.71, y: 63, width: 91, height: 24)
+            self.teamLabel.frame = CGRect(x: 160.71, y: 63, width: 91, height: 24)
             self.version.frame = CGRect(x: 138.43, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
-
             
             
             self.devOne.frame = CGRect(x: 143.7, y: 550, width: 125, height: 21)
@@ -159,16 +143,15 @@ class AboutViewController: UIViewController {
             self.devEight.frame = CGRect(x: 138.68, y: 550, width: 135, height: 21)
             self.devNine.frame = CGRect(x: 158.74, y: 550, width: 94, height: 21)
         }else if UIDevice.current.screenType == .iPhones_X_XS {
-            self.srDevLabel.frame = CGRect(x: 120.26, y: 550, width: 132, height: 21)
-            self.prManagerLabel.frame = CGRect(x: 124.08, y: 550, width: 126, height: 21)
-            self.graphicDesignlabel.frame = CGRect(x: 116.43, y: 550, width: 142, height: 21)
+            self.srDev.frame = CGRect(x: 120.26, y: 550, width: 132, height: 21)
+            self.prManager.frame = CGRect(x: 124.08, y: 550, width: 126, height: 21)
+            self.graphicDesign.frame = CGRect(x: 116.43, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 143.18, y: 550, width: 87, height: 21)
             
-            self.teamLable.frame = CGRect(x: 141.84, y: 63, width: 91, height: 24)
+            self.teamLabel.frame = CGRect(x: 141.84, y: 63, width: 91, height: 24)
             self.version.frame = CGRect(x: 117.71, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
-
             
             
             self.devOne.frame = CGRect(x: 124, y: 550, width: 125, height: 21)
@@ -180,19 +163,17 @@ class AboutViewController: UIViewController {
             self.devSeven.frame = CGRect(x: 134.27, y: 550, width: 105, height: 21)
             self.devEight.frame = CGRect(x: 119.5, y: 550, width: 135, height: 21)
             self.devNine.frame = CGRect(x: 140, y: 550, width: 94, height: 21)
-            
         }else if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
-            self.srDevLabel.frame = CGRect(x: 93.55, y: 550, width: 132, height: 21)
-            self.prManagerLabel.frame = CGRect(x: 96.9, y: 550, width: 126, height: 21)
-            self.graphicDesignlabel.frame = CGRect(x: 85.54, y: 550, width: 142, height: 21)
+            self.srDev.frame = CGRect(x: 93.55, y: 550, width: 132, height: 21)
+            self.prManager.frame = CGRect(x: 96.9, y: 550, width: 126, height: 21)
+            self.graphicDesign.frame = CGRect(x: 85.54, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 115.28, y: 550, width: 87, height: 21)
             
-            self.teamLable.frame = CGRect(x: 113.75, y: 63, width: 91, height: 24)
+            self.teamLabel.frame = CGRect(x: 113.75, y: 63, width: 91, height: 24)
             self.version.frame = CGRect(x: 91.47, y: 520, width: 137, height: 38)
-
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5).isActive = true
-
+            
             
             self.devOne.frame = CGRect(x: 96.9, y: 550, width: 125, height: 21)
             self.devTwo.frame = CGRect(x: 115.28, y: 550, width: 89, height: 21)
@@ -203,12 +184,11 @@ class AboutViewController: UIViewController {
             self.devSeven.frame = CGRect(x: 106.92, y: 550, width: 105, height: 21)
             self.devEight.frame = CGRect(x: 91.88, y: 550, width: 135, height: 21)
             self.devNine.frame = CGRect(x: 111.94, y: 550, width: 94, height: 21)
-            
         }
         
         
         
-
+        
     }
     func animateContent () {
         
@@ -216,8 +196,8 @@ class AboutViewController: UIViewController {
             withDuration: 5,
             delay: 0,
             animations: {
-                self.srDevLabel.alpha = 1.0
-                self.srDevLabel.frame = self.srDevLabel.frame.offsetBy(dx: 0, dy: -444)
+                self.srDev.alpha = 1.0
+                self.srDev.frame = self.srDev.frame.offsetBy(dx: 0, dy: -444)
         },
             completion: nil)
         
@@ -225,8 +205,8 @@ class AboutViewController: UIViewController {
             withDuration: 5,
             delay: 1.2,
             animations: {
-                self.prManagerLabel.alpha = 1.0
-                self.prManagerLabel.frame = self.prManagerLabel.frame.offsetBy(dx: 0, dy: -369)
+                self.prManager.alpha = 1.0
+                self.prManager.frame = self.prManager.frame.offsetBy(dx: 0, dy: -369)
         },
             completion: nil)
         
@@ -234,8 +214,8 @@ class AboutViewController: UIViewController {
             withDuration: 5,
             delay: 2.4,
             animations: {
-                self.graphicDesignlabel.alpha = 1.0
-                self.graphicDesignlabel.frame = self.graphicDesignlabel.frame.offsetBy(dx: 0, dy: -294)
+                self.graphicDesign.alpha = 1.0
+                self.graphicDesign.frame = self.graphicDesign.frame.offsetBy(dx: 0, dy: -294)
         }, completion: nil)
         
         UIView.animateKeyframes(
@@ -253,7 +233,7 @@ class AboutViewController: UIViewController {
             animations: {
                 self.devOne.alpha = 1.0
                 self.devOne.frame = self.devOne.frame.offsetBy(dx: 0, dy: -149)
-                },
+        },
             completion: nil)
         
         UIView.animateKeyframes(
@@ -272,7 +252,7 @@ class AboutViewController: UIViewController {
             animations: {
                 self.devThree.alpha = 1.0
                 self.devThree.frame = self.devThree.frame.offsetBy(dx: 0, dy: -89)
-                },
+        },
             completion: nil)
         
         UIView.animateKeyframes(
@@ -324,6 +304,7 @@ class AboutViewController: UIViewController {
                 self.devNine.frame = self.devNine.frame.offsetBy(dx: 0, dy: -29)
         }, completion: nil)
     }
-
-
+    
+    
 }
+

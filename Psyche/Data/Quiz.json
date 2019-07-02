@@ -113,10 +113,10 @@
             ],
             [
                 "What happens to the Psyche spacecraft in Phase E of the mission?",
-                "The spacecraft is put together.",
-                "The spacecraft undergoes its final maintenance testing",
-                "The spacecraft arrives at (16) Psyche",
-                "The spacecraft is shutdown",
+"Spacecraft is put together.",
+" Final maintenance testing",
+"The spacecraft arrives at (16) Psyche",
+"Spacecraft is shutdown",
                 "3"
             ],
             [
@@ -287,7 +287,7 @@
             ],
             [
                 "At what facility is the Gamma Ray and Neutron Spectrometer being built?",
-                "Applied Physics Lab at John Hopkins University",
+"Applied Physics Lab ",
                 "Arizona State University",
                 "University of California, Los Angeles",
                 "Massachusetts Institute of Technology",
@@ -479,7 +479,7 @@
             ],
             [
                 " What NASA program is the Psyche mission a part of?",
-                "Solar System Exploration Research Virtual Institute",
+"SSERVI",
                 "New Frontiers",
                 "Outer Planets Flagship",
                 "Discovery",
@@ -638,7 +638,7 @@
                 "Massachusetts Institute of Technology",
                 "University of California",
                 "Southwest Research Institute",
-                "Johns Hopkins University",
+"Applied Physics Lab",
                 "4"
             ],
             [
@@ -659,7 +659,7 @@
             ],
             [
                 "What NASA program is the Psyche mission a part of?",
-                "Solar System Exploration Research Virtual Institute",
+"SSERVI",
                 "New Frontiers",
                 "Outer Planets Flagship",
                 "Discovery",
@@ -1074,12 +1074,10 @@
                 "4"
             ],
             [
-                "What does NASA stand for?",
-                "National Aeronautics and Solar Alliances",
-                "National Aeronautics and Space Administration",
-                "National Aviation and System Advances",
-                "National Astronaut and System Analysis",
-                "2"
+"NASA stands for National Aeronautics and Space Administration.",
+"True",
+"False",
+"1"
             ],
             [
                 "Why wasn’t Apollo 13 able to land on the moon?",
@@ -1258,12 +1256,10 @@
                 "4"
             ],
             [
-                "What were Buzz Aldrin’s first words on the Moon?",
-                "Infinity and beyond.",
-                "I wonder if I can get in the bottom of this crater hole.",
-                "Hey, who’s been tracking up my lunar surface?",
-                "Beautiful view. Magnificent desolation.",
-                "4"
+" Buzz Aldrin’s first words on the Moon were: Beautiful view. Magnificent desolation.",
+"True",
+"False",
+"1"
             ]
         ],
         "nasa7": [
@@ -1306,12 +1302,10 @@
                 "2"
             ],
             [
-                "NASA replaced what US federal agency",
-                "Federal Aeronautics Center",
-                "Space Explorations and Communications",
-                "National Advisory Committee for Aeronautics",
-                "American Space Agency",
-                "3"
+"NASA replaced a previous US federal agency known as the National Advisory Committee for Aeronautics.",
+"True",
+"False",
+"1"
             ],
             [
                 "What is NASA’s slogan?",
@@ -2037,9 +2031,9 @@
             ],
             [
                 "What is not a purpose of the Deep Space Network?",
-                "Support interplanetary spacecraft missions.",
-                "Provide radar observations.",
-                "Provide radio astronomy observations.",
+"Support spacecraft missions.",
+" radar observations.",
+" radio astronomy observations.",
                 "Send spacecraft to space.",
                 "4"
             ]
@@ -2246,7 +2240,7 @@
                 "Jet Stream",
                 "Main Stream",
                 "Gulf Stream",
-                "Easterlie winds",
+"Easterly winds",
                 "3"
             ],
             [
@@ -2334,7 +2328,7 @@
                 "Jet Stream",
                 "Main Stream",
                 "Gulf Stream",
-                "Easterlie winds",
+"Easterly winds",
                 "3"
             ],
             [
@@ -2612,12 +2606,10 @@
                 "1"
             ],
             [
-                "What does LASER stand for?",
-                "Luminescence Amplified for Stationary Efficient Reporting",
-                "Light Amplification by Stimulated Emission of Radiation",
-                "Light Amplification through Simple Ejected Radiation",
-                "LASER does not stand for anything.",
-                "2"
+" LASER stands for Light Amplification by Stimulated Emission of Radiation.",
+"True",
+"False",
+"1"
             ],
             [
                 "Who discovered lithium?",

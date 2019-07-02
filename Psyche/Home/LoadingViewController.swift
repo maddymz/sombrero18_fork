@@ -27,11 +27,17 @@ class LoadingViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         if showAnimation {
             showLoadingScreen()
         }
     }
   
+    @IBAction func unwinedToMainScreen(segue: UIStoryboardSegue){
+      
+    }
+    
+   
     func showLoadingScreen(){
         //Add loading subviews to the main view
         View1Bck.translatesAutoresizingMaskIntoConstraints = false

@@ -286,12 +286,6 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
             
             // Update countdown clock to match phase that was just tapped
             let item = cellItems[selectedIndex]
-//            if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
-//                countdownClockSmall.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
-//            }else {
-//                countdownClockGeneral.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
-//            }
-            
             if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
                 countdownClockSmall.changeCountdown(phase: item.phase.phaseInfo, date: item.phase.dateInfo)
             }else if UIDevice.current.screenType == .iPhone_XR{
@@ -308,6 +302,14 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         self.tableView.reloadRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
         self.tableView.endUpdates()
     }
+    
+//    // segue to aboutViewController - Madhukar raj 06/25
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "aboutSegueTimeline" {
+//            segue.destination as! AboutViewController
+//        }
+//    }
+//    
     
     //menu functions (include in all pages with hamburger)
     @IBAction func menuClicked(_ sender: Any) {

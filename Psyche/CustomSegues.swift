@@ -293,16 +293,16 @@ class AboutScreenSegue: UIStoryboardSegue {
         let src = self.source as! HomeViewController
         let dst = self.destination as! AboutViewController
         
-        
+        print("destinaton", dst)
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
-         src.present(dst, animated: false, completion: nil)
+        src.present(dst, animated: false, completion: nil)
     }
 }
 
 class unwinedAboutScreenSegue: UIStoryboardSegue {
     override func perform() {
         let src = self.source as! AboutViewController
-        let dst = self.destination as!  LoadingViewController
+        let dst = self.destination as!  HomeViewController
         
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
         src.dismiss(animated: false, completion: nil)
@@ -312,7 +312,7 @@ class unwinedAboutScreenSegue: UIStoryboardSegue {
 class AboutScreenSegueTimeline: UIStoryboardSegue {
     override func perform() {
         let src = self.source as! TimelineTableViewController
-        let dst = self.destination as! AboutViewController
+        let dst = self.destination as! AboutTimelineViewController
         
         
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
@@ -322,7 +322,7 @@ class AboutScreenSegueTimeline: UIStoryboardSegue {
 
 class unwinedAboutScreenSegueTimeline: UIStoryboardSegue {
     override func perform() {
-        let src = self.source as! AboutViewController
+        let src = self.source as! AboutTimelineViewController
         let dst = self.destination as!  TimelineTableViewController
         
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
@@ -333,7 +333,7 @@ class unwinedAboutScreenSegueTimeline: UIStoryboardSegue {
 class AboutScreenSegueGallery: UIStoryboardSegue {
     override func perform() {
         let src = self.source as! GalleryViewController
-        let dst = self.destination as! AboutViewController
+        let dst = self.destination as! AboutGalleryViewController
         
         
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
@@ -343,8 +343,21 @@ class AboutScreenSegueGallery: UIStoryboardSegue {
 
 class unwinedAboutScreenSegueGallery: UIStoryboardSegue {
     override func perform() {
-        let src = self.source as! AboutViewController
+        let src = self.source as! AboutGalleryViewController
         let dst = self.destination as!  GalleryViewController
+        
+        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        src.dismiss(animated: false, completion: nil)
+    }
+}
+
+
+class unwinedToLoadingView: UIStoryboardSegue {
+    override func perform() {
+        let src = self.source as! TriviaExitViewController
+        let dst = self.destination as!  LoadingViewController
+        
+        dst.showAnimation = false
         
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
         src.dismiss(animated: false, completion: nil)

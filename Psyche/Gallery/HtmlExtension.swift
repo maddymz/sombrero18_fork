@@ -37,17 +37,21 @@ extension String{
                     }
                 }
             }
+            print("htmlstring", htmlCSSString)
+            if htmlCSSString.contains("<if"){
+                let startindex = htmlCSSString.index(of: "<if")
+                let endindex = htmlCSSString.index(of: "></p>")
+                htmlCSSString.removeSubrange(startindex!...endindex!)
+                let anchorTag = "<a class=" + "link" + " " +  "href=\(urlSubString)" + " " + "target=" + "_blank" + " " + "rel=noopener noreferrer" + ">View the full video</a>"
+                
+                htmlCSSString.replaceSubrange(startindex!..<htmlCSSString.endIndex, with: anchorTag)
+            }
             
-            let startindex = htmlCSSString.index(of: "<if")
-            let endindex = htmlCSSString.index(of: "></p>")
-//            htmlCSSString.removeSubrange(startindex!...endindex!)
-            let anchorTag = "<a class=" + "link" + " " +  "href=\(urlSubString)" + " " + "target=" + "_blank" + " " + "rel=noopener noreferrer" + ">View the full video</a>"
-            
-//            htmlCSSString.replaceSubrange(startindex!..<htmlCSSString.endIndex, with: anchorTag)
             guard let data = htmlCSSString.data(using: String.Encoding.utf8) else {
                 return nil
             }
             
+            print("htmlStringData", htmlCSSString.data)
             return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
         }catch{
             return NSAttributedString()
