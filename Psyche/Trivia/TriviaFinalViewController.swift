@@ -38,9 +38,19 @@ class TriviaFinalViewController: UIViewController {
     var profile_image = 1
     var finalScore = 0;
     
+    @IBOutlet weak var letsPlayButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if finalScore < (opponent?.highScore)! {
+            self.share.isHidden = true
+            self.shareButton.isHidden = true
+            self.letsPlayButton.translatesAutoresizingMaskIntoConstraints = false
+            
+            self.letsPlayButton.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
+            self.letsPlayButton.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -10).isActive = true
+            self.letsPlayButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+            self.letsPlayButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        }
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TriviaInfo")
@@ -139,7 +149,6 @@ class TriviaFinalViewController: UIViewController {
     @IBAction func shareDialog(_ sender: Any) {
         let option1 = false //Set to true when not on simulator
         if(option1) {
-            
             if (TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers()) {
                 // App must have at least one logged-in user to compose a Tweet
                 let composer = TWTRComposerViewController(initialText: "I beat \(self.opponentName.text!) with a score of \(self.finalScoreLabel.text!)! #Psyche", image: self.takeScreenshot(), videoData : nil)

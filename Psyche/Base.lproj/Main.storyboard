@@ -1501,6 +1501,7 @@ Test 3</string>
                         <outlet property="closeButton" destination="Kqq-Ov-u9x" id="vgG-U9-Ehc"/>
                         <outlet property="completeMessage" destination="n7G-f1-PrC" id="cK9-Nu-2iJ"/>
                         <outlet property="finalScoreLabel" destination="21y-xj-dKs" id="1JH-Wc-gJZ"/>
+                        <outlet property="letsPlayButton" destination="rFH-Vn-r5Z" id="WN0-qz-4qd"/>
                         <outlet property="mainView" destination="8CU-2z-Exa" id="Kj8-km-PqB"/>
                         <outlet property="nasaLogo" destination="brQ-fX-ZYo" id="mRq-Yq-6CQ"/>
                         <outlet property="opponentAvatar" destination="NVY-kw-kZk" id="YxJ-21-piv"/>
@@ -3183,13 +3184,12 @@ yiTPAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAJNE
         <image name="new-timeline-second" width="50" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sMQ-h8-wGb"/>
         <segue reference="cAV-Af-ffN"/>
         <segue reference="nWd-5Z-J5P"/>
         <segue reference="5fb-a0-hGe"/>
         <segue reference="xJ0-bY-Hqd"/>
         <segue reference="rhv-Gl-DYl"/>
-        <segue reference="Fy8-jN-GE6"/>
+        <segue reference="azk-ax-l3W"/>
         <segue reference="d5N-7C-AG6"/>
         <segue reference="MXS-FT-LcY"/>
         <segue reference="flH-1B-IPE"/>
