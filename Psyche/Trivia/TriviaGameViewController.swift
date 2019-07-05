@@ -444,7 +444,7 @@ class TriviaGameViewController: UIViewController {
             questionNo.heightAnchor.constraint(equalToConstant: 30).isActive = true
             question.topAnchor.constraint(equalTo: guide.topAnchor, constant: 305).isActive = true
             question.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 35).isActive = true
-            question.widthAnchor.constraint(equalToConstant: 240).isActive = true
+            question.widthAnchor.constraint(equalToConstant: 250).isActive = true
             question.heightAnchor.constraint(equalToConstant: 70).isActive = true
             answer1.topAnchor.constraint(equalTo: guide.topAnchor, constant: 381).isActive = true
             answer1.widthAnchor.constraint(equalToConstant: 248).isActive = true
@@ -714,6 +714,10 @@ class TriviaGameViewController: UIViewController {
         questionCard.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -16).isActive = true
         questionCard.topAnchor.constraint(equalTo: guide.topAnchor, constant: 230).isActive = true
         self.question.font = UIFont(name: self.question.font.fontName, size: 14)
+        self.answer1.titleLabel?.font = UIFont(name: (self.answer1.titleLabel?.font.fontName)!, size: 12)
+        self.answer2.titleLabel?.font = UIFont(name: (self.answer2.titleLabel?.font.fontName)!, size: 12)
+        self.answer3.titleLabel?.font = UIFont(name: (self.answer3.titleLabel?.font.fontName)!, size: 12)
+        self.answer4.titleLabel?.font = UIFont(name: (self.answer4.titleLabel?.font.fontName)!, size: 12)
         self.timerLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 28).isActive = true
         self.timerLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 151.5).isActive = true
       } else if UIDevice.current.screenType == .iPhone_XSMax {
