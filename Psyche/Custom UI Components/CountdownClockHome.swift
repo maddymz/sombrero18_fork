@@ -106,7 +106,6 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         
         if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
             daysMLabel.frame = CGRect(x: yearMLabelX + 3, y: 41, width: 50, height: 21)
-
         } else {
             daysMLabel.frame = CGRect(x: yearMLabelX + 3, y: 41, width: 110, height: 21)
 
@@ -177,7 +176,6 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
                     , width: self.timeBlurWidth, height: self.timeBlurHeight)
                 self.dropdownView.frame = CGRect(x: 0, y: self.timeBlurYPos - self.timeBlurHeight
                     , width: self.timeBlurWidth, height: self.timeBlurHeight)
-                self.updatePhaseImg()
             }, completion: { (finished: Bool) in
                 self.blurEffectView.removeFromSuperview()
                 self.dropdownView.removeFromSuperview()
@@ -236,9 +234,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
                 
                 let dateView = DateView()
                 dateView.frame = CGRect(x: 0, y: i * separation, width: Int(self.bounds.width), height: separation)
-                let dateLabel = UILabel()
-                dateLabel.frame = CGRect(x: dateLabelX, y: dateLabelYConst, width: 100, height: 100)
-                
+               
 //                if (result.0 != "") { // years > 0
                     let yearLabel = UILabel()
                     yearLabel.frame = CGRect(x: yearLabelX, y: timeLabelYConst, width: 100, height: 100)
@@ -285,11 +281,17 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
                     dateView.dayLabel = dayLabel
                     dateView.hourLabel = hourLabel
 
-                
+                let dateLabel = UILabel()
+                dateLabel.frame = CGRect(x: dateLabelX, y: dateLabelYConst, width: 100, height: 100)
                 dateLabel.text = phase.0
                 dateLabel.textColor = UIColor.black
                 dateLabel.font = dateLabel.font.withSize(10)
                 dateView.addSubview(dateLabel)
+                
+                if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+                    dateLabel.frame = CGRect(x: dateLabelX - 10, y: dateLabelYConst, width: 100, height: 100)
+                    dateLabel.font = dateLabel.font.withSize(8)
+                }
                 
                 if (i < max) {
                     let line = UIView()
@@ -354,7 +356,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         
         dateComponents.year = 2021
         dateComponents.month = 1
-        dateComponents.day = 21
+        dateComponents.day = 22
         phases.append(("PHASE D", "D", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2022
@@ -401,6 +403,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     // Initialize countdown clock
     func initTimer() {
         countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimerLabel)
+        RunLoop.current.add(countdownTimer!, forMode: .commonModes)
     }
     
     // Updates all the timer labels

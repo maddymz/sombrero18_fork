@@ -28,7 +28,6 @@ extension String{
                 if element.contains("https"){
                     let urlSub = element
                     let newUrl = urlSub.split(separator: "\"")
-                    print("url array", newUrl)
                     for item in newUrl {
                         if item.contains("https") {
                             var finalUrl = item.split(separator: "?")
@@ -37,7 +36,6 @@ extension String{
                     }
                 }
             }
-            print("htmlstring", htmlCSSString)
             if htmlCSSString.contains("<if"){
                 let startindex = htmlCSSString.index(of: "<if")
                 let endindex = htmlCSSString.index(of: "></p>")
@@ -51,7 +49,6 @@ extension String{
                 return nil
             }
             
-            print("htmlStringData", htmlCSSString.data)
             return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
         }catch{
             return NSAttributedString()

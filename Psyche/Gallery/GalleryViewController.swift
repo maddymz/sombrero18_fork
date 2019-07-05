@@ -201,6 +201,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if(self.gallery[(indexPath.row)].videoURL != ""){
+            layout()
             titleLabel.text = self.gallery[(indexPath.row)].title
             titleLabel.textColor = UIColor.black
             titleLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(18))
@@ -215,25 +216,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         else{
             video.isHidden = true
             imageViewer.isHidden = false
-            if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
-                let guide = secondViewer.safeAreaLayoutGuide
-                self.imageViewer.translatesAutoresizingMaskIntoConstraints = false
-                self.captionText.translatesAutoresizingMaskIntoConstraints = false
-                self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
-                self.imageViewer.heightAnchor.constraint(equalToConstant: 255).isActive = true
-                self.imageViewer.widthAnchor.constraint(equalToConstant: 255).isActive  = true
-                self.imageViewer.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
-                self.imageViewer.topAnchor.constraint(equalTo: guide.topAnchor, constant: 40).isActive = true
-                self.captionText.widthAnchor.constraint(equalToConstant: 255).isActive = true
-                self.captionText.heightAnchor.constraint(equalToConstant: 100).isActive = true
-                self.captionText.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 35).isActive = true
-                self.captionText.topAnchor.constraint(equalTo: guide.topAnchor, constant: 335).isActive  = true
-                self.titleLabel.widthAnchor.constraint(equalToConstant: 255).isActive = true
-                self.titleLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 306).isActive  = true
-                self.titleLabel.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
-                self.titleLabel.font = UIFont(name: self.titleLabel.font.fontName, size: 5)
-                
-            }
+            layout()
             let processor = DownsamplingImageProcessor(size: CGSize(width: 255, height: 255))
             imageViewer.kf.indicatorType = .activity
             imageViewer.kf.setImage(
@@ -303,12 +286,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         let substring = videoUrl.split(separator: "/")
         let host = substring[1].split(separator: ".")
         let finalString = host[1].split(separator: ".")
-        print("finalstring:", finalString)
-        print("host:", host)
-        print("substring:", substring)
-        print("usrlorigin:",substring[1])
-        print("urlsource", urlSource)
-       
+     
         func play(videoUrl: URL){
             let player = AVPlayer(url: videoUrl)
             self.playerLayer = AVPlayerLayer(player: player)
@@ -470,6 +448,34 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         return indexPath.item % 3 == 0 ? FMMosaicCellSize.big : FMMosaicCellSize.small
     }
     
+    
+    /**
+     * author: Madhukar Raj
+     * method: @layout()
+     * this method sets the second view as per iphone 5 screen
+     */
+    func layout() {
+        if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            let guide = secondViewer.safeAreaLayoutGuide
+            self.imageViewer.translatesAutoresizingMaskIntoConstraints = false
+            self.captionText.translatesAutoresizingMaskIntoConstraints = false
+            self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            self.imageViewer.heightAnchor.constraint(equalToConstant: 255).isActive = true
+            self.imageViewer.widthAnchor.constraint(equalToConstant: 255).isActive  = true
+            self.imageViewer.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
+            self.imageViewer.topAnchor.constraint(equalTo: guide.topAnchor, constant: 40).isActive = true
+            self.captionText.widthAnchor.constraint(equalToConstant: 255).isActive = true
+            self.captionText.heightAnchor.constraint(equalToConstant: 100).isActive = true
+            self.captionText.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 35).isActive = true
+            self.captionText.topAnchor.constraint(equalTo: guide.topAnchor, constant: 335).isActive  = true
+            self.titleLabel.widthAnchor.constraint(equalToConstant: 255).isActive = true
+            self.titleLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 306).isActive  = true
+            self.titleLabel.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 5).isActive = true
+            self.titleLabel.font = UIFont(name: self.titleLabel.font.fontName, size: 5)
+            
+        }
+    }
+    
     //menu functions (include in all pages with hamburger)
     @IBAction func menuClicked(_ sender: Any) {
         self.menuBlur.layer.zPosition = 3
@@ -495,14 +501,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             self.menuBlur.layer.isHidden = true
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "aboutGallerySegue"{
-            let sender = sender as! UIButton
-            let receiver = segue.destination as! AboutViewController
-        }
-        
-    }
+
     
     @IBAction func events(_ sender: Any) {
         menuHelper.events(vc: self)
