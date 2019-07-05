@@ -70,12 +70,8 @@ class TriviaExitViewController: UIViewController {
 
     }
     
-//    @IBAction func unwinedToMainScreen (segue: UIStoryboardSegue){
-//        print("to the homescreen...!!!")
-//    }
-    
     @IBAction func yesBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toHomePage", sender: self) // Performs segue to the tab bar controller which goes to the home tab
+            self.performSegue(withIdentifier: "toHomePage", sender: nil) // Performs segue to the tab bar controller which goes to the home tab
     }
 
     @IBAction func noBtnPressed(_ sender: Any) {

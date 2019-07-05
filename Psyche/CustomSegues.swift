@@ -161,8 +161,8 @@ class socialmediaSegue: UIStoryboardSegue {
         let src = self.source as! HomeViewController
         let dst = self.destination as! SocialMediaViewController
         
-        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
-        
+        let window = UIApplication.shared.delegate?.window!
+        window?.insertSubview(dst.view, aboveSubview: src.view)
         if self.identifier == "facebook"{
             dst.socialMediaTitle.text = "Facebook"
             let url = URL(string: "https://facebook.com/nasapsyche")!
@@ -184,7 +184,6 @@ class socialmediaSegue: UIStoryboardSegue {
             let reqObj = URLRequest(url: url)
             dst.wbView.load(reqObj)
         }
-        
         src.present(dst, animated: false, completion: nil)
     }
 }
@@ -192,9 +191,6 @@ class socialmediaSegue: UIStoryboardSegue {
 class unwinedSocialmediaSegue: UIStoryboardSegue {
     override func perform() {
         let src = self.source as! SocialMediaViewController
-        let dst = self.destination as!  LoadingViewController
-        
-        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
         src.dismiss(animated: false, completion: nil)
     }
 }
@@ -205,7 +201,8 @@ class socialmediaSegueTimeline: UIStoryboardSegue {
         let src = self.source as! TimelineTableViewController
         let dst = self.destination as! SocialMediaTimelineViewController
         
-        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        let window = UIApplication.shared.delegate?.window!
+        window?.insertSubview(dst.view, aboveSubview: src.view)
         
         if self.identifier == "facebook"{
             dst.socialMediaTitle.text = "Facebook"
@@ -228,7 +225,6 @@ class socialmediaSegueTimeline: UIStoryboardSegue {
             let reqObj = URLRequest(url: url)
             dst.wbView.load(reqObj)
         }
-        
         src.present(dst, animated: false, completion: nil)
     }
 }
@@ -236,9 +232,6 @@ class socialmediaSegueTimeline: UIStoryboardSegue {
 class unwinedSocialmediaSegueTimeline: UIStoryboardSegue {
     override func perform() {
         let src = self.source as! SocialMediaTimelineViewController
-        let dst = self.destination as!  TimelineTableViewController
-        
-        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
         src.dismiss(animated: false, completion: nil)
     }
 }
@@ -250,7 +243,10 @@ class socialmediaSegueGallery: UIStoryboardSegue {
         let src = self.source as! GalleryViewController
         let dst = self.destination as! SocialMediaGalleryViewController
         
-        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+
+        
+        let window = UIApplication.shared.delegate?.window!
+        window?.insertSubview(dst.view, aboveSubview: src.view)
         
         if self.identifier == "facebook"{
             dst.socialMediaTitle.text = "Facebook"
@@ -273,7 +269,6 @@ class socialmediaSegueGallery: UIStoryboardSegue {
             let reqObj = URLRequest(url: url)
             dst.wbView.load(reqObj)
         }
-        
         src.present(dst, animated: false, completion: nil)
     }
 }
@@ -293,8 +288,8 @@ class AboutScreenSegue: UIStoryboardSegue {
         let src = self.source as! HomeViewController
         let dst = self.destination as! AboutViewController
         
-        print("destinaton", dst)
-        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        let window = UIApplication.shared.delegate?.window!
+        window?.insertSubview(dst.view, aboveSubview: src.view)
         src.present(dst, animated: false, completion: nil)
     }
 }
@@ -302,9 +297,6 @@ class AboutScreenSegue: UIStoryboardSegue {
 class unwinedAboutScreenSegue: UIStoryboardSegue {
     override func perform() {
         let src = self.source as! AboutViewController
-        let dst = self.destination as!  HomeViewController
-        
-        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
         src.dismiss(animated: false, completion: nil)
     }
 }
@@ -314,8 +306,9 @@ class AboutScreenSegueTimeline: UIStoryboardSegue {
         let src = self.source as! TimelineTableViewController
         let dst = self.destination as! AboutTimelineViewController
         
+        let window = UIApplication.shared.delegate?.window!
         
-        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        window?.insertSubview(dst.view, aboveSubview: src.view)
         src.present(dst, animated: false, completion: nil)
     }
 }
@@ -323,9 +316,6 @@ class AboutScreenSegueTimeline: UIStoryboardSegue {
 class unwinedAboutScreenSegueTimeline: UIStoryboardSegue {
     override func perform() {
         let src = self.source as! AboutTimelineViewController
-        let dst = self.destination as!  TimelineTableViewController
-        
-        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
         src.dismiss(animated: false, completion: nil)
     }
 }
@@ -335,8 +325,9 @@ class AboutScreenSegueGallery: UIStoryboardSegue {
         let src = self.source as! GalleryViewController
         let dst = self.destination as! AboutGalleryViewController
         
+        let window = UIApplication.shared.delegate?.window!
         
-        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
+        window?.insertSubview(dst.view, aboveSubview: src.view)
         src.present(dst, animated: false, completion: nil)
     }
 }
@@ -344,22 +335,8 @@ class AboutScreenSegueGallery: UIStoryboardSegue {
 class unwinedAboutScreenSegueGallery: UIStoryboardSegue {
     override func perform() {
         let src = self.source as! AboutGalleryViewController
-        let dst = self.destination as!  GalleryViewController
-        
-        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
         src.dismiss(animated: false, completion: nil)
     }
 }
 
 
-class unwinedToLoadingView: UIStoryboardSegue {
-    override func perform() {
-        let src = self.source as! TriviaExitViewController
-        let dst = self.destination as!  LoadingViewController
-        
-        dst.showAnimation = false
-        
-        src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
-        src.dismiss(animated: false, completion: nil)
-    }
-}

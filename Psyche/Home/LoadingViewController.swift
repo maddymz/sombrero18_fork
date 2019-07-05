@@ -32,11 +32,6 @@ class LoadingViewController: UITabBarController {
             showLoadingScreen()
         }
     }
-  
-    @IBAction func unwinedToMainScreen(segue: UIStoryboardSegue){
-      
-    }
-    
    
     func showLoadingScreen(){
         //Add loading subviews to the main view
