@@ -594,31 +594,66 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         
         // scroll view
         scrollView.delegate = self
-        for image in 0...3 {
-            let imageToDisplay = UIImage(named: "\(image)")
-            let imageView = UIImageView(image: imageToDisplay)
-            let xCoordinate = view.frame.midX + view.frame.width * CGFloat(image)
-            print("xcordinate", xCoordinate)
-            print("ramehieight", view.frame.height)
-            contentWidth += view.frame.width
-            scrollView.addSubview(imageView)
+       
             
             print("screentype", UIDevice.current.screenType)
             if UIDevice.current.screenType == .iPhones_6_6s_7_8 {
-                 imageView.frame = CGRect(x: xCoordinate - 187.5, y: (view.frame.height / 2) - 335, width: view.frame.width, height: 325)
+                for image in 0...3 {
+                    let imageToDisplay = UIImage(named: "\(String(image) + "_375x325")")
+                    let imageView = UIImageView(image: imageToDisplay)
+                    let xCoordinate = view.frame.midX + view.frame.width * CGFloat(image)
+                    contentWidth += view.frame.width
+                    scrollView.addSubview(imageView)
+                    imageView.frame = CGRect(x: xCoordinate - 187.5, y: (view.frame.height / 2) - 335, width: view.frame.width, height: 325)
+                }
             } else if UIDevice.current.screenType == .iPhone_XR {
-                imageView.frame = CGRect(x: xCoordinate - 207.2, y: (view.frame.height / 2) - 450, width: view.frame.width, height: 450)
+                for image in 0...3 {
+                    let imageToDisplay = UIImage(named: "\(image)" + "_414x450")
+                    let imageView = UIImageView(image: imageToDisplay)
+                    let xCoordinate = view.frame.midX + view.frame.width * CGFloat(image)
+                    contentWidth += view.frame.width
+                    scrollView.addSubview(imageView)
+                    imageView.frame = CGRect(x: xCoordinate - 207.2, y: (view.frame.height / 2) - 450, width: view.frame.width, height: 450)
+                }
             } else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
-                imageView.frame = CGRect(x: xCoordinate - 207, y: (view.frame.height / 2) - 385, width: view.frame.width, height: 380)
+                for image in 0...3 {
+                    let imageToDisplay = UIImage(named: "\(image)" + "_414x380")
+                    let imageView = UIImageView(image: imageToDisplay)
+                    let xCoordinate = view.frame.midX + view.frame.width * CGFloat(image)
+                    contentWidth += view.frame.width
+                    scrollView.addSubview(imageView)
+                    imageView.frame = CGRect(x: xCoordinate - 207, y: (view.frame.height / 2) - 385, width: view.frame.width, height: 380)
+                }
             }else if UIDevice.current.screenType == .iPhones_X_XS{
-                imageView.frame = CGRect(x: xCoordinate - 187.5, y: (view.frame.height / 2) - 410, width: view.frame.width, height: 400)
+                for image in 0...3 {
+                    let imageToDisplay = UIImage(named: "\(image)" + "_375x400")
+                    let imageView = UIImageView(image: imageToDisplay)
+                    let xCoordinate = view.frame.midX + view.frame.width * CGFloat(image)
+                    contentWidth += view.frame.width
+                    scrollView.addSubview(imageView)
+                    imageView.frame = CGRect(x: xCoordinate - 187.5, y: (view.frame.height / 2) - 410, width: view.frame.width, height: 400)
+                }
             }else if UIDevice.current.screenType == .iPhone_XSMax{
-                imageView.frame = CGRect(x: xCoordinate - 207.2, y: (view.frame.height / 2) - 450, width: view.frame.width, height: 450)
+                for image in 0...3 {
+                    let imageToDisplay = UIImage(named: "\(image)" + "_414x450")
+                    let imageView = UIImageView(image: imageToDisplay)
+                    let xCoordinate = view.frame.midX + view.frame.width * CGFloat(image)
+                    contentWidth += view.frame.width
+                    scrollView.addSubview(imageView)
+                    imageView.frame = CGRect(x: xCoordinate - 207.2, y: (view.frame.height / 2) - 450, width: view.frame.width, height: 450)
+                }
             } else if UIDevice.current.screenType == .iPhones_5_5s_5c_SE{
-                imageView.frame = CGRect(x: xCoordinate - 160, y: (view.frame.height / 2) - 290, width: view.frame.width, height: 250)
+                for image in 0...3 {
+                    let imageToDisplay = UIImage(named: "\(image)" + "_320x250")
+                    let imageView = UIImageView(image: imageToDisplay)
+                    let xCoordinate = view.frame.midX + view.frame.width * CGFloat(image)
+                    contentWidth += view.frame.width
+                    scrollView.addSubview(imageView)
+                    imageView.frame = CGRect(x: xCoordinate - 160, y: (view.frame.height / 2) - 290, width: view.frame.width, height: 250)
+                }
             }
            
-        }
+        
         scrollView.contentSize = CGSize(width: contentWidth, height: 1.0)
         
         // Add countdown clock component

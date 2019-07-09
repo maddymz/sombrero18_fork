@@ -37,7 +37,6 @@
 		6BD9903522C4B6B2002F197D /* AboutTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD9903422C4B6B2002F197D /* AboutTimelineViewController.swift */; };
 		6BD9903722C4B6C2002F197D /* AboutGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD9903622C4B6C2002F197D /* AboutGalleryViewController.swift */; };
 		7DA4EC440A0174E88F40ED1C /* Pods_Psyche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBCBCFD4C2D84175D328683A /* Pods_Psyche.framework */; };
-		7E71D960207F3D6700A33C4A /* ONe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E71D95F207F3D6600A33C4A /* ONe.gif */; };
 		B737F58622BC05CE002A2F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B737F58522BC05CE002A2F67 /* Assets.xcassets */; };
 		B737F58C22BC5019002A2F67 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737F58B22BC5019002A2F67 /* StringExtension.swift */; };
 		B737F59122BD684B002A2F67 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737F59022BD684B002A2F67 /* AboutViewController.swift */; };
@@ -82,7 +81,6 @@
 		6B7C259221EFEB620085AC0A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		6BD9903422C4B6B2002F197D /* AboutTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTimelineViewController.swift; sourceTree = "<group>"; };
 		6BD9903622C4B6C2002F197D /* AboutGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutGalleryViewController.swift; sourceTree = "<group>"; };
-		7E71D95F207F3D6600A33C4A /* ONe.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ONe.gif; sourceTree = "<group>"; };
 		A4C6D0B6D6F2EEC9D96D0F6E /* Pods-Psyche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psyche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psyche/Pods-Psyche.debug.xcconfig"; sourceTree = "<group>"; };
 		B737F58522BC05CE002A2F67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B737F58B22BC5019002A2F67 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 				1788479D1FE255AD00916C4D /* Info.plist */,
 				178847911FE255AD00916C4D /* AppDelegate.swift */,
 				043E1F8220343C4300455B26 /* swift+gif.swift */,
-				7E71D95F207F3D6600A33C4A /* ONe.gif */,
 				42164EC9206C249600E2BCD2 /* Psyche-Bridging-Header.h */,
 				17F1D2522076A7DC00B9B6A9 /* sideMenuHelper.swift */,
 				17F1D258207D555000B9B6A9 /* CustomSegues.swift */,
@@ -340,7 +337,6 @@
 				42F8ADE92063154600809E0F /* RobotoMono-Regular.ttf in Resources */,
 				178847971FE255AD00916C4D /* Main.storyboard in Resources */,
 				B737F58622BC05CE002A2F67 /* Assets.xcassets in Resources */,
-				7E71D960207F3D6700A33C4A /* ONe.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

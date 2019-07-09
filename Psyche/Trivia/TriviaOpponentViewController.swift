@@ -64,7 +64,7 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
                 if let highScore = result.value(forKey: "high_score") as? Int {
                     print(highScore)
 //                    playerHighScore.text = String(highScore)
-                    playerHighScore.text = String(1280)
+                    playerHighScore.text = String(highScore)
                     
                 } else {
                     print("no high score")
@@ -213,10 +213,10 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
                     cell.name.translatesAutoresizingMaskIntoConstraints = false
                     cell.name.widthAnchor.constraint(equalToConstant: 100).isActive = true
                     cell.name.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 92).isActive = true
-                    cell.score.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -35).isActive = true
+                    cell.score.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -40).isActive = true
                     cell.name.topAnchor.constraint(equalTo: guide.topAnchor, constant: 15).isActive = true
                     cell.highScore.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -2).isActive = true
-                    cell.highScore.widthAnchor.constraint(equalToConstant: 30).isActive = true
+                    cell.highScore.widthAnchor.constraint(equalToConstant: 35).isActive = true
                     cell.highScore.heightAnchor.constraint(equalToConstant: 33).isActive = true
                     cell.playButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -5).isActive = true
                     cell.playButton.widthAnchor.constraint(equalToConstant: 77).isActive = true
@@ -241,9 +241,9 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
                     cell.name.widthAnchor.constraint(equalToConstant: 100).isActive = true
                     cell.name.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 92).isActive = true
                     cell.name.topAnchor.constraint(equalTo: guide.topAnchor, constant: 15).isActive = true
-                    cell.score.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -35).isActive = true
+                    cell.score.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -40).isActive = true
                     cell.highScore.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -2).isActive = true
-                    cell.highScore.widthAnchor.constraint(equalToConstant: 30).isActive = true
+                    cell.highScore.widthAnchor.constraint(equalToConstant: 35).isActive = true
                     cell.highScore.heightAnchor.constraint(equalToConstant: 33).isActive = true
                 }
        
@@ -269,6 +269,10 @@ class TriviaOpponentViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBAction func prepareForUnwind(segue:UIStoryboardSegue){
         
+    }
+    
+    @IBAction func back(_ sender: Any){
+        performSegue(withIdentifier: "opponentToExit", sender: nil)
     }
 
     @IBAction func openNASA(_ sender: Any) {
