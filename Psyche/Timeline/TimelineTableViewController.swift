@@ -140,9 +140,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
             nasaLogo.topAnchor.constraint(equalTo: guide.topAnchor, constant: -15).isActive = true
             nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
             nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
-        } else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
-            
-        } else if UIDevice.current.screenType == .iPhones_X_XS{
+        }  else if UIDevice.current.screenType == .iPhones_X_XS{
             nasaLogo.translatesAutoresizingMaskIntoConstraints = false
             nasaTitle.translatesAutoresizingMaskIntoConstraints = false
             menuhamburger.translatesAutoresizingMaskIntoConstraints = false
@@ -203,10 +201,12 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         cell.dateLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         
         // hotfix for title size: makes font size small enough to show all shortened titles
-        if (adjustTitleSize) {
-            cell.titleLabel.font = cell.titleLabel.font.withSize(23)
+//        if (adjustTitleSize) {
+//            cell.titleLabel.font = cell.titleLabel.font.withSize(23)
+//        }
+        if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            cell.titleLabel.font = cell.titleLabel.font.withSize(15)
         }
-        
         // Grab new bulletsLabel height
         if (!fixExpandedCellHeights) {
             if UIDevice.current.screenType == .iPhones_5_5s_5c_SE{

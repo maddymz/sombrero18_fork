@@ -178,7 +178,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     }
     
     func textView(_ captionText: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        print("Link Selected!")
         return true
     }
     
@@ -202,7 +201,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         
         if(self.gallery[(indexPath.row)].videoURL != ""){
             layout()
-            titleLabel.text = self.gallery[(indexPath.row)].title
+            titleLabel.attributedText = self.gallery[(indexPath.row)].title.convertHtml(family: nil, size: 15)
             titleLabel.textColor = UIColor.black
             titleLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(18))
             if (self.gallery[(indexPath.row)].description == ""){
@@ -236,16 +235,14 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
                     print("Job failed: \(error.localizedDescription)")
                 }
             }
-            titleLabel.text = self.gallery[(indexPath.row)].title
+            titleLabel.attributedText = self.gallery[(indexPath.row)].title.convertHtml(family: nil, size: 15)
             titleLabel.textColor = UIColor.black
             titleLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(18))
-            print("date label", titleLabel.text!)
             if (self.gallery[(indexPath.row)].description == ""){
                 captionText.attributedText = self.gallery[(indexPath.row)].altText.convertHtml(family: nil , size: 10)
             } else {
                 captionText.attributedText = self.gallery[(indexPath.row)].description.convertHtml(family: nil, size: 10)
             }
-            print("captiontext:", captionText.text)
             imageViewer.layer.cornerRadius = 8
             imageViewer.clipsToBounds = true
         }
@@ -280,7 +277,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         
         let videoUrl = self.gallery[(selected)].videoURL
         let index = videoUrl.firstIndex(of: ".") ?? videoUrl.endIndex
-        print("index:", index)
         
         let urlSource = String(videoUrl[..<index])
         let substring = videoUrl.split(separator: "/")
@@ -427,7 +423,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     }
     //NUMBER OF PHOTOS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("item count:", self.gallery.count)
         return self.gallery.count
         
     }
