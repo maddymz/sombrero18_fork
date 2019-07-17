@@ -174,14 +174,14 @@ class TriviaGameViewController: UIViewController {
         shapeLayer2.strokeColor = UIColor.clear.cgColor
         timer.invalidate()
         
-        time = 10
-        timerLabel.text = "10"
+        time = 15
+        timerLabel.text = "15"
         
         timer = Timer.scheduledTimer(timeInterval: 0.999, target: self, selector: #selector(TriviaGameViewController.startAction), userInfo: nil, repeats: true)
         
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         basicAnimation.toValue = 0
-        basicAnimation.duration = 10
+        basicAnimation.duration = 15
         shapeLayer.add(basicAnimation, forKey: "basic")
         
     }
@@ -208,6 +208,40 @@ class TriviaGameViewController: UIViewController {
             eEndAngle = 4.084187276446581
         } else if (time < 1) {
             eEndAngle = 4.712505807162981
+        }
+        
+        
+        if (time == 14) {
+            eEndAngle = -0.9423609692828735
+        } else if (time == 13) {
+            eEndAngle = -0.3140424385664735
+        } else if (time == 12) {
+            eEndAngle = 0.3142760921499265
+        } else if (time == 11) {
+            eEndAngle = 0.9425946228663266
+        } else if (time == 10) {
+            eEndAngle = 1.570913153582727
+        } else if (time == 9) {
+            eEndAngle = 2.199231684297381
+        } else if (time == 8) {
+            eEndAngle = 2.827550215013781
+        } else if (time == 7) {
+            eEndAngle = 3.455868745730181
+        } else if (time == 6) {
+            eEndAngle = 4.084187276446581
+        }else if (time == 5){
+            eEndAngle = 5.084187276446581
+        }else if (time == 4){
+            eEndAngle = 5.454187276446581
+        }else if (time == 3){
+            eEndAngle = 6.084187276446581
+        }else if (time == 2){
+            eEndAngle = 6.484187276446581
+        }else if (time == 1){
+            eEndAngle = 7.084187276446581
+        }
+        else if (time < 1) {
+            eEndAngle = 7.712505807162981
         }
         
         if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {

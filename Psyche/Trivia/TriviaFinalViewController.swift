@@ -27,7 +27,7 @@ class TriviaFinalViewController: UIViewController {
     
     @IBOutlet weak var shareMessage: UILabel!
     
-    @IBOutlet weak var share: UIButton!
+//    @IBOutlet weak var share: UIButton!
     @IBOutlet weak var nasaLogo: UIImageView!
     @IBOutlet weak var closeButton: UIButton!
     //category buttons
@@ -42,7 +42,7 @@ class TriviaFinalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if finalScore < (opponent?.highScore)! {
-            self.share.isHidden = true
+//            self.share.isHidden = true
             self.shareButton.isHidden = true
             self.letsPlayButton.translatesAutoresizingMaskIntoConstraints = false
             
@@ -213,7 +213,7 @@ class TriviaFinalViewController: UIViewController {
             completeMessage.translatesAutoresizingMaskIntoConstraints = false
             mainView.translatesAutoresizingMaskIntoConstraints = false
             shareMessage.translatesAutoresizingMaskIntoConstraints = false
-            share.translatesAutoresizingMaskIntoConstraints = false
+//            share.translatesAutoresizingMaskIntoConstraints = false
             self.opponentQuote.translatesAutoresizingMaskIntoConstraints = false
             opponentAvatar.widthAnchor.constraint(equalToConstant: 130).isActive = true
             opponentAvatar.heightAnchor.constraint(equalToConstant: 130).isActive = true
@@ -243,8 +243,8 @@ class TriviaFinalViewController: UIViewController {
             shareMessage.font = UIFont(name: completeMessage.font.fontName, size: 14)
             mainView.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 3).isActive = true
             mainView.centerYAnchor.constraint(equalTo: guide.centerYAnchor, constant: 50).isActive = true
-            share.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 5).isActive = true
-            share.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -5).isActive = true
+//            share.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 5).isActive = true
+//            share.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -5).isActive = true
             self.opponentQuote.font = UIFont(name: self.opponentQuote.font.fontName, size: 10)
             self.opponentQuote.topAnchor.constraint(equalTo: guide.topAnchor, constant: 444).isActive = true
             self.opponentQuote.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 4).isActive = true
