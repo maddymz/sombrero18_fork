@@ -24,7 +24,7 @@ class TriviaGameViewController: UIViewController {
     var score = 0
     
     //timer variables
-    var time = 10
+    var time = 15
     var timer = Timer()
     let shapeLayer = CAShapeLayer()
     let shapeLayer2 = CAShapeLayer()
@@ -57,6 +57,9 @@ class TriviaGameViewController: UIViewController {
         if (time > 0) {
             time -= 1
             timerLabel.text = "\(time)"
+            if timerLabel.text == "10" {
+                timerLabel.frame = CGRect(x: 140.5, y: 50, width: 42, height: 21)
+            }
         } else {
             runAnimatePause()
             UIView.animate(withDuration: 0.4, animations: {
@@ -188,61 +191,38 @@ class TriviaGameViewController: UIViewController {
     
     @objc private func runAnimatePause() {
         var eEndAngle = -1.5706795
-        if (time == 9) {
-            eEndAngle = -0.9423609692828735
-        } else if (time == 8) {
-            eEndAngle = -0.3140424385664735
-        } else if (time == 7) {
-            eEndAngle = 0.3142760921499265
-        } else if (time == 6) {
-            eEndAngle = 0.9425946228663266
-        } else if (time == 5) {
-            eEndAngle = 1.570913153582727
-        } else if (time == 4) {
-            eEndAngle = 2.199231684297381
-        } else if (time == 3) {
-            eEndAngle = 2.827550215013781
-        } else if (time == 2) {
-            eEndAngle = 3.455868745730181
-        } else if (time == 1) {
-            eEndAngle = 4.084187276446581
-        } else if (time < 1) {
-            eEndAngle = 4.712505807162981
-        }
-        
-        
         if (time == 14) {
-            eEndAngle = -0.9423609692828735
+            eEndAngle = -1.152012833334
         } else if (time == 13) {
-            eEndAngle = -0.3140424385664735
+            eEndAngle = -0.733346166668
         } else if (time == 12) {
-            eEndAngle = 0.3142760921499265
+            eEndAngle = -0.314679500002
         } else if (time == 11) {
-            eEndAngle = 0.9425946228663266
+            eEndAngle = 0.103987166664
         } else if (time == 10) {
-            eEndAngle = 1.570913153582727
+            eEndAngle = 0.52265383333
         } else if (time == 9) {
-            eEndAngle = 2.199231684297381
+            eEndAngle = 0.941320499996
         } else if (time == 8) {
-            eEndAngle = 2.827550215013781
+            eEndAngle = 1.359987166662
         } else if (time == 7) {
-            eEndAngle = 3.455868745730181
+            eEndAngle = 1.778653833328
         } else if (time == 6) {
-            eEndAngle = 4.084187276446581
-        }else if (time == 5){
-            eEndAngle = 5.084187276446581
-        }else if (time == 4){
-            eEndAngle = 5.454187276446581
-        }else if (time == 3){
-            eEndAngle = 6.084187276446581
-        }else if (time == 2){
-            eEndAngle = 6.484187276446581
-        }else if (time == 1){
-            eEndAngle = 7.084187276446581
+            eEndAngle = 2.197320499994
+        } else if (time == 5) {
+            eEndAngle = 2.61598716666
+        } else if (time == 4){
+            eEndAngle = 3.034653833326
+        } else if (time == 3){
+            eEndAngle = 3.453320499992
+        } else if (time == 2) {
+            eEndAngle = 3.871987166658
+        } else if (time == 1){
+            eEndAngle = 4.290653833324
+        } else if (time < 1){
+            eEndAngle = 4.70932049999
         }
-        else if (time < 1) {
-            eEndAngle = 7.712505807162981
-        }
+        
         
         if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
             let center = CGPoint(x: view.frame.width/2, y: 60)
@@ -320,6 +300,7 @@ class TriviaGameViewController: UIViewController {
         // countdown clock
         if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
             let center = CGPoint(x: view.frame.width/2, y: 60)
+            print("CENTER", view.frame.width/2)
             // create track layer
             let trackLayer = CAShapeLayer()
             let circularPath = UIBezierPath(arcCenter: center, radius: 30, startAngle: -CGFloat.pi / 2, endAngle: -1.5706795, clockwise: false)
@@ -726,7 +707,7 @@ class TriviaGameViewController: UIViewController {
         playerScoreLabel.translatesAutoresizingMaskIntoConstraints = false
         questionCard.translatesAutoresizingMaskIntoConstraints = false
         self.question.translatesAutoresizingMaskIntoConstraints = false
-        self.timerLabel.translatesAutoresizingMaskIntoConstraints = false
+//        self.timerLabel.translatesAutoresizingMaskIntoConstraints = false
         opponentAvatar.widthAnchor.constraint(equalToConstant: 130).isActive = true
         opponentAvatar.heightAnchor.constraint(equalToConstant: 130).isActive = true
         opponentAvatar.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10).isActive = true
@@ -752,8 +733,11 @@ class TriviaGameViewController: UIViewController {
         self.answer2.titleLabel?.font = UIFont(name: (self.answer2.titleLabel?.font.fontName)!, size: 12)
         self.answer3.titleLabel?.font = UIFont(name: (self.answer3.titleLabel?.font.fontName)!, size: 12)
         self.answer4.titleLabel?.font = UIFont(name: (self.answer4.titleLabel?.font.fontName)!, size: 12)
-        self.timerLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 28).isActive = true
-        self.timerLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 151.5).isActive = true
+//        self.timerLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 28).isActive = true
+//        self.timerLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 149.5).isActive = true
+        
+        timerLabel.frame = CGRect(x: 140.5, y: 50, width: 42, height: 21)
+
       } else if UIDevice.current.screenType == .iPhone_XSMax {
         self.nasaLogo.translatesAutoresizingMaskIntoConstraints = false
         self.closeButton.translatesAutoresizingMaskIntoConstraints = false

@@ -243,8 +243,6 @@ class TriviaFinalViewController: UIViewController {
             shareMessage.font = UIFont(name: completeMessage.font.fontName, size: 14)
             mainView.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 3).isActive = true
             mainView.centerYAnchor.constraint(equalTo: guide.centerYAnchor, constant: 50).isActive = true
-//            share.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 5).isActive = true
-//            share.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -5).isActive = true
             self.opponentQuote.font = UIFont(name: self.opponentQuote.font.fontName, size: 10)
             self.opponentQuote.topAnchor.constraint(equalTo: guide.topAnchor, constant: 444).isActive = true
             self.opponentQuote.centerXAnchor.constraint(equalTo: guide.centerXAnchor, constant: 4).isActive = true
