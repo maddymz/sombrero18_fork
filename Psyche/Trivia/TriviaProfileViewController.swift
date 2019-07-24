@@ -58,6 +58,7 @@ class TriviaProfileViewController: UIViewController {
     @IBOutlet weak var backgroundGradient: UIImageView!
     @IBOutlet weak var usernameLengthLabel: UILabel!
     
+    @IBOutlet weak var skipMessage: UILabel!
     
     @IBOutlet weak var nasaLogo: UIButton!
     var avatars = [AvatarButton]()
@@ -72,6 +73,23 @@ class TriviaProfileViewController: UIViewController {
         setStyle()
         createAvatarButtons()
         screenLayout()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TriviaInfo")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let results = try context.fetch(request)
+            if results.count == 0 {
+            skipMessage.isHidden = true
+            }
+        } catch let error {
+            print("request failed", error)
+        }
+        
+        
         /*let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "TriviaInfo")
