@@ -51,7 +51,6 @@ class AboutViewController: UIViewController {
         
         self.bckGround.translatesAutoresizingMaskIntoConstraints = false
         self.version.translatesAutoresizingMaskIntoConstraints = false
-        let guide = view.safeAreaLayoutGuide
         self.bckGround.leadingAnchor.constraint(equalTo: view.leadingAnchor ).isActive = true
         self.bckGround.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         self.bckGround.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -77,7 +76,7 @@ class AboutViewController: UIViewController {
             self.graphicDesignlabel.frame = CGRect(x: 116.43, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 143.18, y: 550, width: 87, height: 21)
             
-            self.teamLable.frame = CGRect(x: 141.84, y: 63, width: 91, height: 24)
+            self.teamLable.frame = CGRect(x: 104, y: 63, width: 169, height: 24)
             self.version.frame = CGRect(x: 117.71, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
@@ -100,7 +99,7 @@ class AboutViewController: UIViewController {
             self.graphicDesignlabel.frame = CGRect(x: 135.34, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 162.08, y: 550, width: 87, height: 21)
             
-            self.teamLable.frame = CGRect(x: 160.71, y: 63, width: 91, height: 24)
+            self.teamLable.frame = CGRect(x: 120, y: 63, width: 169, height: 24)
             self.version.frame = CGRect(x: 138.43, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
@@ -122,7 +121,7 @@ class AboutViewController: UIViewController {
             self.graphicDesignlabel.frame = CGRect(x: 135.34, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 162.08, y: 550, width: 87, height: 21)
             
-            self.teamLable.frame = CGRect(x: 160.71, y: 63, width: 91, height: 24)
+            self.teamLable.frame = CGRect(x: 120, y: 63, width: 169, height: 24)
             self.version.frame = CGRect(x: 138.43, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
@@ -142,7 +141,7 @@ class AboutViewController: UIViewController {
             self.graphicDesignlabel.frame = CGRect(x: 135.34, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 162.08, y: 550, width: 87, height: 21)
             
-            self.teamLable.frame = CGRect(x: 160.71, y: 63, width: 91, height: 24)
+            self.teamLable.frame = CGRect(x: 120, y: 63, width: 169, height: 24)
             self.version.frame = CGRect(x: 138.43, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
@@ -164,7 +163,7 @@ class AboutViewController: UIViewController {
             self.graphicDesignlabel.frame = CGRect(x: 116.43, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 143.18, y: 550, width: 87, height: 21)
             
-            self.teamLable.frame = CGRect(x: 141.84, y: 63, width: 91, height: 24)
+            self.teamLable.frame = CGRect(x: 104, y: 63, width: 169, height: 24)
             self.version.frame = CGRect(x: 117.71, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
@@ -187,7 +186,7 @@ class AboutViewController: UIViewController {
             self.graphicDesignlabel.frame = CGRect(x: 85.54, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 115.28, y: 550, width: 87, height: 21)
             
-            self.teamLable.frame = CGRect(x: 113.75, y: 63, width: 91, height: 24)
+            self.teamLable.frame = CGRect(x: 75, y: 63, width: 169, height: 24)
             self.version.frame = CGRect(x: 91.47, y: 520, width: 137, height: 38)
 
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
