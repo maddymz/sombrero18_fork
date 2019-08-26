@@ -49,7 +49,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var nasaTitle: UILabel!
     @IBOutlet weak var menuhamburger: UIButton!
     struct homepageStruct: Decodable {
-        let asteroid, spacecraft, science, depth: String
+        let asteroid, spacecraft, science, mission: String
     }
     
     var homeData = [homepageStruct]()
@@ -586,8 +586,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         }
         blurText.textContainer.lineFragmentPadding = 0
         blurText.textContainerInset = .zero
-        blurTitle.text = "Psyche in Depth"
-        blurText.text = homeData[0].depth
+        blurTitle.text = "Mission"
+        blurText.text = homeData[0].mission
         DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(500000)) {
             self.blurText.flashScrollIndicators()
         }
@@ -693,8 +693,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(view.frame.width))
         if (pageControl.currentPage == 0) {
-            blurTitle.text = "Psyche in Depth"
-            blurText.text = homeData[0].depth
+            blurTitle.text = "Mission"
+            blurText.text = homeData[0].mission
         } else if (pageControl.currentPage == 1) {
             blurTitle.text = "The Asteroid"
             blurText.text = homeData[0].asteroid
