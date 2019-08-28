@@ -27,6 +27,9 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     var timerLabel = UILabel()
     var timerMLabel = UILabel()
     var secondsMLabel = UILabel()
+    var launchYearLabel = UILabel()
+    var launchYearVal = UILabel()
+    var launchInfoLabel = UILabel()
     
     var phases: [(label: String, phase: String, date: Date)] = [] // Array of tuples
     var removedPhases : [String] = [] // Array contains removed phases
@@ -75,17 +78,27 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewTap))) // Adds tap event handler
         
         // Initialize imageview and labels
-        phaseImg.frame = CGRect(x: 15, y: 14, width: 25, height: 25)
-        phaseMLabel.frame = CGRect(x: 15, y: 41, width: 40, height: 21)
-        phaseMLabel.text = "PHASE"
+//        phaseImg.frame = CGRect(x: 15, y: 14, width: 25, height: 25)
+        phaseMLabel.frame = CGRect(x: 15, y: 15, width: 40, height: 21)
+////        phaseMLabel.text = "PHASE"
+        phaseMLabel.text = "LAUNCH"
+        
+        launchInfoLabel.frame = CGRect(x: 15, y: 25, width: 40, height: 21)
+        launchInfoLabel.text = "IN"
+        
+        launchYearLabel.frame = CGRect(x: 70, y: 41, width: 40, height: 21)
+        launchYearLabel.text = "YEARS"
+        
+        launchYearVal.frame = CGRect(x: 80, y: 9, width: 20, height: 33)
+        launchYearVal.text = "2"
         
         //40 + 15 + 164 - 82
         width = Int(hvc.view.bounds.width)
         
         let space = (width - 15 * 2 - 25 - 164 - 82) / 3
         
-        yearLabelX = 40 + space * 2 + 10
-        yearMLabelX = 40 + space + 10
+        yearLabelX = 60 + space * 2 + 10
+        yearMLabelX = 100 + space + 10
         dayLabelX = 40 + space * 2 + 82 + space
         dayMLabelX = dayLabelX
         secondsMLabelX = width - 41 - 15
@@ -94,7 +107,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         
         daysLabel.frame = CGRect(x: yearLabelX, y: 9, width: 100, height: 33)
         
-        daysMLabel.text = "DAYS TO NEXT PHASE"
+        daysMLabel.text = "DAYS"
         
         timerLabel.frame = CGRect(x: dayLabelX, y: 11, width: 164, height: 29)
         
@@ -117,6 +130,9 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         timerMLabel.font = UIFont(name: "Roboto Mono", size: 10)
         secondsMLabel.font = UIFont(name: "Roboto Mono", size: 10)
         phaseMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+        launchYearLabel.font = UIFont(name: "Roboto Mono", size: 10)
+        launchYearVal.font = UIFont(name: "Roboto Mono", size: 34)
+        launchInfoLabel.font = UIFont(name: "Roboto Mono", size: 10)
         
         daysLabel.textColor = UIColor.white
         daysMLabel.textColor = UIColor.white
@@ -124,6 +140,9 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         timerMLabel.textColor = UIColor.white
         secondsMLabel.textColor = UIColor.white
         phaseMLabel.textColor = UIColor.white
+        launchYearLabel.textColor = UIColor.white
+        launchYearVal.textColor = UIColor.white
+        launchInfoLabel.textColor = UIColor.white
         
         self.addSubview(phaseImg)
         self.addSubview(phaseMLabel)
@@ -132,6 +151,9 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         self.addSubview(timerLabel)
         self.addSubview(timerMLabel)
         self.addSubview(secondsMLabel)
+        self.addSubview(launchYearLabel)
+        self.addSubview(launchYearVal)
+        self.addSubview(launchInfoLabel)
         
         // Initialize blur variables
         timeBlurYPos = Int(hvc.stackView.frame.height)
@@ -207,7 +229,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     
     func updatePhaseImg() {
         let phase = removedPhases[currentDateIndex]
-        phaseImg.image = UIImage(named: "Phase_\(phase)")
+//        phaseImg.image = UIImage(named: "Phase_\(phase)")
     }
     
     // Adds labels to blur effect view
@@ -354,6 +376,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         dateComponents.day = 25
         phases.append(("PHASE C", "C", Calendar.current.date(from: dateComponents)!))
         
+        
         dateComponents.year = 2021
         dateComponents.month = 1
         dateComponents.day = 22
@@ -361,7 +384,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         
         dateComponents.year = 2022
         dateComponents.month = 8
-        dateComponents.day = 6
+        dateComponents.day = 20
         phases.append(("LAUNCH", "D", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2022
@@ -374,21 +397,20 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         dateComponents.day = 14
         phases.append(("CAPTURE", "E", Calendar.current.date(from: dateComponents)!))
         
-        dateComponents.year = 2027
-        dateComponents.month = 10
-        dateComponents.day = 31
-        phases.append(("MISSION END", "E", Calendar.current.date(from: dateComponents)!))
+//        dateComponents.year = 2027
+//        dateComponents.month = 10
+//        dateComponents.day = 31
+//        phases.append(("MISSION END", "E", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2027
         dateComponents.month = 11
         dateComponents.day = 1
-        phases.append(("PHASE", "F", Calendar.current.date(from: dateComponents)!))
+        phases.append(("PHASE F", "F", Calendar.current.date(from: dateComponents)!))
        
         dateComponents.year = 2028
         dateComponents.month = 8
         dateComponents.day = 1
         phases.append(("CLOSEOUT", "F", Calendar.current.date(from: dateComponents)!))
-        
         
         let date = Date() // Current date
         // Remove all phases that already passed
@@ -408,9 +430,18 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     
     // Updates all the timer labels
     func updateTimerLabel(t: Timer) {
-        var diff = Int(phases[currentDateIndex].2.timeIntervalSince(Date.init()))
-        
+//        var diff = Int(phases[currentDateIndex].2.timeIntervalSince(Date.init()))
+        var finalDate = DateComponents()
+        finalDate.year = 2022
+        finalDate.month = 08
+        finalDate.day = 20
+        var diff = Int((Calendar.current.date(from: finalDate)!).timeIntervalSince(Date.init()))
+        print("diff", diff)
+        let years = diff/31536000
+        print("years",years)
+        diff -= years * 31536000
         let days = diff / 86400 // 86400 = 60 * 60 * 24
+        print("days", days)
         diff -= days * 86400
         let hours = diff / 3600 // 3600 = 60 * 60
         diff -= hours * 3600
