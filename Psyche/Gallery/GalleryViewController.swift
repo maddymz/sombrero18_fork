@@ -529,6 +529,10 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     @IBAction func openNASA(_ sender: Any) {
         menuHelper.openNASA(vc: self)
     }
+    
+    @IBAction func openTeam(_ sender: Any) {
+        menuHelper.openTeam(vc: self)
+    }
 }
 
 

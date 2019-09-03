@@ -39,6 +39,9 @@ class menuHelper{
         showWarningAlert(vc: vc, appURLStr: "", webURLStr: "https://psyche.asu.edu/category/news/")
     }
     
+    static func openTeam(vc: UIViewController){
+        showWarningAlert(vc: vc, appURLStr: "", webURLStr: "https://psyche.asu.edu/mission/the-team/")
+    }
     static func openYoutube(vc : UIViewController){
         let YoutubeUser =  "UC2BGcbPW8mxryXnjQcBqk6A"
         

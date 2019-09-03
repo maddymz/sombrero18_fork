@@ -368,4 +368,8 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     @IBAction func openNASA(_ sender: Any) {
         menuHelper.openNASA(vc: self)
     }
+    
+    @IBAction func openTeam(_ sender: Any) {
+        menuHelper.openTeam(vc: self)
+    }
 }

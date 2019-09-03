@@ -406,7 +406,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    
     // methods
 
     override func viewDidLoad() {
@@ -768,6 +767,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func openNASA(_ sender: Any) {
         menuHelper.openNASA(vc: self)
+    }
+    
+    @IBAction func openTeam(_ sender: Any) {
+        menuHelper.openTeam(vc: self)
     }
     
 }
