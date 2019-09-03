@@ -59,6 +59,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         if UIDevice.current.screenType == .iPhones_6_6s_7_8 {
             if sender.state == .began || sender.state == .changed {
                 let translation = sender.translation(in: self.view).y
+                let velocity = sender.velocity(in: self.view)
                 
                 if translation < 0 {
                     if blurY.constant > 8 {
@@ -87,7 +88,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurY.constant = 17
                         self.view.layoutIfNeeded()
                         self.arrowImage.image = UIImage(named: "Arrow")
-//                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
                         self.blurTextY.constant = 18
                         self.blurTextHeight.constant = 420
                         self.blurText.isScrollEnabled = true
@@ -100,7 +100,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurY.constant = 390
                         self.view.layoutIfNeeded()
                         self.arrowImage.image = UIImage(named: "ArrowF")
-//                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
                         self.blurTextY.constant = -170
                         self.blurTextHeight.constant = 40
                         self.blurText.isScrollEnabled = false
@@ -143,7 +142,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurY.constant = 17
                         self.view.layoutIfNeeded()
                         self.arrowImage.image = UIImage(named: "Arrow")
-//                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 600
                         self.blurText.isScrollEnabled = true
@@ -156,7 +154,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurY.constant = 500
                         self.view.layoutIfNeeded()
                         self.arrowImage.image = UIImage(named: "ArrowF")
-//                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
                         self.blurTextY.constant = -260
                         self.blurTextHeight.constant = 80
                         self.blurText.isScrollEnabled = false
@@ -201,7 +198,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurY.constant = 17
                         self.view.layoutIfNeeded()
                         self.arrowImage.image = UIImage(named: "Arrow")
-//                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 450
                         self.blurText.isScrollEnabled = true
@@ -214,7 +210,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurY.constant = 430
                         self.view.layoutIfNeeded()
                         self.arrowImage.image = UIImage(named: "ArrowF")
-//                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
                         self.blurTextY.constant = -200
                         self.blurTextHeight.constant = 60
                         self.blurText.isScrollEnabled = false
@@ -259,7 +254,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurY.constant = 17
                         self.view.layoutIfNeeded()
                         self.arrowImage.image = UIImage(named: "Arrow")
-//                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 500
                         self.blurText.isScrollEnabled = true
@@ -273,7 +267,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurY.constant = 460
                         self.view.layoutIfNeeded()
                         self.arrowImage.image = UIImage(named: "ArrowF")
-//                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
                         self.blurTextY.constant = -230
                         self.blurTextHeight.constant = 60
                         self.blurText.isScrollEnabled = false
@@ -317,7 +310,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurY.constant = 17
                         self.view.layoutIfNeeded()
                         self.arrowImage.image = UIImage(named: "Arrow")
-//                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 600
                         self.blurText.isScrollEnabled = true
@@ -331,7 +323,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurY.constant = 500
                         self.view.layoutIfNeeded()
                         self.arrowImage.image = UIImage(named: "ArrowF")
-//                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
                         self.blurTextY.constant = -260
                         self.blurTextHeight.constant = 80
                         self.blurText.isScrollEnabled = false
@@ -375,7 +366,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurY.constant = 17
                         self.view.layoutIfNeeded()
                         self.arrowImage.image = UIImage(named: "Arrow")
-//                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 290
                         self.blurText.isScrollEnabled = true
@@ -387,7 +377,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.blurY.constant = 305
                         self.view.layoutIfNeeded()
                         self.arrowImage.image = UIImage(named: "ArrowF")
-//                        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
                         self.blurTextY.constant = -125
                         self.blurTextHeight.constant = 30
                         self.blurText.isScrollEnabled = false
