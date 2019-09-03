@@ -30,6 +30,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     var launchYearLabel = UILabel()
     var launchYearVal = UILabel()
     var launchInfoLabel = UILabel()
+    var currentPhaseLable = UILabel()
     
     var phases: [(label: String, phase: String, date: Date)] = [] // Array of tuples
     var removedPhases : [String] = [] // Array contains removed phases
@@ -78,19 +79,18 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewTap))) // Adds tap event handler
         
         // Initialize imageview and labels
-//        phaseImg.frame = CGRect(x: 15, y: 14, width: 25, height: 25)
-        phaseMLabel.frame = CGRect(x: 15, y: 15, width: 40, height: 21)
+        phaseImg.frame = CGRect(x: 15, y: 10, width: 45, height: 45)
+//        phaseMLabel.frame = CGRect(x: 15, y: 41, width: 40, height: 21)
 ////        phaseMLabel.text = "PHASE"
-        phaseMLabel.text = "LAUNCH"
+//        phaseMLabel.text = "LAUNCH PERIOD OPENS"
         
-        launchInfoLabel.frame = CGRect(x: 15, y: 25, width: 40, height: 21)
-        launchInfoLabel.text = "IN"
+//        launchInfoLabel.frame = CGRect(x: 15, y: 25, width: 40, height: 21)
+//        launchInfoLabel.text = "PERIOD IN"
         
         launchYearLabel.frame = CGRect(x: 70, y: 41, width: 40, height: 21)
         launchYearLabel.text = "YEARS"
-        
+
         launchYearVal.frame = CGRect(x: 80, y: 9, width: 20, height: 33)
-        launchYearVal.text = "2"
         
         //40 + 15 + 164 - 82
         width = Int(hvc.view.bounds.width)
@@ -181,6 +181,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
             hvc.view.addSubview(blurEffectView)
             hvc.view.addSubview(dropdownView)
             
+            currentPhaseLable.isHidden = false
             addCountdownLabels()
             
             hvc.stackView.layer.zPosition = 1 // So that the blur effect passes underneath
@@ -193,6 +194,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
             
             self.dropdownShowing = 1
         } else { // Dropdown is showing, unshow
+            currentPhaseLable.isHidden = true
             UIView.animate(withDuration: 0.3, delay: 0.0, options: [], animations: {
                 self.blurEffectView.frame = CGRect(x: 0, y: self.timeBlurYPos - self.timeBlurHeight
                     , width: self.timeBlurWidth, height: self.timeBlurHeight)
@@ -229,7 +231,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     
     func updatePhaseImg() {
         let phase = removedPhases[currentDateIndex]
-//        phaseImg.image = UIImage(named: "Phase_\(phase)")
+        phaseImg.image = UIImage(named: "launch_55")
     }
     
     // Adds labels to blur effect view
@@ -436,12 +438,9 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         finalDate.month = 08
         finalDate.day = 20
         var diff = Int((Calendar.current.date(from: finalDate)!).timeIntervalSince(Date.init()))
-        print("diff", diff)
         let years = diff/31536000
-        print("years",years)
         diff -= years * 31536000
         let days = diff / 86400 // 86400 = 60 * 60 * 24
-        print("days", days)
         diff -= days * 86400
         let hours = diff / 3600 // 3600 = 60 * 60
         diff -= hours * 3600
@@ -451,6 +450,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         
         daysLabel.text = "\(days)"
         timerLabel.text = String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
+        launchYearVal.text = "\(years)"
         
         if (dropdownShowing == 1) { // If dropdown is showing, then loop through all the dates and update the labels
             dateViews.forEach { (dateView) in
