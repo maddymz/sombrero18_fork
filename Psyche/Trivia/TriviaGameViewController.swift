@@ -58,7 +58,20 @@ class TriviaGameViewController: UIViewController {
             time -= 1
             timerLabel.text = "\(time)"
             if timerLabel.text == "10" {
-                timerLabel.frame = CGRect(x: 140.5, y: 50, width: 42, height: 21)
+                if UIDevice.current.screenType == .iPhones_6_6s_7_8 {
+                    timerLabel.frame = CGRect(x: 165.5, y: 60, width: 42, height: 21)
+                }else if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+                    timerLabel.frame = CGRect(x: 140.5, y: 50, width: 42, height: 21)
+                }else if UIDevice.current.screenType == .iPhone_XR {
+                    timerLabel.frame = CGRect(x: 185.5, y: 60, width: 42, height: 21)
+                }else if UIDevice.current.screenType == .iPhone_XSMax {
+                    timerLabel.frame = CGRect(x: 185.5, y: 60, width: 42, height: 21)
+                }else if UIDevice.current.screenType == .iPhones_X_XS {
+                    timerLabel.frame = CGRect(x: 165.5, y: 60, width: 42, height: 21)
+                }else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
+                    timerLabel.frame = CGRect(x: 185.5, y: 60, width: 42, height: 21)
+                }
+                
             }
         } else {
             runAnimatePause()

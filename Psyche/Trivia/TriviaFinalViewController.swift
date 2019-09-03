@@ -44,6 +44,7 @@ class TriviaFinalViewController: UIViewController {
         if finalScore < (opponent?.highScore)! {
 //            self.share.isHidden = true
             self.shareButton.isHidden = true
+            self.shareMessage.text = "Play another round!"
             self.letsPlayButton.translatesAutoresizingMaskIntoConstraints = false
             
             self.letsPlayButton.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
