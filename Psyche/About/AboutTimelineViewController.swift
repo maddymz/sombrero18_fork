@@ -240,7 +240,7 @@ class AboutTimelineViewController: UIViewController {
             delay: 5.2,
             animations: {
                 self.devTwo.alpha = 1.0
-                self.devTwo.frame = self.devTwo.frame.offsetBy(dx: 0, dy: -119)
+                self.devTwo.frame = self.devTwo.frame.offsetBy(dx: 0, dy: -29)
                 
         },
             completion: nil)
@@ -250,7 +250,7 @@ class AboutTimelineViewController: UIViewController {
             delay: 5.8,
             animations: {
                 self.devThree.alpha = 1.0
-                self.devThree.frame = self.devThree.frame.offsetBy(dx: 0, dy: -89)
+                self.devThree.frame = self.devThree.frame.offsetBy(dx: 0, dy: -119)
         },
             completion: nil)
         
@@ -276,7 +276,7 @@ class AboutTimelineViewController: UIViewController {
             delay: 3.0,
             animations: {
                 self.devSix.alpha = 1.0
-                self.devSix.frame = self.devSix.frame.offsetBy(dx: 0, dy: -259)
+                self.devSix.frame = self.devSix.frame.offsetBy(dx: 0, dy: -229)
         }, completion: nil)
         
         UIView.animateKeyframes(
@@ -292,7 +292,7 @@ class AboutTimelineViewController: UIViewController {
             delay: 3.4,
             animations: {
                 self.devEight.alpha = 1.0
-                self.devEight.frame = self.devEight.frame.offsetBy(dx: 0, dy: -229)
+                self.devEight.frame = self.devEight.frame.offsetBy(dx: 0, dy: -259)
         }, completion: nil)
         
         UIView.animateKeyframes(
@@ -300,7 +300,7 @@ class AboutTimelineViewController: UIViewController {
             delay: 7.0,
             animations: {
                 self.devNine.alpha = 1.0
-                self.devNine.frame = self.devNine.frame.offsetBy(dx: 0, dy: -29)
+                self.devNine.frame = self.devNine.frame.offsetBy(dx: 0, dy: -89)
         }, completion: nil)
     }
     
