@@ -63,6 +63,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     var secondsMLabelX = 317
     let timeMLabelXConst = 1
     
+    
     // Y positions
     let dateLabelYConst = -20
     let timeLabelYConst = -10
@@ -119,6 +120,19 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         
         if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
             daysMLabel.frame = CGRect(x: yearMLabelX + 3, y: 41, width: 50, height: 21)
+            secondsMLabelX = width - 41 - 20
+            hourLabelX = width - 41 - 15
+            hourMLabelX = hourLabelX
+            
+            daysLabel.frame = CGRect(x: yearLabelX + 25, y: 9, width: 100, height: 33)
+            
+            daysMLabel.text = "DAYS"
+            
+            timerLabel.frame = CGRect(x: dayLabelX + 30, y: 11, width: 164, height: 29)
+            
+            timerMLabel.frame = CGRect(x: dayMLabelX + 10, y: 41, width: 110, height: 21)
+            timerMLabel.text = "    HOURS MINUTES"
+
         } else {
             daysMLabel.frame = CGRect(x: yearMLabelX + 3, y: 41, width: 110, height: 21)
 
@@ -133,6 +147,18 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         launchYearLabel.font = UIFont(name: "Roboto Mono", size: 10)
         launchYearVal.font = UIFont(name: "Roboto Mono", size: 34)
         launchInfoLabel.font = UIFont(name: "Roboto Mono", size: 10)
+        
+        if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+            daysLabel.font = UIFont(name: "Roboto Mono", size: 30)
+            daysMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+            timerLabel.font = UIFont(name: "Roboto Mono", size: 30)
+            timerMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+            secondsMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+            phaseMLabel.font = UIFont(name: "Roboto Mono", size: 10)
+            launchYearLabel.font = UIFont(name: "Roboto Mono", size: 10)
+            launchYearVal.font = UIFont(name: "Roboto Mono", size: 30)
+            launchInfoLabel.font = UIFont(name: "Roboto Mono", size: 10)
+        }
         
         daysLabel.textColor = UIColor.white
         daysMLabel.textColor = UIColor.white
@@ -170,6 +196,8 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         
         initTimer()
         countdownTimer?.fire() // Trigger timer right away, otherwise there is a 1 second delay
+        
+      
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -230,7 +258,7 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
     }
     
     func updatePhaseImg() {
-        let phase = removedPhases[currentDateIndex]
+//        let phase = removedPhases[currentDateIndex]
         phaseImg.image = UIImage(named: "launch_55")
     }
     
@@ -259,6 +287,19 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
                 let dateView = DateView()
                 dateView.frame = CGRect(x: 0, y: i * separation, width: Int(self.bounds.width), height: separation)
                
+                if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+                    yearMLabelX = 60
+                }else if UIDevice.current.screenType == .iPhone_XR {
+                    yearMLabelX = 130
+                }else if UIDevice.current.screenType == .iPhone_XSMax {
+                    yearMLabelX = 130
+                }else if UIDevice.current.screenType == .iPhones_X_XS {
+                    yearMLabelX = 100
+                }else if UIDevice.current.screenType == .iPhones_6_6s_7_8 {
+                    yearMLabelX = 100
+                }else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
+                    yearMLabelX = 130
+                }
 //                if (result.0 != "") { // years > 0
                     let yearLabel = UILabel()
                     yearLabel.frame = CGRect(x: yearLabelX, y: timeLabelYConst, width: 100, height: 100)
@@ -385,11 +426,6 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         phases.append(("PHASE D", "D", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2022
-        dateComponents.month = 8
-        dateComponents.day = 20
-        phases.append(("LAUNCH", "D", Calendar.current.date(from: dateComponents)!))
-        
-        dateComponents.year = 2022
         dateComponents.month = 10
         dateComponents.day = 1
         phases.append(("PHASE E", "E", Calendar.current.date(from: dateComponents)!))
@@ -398,11 +434,6 @@ class CountdownClockHome : UIView, UIScrollViewDelegate {
         dateComponents.month = 1
         dateComponents.day = 14
         phases.append(("CAPTURE", "E", Calendar.current.date(from: dateComponents)!))
-        
-//        dateComponents.year = 2027
-//        dateComponents.month = 10
-//        dateComponents.day = 31
-//        phases.append(("MISSION END", "E", Calendar.current.date(from: dateComponents)!))
         
         dateComponents.year = 2027
         dateComponents.month = 11
