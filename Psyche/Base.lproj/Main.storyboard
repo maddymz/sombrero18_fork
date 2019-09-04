@@ -131,6 +131,17 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcy-yc-iv3" userLabel="Swipe Label">
+                                            <rect key="frame" x="195" y="20" width="24" height="11"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="PJk-VL-lNU">
+                                            <rect key="frame" x="172" y="15" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="eQp-e7-CAL">
                                             <rect key="frame" x="141" y="8" width="133" height="37"/>
                                             <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -171,13 +182,6 @@ Test 3</string>
                                 <rect key="frame" x="172" y="578" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcy-yc-iv3" userLabel="Swipe Label">
-                                <rect key="frame" x="139" y="273" width="24" height="11"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goc-dJ-qaO">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,6 +193,13 @@ Test 3</string>
                                 <gestureRecognizers/>
                                 <blurEffect style="extraLight"/>
                             </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33Q-YR-UTE" userLabel="Swipe Label">
+                                <rect key="frame" x="195" y="362" width="24" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -226,9 +237,11 @@ Test 3</string>
                         <outlet property="pageControl" destination="eQp-e7-CAL" id="Dnp-WW-1Qv"/>
                         <outlet property="scrollView" destination="iij-lS-rpX" id="M0M-tv-Raf"/>
                         <outlet property="stackView" destination="Htd-pq-7pw" id="xyR-1y-2NA"/>
-                        <outlet property="swipeLabel" destination="Kcy-yc-iv3" id="qch-lv-NqN"/>
+                        <outlet property="swipeLabel" destination="33Q-YR-UTE" id="9OM-9H-fqf"/>
                         <outlet property="timeBar" destination="Pdw-lV-3lm" id="dTl-UB-YDa"/>
                         <outlet property="timerLabel" destination="wAY-IJ-lID" id="lII-hc-O9g"/>
+                        <outlet property="topArrow" destination="PJk-VL-lNU" id="O3N-ca-TCQ"/>
+                        <outlet property="topSwipeLabel" destination="Kcy-yc-iv3" id="FJT-fX-SOt"/>
                     </connections>
                 </viewController>
                 <view contentMode="scaleToFill" id="sLD-Iy-LHl" userLabel="Menu">
@@ -3006,6 +3019,7 @@ Test 3</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Arrow" width="30" height="30"/>
         <image name="EdwinHubbleGradient" width="360" height="360"/>
         <image name="FadingRectangle" width="375" height="84"/>
         <image name="Gallery" width="30" height="28"/>
