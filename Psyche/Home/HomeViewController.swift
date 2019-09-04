@@ -39,6 +39,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     
+    @IBOutlet weak var topSwipeLabel: UILabel!
+    @IBOutlet weak var topArrow: UIImageView!
     @IBOutlet weak var swipeLabel: UILabel!
     @IBOutlet weak var blurTextX: NSLayoutConstraint!
     @IBOutlet weak var blurTextWidth: NSLayoutConstraint!
@@ -59,7 +61,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         if UIDevice.current.screenType == .iPhones_6_6s_7_8 {
             if sender.state == .began || sender.state == .changed {
                 let translation = sender.translation(in: self.view).y
-                let velocity = sender.velocity(in: self.view)
                 
                 if translation < 0 {
                     if blurY.constant > 8 {
@@ -87,18 +88,26 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.blurY.constant = 17
                         self.view.layoutIfNeeded()
-                        self.arrowImage.image = UIImage(named: "Arrow")
+                        self.topArrow.isHidden = false
+                        self.topSwipeLabel.isHidden = false
+                        self.arrowImage.isHidden = true
+                        self.swipeLabel.isHidden = true
+                        self.topArrow.image = UIImage(named: "Arrow")
                         self.blurTextY.constant = 18
                         self.blurTextHeight.constant = 420
                         self.blurText.isScrollEnabled = true
                         self.pageControl.isHidden = true
-                        self.swipeLabel.text = "Swipe"
+                        self.topSwipeLabel.text = "Swipe"
 
                     })
                 } else {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.blurY.constant = 390
                         self.view.layoutIfNeeded()
+                        self.arrowImage.isHidden = false
+                        self.swipeLabel.isHidden = false
+                        self.topArrow.isHidden = true
+                        self.topSwipeLabel.isHidden = true
                         self.arrowImage.image = UIImage(named: "ArrowF")
                         self.blurTextY.constant = -170
                         self.blurTextHeight.constant = 40
@@ -141,18 +150,28 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.blurY.constant = 17
                         self.view.layoutIfNeeded()
-                        self.arrowImage.image = UIImage(named: "Arrow")
+                        self.topArrow.isHidden = false
+                        self.topSwipeLabel.isHidden = false
+                        self.arrowImage.isHidden = true
+                        self.swipeLabel.isHidden = true
+                        self.arrowImage.isHidden = true
+                        self.swipeLabel.isHidden = true
+                        self.topArrow.image = UIImage(named: "Arrow")
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 600
                         self.blurText.isScrollEnabled = true
                         self.pageControl.isHidden = true
-                        self.swipeLabel.text = "Swipe"
+                        self.topSwipeLabel.text = "Swipe"
 
                     })
                 } else {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.blurY.constant = 500
                         self.view.layoutIfNeeded()
+                        self.arrowImage.isHidden = false
+                        self.swipeLabel.isHidden = false
+                        self.topArrow.isHidden = true
+                        self.topSwipeLabel.isHidden = true
                         self.arrowImage.image = UIImage(named: "ArrowF")
                         self.blurTextY.constant = -260
                         self.blurTextHeight.constant = 80
@@ -197,18 +216,26 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.blurY.constant = 17
                         self.view.layoutIfNeeded()
-                        self.arrowImage.image = UIImage(named: "Arrow")
+                        self.topArrow.isHidden = false
+                        self.topSwipeLabel.isHidden = false
+                        self.arrowImage.isHidden = true
+                        self.swipeLabel.isHidden = true
+                        self.topArrow.image = UIImage(named: "Arrow")
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 450
                         self.blurText.isScrollEnabled = true
                         self.pageControl.isHidden = true
-                        self.swipeLabel.text = "Swipe"
+                        self.topSwipeLabel.text = "Swipe"
 
                     })
                 } else {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.blurY.constant = 430
                         self.view.layoutIfNeeded()
+                        self.arrowImage.isHidden = false
+                        self.swipeLabel.isHidden = false
+                        self.topArrow.isHidden = true
+                        self.topSwipeLabel.isHidden = true
                         self.arrowImage.image = UIImage(named: "ArrowF")
                         self.blurTextY.constant = -200
                         self.blurTextHeight.constant = 60
@@ -253,12 +280,16 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.blurY.constant = 17
                         self.view.layoutIfNeeded()
-                        self.arrowImage.image = UIImage(named: "Arrow")
+                        self.topArrow.isHidden = false
+                        self.topSwipeLabel.isHidden = false
+                        self.arrowImage.isHidden = true
+                        self.swipeLabel.isHidden = true
+                        self.topArrow.image = UIImage(named: "Arrow")
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 500
                         self.blurText.isScrollEnabled = true
                         self.pageControl.isHidden = true
-                        self.swipeLabel.text = "Swipe"
+                        self.topSwipeLabel.text = "Swipe"
 
 
                     })
@@ -266,6 +297,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.blurY.constant = 460
                         self.view.layoutIfNeeded()
+                        self.arrowImage.isHidden = false
+                        self.swipeLabel.isHidden = false
+                        self.topArrow.isHidden = true
+                        self.topSwipeLabel.isHidden = true
                         self.arrowImage.image = UIImage(named: "ArrowF")
                         self.blurTextY.constant = -230
                         self.blurTextHeight.constant = 60
@@ -309,12 +344,16 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.blurY.constant = 17
                         self.view.layoutIfNeeded()
-                        self.arrowImage.image = UIImage(named: "Arrow")
+                        self.topArrow.isHidden = false
+                        self.topSwipeLabel.isHidden = false
+                        self.arrowImage.isHidden = true
+                        self.swipeLabel.isHidden = true
+                        self.topArrow.image = UIImage(named: "Arrow")
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 600
                         self.blurText.isScrollEnabled = true
                         self.pageControl.isHidden = true
-                        self.swipeLabel.text = "Swipe"
+                        self.topSwipeLabel.text = "Swipe"
 
 
                     })
@@ -322,6 +361,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.blurY.constant = 500
                         self.view.layoutIfNeeded()
+                        self.arrowImage.isHidden = false
+                        self.swipeLabel.isHidden = false
+                        self.topArrow.isHidden = true
+                        self.topSwipeLabel.isHidden = true
                         self.arrowImage.image = UIImage(named: "ArrowF")
                         self.blurTextY.constant = -260
                         self.blurTextHeight.constant = 80
@@ -365,17 +408,25 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.blurY.constant = 17
                         self.view.layoutIfNeeded()
-                        self.arrowImage.image = UIImage(named: "Arrow")
+                        self.topArrow.isHidden = false
+                        self.topSwipeLabel.isHidden = false
+                        self.arrowImage.isHidden = true
+                        self.swipeLabel.isHidden = true
+                        self.topArrow.image = UIImage(named: "Arrow")
                         self.blurTextY.constant = 0
                         self.blurTextHeight.constant = 290
                         self.blurText.isScrollEnabled = true
                         self.pageControl.isHidden = true
-                        self.swipeLabel.text = "Swipe"
+                        self.topSwipeLabel.text = "Swipe"
                     })
                 } else {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.blurY.constant = 305
                         self.view.layoutIfNeeded()
+                        self.arrowImage.isHidden = false
+                        self.swipeLabel.isHidden = false
+                        self.topArrow.isHidden = true
+                        self.topSwipeLabel.isHidden = true
                         self.arrowImage.image = UIImage(named: "ArrowF")
                         self.blurTextY.constant = -125
                         self.blurTextHeight.constant = 30
@@ -445,11 +496,14 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         timeBar.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
         //blurView.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
         self.arrowImage.image = UIImage(named: "ArrowF")
+        self.topArrow.isHidden = true
+        self.topSwipeLabel.isHidden = true
 //        self.arrowImage.fadeIn(duration: 1, delay: 0.5, completion: {(finished: Bool) -> Void in})
         Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(self.arrowBlink), userInfo: nil, repeats: true)
         Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(self.swipeLabelblink), userInfo: nil, repeats: true)
         self.swipeLabel.text = "Swipe"
         self.swipeLabel.textColor = UIColor.gray
+        self.topSwipeLabel.textColor = UIColor.gray
         
 
         let anchor = view.layoutMarginsGuide
@@ -459,6 +513,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             blurTextHeight.constant = 40
             blurTextY.constant = -170
             self.swipeLabel.translatesAutoresizingMaskIntoConstraints = false
+            self.topSwipeLabel.translatesAutoresizingMaskIntoConstraints = false
+            self.topSwipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 157).isActive = true
+            self.topSwipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 65).isActive = true
             self.swipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 157).isActive = true
             self.swipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 581).isActive = true
         } else if UIDevice.current.screenType == .iPhone_XR {
@@ -468,6 +525,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             blurTextY.constant = -260
             self.swipeLabel.translatesAutoresizingMaskIntoConstraints = false
             self.arrowImage.translatesAutoresizingMaskIntoConstraints = false
+            self.topSwipeLabel.translatesAutoresizingMaskIntoConstraints = false
+            self.topArrow.translatesAutoresizingMaskIntoConstraints = false
             nasaLogo.translatesAutoresizingMaskIntoConstraints = false
             nasaTitle.translatesAutoresizingMaskIntoConstraints = false
             menuhamburger.translatesAutoresizingMaskIntoConstraints = false
@@ -481,6 +540,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
             self.arrowImage.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 170).isActive = true
             self.arrowImage.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 720).isActive = true
+            self.topArrow.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 170).isActive = true
+            self.topArrow.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 50).isActive = true
+            self.topSwipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 171).isActive = true
+            self.topSwipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 45).isActive = true
             self.swipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 171).isActive = true
             self.swipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 745).isActive = true
         } else if UIDevice.current.screenType == .iPhones_6Plus_6sPlus_7Plus_8Plus {
@@ -490,6 +553,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             blurTextY.constant = -200
             self.swipeLabel.translatesAutoresizingMaskIntoConstraints = false
             self.arrowImage.translatesAutoresizingMaskIntoConstraints = false
+            self.topSwipeLabel.translatesAutoresizingMaskIntoConstraints = false
+            self.topArrow.translatesAutoresizingMaskIntoConstraints = false
             nasaLogo.translatesAutoresizingMaskIntoConstraints = false
             nasaLogo.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
             nasaLogo.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 27).isActive = true
@@ -497,6 +562,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
             self.arrowImage.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 170).isActive = true
             self.arrowImage.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 620).isActive = true
+            self.topArrow.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 170).isActive = true
+            self.topArrow.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 65).isActive = true
+            self.topSwipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 170).isActive = true
+            self.topSwipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 60).isActive = true
             self.swipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 171).isActive = true
             self.swipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 645).isActive = true
         }else if UIDevice.current.screenType == .iPhones_X_XS{
@@ -506,6 +575,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             blurTextY.constant = -230
             self.swipeLabel.translatesAutoresizingMaskIntoConstraints = false
             self.arrowImage.translatesAutoresizingMaskIntoConstraints = false
+            self.topArrow.translatesAutoresizingMaskIntoConstraints = false
+            self.topSwipeLabel.translatesAutoresizingMaskIntoConstraints = false
             nasaLogo.translatesAutoresizingMaskIntoConstraints = false
             nasaTitle.translatesAutoresizingMaskIntoConstraints = false
             menuhamburger.translatesAutoresizingMaskIntoConstraints = false
@@ -521,6 +592,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             self.arrowImage.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 640).isActive = true
             self.swipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 151).isActive = true
             self.swipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 665).isActive = true
+            self.topArrow.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 150).isActive = true
+            self.topArrow.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 50).isActive = true
+            self.topSwipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 151).isActive = true
+            self.topSwipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 45).isActive = true
         }else if UIDevice.current.screenType == .iPhone_XSMax{
             blurY.constant = 500
             blurHeight.constant = 780
@@ -531,6 +606,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             nasaTitle.translatesAutoresizingMaskIntoConstraints = false
             menuhamburger.translatesAutoresizingMaskIntoConstraints = false
             self.swipeLabel.translatesAutoresizingMaskIntoConstraints = false
+            self.topArrow.translatesAutoresizingMaskIntoConstraints = false
+            self.topSwipeLabel.translatesAutoresizingMaskIntoConstraints = false
             nasaTitle.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
             nasaTitle.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 120).isActive = true
             menuhamburger.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
@@ -543,6 +620,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             self.arrowImage.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 720).isActive = true
             self.swipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 171).isActive = true
             self.swipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 745).isActive = true
+            self.topArrow.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 170).isActive = true
+            self.topArrow.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 50).isActive = true
+            self.topSwipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 171).isActive = true
+            self.topSwipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 45).isActive = true
         } else if UIDevice.current.screenType == .iPhones_5_5s_5c_SE{
             blurY.constant = 305
             blurHeight.constant = 450
@@ -554,6 +635,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             
             self.arrowImage.translatesAutoresizingMaskIntoConstraints = false
             self.swipeLabel.translatesAutoresizingMaskIntoConstraints = false
+            self.topArrow.translatesAutoresizingMaskIntoConstraints = false
+            self.topSwipeLabel.translatesAutoresizingMaskIntoConstraints = false
             nasaLogo.translatesAutoresizingMaskIntoConstraints = false
             nasaTitle.translatesAutoresizingMaskIntoConstraints = false
             nasaTitle.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
@@ -570,6 +653,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             self.arrowImage.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 460).isActive = true
             self.swipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 131).isActive = true
             self.swipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 485).isActive = true
+            self.topArrow.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 130).isActive = true
+            self.topArrow.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 65).isActive = true
+            self.topSwipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 131).isActive = true
+            self.topSwipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 60).isActive = true
    
         }
         blurText.textContainer.lineFragmentPadding = 0
@@ -659,12 +746,14 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @objc func arrowBlink(){
         UIView.animate(withDuration: 0.7) {
             self.arrowImage.alpha = self.arrowImage.alpha == 1.0 ? 0.0 : 1.0
+            self.topArrow.alpha = self.topArrow.alpha == 1.0 ? 0.0 : 1.0
         }
     }
     
     @objc func swipeLabelblink(){
         UIView.animate(withDuration: 0.7) {
             self.swipeLabel.alpha = self.swipeLabel.alpha == 1.0 ? 0.0 : 1.0
+            self.topSwipeLabel.alpha = self.topSwipeLabel.alpha == 1.0 ? 0.0 : 1.0
         }
     }
  
