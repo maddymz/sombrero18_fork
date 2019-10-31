@@ -407,6 +407,13 @@ Test 3</string>
                                 <action selector="openTeam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="54R-ul-cGV"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCw-CY-KbD">
+                            <rect key="frame" x="25" y="414" width="72" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Disclaimer">
+                                <color key="titleColor" red="0.36862745098039218" green="0.36862745098039218" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <viewLayoutGuide key="safeArea" id="yvt-Wn-zhc"/>
@@ -3227,7 +3234,7 @@ yiTPAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAJNE
         <segue reference="99g-zA-NbL"/>
         <segue reference="xJ0-bY-Hqd"/>
         <segue reference="rhv-Gl-DYl"/>
-        <segue reference="azk-ax-l3W"/>
+        <segue reference="Jz8-vd-ITI"/>
         <segue reference="bAQ-YD-7QP"/>
         <segue reference="MXS-FT-LcY"/>
         <segue reference="flH-1B-IPE"/>
