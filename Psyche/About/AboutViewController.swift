@@ -40,6 +40,8 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var devLabel: UILabel!
     @IBOutlet weak var graphicDesignlabel: UILabel!
     @IBOutlet weak var prManagerLabel: UILabel!
+    
+    @IBOutlet weak var descriptionText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()       
         layout()
@@ -47,8 +49,33 @@ class AboutViewController: UIViewController {
         
     }
     
-    func layout() {
+    func getDisclaimerData() -> String{
+        struct DisclaimerStruct: Decodable {
+            let disclaimer: String
+        }
         
+        var disclaimerData = [DisclaimerStruct]()
+        
+        //parse json from Disclaimer.json
+        if let disclamerDataUrl = Bundle.main.url(forResource: "Disclaimer", withExtension: "json", subdirectory: "/Data"){
+            do {
+                let data = try Data(contentsOf: disclamerDataUrl)
+                let disclaimerDecoder = JSONDecoder()
+                let discalaimerDecodedData =  try disclaimerDecoder.decode(DisclaimerStruct.self, from: data)
+                disclaimerData = [discalaimerDecodedData]
+                
+                print("decoded data ", disclaimerData[0].disclaimer)
+                
+                
+            }catch let parseError {
+                print("Error in parsing json:", parseError)
+            }
+        }
+        return disclaimerData[0].disclaimer
+    }
+    func layout() {
+        let disclaimerContent = getDisclaimerData()
+        print(" inside layout ", disclaimerContent)
         self.bckGround.translatesAutoresizingMaskIntoConstraints = false
         self.version.translatesAutoresizingMaskIntoConstraints = false
         self.bckGround.leadingAnchor.constraint(equalTo: view.leadingAnchor ).isActive = true
@@ -56,6 +83,7 @@ class AboutViewController: UIViewController {
         self.bckGround.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         self.bckGround.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
+        self.descriptionText.text = disclaimerContent
         self.devOne.alpha = 0.0
         self.devTwo.alpha = 0.0
         self.devThree.alpha = 0.0
@@ -76,12 +104,13 @@ class AboutViewController: UIViewController {
             self.graphicDesignlabel.frame = CGRect(x: 116.43, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 143.18, y: 550, width: 87, height: 21)
             
-            self.teamLable.frame = CGRect(x: 104, y: 63, width: 169, height: 24)
+            self.teamLable.frame = CGRect(x: 104, y: 53, width: 169, height: 24)
+            self.teamLable.textAlignment = .center
             self.version.frame = CGRect(x: 117.71, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
 
-            
+//            self.descriptionText.frame = CGRect(x: 0, y: 554, width: <#T##Int#>, height: <#T##Int#>)
             
             self.devOne.frame = CGRect(x: 124, y: 550, width: 125, height: 21)
             self.devTwo.frame = CGRect(x: 142, y: 550, width: 89, height: 21)
@@ -100,6 +129,7 @@ class AboutViewController: UIViewController {
             self.devLabel.frame = CGRect(x: 162.08, y: 550, width: 87, height: 21)
             
             self.teamLable.frame = CGRect(x: 120, y: 63, width: 169, height: 24)
+            self.teamLable.textAlignment = .center
             self.version.frame = CGRect(x: 138.43, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
@@ -122,6 +152,7 @@ class AboutViewController: UIViewController {
             self.devLabel.frame = CGRect(x: 162.08, y: 550, width: 87, height: 21)
             
             self.teamLable.frame = CGRect(x: 120, y: 63, width: 169, height: 24)
+            self.teamLable.textAlignment = .center
             self.version.frame = CGRect(x: 138.43, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
@@ -216,7 +247,8 @@ class AboutViewController: UIViewController {
             delay: 0,
             animations: {
                 self.srDevLabel.alpha = 1.0
-                self.srDevLabel.frame = self.srDevLabel.frame.offsetBy(dx: 0, dy: -444)
+                self.srDevLabel.textAlignment = .center
+                self.srDevLabel.frame = self.srDevLabel.frame.offsetBy(dx: 0, dy: -464)
         },
             completion: nil)
         
@@ -225,7 +257,8 @@ class AboutViewController: UIViewController {
             delay: 1.2,
             animations: {
                 self.prManagerLabel.alpha = 1.0
-                self.prManagerLabel.frame = self.prManagerLabel.frame.offsetBy(dx: 0, dy: -369)
+                self.prManagerLabel.textAlignment = .center
+                self.prManagerLabel.frame = self.prManagerLabel.frame.offsetBy(dx: 0, dy: -404)
         },
             completion: nil)
         
@@ -234,7 +267,8 @@ class AboutViewController: UIViewController {
             delay: 2.4,
             animations: {
                 self.graphicDesignlabel.alpha = 1.0
-                self.graphicDesignlabel.frame = self.graphicDesignlabel.frame.offsetBy(dx: 0, dy: -294)
+                self.graphicDesignlabel.textAlignment = .center
+                self.graphicDesignlabel.frame = self.graphicDesignlabel.frame.offsetBy(dx: 0, dy: -344)
         }, completion: nil)
         
         UIView.animateKeyframes(
@@ -242,7 +276,8 @@ class AboutViewController: UIViewController {
             delay: 4.0,
             animations: {
                 self.devLabel.alpha = 1.0
-                self.devLabel.frame = self.devLabel.frame.offsetBy(dx: 0, dy: -189)
+                self.devLabel.textAlignment = .center
+                self.devLabel.frame = self.devLabel.frame.offsetBy(dx: 0, dy: -264)
         },
             completion: nil)
         
@@ -251,7 +286,8 @@ class AboutViewController: UIViewController {
             delay: 4.6,
             animations: {
                 self.devOne.alpha = 1.0
-                self.devOne.frame = self.devOne.frame.offsetBy(dx: 0, dy: -149)
+                self.devOne.textAlignment = .center
+                self.devOne.frame = self.devOne.frame.offsetBy(dx: 0, dy: -234)
                 },
             completion: nil)
         
@@ -260,7 +296,8 @@ class AboutViewController: UIViewController {
             delay: 5.2,
             animations: {
                 self.devTwo.alpha = 1.0
-                self.devTwo.frame = self.devTwo.frame.offsetBy(dx: 0, dy: -29)
+                self.devTwo.textAlignment = .center
+                self.devTwo.frame = self.devTwo.frame.offsetBy(dx: 0, dy: -154)
                 
         },
             completion: nil)
@@ -270,7 +307,8 @@ class AboutViewController: UIViewController {
             delay: 5.8,
             animations: {
                 self.devThree.alpha = 1.0
-                self.devThree.frame = self.devThree.frame.offsetBy(dx: 0, dy: -119)
+                self.devThree.textAlignment = .center
+                self.devThree.frame = self.devThree.frame.offsetBy(dx: 0, dy: -214)
                 },
             completion: nil)
         
@@ -279,7 +317,8 @@ class AboutViewController: UIViewController {
             delay: 6.4,
             animations: {
                 self.devFour.alpha = 1.0
-                self.devFour.frame = self.devFour.frame.offsetBy(dx: 0, dy: -59)
+                self.devFour.textAlignment = .center
+                self.devFour.frame = self.devFour.frame.offsetBy(dx: 0, dy: -174)
         }, completion: nil)
         
         UIView.animateKeyframes(
@@ -287,7 +326,8 @@ class AboutViewController: UIViewController {
             delay: 1.8,
             animations: {
                 self.devFive.alpha = 1.0
-                self.devFive.frame = self.devFive.frame.offsetBy(dx: 0, dy: -334)
+                self.devSix.textAlignment = .center
+                self.devFive.frame = self.devFive.frame.offsetBy(dx: 0, dy: -374)
         },
             completion: nil)
         
@@ -296,7 +336,8 @@ class AboutViewController: UIViewController {
             delay: 3.0,
             animations: {
                 self.devSix.alpha = 1.0
-                self.devSix.frame = self.devSix.frame.offsetBy(dx: 0, dy: -229)
+                self.srDevLabel.textAlignment = .center
+                self.devSix.frame = self.devSix.frame.offsetBy(dx: 0, dy: -294)
         }, completion: nil)
         
         UIView.animateKeyframes(
@@ -304,7 +345,8 @@ class AboutViewController: UIViewController {
             delay: 0.6,
             animations: {
                 self.devSeven.alpha = 1.0
-                self.devSeven.frame = self.devSeven.frame.offsetBy(dx: 0, dy: -409)
+                self.devSeven.textAlignment = .center
+                self.devSeven.frame = self.devSeven.frame.offsetBy(dx: 0, dy: -434)
         }, completion: nil)
         
         UIView.animateKeyframes(
@@ -312,7 +354,8 @@ class AboutViewController: UIViewController {
             delay: 3.4,
             animations: {
                 self.devEight.alpha = 1.0
-                self.devEight.frame = self.devEight.frame.offsetBy(dx: 0, dy: -259)
+                self.devEight.textAlignment = .center
+                self.devEight.frame = self.devEight.frame.offsetBy(dx: 0, dy: -314)
         }, completion: nil)
         
         UIView.animateKeyframes(
@@ -320,7 +363,8 @@ class AboutViewController: UIViewController {
             delay: 7.0,
             animations: {
                 self.devNine.alpha = 1.0
-                self.devNine.frame = self.devNine.frame.offsetBy(dx: 0, dy: -89)
+                self.devNine.textAlignment = .center
+                self.devNine.frame = self.devNine.frame.offsetBy(dx: 0, dy: -194)
         }, completion: nil)
     }
 
