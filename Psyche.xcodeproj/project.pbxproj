@@ -43,7 +43,6 @@
 		B73BC359229F4CFC005F3307 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73BC358229F4CFC005F3307 /* UIDeviceExtension.swift */; };
 		B7540FF42293515E00F722F3 /* SocialMediaTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7540FF32293515E00F722F3 /* SocialMediaTimelineViewController.swift */; };
 		B7540FF62293517700F722F3 /* SocialMediaGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7540FF52293517700F722F3 /* SocialMediaGalleryViewController.swift */; };
-		B79A222223678211002F20D1 /* DisclaimerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79A222123678211002F20D1 /* DisclaimerHomeViewController.swift */; };
 		B7D8616D22C16D9700508F91 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = B754100822936F8B00F722F3 /* Data */; };
 		B7F5C00D21FFC5B900FA473B /* HtmlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */; };
 		B7FE03E2228A3E4D006EDE41 /* SocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FE03E1228A3E4D006EDE41 /* SocialMediaViewController.swift */; };
@@ -90,7 +89,6 @@
 		B7540FF32293515E00F722F3 /* SocialMediaTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaTimelineViewController.swift; sourceTree = "<group>"; };
 		B7540FF52293517700F722F3 /* SocialMediaGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaGalleryViewController.swift; sourceTree = "<group>"; };
 		B754100822936F8B00F722F3 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
-		B79A222123678211002F20D1 /* DisclaimerHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerHomeViewController.swift; sourceTree = "<group>"; };
 		B7F5C00C21FFC5B900FA473B /* HtmlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlExtension.swift; sourceTree = "<group>"; };
 		B7FE03E1228A3E4D006EDE41 /* SocialMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaViewController.swift; sourceTree = "<group>"; };
 		EBCBCFD4C2D84175D328683A /* Pods_Psyche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psyche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +137,6 @@
 		178847901FE255AD00916C4D /* Psyche */ = {
 			isa = PBXGroup;
 			children = (
-				B79A2220236781D7002F20D1 /* Disclaimer */,
 				B737F58D22BD67C8002A2F67 /* About */,
 				B737F58522BC05CE002A2F67 /* Assets.xcassets */,
 				B73BC357229F4CD6005F3307 /* Extensions */,
@@ -260,14 +257,6 @@
 				0406D8A120357F770087D5BC /* UIViewExtensions.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		B79A2220236781D7002F20D1 /* Disclaimer */ = {
-			isa = PBXGroup;
-			children = (
-				B79A222123678211002F20D1 /* DisclaimerHomeViewController.swift */,
-			);
-			path = Disclaimer;
 			sourceTree = "<group>";
 		};
 		B7FE03E0228A3DAF006EDE41 /* Social */ = {
@@ -455,7 +444,6 @@
 				6BD9903522C4B6B2002F197D /* AboutTimelineViewController.swift in Sources */,
 				170B330D20756DA50080FA6E /* UnlockedTriviaOpponentTableViewCell.swift in Sources */,
 				B737F59122BD684B002A2F67 /* AboutViewController.swift in Sources */,
-				B79A222223678211002F20D1 /* DisclaimerHomeViewController.swift in Sources */,
 				B7F5C00D21FFC5B900FA473B /* HtmlExtension.swift in Sources */,
 				424B94DF2071950700739FF1 /* TriviaProfileViewController.swift in Sources */,
 				170B330C20756DA50080FA6E /* LockedTriviaOpponentTableViewCell.swift in Sources */,

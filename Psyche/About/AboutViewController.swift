@@ -75,9 +75,10 @@ class AboutViewController: UIViewController {
     }
     func layout() {
         let disclaimerContent = getDisclaimerData()
-        print(" inside layout ", disclaimerContent)
+        let guide = view.safeAreaLayoutGuide
         self.bckGround.translatesAutoresizingMaskIntoConstraints = false
         self.version.translatesAutoresizingMaskIntoConstraints = false
+        self.descriptionText.translatesAutoresizingMaskIntoConstraints = false
         self.bckGround.leadingAnchor.constraint(equalTo: view.leadingAnchor ).isActive = true
         self.bckGround.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         self.bckGround.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -110,7 +111,10 @@ class AboutViewController: UIViewController {
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
 
-//            self.descriptionText.frame = CGRect(x: 0, y: 554, width: <#T##Int#>, height: <#T##Int#>)
+            
+            self.descriptionText.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20).isActive = true
+            self.descriptionText.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20).isActive = true
+            self.descriptionText.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -50).isActive = true
             
             self.devOne.frame = CGRect(x: 124, y: 550, width: 125, height: 21)
             self.devTwo.frame = CGRect(x: 142, y: 550, width: 89, height: 21)
@@ -127,6 +131,10 @@ class AboutViewController: UIViewController {
             self.prManagerLabel.frame = CGRect(x: 143.7, y: 550, width: 126, height: 21)
             self.graphicDesignlabel.frame = CGRect(x: 135.34, y: 550, width: 142, height: 21)
             self.devLabel.frame = CGRect(x: 162.08, y: 550, width: 87, height: 21)
+            
+            self.descriptionText.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20).isActive = true
+            self.descriptionText.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20).isActive = true
+            self.descriptionText.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -50).isActive = true
             
             self.teamLable.frame = CGRect(x: 120, y: 63, width: 169, height: 24)
             self.teamLable.textAlignment = .center
@@ -156,6 +164,10 @@ class AboutViewController: UIViewController {
             self.version.frame = CGRect(x: 138.43, y: 609, width: 137, height: 38)
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+            
+            self.descriptionText.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20).isActive = true
+            self.descriptionText.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20).isActive = true
+            self.descriptionText.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -50).isActive = true
 
             self.devOne.frame = CGRect(x: 143.7, y: 550, width: 125, height: 21)
             self.devTwo.frame = CGRect(x: 162.08, y: 550, width: 89, height: 21)
@@ -177,6 +189,9 @@ class AboutViewController: UIViewController {
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
 
+            self.descriptionText.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20).isActive = true
+            self.descriptionText.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20).isActive = true
+            self.descriptionText.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -50).isActive = true
             
             
             self.devOne.frame = CGRect(x: 143.7, y: 550, width: 125, height: 21)
@@ -199,6 +214,9 @@ class AboutViewController: UIViewController {
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
 
+            self.descriptionText.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20).isActive = true
+            self.descriptionText.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20).isActive = true
+            self.descriptionText.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -50).isActive = true
             
             
             self.devOne.frame = CGRect(x: 124, y: 550, width: 125, height: 21)
@@ -222,6 +240,10 @@ class AboutViewController: UIViewController {
 
             self.version.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             self.version.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5).isActive = true
+            
+            self.descriptionText.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 5).isActive = true
+            self.descriptionText.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -5).isActive = true
+            self.descriptionText.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -20).isActive = true
 
             
             self.devOne.frame = CGRect(x: 96.9, y: 550, width: 125, height: 21)
@@ -233,6 +255,21 @@ class AboutViewController: UIViewController {
             self.devSeven.frame = CGRect(x: 106.92, y: 550, width: 105, height: 21)
             self.devEight.frame = CGRect(x: 91.88, y: 550, width: 135, height: 21)
             self.devNine.frame = CGRect(x: 111.94, y: 550, width: 94, height: 21)
+            
+            self.srDevLabel.font =  self.srDevLabel.font.withSize(10)
+            self.prManagerLabel.font =  self.prManagerLabel.font.withSize(10)
+            self.graphicDesignlabel.font =  self.graphicDesignlabel.font.withSize(10)
+            self.devLabel.font = self.devLabel.font.withSize(10)
+            self.devOne.font =  self.devOne.font.withSize(10)
+            self.devTwo.font = self.devTwo.font.withSize(10)
+            self.devThree.font = self.devThree.font.withSize(10)
+            self.devFour.font = self.devFour.font.withSize(10)
+            self.devFive.font = self.devFive.font.withSize(10)
+            self.devSix.font = self.devSix.font.withSize(10)
+            self.devSeven.font = self.devSeven.font.withSize(10)
+            self.devEight.font = self.devEight.font.withSize(10)
+            self.devNine.font = self.devNine.font.withSize(10)
+            self.descriptionText.font = self.descriptionText.font.withSize(8)
             
         }
         

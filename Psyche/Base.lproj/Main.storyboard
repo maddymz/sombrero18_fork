@@ -2146,19 +2146,15 @@ Test 3</string>
                                     <segue destination="BYZ-38-t0r" kind="custom" identifier="unwinedToHomePage" customClass="unwinedAboutScreenSegue" customModule="Psyche" id="mEW-0B-NQH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description text" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJc-FZ-PUT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description text" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJc-FZ-PUT">
                                 <rect key="frame" x="20" y="470" width="374" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="NJc-FZ-PUT" firstAttribute="top" secondItem="iEp-RJ-p6h" secondAttribute="top" constant="450" id="02D-2x-J3i"/>
-                            <constraint firstItem="NJc-FZ-PUT" firstAttribute="leading" secondItem="iEp-RJ-p6h" secondAttribute="leading" constant="20" id="5O5-Ii-sGy"/>
-                            <constraint firstItem="iEp-RJ-p6h" firstAttribute="trailing" secondItem="NJc-FZ-PUT" secondAttribute="trailing" constant="20" id="Znk-xO-PRN"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iEp-RJ-p6h"/>
                     </view>
                     <connections>
