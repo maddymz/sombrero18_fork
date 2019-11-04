@@ -373,7 +373,7 @@ class AboutViewController: UIViewController {
             delay: 3.0,
             animations: {
                 self.devSix.alpha = 1.0
-                self.srDevLabel.textAlignment = .center
+                self.devSix.textAlignment = .center
                 self.devSix.frame = self.devSix.frame.offsetBy(dx: 0, dy: -294)
         }, completion: nil)
         
