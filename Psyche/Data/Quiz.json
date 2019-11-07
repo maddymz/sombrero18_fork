@@ -10,7 +10,7 @@
                 "3"
             ],
             [
-                "Psyche is the first mission to a world made of ____.",
+                "Psyche is the first mission to a world likely largely made of ____.",
                 "Rock",
                 "Ice",
                 "Gas",
@@ -90,11 +90,11 @@
                 "3"
             ],
             [
-                "How many days will the Psyche spacecraft be in Orbit C?",
-                "100",
-                "76",
-                "56",
-                "83",
+                "What are the four Psyche spacecraft staging orbits named??",
+                "A, B, C, D",
+                "Alpha, Beta, Gamma, Omega ",
+                "1, 2, 3, 4",
+                "Primo, Secunda, Tertia, Quartus",
                 "1"
             ],
             [
@@ -216,7 +216,7 @@
                 "2"
             ],
             [
-                "Psyche is believed to be made mostly out of:",
+                "Psyche is believed to be likely made largely out of:",
                 "Nickel",
                 "Iron",
                 "Gold",
@@ -224,11 +224,11 @@
                 "4"
             ],
             [
-                "Which object is similar to Psyche in its density?",
-                "A bar of steel",
-                "A roll of aluminum foil",
-                "A gold coin",
-                "The lead in a pencil",
+                "By the time it reaches the Psyche asteroid, about how far will the Psyche spacecraft have traveled?",
+                "2.4 billion kilometers",
+                "1.0 billion kilometers",
+                "4.6 billion kilometers",
+                "13.2 billion kilometers",
                 "1"
             ],
             [
@@ -738,7 +738,7 @@
                 "1"
             ],
             [
-                "Where is Psyche the Asteroid located?",
+                "Where is Psyche the asteroid located?",
                 "Outside our Solar System",
                 "Between Venus and Earth",
                 "In the Asteroid Belt",
@@ -756,7 +756,7 @@
         ],
         "nasa3": [
             [
-                "What project was selected for NASA’ s Discovery Program along with Psyche?",
+                "What project was selected for NASA’s Discovery Program along with Psyche?",
                 "Stardust",
                 "Lucy",
                 "Genesis",
@@ -1170,7 +1170,7 @@
                 "2"
             ],
             [
-                "Who was the second person to go in space?",
+                "Who was the second person to go into space?",
                 "Alan Bean",
                 "Gus Grissom",
                 "Alexei Leonov",
@@ -1488,7 +1488,7 @@
                 "1"
             ],
             [
-                "Psyche is believed to be made mostly of:",
+                "Psyche is believed to be likely made largely of:",
                 "Nickel",
                 "Iron",
                 "Gold",
@@ -2723,3 +2723,4 @@
         ]
     }
 ]
+
