@@ -1587,15 +1587,6 @@ Test 3</string>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <visualEffectView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" id="GnA-pK-FhK">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="833"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="cQW-gn-ATC">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="833"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </view>
-                                    <blurEffect style="extraLight"/>
-                                </visualEffectView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="vOx-hF-YhH">
                                         <rect key="frame" x="0.0" y="0.0" width="89" height="89"/>
@@ -1634,6 +1625,15 @@ Test 3</string>
                                     <outlet property="delegate" destination="Tbu-MQ-uGJ" id="ost-h0-mjq"/>
                                 </connections>
                             </collectionView>
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GnA-pK-FhK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="cQW-gn-ATC">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5le-zf-rIz"/>
@@ -1877,7 +1877,7 @@ Test 3</string>
                     <viewLayoutGuide key="safeArea" id="dpN-Nd-ijh"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2716.875" y="1022.5352112676056"/>
+            <point key="canvasLocation" x="2716" y="1021.9211822660099"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="mOV-hp-kmc">
@@ -3246,9 +3246,6 @@ yiTPAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAJNE
         <image name="new-timeline-second" width="50" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sMQ-h8-wGb"/>
-        <segue reference="fbY-ET-o4A"/>
-        <segue reference="cc7-zu-7ll"/>
         <segue reference="cAV-Af-ffN"/>
         <segue reference="qW7-CE-FaO"/>
         <segue reference="99g-zA-NbL"/>
