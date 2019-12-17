@@ -645,10 +645,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             nasaLogo.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 22).isActive = true
             nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
             nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
-            pageControl.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 141)
-            pageControl.trailingAnchor.constraint(equalTo: anchor.trailingAnchor, constant: 140)
-            pageControl.bottomAnchor.constraint(equalTo: anchor.bottomAnchor, constant: 127)
-            pageControl.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 8)
             self.arrowImage.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 130).isActive = true
             self.arrowImage.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 460).isActive = true
             self.swipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 131).isActive = true

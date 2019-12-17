@@ -14,6 +14,8 @@ class RightLeftSegue : UIStoryboardSegue{
     {
         let src = self.source
         let dst = self.destination
+        src.modalPresentationStyle = .fullScreen
+        dst.modalPresentationStyle = .fullScreen
         
         src.view.superview?.insertSubview(dst.view, aboveSubview: src.view)
         dst.view.transform = CGAffineTransform(translationX: src.view.frame.size.width, y: 0)
@@ -33,6 +35,8 @@ class UnwindRightLeftSegue : UIStoryboardSegue{
     override func perform() {
         let src = self.source
         let dst = self.destination
+        src.modalPresentationStyle = .fullScreen
+        dst.modalPresentationStyle = .fullScreen
         
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
 
@@ -55,6 +59,9 @@ class ProfileOpponentSegue : UIStoryboardSegue{
     {
         let src = self.source as! TriviaProfileViewController
         let dst = self.destination as! TriviaOpponentViewController
+        
+        src.modalPresentationStyle = .fullScreen
+        dst.modalPresentationStyle = .fullScreen
         
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
         
@@ -79,6 +86,9 @@ class UnwindProfileOpponentSegue: UIStoryboardSegue{
     override func perform(){
         let dst = self.destination as! TriviaProfileViewController
         let src = self.source as! TriviaOpponentViewController
+        
+        src.modalPresentationStyle = .fullScreen
+        dst.modalPresentationStyle = .fullScreen
         
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
         dst.view.alpha = 1
@@ -108,6 +118,9 @@ class GameFinalSegue: UIStoryboardSegue{
         let src = self.source as! TriviaGameViewController
         let dst = self.destination as! TriviaFinalViewController
         
+        src.modalPresentationStyle = .fullScreen
+        dst.modalPresentationStyle = .fullScreen
+        
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
 
         UIView.animate(withDuration: 1, animations: {
@@ -127,6 +140,9 @@ class PlayAgainSegue: UIStoryboardSegue{
     {
         let src = self.source as! TriviaFinalViewController
         let dst = self.destination as! TriviaOpponentViewController
+        
+        src.modalPresentationStyle = .fullScreen
+        dst.modalPresentationStyle = .fullScreen
         
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
         
@@ -160,6 +176,9 @@ class socialmediaSegue: UIStoryboardSegue {
         
         let src = self.source as! HomeViewController
         let dst = self.destination as! SocialMediaViewController
+        
+        src.modalPresentationStyle = .fullScreen
+        dst.modalPresentationStyle = .fullScreen
         
         let window = UIApplication.shared.delegate?.window!
         window?.insertSubview(dst.view, aboveSubview: src.view)
@@ -200,6 +219,9 @@ class socialmediaSegueTimeline: UIStoryboardSegue {
         
         let src = self.source as! TimelineTableViewController
         let dst = self.destination as! SocialMediaTimelineViewController
+        
+        src.modalPresentationStyle = .fullScreen
+        dst.modalPresentationStyle = .fullScreen
         
         let window = UIApplication.shared.delegate?.window!
         window?.insertSubview(dst.view, aboveSubview: src.view)
@@ -243,7 +265,8 @@ class socialmediaSegueGallery: UIStoryboardSegue {
         let src = self.source as! GalleryViewController
         let dst = self.destination as! SocialMediaGalleryViewController
         
-
+        src.modalPresentationStyle = .fullScreen
+        dst.modalPresentationStyle = .fullScreen
         
         let window = UIApplication.shared.delegate?.window!
         window?.insertSubview(dst.view, aboveSubview: src.view)
@@ -278,6 +301,9 @@ class unwinedSocialmediaSegueGallery: UIStoryboardSegue {
         let src = self.source as! SocialMediaGalleryViewController
         let dst = self.destination as!  GalleryViewController
         
+        src.modalPresentationStyle = .fullScreen
+        dst.modalPresentationStyle = .fullScreen
+        
         src.view.superview?.insertSubview(dst.view, belowSubview: src.view)
         src.dismiss(animated: false, completion: nil)
     }
@@ -287,6 +313,9 @@ class AboutScreenSegue: UIStoryboardSegue {
     override func perform() {
         let src = self.source as! HomeViewController
         let dst = self.destination as! AboutViewController
+        
+        src.modalPresentationStyle = .fullScreen
+        dst.modalPresentationStyle = .fullScreen
         
         let window = UIApplication.shared.delegate?.window!
         window?.insertSubview(dst.view, aboveSubview: src.view)
@@ -306,6 +335,9 @@ class AboutScreenSegueTimeline: UIStoryboardSegue {
         let src = self.source as! TimelineTableViewController
         let dst = self.destination as! AboutTimelineViewController
         
+        src.modalPresentationStyle = .fullScreen
+        dst.modalPresentationStyle = .fullScreen
+        
         let window = UIApplication.shared.delegate?.window!
         
         window?.insertSubview(dst.view, aboveSubview: src.view)
@@ -324,6 +356,9 @@ class AboutScreenSegueGallery: UIStoryboardSegue {
     override func perform() {
         let src = self.source as! GalleryViewController
         let dst = self.destination as! AboutGalleryViewController
+        
+        src.modalPresentationStyle = .fullScreen
+        dst.modalPresentationStyle = .fullScreen
         
         let window = UIApplication.shared.delegate?.window!
         
