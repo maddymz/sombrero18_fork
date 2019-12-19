@@ -2,7 +2,7 @@
 //  UIDeviceExtension.swift
 //  Psyche
 //
-//  Created by psyche-admin on 5/29/19.
+//  Created by Madhukar Raj on 5/29/19.
 //  Copyright © 2019 ASU. All rights reserved.
 //
 

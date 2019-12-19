@@ -551,6 +551,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             blurHeight.constant = 630
             blurTextHeight.constant = 40
             blurTextY.constant = -200
+            self.stackView.translatesAutoresizingMaskIntoConstraints = false
             self.swipeLabel.translatesAutoresizingMaskIntoConstraints = false
             self.arrowImage.translatesAutoresizingMaskIntoConstraints = false
             self.topSwipeLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -568,6 +569,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             self.topSwipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 60).isActive = true
             self.swipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 171).isActive = true
             self.swipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 645).isActive = true
+//            self.stackView.topAnchor.constraint(equalTo: anchor.topAnchor).isActive = true
+//            self.stackView.bottomAnchor.constraint(equalTo: anchor.bottomAnchor, constant: 606).isActive = true
+//            self.stackView.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 0).isActive = true
+//            self.stackView.trailingAnchor.constraint(equalTo: anchor.trailingAnchor, constant: 0).isActive = true
         }else if UIDevice.current.screenType == .iPhones_X_XS{
             blurY.constant = 460
             blurHeight.constant = 700
