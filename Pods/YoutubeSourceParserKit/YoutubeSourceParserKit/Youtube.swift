@@ -110,8 +110,6 @@ public class Youtube: NSObject {
       }
         group.leave()
     }).resume()
-    group.wait(timeout: .distantFuture)
-//    dispatch_group_wait(group, dispatch_time_t(DispatchTime.distantFuture))
     
     let parts = responseString.dictionaryFromQueryStringComponents()
     if parts.count > 0 {
