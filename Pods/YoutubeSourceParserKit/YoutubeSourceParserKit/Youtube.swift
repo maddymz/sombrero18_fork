@@ -110,7 +110,7 @@ public class Youtube: NSObject {
       }
         group.leave()
     }).resume()
-    group.wait(timeout: .distantFuture)
+//    group.wait(timeout: .distantFuture)
 //    dispatch_group_wait(group, dispatch_time_t(DispatchTime.distantFuture))
     
     let parts = responseString.dictionaryFromQueryStringComponents()
@@ -142,6 +142,87 @@ public class Youtube: NSObject {
             videoComponents["isStream"] = false as AnyObject
             return videoComponents as [String: AnyObject]
           }
+        }
+      }else {
+        if (parts["player_response"] != nil){
+            print("player response", parts["player_response"] as Any)
+            
+            //data model for youtube link json response 
+            struct PlayerResStruct: Codable {
+                let streamingData: StreamingData
+            }
+            
+            // StreamingData
+            struct StreamingData: Codable {
+                let expiresInSeconds: String
+                let formats, adaptiveFormats: [Format]
+                let dashManifestURL: String
+
+                enum CodingKeys: String, CodingKey {
+                    case expiresInSeconds, formats, adaptiveFormats
+                    case dashManifestURL = "dashManifestUrl"
+                }
+            }
+
+            // Format
+            struct Format: Codable {
+                let itag: Int
+                let url: String
+                let mimeType: String
+                let bitrate: Int
+                let width, height: Int?
+                let initRange, indexRange: Range?
+                let lastModified: String
+                let contentLength: String?
+                let quality: String
+                let fps: Int?
+                let qualityLabel: String?
+                let projectionType: ProjectionType
+                let averageBitrate: Int?
+                let approxDurationMS: String?
+                let type: TypeEnum?
+                let highReplication: Bool?
+                let audioQuality, audioSampleRate: String?
+                let audioChannels: Int?
+
+                enum CodingKeys: String, CodingKey {
+                    case itag, url, mimeType, bitrate, width, height, initRange, indexRange, lastModified, contentLength, quality, fps, qualityLabel, projectionType, averageBitrate
+                    case approxDurationMS = "approxDurationMs"
+                    case type, highReplication, audioQuality, audioSampleRate, audioChannels
+                }
+            }
+
+            // Range
+            struct Range: Codable {
+                let start, end: String
+            }
+            //ProjectionType
+            enum ProjectionType: String, Codable {
+                case rectangular = "RECTANGULAR"
+            }
+            //TypeEnum
+            enum TypeEnum: String, Codable {
+                case formatStreamTypeOtf = "FORMAT_STREAM_TYPE_OTF"
+            }
+            
+            let test = parts["player_response"]
+            let jsonString = test as! String
+            let jsonData = jsonString.data(using: .utf8)!
+            let json = try! JSONDecoder().decode(PlayerResStruct.self, from: jsonData)
+            
+            print("parsed json", json.streamingData.adaptiveFormats)
+            
+            for element in json.streamingData.adaptiveFormats {
+                if element.mimeType.contains("video/mp4") && (element.qualityLabel == "1080p" || element.qualityLabel == "720p" || element.qualityLabel == "480p") {
+                    let URL = element.url
+                    print(" video url ", URL)
+                    
+                    var dict = [String: AnyObject]()
+                    dict["url"] = URL as AnyObject
+                    
+                    return dict
+                }
+            }
         }
       }
     }
