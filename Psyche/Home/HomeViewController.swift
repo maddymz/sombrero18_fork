@@ -514,6 +514,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             blurTextY.constant = -170
             self.swipeLabel.translatesAutoresizingMaskIntoConstraints = false
             self.topSwipeLabel.translatesAutoresizingMaskIntoConstraints = false
+            self.stackView.translatesAutoresizingMaskIntoConstraints = false
+            self.stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+            self.stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
             self.topSwipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 157).isActive = true
             self.topSwipeLabel.topAnchor.constraint(equalTo: anchor.topAnchor, constant: 65).isActive = true
             self.swipeLabel.leadingAnchor.constraint(equalTo: anchor.leadingAnchor, constant: 157).isActive = true
@@ -530,6 +533,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             nasaLogo.translatesAutoresizingMaskIntoConstraints = false
             nasaTitle.translatesAutoresizingMaskIntoConstraints = false
             menuhamburger.translatesAutoresizingMaskIntoConstraints = false
+            self.stackView.translatesAutoresizingMaskIntoConstraints = false
+            self.stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+            self.stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
             nasaTitle.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
             nasaTitle.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 120).isActive = true
             menuhamburger.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
@@ -556,6 +562,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             self.topSwipeLabel.translatesAutoresizingMaskIntoConstraints = false
             self.topArrow.translatesAutoresizingMaskIntoConstraints = false
             nasaLogo.translatesAutoresizingMaskIntoConstraints = false
+            self.stackView.translatesAutoresizingMaskIntoConstraints = false
+            self.stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+            self.stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
             nasaLogo.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
             nasaLogo.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 27).isActive = true
             nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
@@ -580,6 +589,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             nasaLogo.translatesAutoresizingMaskIntoConstraints = false
             nasaTitle.translatesAutoresizingMaskIntoConstraints = false
             menuhamburger.translatesAutoresizingMaskIntoConstraints = false
+            self.stackView.translatesAutoresizingMaskIntoConstraints = false
+            self.stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+            self.stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
             nasaTitle.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
             nasaTitle.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 100).isActive = true
             menuhamburger.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
@@ -608,6 +620,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             self.swipeLabel.translatesAutoresizingMaskIntoConstraints = false
             self.topArrow.translatesAutoresizingMaskIntoConstraints = false
             self.topSwipeLabel.translatesAutoresizingMaskIntoConstraints = false
+            self.stackView.translatesAutoresizingMaskIntoConstraints = false
+            self.stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+            self.stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
             nasaTitle.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
             nasaTitle.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 120).isActive = true
             menuhamburger.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
@@ -632,7 +647,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             blurTextWidth.constant = 255
             blurTextX.constant = 4
             
-            
+            self.stackView.translatesAutoresizingMaskIntoConstraints = false
+            self.stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+            self.stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
             self.arrowImage.translatesAutoresizingMaskIntoConstraints = false
             self.swipeLabel.translatesAutoresizingMaskIntoConstraints = false
             self.topArrow.translatesAutoresizingMaskIntoConstraints = false
