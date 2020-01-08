@@ -169,7 +169,7 @@ public class Youtube: NSObject {
       }
         group.leave()
     }).resume()
-    group.wait(timeout: .distantFuture)
+//    group.wait(timeout: .distantFuture)
 //    dispatch_group_wait(group, dispatch_time_t(DispatchTime.distantFuture))
     
     let parts = responseString.dictionaryFromQueryStringComponents()
@@ -205,7 +205,7 @@ public class Youtube: NSObject {
       }else {
         if (parts["player_response"] != nil){
 //            print("inside player response block !!!")
-            print("response", parts["player_response"])
+            print("response", parts["player_response"] as Any)
             
             
             let test = parts["player_response"]
