@@ -1,32 +1,34 @@
 PODS:
-  - AFNetworking (2.6.3):
-    - AFNetworking/NSURLConnection (= 2.6.3)
-    - AFNetworking/NSURLSession (= 2.6.3)
-    - AFNetworking/Reachability (= 2.6.3)
-    - AFNetworking/Security (= 2.6.3)
-    - AFNetworking/Serialization (= 2.6.3)
-    - AFNetworking/UIKit (= 2.6.3)
-  - AFNetworking/NSURLConnection (2.6.3):
+  - AFNetworking (2.7.0):
+    - AFNetworking/NSURLConnection (= 2.7.0)
+    - AFNetworking/NSURLSession (= 2.7.0)
+    - AFNetworking/Reachability (= 2.7.0)
+    - AFNetworking/Security (= 2.7.0)
+    - AFNetworking/Serialization (= 2.7.0)
+    - AFNetworking/UIKit (= 2.7.0)
+  - AFNetworking/NSURLConnection (2.7.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.3):
+  - AFNetworking/NSURLSession (2.7.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.3)
-  - AFNetworking/Security (2.6.3)
-  - AFNetworking/Serialization (2.6.3)
-  - AFNetworking/UIKit (2.6.3):
+  - AFNetworking/Reachability (2.7.0)
+  - AFNetworking/Security (2.7.0)
+  - AFNetworking/Serialization (2.7.0)
+  - AFNetworking/UIKit (2.7.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - FLKAutoLayout (0.2.1)
   - FMMosaicLayout (0.1.4)
   - HCVimeoVideoExtractor (0.0.1)
-  - Kingfisher (5.1.0)
+  - Kingfisher (5.12.0):
+    - Kingfisher/Core (= 5.12.0)
+  - Kingfisher/Core (5.12.0)
   - ORStackView (3.0.1):
     - FLKAutoLayout (~> 0.2)
-  - SwiftyJSON (3.1.4)
+  - SwiftyJSON (4.3.0)
   - TwitterCore (3.2.0)
   - TwitterKit (3.4.2):
     - TwitterCore (>= 3.2.0)
@@ -38,12 +40,12 @@ DEPENDENCIES:
   - HCVimeoVideoExtractor
   - Kingfisher (~> 5.0)
   - ORStackView (~> 3.0)
-  - SwiftyJSON (~> 3.1.1)
+  - SwiftyJSON (~> 4.0)
   - TwitterKit
   - YoutubeSourceParserKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AFNetworking
     - FLKAutoLayout
     - FMMosaicLayout
@@ -56,17 +58,17 @@ SPEC REPOS:
     - YoutubeSourceParserKit
 
 SPEC CHECKSUMS:
-  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
   FLKAutoLayout: 9db6b30c2008d230da608e62c607b11c23b942e6
   FMMosaicLayout: c0febf6876c987c425d7e2176d034fa7a2c98cb5
   HCVimeoVideoExtractor: d3c251280f7027ffd324266e1930b3618e0adb46
-  Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
+  Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
   TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
   YoutubeSourceParserKit: d1506222a62718ed41f18ab52ebbc1b1d9ecabcc
 
-PODFILE CHECKSUM: 0bce17dc3a6430ab1de8bf42233d38b3158520e9
+PODFILE CHECKSUM: c5f49b8dc4c76a2b8533dfa62aa47803da832bfd
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

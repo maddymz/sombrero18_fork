@@ -118,7 +118,6 @@ public class Youtube: NSObject {
     enum TypeEnum: String, Codable {
         case formatStreamTypeOtf = "FORMAT_STREAM_TYPE_OTF"
     }
-    
   /**
   Method for retrieving the youtube ID from a youtube URL
 
@@ -163,13 +162,14 @@ public class Youtube: NSObject {
     let session = URLSession(configuration: URLSessionConfiguration.default)
     let group = DispatchGroup()
     group.enter()
-    session.dataTask(with: request as URLRequest, completionHandler: { (data, response, _) -> Void in
+    session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
       if let data = data as NSData? {
         responseString = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue)!
       }
+        print(" error", error as Any)
         group.leave()
     }).resume()
-//    group.wait(timeout: .distantFuture)
+    group.wait(timeout: .distantFuture)
 //    dispatch_group_wait(group, dispatch_time_t(DispatchTime.distantFuture))
     
     let parts = responseString.dictionaryFromQueryStringComponents()
@@ -203,30 +203,28 @@ public class Youtube: NSObject {
           }
         }
       }else {
-        if (parts["player_response"] != nil){
-//            print("inside player response block !!!")
-            print("response", parts["player_response"] as Any)
-            
-            
+        if let playerresponse = parts["player_response"] as? String {
+            print("player response ", playerresponse)
             let test = parts["player_response"]
+            
+            
             let jsonString = test as! String
             let jsonData = jsonString.data(using: .utf8)!
             let json = try! JSONDecoder().decode(self.PlayerResStruct.self, from: jsonData)
-            
-            print("parsed json", json.streamingData.adaptiveFormats)
-            
-            for element in json.streamingData.adaptiveFormats {
-                if element.mimeType.contains("video/mp4") && (element.qualityLabel == "1080p" || element.qualityLabel == "720p" || element.qualityLabel == "480p") {
-                    let URL = element.url
-                    print(" video url ", URL)
-                    
-                    var dict = [String: AnyObject]()
-                    dict["url"] = URL as AnyObject
-                    
-                    return dict
-                }
-            }
 
+            print("parsed json", json.streamingData.adaptiveFormats)
+
+            for element in json.streamingData.adaptiveFormats {
+              if element.mimeType.contains("video/mp4") && (element.qualityLabel == "1080p" || element.qualityLabel == "720p" || element.qualityLabel == "480p") {
+                  let URL = element.url
+                  print(" video url ", URL)
+                  
+                  var dict = [String: AnyObject]()
+                  dict["url"] = URL as AnyObject
+                  
+                  return dict
+              }
+            }
         }
         }
     }

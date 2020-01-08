@@ -6,7 +6,7 @@ target 'Psyche' do
   # Pods for Psyche
   pod 'AFNetworking', '~> 2.6'
   pod 'ORStackView', '~> 3.0'
-  pod 'SwiftyJSON', '~> 3.1.1'
+  pod 'SwiftyJSON', '~> 4.0'
   pod 'HCVimeoVideoExtractor'
   pod 'YoutubeSourceParserKit'
   pod 'FMMosaicLayout'
