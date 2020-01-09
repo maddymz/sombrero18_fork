@@ -68,9 +68,9 @@ public class Youtube: NSObject {
     
     // StreamingData
     struct StreamingData: Codable {
-        let expiresInSeconds: String
+        let expiresInSeconds: String?
         let formats, adaptiveFormats: [Format]
-        let dashManifestURL: String
+        let dashManifestURL: String?
 
         enum CodingKeys: String, CodingKey {
             case expiresInSeconds, formats, adaptiveFormats
@@ -80,15 +80,15 @@ public class Youtube: NSObject {
 
     // Format
     struct Format: Codable {
-        let itag: Int
-        let url: String
-        let mimeType: String
-        let bitrate: Int
+        let itag: Int?
+        let url: String?
+        let mimeType: String?
+        let bitrate: Int?
         let width, height: Int?
         let initRange, indexRange: Range?
-        let lastModified: String
+        let lastModified: String?
         let contentLength: String?
-        let quality: String
+        let quality: String?
         let fps: Int?
         let qualityLabel: String?
         let projectionType: ProjectionType
@@ -108,7 +108,7 @@ public class Youtube: NSObject {
 
     // Range
     struct Range: Codable {
-        let start, end: String
+        let start, end: String?
     }
     //ProjectionType
     enum ProjectionType: String, Codable {
@@ -215,9 +215,9 @@ public class Youtube: NSObject {
             print("parsed json", json.streamingData.adaptiveFormats)
 
             for element in json.streamingData.adaptiveFormats {
-              if element.mimeType.contains("video/mp4") && (element.qualityLabel == "1080p" || element.qualityLabel == "720p" || element.qualityLabel == "480p") {
+                if (element.mimeType?.contains("video/mp4"))! && (element.qualityLabel == "1080p" || element.qualityLabel == "720p" || element.qualityLabel == "480p") {
                   let URL = element.url
-                  print(" video url ", URL)
+                    print(" video url ", URL as Any)
                   
                   var dict = [String: AnyObject]()
                   dict["url"] = URL as AnyObject

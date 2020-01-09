@@ -326,7 +326,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
                 }
             })
         case substring[1].contains("youtu") :
-            let testURL = NSURL(string: videoUrl)!
+            guard let testURL = NSURL(string: videoUrl) else { return }
             Youtube.h264videosWithYoutubeURL(youtubeURL: testURL) { (videoInfo, error) -> Void in
                 let youtubeUrl = URL(string: (videoInfo?["url"] as? String)!)
                 play(videoUrl: youtubeUrl!)
