@@ -219,7 +219,6 @@
 				8D227BF5E6E7D8E1B3E967E9 /* Pods-Psyche.debug.xcconfig */,
 				0077C0C2BF5F6FF605298865 /* Pods-Psyche.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -600,6 +599,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = 44J66C26UU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -633,6 +633,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = 44J66C26UU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
