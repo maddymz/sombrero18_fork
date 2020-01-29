@@ -55,7 +55,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         let altText: String
         let mediaType: MediaType
         let mimeType: MIMEType
-        let mediaDetails: MediaDetails
+        let mediaDetails: MediaDetails?
         let sourceURL: String
         
         enum CodingKeys: String, CodingKey {
@@ -77,7 +77,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     struct MediaDetails: Decodable {
         let width, height: Int
         let file: String
-        let sizes: Sizes
+        let sizes: Sizes?
         let hwstringSmall: String?
         
         enum CodingKeys: String, CodingKey {
@@ -89,7 +89,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     struct Sizes: Decodable {
         let thumbnail: Excerpt
         let mediumLarge, large, hero: Excerpt?
-        let heroSm, excerpt: Excerpt
+        let heroSm, excerpt: Excerpt?
         let full: Excerpt
         
         enum CodingKeys: String, CodingKey {
@@ -198,7 +198,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
     
     //clicked thumbnail reveal secondView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         if(self.gallery[(indexPath.row)].videoURL != ""){
             layout()
             titleLabel.attributedText = self.gallery[(indexPath.row)].title.convertHtml(family: nil, size: 15)
@@ -296,6 +295,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             
             self.secondViewer.layer.addSublayer(self.playerLayer!)
             player.play()
+            player.isMuted = false
             UIView.animate(withDuration: 1.0, animations: {
             })
             playing = true
@@ -398,7 +398,7 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) 
         cell.layer.cornerRadius = 8
-        var imageView = cell.viewWithTag(2) as! UIImageView
+        let imageView = cell.viewWithTag(2) as! UIImageView
         
         let processor = DownsamplingImageProcessor(size: CGSize(width: 250, height: 250))
         imageView.kf.indicatorType = .activity
