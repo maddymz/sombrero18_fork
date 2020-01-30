@@ -596,7 +596,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             nasaTitle.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 100).isActive = true
             menuhamburger.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
             menuhamburger.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 15).isActive = true
-            nasaLogo.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -40).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -10).isActive = true
             nasaLogo.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 27).isActive = true
             nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
             nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
@@ -658,7 +658,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             nasaTitle.translatesAutoresizingMaskIntoConstraints = false
             nasaTitle.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 40).isActive = true
             nasaTitle.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 70).isActive = true
-            nasaLogo.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -100).isActive = true
+            nasaLogo.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
             nasaLogo.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 22).isActive = true
             nasaLogo.heightAnchor.constraint(equalToConstant: 45).isActive = true
             nasaLogo.widthAnchor.constraint(equalToConstant: 45).isActive = true
