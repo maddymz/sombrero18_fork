@@ -295,7 +295,6 @@ class GalleryViewController: UIViewController, FMMosaicLayoutDelegate, UICollect
             
             self.secondViewer.layer.addSublayer(self.playerLayer!)
             player.play()
-            player.isMuted = false
             UIView.animate(withDuration: 1.0, animations: {
             })
             playing = true

@@ -212,10 +212,10 @@ public class Youtube: NSObject {
             let jsonData = jsonString.data(using: .utf8)!
             let json = try! JSONDecoder().decode(self.PlayerResStruct.self, from: jsonData)
 
-            print("parsed json", json.streamingData.adaptiveFormats)
+            print("parsed json", json.streamingData.formats)
 
-            for element in json.streamingData.adaptiveFormats {
-                if (element.mimeType?.contains("video/mp4"))! && (element.qualityLabel == "1080p" || element.qualityLabel == "720p" || element.qualityLabel == "480p") {
+            for element in json.streamingData.formats {
+                if (element.mimeType?.contains("video/mp4"))! && (element.qualityLabel == "1080p" || element.qualityLabel == "720p" || element.qualityLabel == "480p" || element.qualityLabel == "360p") {
                   let URL = element.url
                     print(" video url ", URL as Any)
                   
